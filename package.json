@@ -1,0 +1,41 @@
+{
+  "name": "node-help",
+  "version": "1.0.0",
+  "description": "A node repl module that provides user-friendly in-repl documentation.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/foundling/node-help"
+  },
+  "keywords": [
+    "node",
+    "repl",
+    "help",
+    "user-friendly"
+  ],
+  "author": {
+    "name": "Alex Ramsdell",
+    "email": "alexramsdell@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Stan Zhao",
+      "email": "zhaostan@gmail.com"
+    },
+    {
+      "name": "Kasim Siddiqui",
+      "email": "kasimsiddiqui@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/foundling/node-help/issues"
+  },
+  "homepage": "https://github.com/foundling/node-help"
+}
