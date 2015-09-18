@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/foundling/node-help/issues"
   },
-  "homepage": "https://github.com/foundling/node-help"
+  "homepage": "https://github.com/foundling/node-help",
+  "dependencies": {
+    "request": "^2.62.0"
+  }
 }

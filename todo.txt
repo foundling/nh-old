@@ -1,0 +1,10 @@
+get travis ci up and running
+once you've got a minimal working app, deploy to heroku.
+fix contributors on github.
+
+to do:
+feature list
+code structure
+what each unit takes in and out
+how we're testing each unit
+who is working on what? (pair programming may take care of this)
