@@ -1,7 +1,6 @@
 var cheerio = require('cheerio');
 var request = require('request');
 
-var data = {};
 var types = [   'Object',
                 'String',
                 'Array',
@@ -14,19 +13,38 @@ var sections = [    'Description',
                     'Properties',
                     'Methods'];
 
-types.splice(0,1).forEach(function(value, index, array) {
+// for each type, do a get request for the url for that type
+// load that html
+// for each section, search html for that section
+//
+// getting method names and descriptions
+// for each html block, search each <dt><code></code></dt> block for  method name
+// find next <dd> block, the containing text is the method description
+types.forEach(function(value, index, array) {
+
     var url = 
         'https://developer.mozilla.org' +
         '/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + 
-        value +
-        '/prototype';
+        value;
+
+    var data = {}; 
 
     request(url, function(err, response, html) {
         if (err) return console.log(err);
         var $ = cheerio.load(html);
-        var contents = $('#' + sections[0]).next().text();
-        console.dir(contents);
+        sections.forEach(function(value, index, array) {
+            if (value === 'Description') {
+                data[value] = $('#' + value).next().text();
+            }
+            else {
+                var dl = $('#' + value).next().text();
+                // find each dt > code and get that text
+                // get each dt's sibling.text
+                
+            }
+
+            console.log(value.toUpperCase() + ':\n', data[value], '\n');
+        });
     });
 
-     
 });
