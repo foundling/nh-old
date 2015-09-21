@@ -1,57 +1,57 @@
 var cheerio = require('cheerio');
 var request = require('request');
+var serialize = require('node-serialize');
+var fs = require('fs');
 
 var types = [   'Object',
                 'String',
                 'Array',
                 'Function',
                 'Number',
-                'Boolean',
-                ];
+                'Boolean'];
 
 var sections = [    'Description',
                     'Properties',
                     'Methods'];
 
-// for each type, do a get request for the url for that type
-// load that html
-// for each section, search html for that section
-//
-// getting method names and descriptions
-// for each html block, search each <dt><code></code></dt> block for  method name
-// find next <dd> block, the containing text is the method description
-types.forEach(function(value, index, array) {
+var data = {}; 
 
+types.slice(0,1).forEach(function(dataType, index, array) {
+    
+    data[dataType] = {};
     var url = 
         'https://developer.mozilla.org' +
         '/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + 
-        value;
+        dataType;
 
-    // our pseudoDB
-    var data = {}; 
 
     request(url, function(err, response, html) {
+
         if (err) return console.log(err);
         var $ = cheerio.load(html);
-        sections.forEach(function(value, index, array) {
-            if (value === 'Description') {
-                data[value] = $('#' + value).next().text();
+
+        sections.forEach(function(section) {
+            if (section === 'Description') {
+                data[dataType][section] = $('#' + section).next().text();
             }
             else {
-                var dl = $('#' + value).next();
+                data[dataType][section] = {};
+                // dl section following the h2 header
+                var dl = $('#' + section).next();
+                // dt section inside the dl section
                 $(dl).find('dt').each(function(index, element){
-                    var methodName = $(element).find('code').text();
-                    var description = $(element).next().text();
-                    console.log(methodName, '\n', description, '\n');
+                    data[dataType][section]['methodName'] = $(element).find('code').text();
+                    data[dataType][section]['description'] = $(element).next().text();
                });
-
-                // find each dt > code and get that text
-                // get each dt's sibling.text
-                
             }
-
-            //console.log(value.toUpperCase() + ':\n', data[value], '\n');
         });
     });
 
+
+    fs.writeFile('../lib/mdn_docs.txt', serialize.serialize(data), function(err) {
+        if (err) throw err;
+    });
 });
+console.log(JSON.stringify(data, null,4));
+
+
