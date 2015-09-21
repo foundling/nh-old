@@ -6,8 +6,7 @@ var data = {
             'prop2 name' : 'prop2 description'
         },
         'methods' : {
-            'method1 name' : 'method1 desc',
-        },
+            'method1 name' : 'method1 desc'
+        }
     }
 };
-

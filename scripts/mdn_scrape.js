@@ -27,6 +27,7 @@ types.forEach(function(value, index, array) {
         '/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + 
         value;
 
+    // our pseudoDB
     var data = {}; 
 
     request(url, function(err, response, html) {
@@ -37,13 +38,19 @@ types.forEach(function(value, index, array) {
                 data[value] = $('#' + value).next().text();
             }
             else {
-                var dl = $('#' + value).next().text();
+                var dl = $('#' + value).next();
+                $(dl).find('dt').each(function(index, element){
+                    var methodName = $(element).find('code').text();
+                    var description = $(element).next().text();
+                    console.log(methodName, '\n', description, '\n');
+               });
+
                 // find each dt > code and get that text
                 // get each dt's sibling.text
                 
             }
 
-            console.log(value.toUpperCase() + ':\n', data[value], '\n');
+            //console.log(value.toUpperCase() + ':\n', data[value], '\n');
         });
     });
 
