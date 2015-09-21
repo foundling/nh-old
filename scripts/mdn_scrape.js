@@ -17,13 +17,13 @@ var sections = [    'Description',
 var data = {}; 
 
 types.slice(0,1).forEach(function(dataType, index, array) {
-    
+    debugger;
+
     data[dataType] = {};
     var url = 
         'https://developer.mozilla.org' +
         '/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + 
         dataType;
-
 
     request(url, function(err, response, html) {
 
@@ -36,22 +36,20 @@ types.slice(0,1).forEach(function(dataType, index, array) {
             }
             else {
                 data[dataType][section] = {};
-                // dl section following the h2 header
                 var dl = $('#' + section).next();
-                // dt section inside the dl section
+
                 $(dl).find('dt').each(function(index, element){
                     data[dataType][section]['methodName'] = $(element).find('code').text();
                     data[dataType][section]['description'] = $(element).next().text();
                });
             }
         });
+
+        console.log(data);
+        fs.writeFile('../lib/mdn_docs.txt', serialize.serialize(data), function(err) {
+            if (err) throw err;
+        });
     });
 
 
-    fs.writeFile('../lib/mdn_docs.txt', serialize.serialize(data), function(err) {
-        if (err) throw err;
-    });
 });
-console.log(JSON.stringify(data, null,4));
-
-
