@@ -16,10 +16,10 @@ var sections = [    'Description',
 
 var data = {}; 
 
-types.slice(0,1).forEach(function(dataType, index, array) {
-    debugger;
 
+types.forEach(function(dataType,index,array) {
     data[dataType] = {};
+
     var url = 
         'https://developer.mozilla.org' +
         '/en-US/docs/Web/JavaScript/Reference/Global_Objects/' + 
@@ -39,17 +39,19 @@ types.slice(0,1).forEach(function(dataType, index, array) {
                 var dl = $('#' + section).next();
 
                 $(dl).find('dt').each(function(index, element){
-                    data[dataType][section]['methodName'] = $(element).find('code').text();
-                    data[dataType][section]['description'] = $(element).next().text();
+                    var methodName =  $(element).find('code').text();
+                    var description =  $(element).next().text();
+                    data[dataType][section][methodName] = description;
                });
             }
         });
 
-        console.log(data);
-        fs.writeFile('../lib/mdn_docs.txt', serialize.serialize(data), function(err) {
-            if (err) throw err;
-        });
+        if (index === types.length -1) {
+            fs.writeFile('../lib/mdn_docs.txt', serialize.serialize(data), function(err) {
+                if (err) throw err;
+            });
+            console.log(data);
+        }
     });
-
 
 });
