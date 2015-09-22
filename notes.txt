@@ -1,0 +1,8 @@
+var a = 9;
+help(a);
+
+type: Number
+description:
+
+
+
