@@ -1,3 +1,0 @@
-{"object":
-    {"description":"an object"}
-}
