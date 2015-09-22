@@ -9,7 +9,9 @@ To install node ````nodehelp````:
 + run `nodehelp`
 + get help on something you want to know more about
 
+````bash
 >> help(Array.prototype) 
 name: {}
 type: Array
+````
 
