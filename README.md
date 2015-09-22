@@ -3,11 +3,11 @@
 
 ````nodehelp```` is a node module that integrates the standard node REPL with documentation and colors. Our sources currently include the Mozilla Developer Network JavaScript language references for ECMAScript5 and the Node api docs for your node version.  
 
-To install node ````nodehelp````:
+To install nodehelp, run the following commands: 
 
-+ run `npm install -g nodehelp`
-+ run `nodehelp`
-+ get help on something you want to know more about
++ `npm install -g nodehelp`
++ `nodehelp`
++ in the nodehelp repl, use the help() or i() functions to get help on something you want to know more about.
 
 -------------------------------
 ````
