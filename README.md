@@ -10,7 +10,18 @@ To install node ````nodehelp````:
 + get help on something you want to know more about
 
 -------------------------------
-````bash
+````
+>> var a =  9.0
+>> help() 
+name: 9.0
+type: Number
+
+description: 
+The Number JavaScript object is a wrapper object allowing you to work with numerical
+values. A Number object is created using the Number() constructor.
+````
+
+````````bash
 >> help(Array) 
 name: Array
 type: function
