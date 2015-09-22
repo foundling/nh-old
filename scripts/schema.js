@@ -9,4 +9,13 @@ var data = {
             'method1 name' : 'method1 desc'
         }
     }
-};
+    'Stream': {
+        'description' : 'an abstract resource',
+        'properties' : {
+            'prop2 name' : 'prop2 description'
+        },
+        'methods' : {
+            'method1 name' : 'method1 desc'
+        }
+    }
+}};

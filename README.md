@@ -1,13 +1,14 @@
 # node-help
 [![Build Status](https://travis-ci.org/foundling/node-help.svg?branch=master)](https://travis-ci.org/foundling/node-help)
 
-````nodehelp```` is a node module that integrates the standard node REPL with documentation and colors. Our sources currently include the Mozilla Developer Network JavaScript language references for ECMAScript5 and the Node api docs for your node version.  
+````node-help```` >> ````node````
+````node-help```` is a node module that integrates the standard node REPL with documentation and colors. Our sources currently include the Mozilla Developer Network JavaScript language references for ECMAScript5 and the Node api docs for your node version.  
 
-To install nodehelp, run the following commands: 
+To install node-help, run the following commands: 
 
-+ `npm install -g nodehelp`
-+ `nodehelp`
-+ in the nodehelp repl, use the help() or i() functions to get help on something you want to know more about.
++ `npm install -g node-help`
++ `node-help`
++ in the node-help repl, use the help() or i() functions to get help on something you want to know more about.
 
 -------------------------------
 ````
