@@ -1,4 +1,25 @@
+/*
+ *  use case:
+ *  help({})
+ *
+ *  canonical name: Object Literal
+ *  type: object
+ *  general description:  An object creates ... 
+ *  methods array of objects 
+ *    obj.methodName and obj.methodDescription 
+ *  properties array 
+ *    obj.propertyName and obj.propertyDescription 
+ *  [if methods or properties, they go here]
+ *  node module: false
+ *  
+ *  
+ *
+ *
+ *
+ */
+
 var data = {
+    // standard language features
     'Object': {
         'description' : 'xyz',
         'properties' : {
