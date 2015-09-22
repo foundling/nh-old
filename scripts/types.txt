@@ -1,0 +1,19 @@
+objects:
+
+{}
+new Object
+Object()
+var a = {};
+var b = new Object();
+
+[]
+Array
+new Array
+new Array()
+Array()
+Array.prototype
+
+var a = 'abc'
+help(a.split)
+
+Array.prototype.split

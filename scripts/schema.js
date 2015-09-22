@@ -3,13 +3,20 @@
  *  help({})
  *
  *  canonical name: Object Literal
+ *
  *  type: object
+ *
  *  general description:  An object creates ... 
+ *
  *  methods array of objects 
+ *    [ {Array.__define_getter
  *    obj.methodName and obj.methodDescription 
  *  properties array 
+ *
  *    obj.propertyName and obj.propertyDescription 
+ *
  *  [if methods or properties, they go here]
+ *
  *  node module: false
  *  
  *  
