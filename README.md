@@ -12,7 +12,7 @@ To install node ````nodehelp````:
 -------------------------------
 ````
 >> var a =  9.0
->> help() 
+>> help(a) 
 name: 9.0
 type: Number
 
