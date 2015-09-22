@@ -112,123 +112,123 @@
                 "description": "Returns a string created by using the specified sequence of Unicode values."
             },
             "fromCodePoint": {
-                "name": "String.fromCodePoint() ",
+                "name": "String.fromCodePoint()",
                 "description": "Returns a string created by using the specified sequence of code points."
             },
             "raw": {
-                "name": "String.raw() ",
+                "name": "String.raw()",
                 "description": "Returns a string created from a raw template string."
             },
             "prototype.charCodeAt": {
-                "name": "String.prototype.charCodeAt() ",
+                "name": "String.prototype.charCodeAt()",
                 "description": "Returns a non-negative integer that is the UTF-16 encoded code point value at the given position."
             },
             "prototype.concat": {
-                "name": "String.prototype.concat() ",
+                "name": "String.prototype.concat()",
                 "description": "Combines the text of two strings and returns a new string."
             },
             "prototype.includes": {
-                "name": "String.prototype.includes() ",
+                "name": "String.prototype.includes()",
                 "description": "Determines whether one string may be found within another string."
             },
             "prototype.endsWith": {
-                "name": "String.prototype.endsWith() ",
+                "name": "String.prototype.endsWith()",
                 "description": "Determines whether a string ends with the characters of another string."
             },
             "prototype.indexOf": {
-                "name": "String.prototype.indexOf() ",
+                "name": "String.prototype.indexOf()",
                 "description": "Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found."
             },
             "prototype.lastIndexOf": {
-                "name": "String.prototype.lastIndexOf() ",
+                "name": "String.prototype.lastIndexOf()",
                 "description": "Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found."
             },
             "prototype.localCompare": {
-                "name": "String.prototype.localCompare() ",
+                "name": "String.prototype.localCompare()",
                 "description": "Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order."
             },
             "prototype.match": {
-                "name": "String.prototype.match() ",
+                "name": "String.prototype.match()",
                 "description": "Used to match a regular expression against a string."
             },
             "prototype.normalize": {
-                "name": "String.prototype.normalize() ",
+                "name": "String.prototype.normalize()",
                 "description": "Returns the Unicode Normalization Form of the calling string value."
             },
             "prototype.repeat": {
-                "name": "String.prototype.repeat() ",
+                "name": "String.prototype.repeat()",
                 "description": "Returns a string consisting of the elements of the object repeated the given times."
             },
             "prototype.replace": {
-                "name": "String.prototype.replace() ",
+                "name": "String.prototype.replace()",
                 "description": "Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring."
             },
             "prototype.search": {
-                "name": "String.prototype.search() ",
+                "name": "String.prototype.search()",
                 "description": "Executes the search for a match between a regular expression and a specified string."
             },
             "prototype.slice": {
-                "name": "String.prototype.slice() ",
+                "name": "String.prototype.slice()",
                 "description": "Extracts a section of a string and returns a new string."
             },
             "prototype.split": {
-                "name": "String.prototype.split() ",
+                "name": "String.prototype.split()",
                 "description": "Splits a String object into an array of strings by separating the string into substrings."
             },
             "prototype.startsWith": {
-                "name": "String.prototype.startsWith() ",
+                "name": "String.prototype.startsWith()",
                 "description": "Determines whether a string begins with the characters of another string."
             },
             "prototype.substr": {
-                "name": "String.prototype.substr() ",
+                "name": "String.prototype.substr()",
                 "description": "Returns the characters in a string beginning at the specified location through the specified number of characters."
             },
             "prototype.substring": {
-                "name": "String.prototype.substring() ",
+                "name": "String.prototype.substring()",
                 "description": "Returns the characters in a string between two indexes into the string."
             },
             "prototype.toLocaleLowerCase": {
-                "name": "String.prototype.toLocaleLowerCase() ",
+                "name": "String.prototype.toLocaleLowerCase()",
                 "description": "The characters within a string are converted to lower case while respecting the current locale. For most languages, this will return the same as toLowerCase()."
             },
             "prototype.toLocaleUpperCase": {
-                "name": "String.prototype.toLocaleUpperCase() ",
+                "name": "String.prototype.toLocaleUpperCase()",
                 "description": "The characters within a string are converted to upper case while respecting the current locale. For most languages, this will return the same as toUpperCase()."
             },
             "prototype.toLowerCase": {
-                "name": "String.prototype.toLowerCase() ",
+                "name": "String.prototype.toLowerCase()",
                 "description": "Returns the calling string value converted to lower case."
             },
             "prototype.toSource": {
-                "name": "String.prototype.toSource() ",
+                "name": "String.prototype.toSource()",
                 "description": "Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the Object.prototype.toSource() method. The toSource() method returns a string representing the source code of the object."
             },
             "prototype.toString": {
-                "name": "String.prototype.toString() ",
+                "name": "String.prototype.toString()",
                 "description": "Returns a string representing the specified object. Overrides the Object.prototype.toString() method."
             },
             "prototype.toUpperCase": {
-                "name": "String.prototype.toUpperCase() ",
+                "name": "String.prototype.toUpperCase()",
                 "description": "Returns the calling string value converted to uppercase."
             },
             "prototype.trim": {
-                "name": "String.prototype.trim() ",
+                "name": "String.prototype.trim()",
                 "description": "Trims whitespace from the beginning and end of the string. Part of the ECMAScript 5 standard"
             },
             "prototype.trimLeft": {
-                "name": "String.prototype.trimLeft() ",
+                "name": "String.prototype.trimLeft()",
                 "description": "Trims whitespace from the left side of the string."
             },
             "prototype.trimRight": {
-                "name": "String.prototype.trimRight() ",
+                "name": "String.prototype.trimRight()",
                 "description": "Trims whitespace from the right side of the string."
             },
             "prototype.valueOf": {
-                "name": "String.prototype.valueOf() ",
+                "name": "String.prototype.valueOf()",
                 "description": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf() method."
             },
-            "prototype.[@@iterator]": {
-                "name": "String.prototype.[@@iterator]() ",
+            "prototype[@@iterator]": {
+                "name": "String.prototype[@@iterator]()",
                 "description": "Returns a new Iterator object that iterates over the code points of a String value, returning each code point as a String value."
             }
         }
@@ -243,16 +243,156 @@
             "prototype": {
                 "name": "Array.prototype",
                 "description": "Allows the addition of properties to all array objects."
+            },
+            "prototype.constructor": {
+                "name": "Array.prototype.constructor",
+                "description": "Specifies the function that creates an object's prototype."
+            },
+            "prototype.length": {
+                "name": "Array.prototype.length",
+                "description": "Reflects the number of elements in an array."
             }
         },
         "methods": {
-            "method1": {
-                "name": "",
-                "description": ""
+            "from": {
+                "name": "Array.from()",
+                "description": "Creates a new Array instance from an array-like or iterable object."
             },
-            "method2": {
-                "name": "",
-                "description": ""
+            "isArray": {
+                "name": "Array.isArray()",
+                "description": "Returns true if a variable is an array, if not false."
+            },
+            "observe": {
+                "name": "Array.observe()",
+                "description": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence."
+            },
+            "of": {
+                "name": "Array.of()",
+                "description": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
+            },
+            "prototype.copyWithin": {
+                "name": "Array.prototype.copyWithin()",
+                "description": "Copies a sequence of array elements within the array."
+            },
+            "prototype.fill": {
+                "name": "Array.prototype.fill()",
+                "description": "Fills all the elements of an array from a start index to an end index with a static value."
+            },
+            "prototype.pop": {
+                "name": "Array.prototype.pop()",
+                "description": "Removes the last element from an array and returns that element."
+            },
+            "prototype.push": {
+                "name": "Array.prototype.push()",
+                "description": "Adds one or more elements to the end of an array and returns the new length of the array."
+            },
+            "prototype.reverse": {
+                "name": "Array.prototype.reverse()",
+                "description": "Reverses the order of the elements of an array in place — the first becomes the last, and the last becomes the first."
+            },
+            "prototype.shift": {
+                "name": "Array.prototype.shift()",
+                "description": "Removes the first element from an array and returns that element."
+            },
+            "prototype.sort": {
+                "name": "Array.prototype.sort()",
+                "description": "Sorts the elements of an array in place and returns the array."
+            },
+            "prototype.splice": {
+                "name": "Array.prototype.splice()",
+                "description": "Adds and/or removes elements from an array."
+            },
+            "prototype.unshift": {
+                "name": "Array.prototype.unshift()",
+                "description": "Adds one or more elements to the front of an array and returns the new length of the array."
+            },
+            "prototype.concat": {
+                "name": "Array.prototype.concat()",
+                "description": "Returns a new array comprised of this array joined with other array(s) and/or value(s)."
+            },
+            "prototype.includes": {
+                "name": "Array.prototype.includes()",
+                "description": "Determines whether an array contains a certain element, returning true or false as appropriate."
+            },
+            "prototype.join": {
+                "name": "Array.prototype.join()",
+                "description": "Joins all elements of an array into a string."
+            },
+            "prototype.slice": {
+                "name": "Array.prototype.slice()",
+                "description": "Extracts a section of an array and returns a new array."
+            },
+            "prototype.toSource": {
+                "name": "Array.prototype.toSource()",
+                "description": "Returns an array literal representing the specified array; you can use this value to create a new array. Overrides the Object.prototype.toSource() method."
+            },
+            "prototype.toString": {
+                "name": "Array.prototype.toString()",
+                "description": "Returns a string representing the array and its elements. Overrides the Object.prototype.toString() method."
+            },
+            "prototype.toLocaleString": {
+                "name": "Array.prototype.toLocaleString()",
+                "description": "Returns a localized string representing the array and its elements. Overrides the Object.prototype.toLocaleString() method."
+            },
+            "prototype.indexOf": {
+                "name": "Array.prototype.indexOf()",
+                "description": "Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found."
+            },
+            "prototype.lastIndexOf": {
+                "name": "Array.prototype.lastIndexOf()",
+                "description": "Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found."
+            },
+            "prototype.forEach": {
+                "name": "Array.prototype.forEach()",
+                "description": "Calls a function for each element in the array."
+            },
+            "prototype.entries": {
+                "name": "Array.prototype.entries()",
+                "description": "Returns a new Array Iterator object that contains the key/value pairs for each index in the array."
+            },
+            "prototype.every": {
+                "name": "Array.prototype.every()",
+                "description": "Returns true if every element in this array satisfies the provided testing function."
+            },
+            "prototype.some": {
+                "name": "Array.prototype.some()",
+                "description": "Returns true if at least one element in this array satisfies the provided testing function."
+            },
+            "prototype.filter": {
+                "name": "Array.prototype.filter()",
+                "description": "Creates a new array with all of the elements of this array for which the provided filtering function returns true."
+            },
+            "prototype.find": {
+                "name": "Array.prototype.find()",
+                "description": "Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found."
+            },
+            "prototype.findIndex": {
+                "name": "Array.prototype.findIndex()",
+                "description": "Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found."
+            },
+            "prototype.keys": {
+                "name": "Array.prototype.keys()",
+                "description": "Returns a new Array Iterator that contains the keys for each index in the array."
+            },
+            "prototype.maps": {
+                "name": "Array.prototype.maps()",
+                "description": "Creates a new array with the results of calling a provided function on every element in this array."
+            },
+            "prototype.reduce": {
+                "name": "Array.prototype.reduce()",
+                "description": "Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value."
+            },
+            "prototype.reduceRight": {
+                "name": "Array.prototype.reduceRight()",
+                "description": "Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value."
+            },
+            "prototype.values": {
+                "name": "Array.prototype.values()",
+                "description": "Returns a new Array Iterator object that contains the values for each index in the array."
+            },
+            "prototype[@@iterator]": {
+                "name": "Array.prototype[@@iterator]()",
+                "description": "Returns a new Array Iterator object that contains the values for each index in the array."
             }
         }
     },
