@@ -1,6 +1,6 @@
 {
     "Object": {
-        "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.\n\nWhen called in a non-constructor context, Object behaves identically to new Object().",
+        "description": "The Object constructor creates an object wrapper. The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.\n\nWhen called in a non-constructor context, Object behaves identically to new Object().\nObjects can be initialized using new Object(), Object.create(), or using the literal notation (initializer notation). An object initializer is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}).\nAn object initializer is an expression that describes the initialization of an Object. Objects consist of properties, which are used to describe an object. Values of object properties can either contain primitive data types or other objects.",
         "properties": {
             "length": {
                 "name": "Object.length",
@@ -91,7 +91,7 @@
         }
     },
     "String": {
-        "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
+        "description": "The String global object is a constructor for strings, or a sequence of characters. Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
         "properties": {
             "prototype": {
                 "name": "String.prototype",
@@ -230,29 +230,29 @@
             "prototype.[@@iterator]": {
                 "name": "String.prototype.[@@iterator]() ",
                 "description": "Returns a new Iterator object that iterates over the code points of a String value, returning each code point as a String value."
-            },
+            }
         }
     },
     "Array": {
-        "description": "name description",
+        "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.\n\nSome people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
         "properties": {
-            "property1": {
-                "name": ".get",
-                "description": "to get stuff"
+            "length": {
+                "name": "Array.length",
+                "description": "The Array constructor's length property whose value is 1."
             },
-            "property2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+            "prototype": {
+                "name": "Array.prototype",
+                "description": "Allows the addition of properties to all array objects."
             }
         },
         "methods": {
             "method1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "method2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         }
     },
@@ -260,22 +260,22 @@
         "description": "name description",
         "properties": {
             "property1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "property2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         },
         "methods": {
             "method1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "method2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         }
     },
@@ -283,22 +283,22 @@
         "description": "name description",
         "properties": {
             "property1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "property2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         },
         "methods": {
             "method1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "method2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         }
     },
@@ -306,22 +306,22 @@
         "description": "name description",
         "properties": {
             "property1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "property2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         },
         "methods": {
             "method1": {
-                "name": ".get",
-                "description": "to get stuff"
+                "name": "",
+                "description": ""
             },
             "method2": {
-                "name": ".remove",
-                "description": "to remove stuff"
+                "name": "",
+                "description": ""
             }
         }
     }
