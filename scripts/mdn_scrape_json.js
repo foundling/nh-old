@@ -551,25 +551,33 @@
         }
     },
     "Boolean": {
-        "description": "name description",
+        "description": "The Boolean object is an object wrapper for a boolean value. The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (''), the object has an initial value of false. All other values, including any object or the string 'false', create an object with an initial value of true. Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object. Any object whose value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement.",
         "properties": {
-            "property1": {
-                "name": "",
-                "description": ""
+            "length": {
+                "name": "Boolean.length",
+                "description": "Length property whose value is 1."
             },
-            "property2": {
-                "name": "",
-                "description": ""
+            "prototype": {
+                "name": "Boolean.prototype",
+                "description": "Represents the prototype for the Boolean constructor."
+            },
+            "prototype.constructor": {
+                "name": "Boolean.prototype.constructor",
+                "description": "Returns the function that created an instance's prototype. This is the Boolean function by default."
             }
         },
         "methods": {
-            "method1": {
-                "name": "",
-                "description": ""
+            "prototype.toSource": {
+                "name": "Boolean.prototype.toSource()",
+                "description": "Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object. Overrides the Object.prototype.toSource() method."
             },
-            "method2": {
-                "name": "",
-                "description": ""
+            "prototype.toString": {
+                "name": "Boolean.prototype.toString()",
+                "description": "Returns a string of either 'true or 'false' depending upon the value of the object. Overrides the Object.prototype.toString() method."
+            },
+            "prototype.valueOf": {
+                "name": "Boolean.prototype.valueOf()",
+                "description": "Returns the primitive value of the Boolean object. Overrides the Object.prototype.valueOf() method."
             }
         }
     }
