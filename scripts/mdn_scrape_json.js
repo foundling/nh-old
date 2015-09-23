@@ -397,48 +397,156 @@
         }
     },
     "Function": {
-        "description": "name description",
+        "description": "The Function constructor creates a new Function object. In JavaScript every function is actually a Function object. Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.\n\nAll arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.",
         "properties": {
-            "property1": {
-                "name": "",
-                "description": ""
+            "arguments": {
+                "name": "Function.arguments",
+                "description": "An array corresponding to the arguments passed to a function. This is deprecated as property of Function, use the arguments object available within the function instead."
             },
-            "property2": {
-                "name": "",
-                "description": ""
+            "caller": {
+                "name": "Function.caller ",
+                "description": "Specifies the function that invoked the currently executing function."
+            },
+            "length": {
+                "name": "Function.length",
+                "description": "Specifies the number of arguments expected by the function."
+            },
+            "name": {
+                "name": "Function.name",
+                "description": "The name of the function."
+            },
+            "displayName": {
+                "name": "Function.displayName",
+                "description": "The display name of the function."
+            },
+            "prototype.constructor": {
+                "name": "Function.prototype.constructor",
+                "description": "Specifies the function that creates an object's prototype. See Object.prototype.constructor for more details."
             }
         },
         "methods": {
-            "method1": {
-                "name": "",
-                "description": ""
+            "prototype.apply": {
+                "name": "Function.prototype.apply()",
+                "description": "Applies the method of another object in the context of a different object (the calling object); arguments can be passed as an Array object."
             },
-            "method2": {
-                "name": "",
-                "description": ""
+            "prototype.bind": {
+                "name": "Function.prototype.bind()",
+                "description": "Creates a new function which, when called, itself calls this function in the context of the provided value, with a given sequence of arguments preceding any provided when the new function was called."
+            },
+            "prototype.call": {
+                "name": "Function.prototype.call()",
+                "description": "Calls (executes) a method of another object in the context of a different object (the calling object); arguments can be passed as they are."
+            },
+            "prototype.isGenerator": {
+                "name": "Function.prototype.isGenerator()",
+                "description": "Returns true if the function is a generator; otherwise returns false."
+            },
+            "prototype.toSource": {
+                "name": "Function.prototype.toSource()",
+                "description": "Returns a string representing the source code of the function. Overrides the Object.prototype.toSource method."
+            },
+            "prototype.toString": {
+                "name": "Function.prototype.toString()",
+                "description": "Returns a string representing the source code of the function. Overrides the Object.prototype.toString method."
             }
         }
     },
     "Number": {
-        "description": "name description",
+        "description": "The Number JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the Number() constructor.The primary uses for the Number object are:\n\nIf the argument cannot be converted into a number, it returns NaN.\n\nIn a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.",
         "properties": {
-            "property1": {
-                "name": "",
-                "description": ""
+            "EPSILON": {
+                "name": "Number.EPSILON",
+                "description": "The smallest interval between two representable numbers."
             },
-            "property2": {
-                "name": "",
-                "description": ""
+            "MAX_SAFE_INTEGER": {
+                "name": "Number.MAX_SAFE_INTEGER",
+                "description": "The maximum safe integer in JavaScript (2^53 - 1)."
+            },
+            "MAX_VALUE": {
+                "name": "Number.MAX_VALUE",
+                "description": "The largest positive representable number."
+            },
+            "MIN_SAFE_INTEGER": {
+                "name": "Number.MIN_SAFE_INTEGER",
+                "description": "The minimum safe integer in JavaScript (-(2^53 - 1))."
+            },
+            "MIN_VALUE": {
+                "name": "Number.MIN_VALUE",
+                "description": "The smallest positive representable number - that is, the positive number closest to zero (without actually being zero)."
+            },
+            "NaN": {
+                "name": "Number.NaN",
+                "description": "Special 'not a number' value."
+            },
+            "NEGATIVE_INFINITY": {
+                "name": "Number.NEGATIVE_INFINITY",
+                "description": "Special value representing negative infinity; returned on overflow."
+            },
+            "POSITIVE_INFINITY": {
+                "name": "Number.POSITIVE_INFINITY ",
+                "description": "Special value representing infinity; returned on overflow."
+            },
+            "prototype": {
+                "name": "Number.prototype",
+                "description": "Allows the addition of properties to a Number object."
+            },
+            "prototype.constructor": {
+                "name": "Number.prototype.constructor",
+                "description": "Returns the function that created this object's instance. By default this is the Number object."
             }
         },
         "methods": {
             "method1": {
-                "name": "",
-                "description": ""
+                "name": "Number.isNaN()",
+                "description": "Determine whether the passed value is NaN."
             },
-            "method2": {
-                "name": "",
-                "description": ""
+            "isFinite": {
+                "name": "Number.isFinite()",
+                "description": "Determine whether the passed value is a finite number."
+            },
+            "isInteger": {
+                "name": "Number.isInteger()",
+                "description": "Determine whether the passed value is an integer."
+            },
+            "isSafeInteger": {
+                "name": "Number.isSafeInteger()",
+                "description": "Determine whether the passed value is a safe integer (number between -(2^53 - 1) and 2^53 - 1)."
+            },
+            "parseFloat": {
+                "name": "Number.parseFloat()",
+                "description": "The value is the same as parseFloat() of the global object. The parseFloat() function parses a string argument and returns a floating point number."
+            },
+            "parseInt": {
+                "name": "Number.parseInt()",
+                "description": "The value is the same as parseInt() of the global object. The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems)."
+            },
+            "prototype.toExponential": {
+                "name": "Number.prototype.toExponential()",
+                "description": "Returns a string representing the number in exponential notation."
+            },
+            "prototype.toFixed": {
+                "name": "Number.prototype.toFixed()",
+                "description": "Returns a string representing the number in fixed-point notation."
+            },
+            "prototype.toLocaleString": {
+                "name": "Number.prototype.toLocaleString()",
+                "description": "Returns a string with a language sensitive representation of this number. Overrides the Object.prototype.toLocaleString() method"
+            },
+            "prototype.toPrecision": {
+                "name": "Number.prototype.toPrecision()",
+                "description": "Returns a string representing the number to a specified precision in fixed-point or exponential notation."
+            },
+            "prototype.toSource": {
+                "name": "Number.prototype.toSource()",
+                "description": "Returns an object literal representing the specified Number object; you can use this value to create a new object. Overrides the Object.prototype.toSource() method."
+            },
+            "prototype.toString": {
+                "name": "Number.prototype.toString()",
+                "description": "Returns a string representing the specified object in the specified radix (base). Overrides the Object.prototype.toString() method."
+            },
+            "prototype.valueOf": {
+                "name": "Number.prototype.valueOf()",
+                "description": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf() method."
             }
         }
     },
