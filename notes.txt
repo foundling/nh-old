@@ -3,9 +3,6 @@ help(object) -> short hand list of attributes like prototype, refers to,
 people(name, object) -> get's people you can refer to
 crockford(object) -> gets a list of Douglas Crockford quotes about objects.
 
-
-
-
 gets full docs on conceptual type
 
 general approach:
