@@ -1,0 +1,72 @@
+docs(object) -> full MDN documentation
+help(object) -> short hand list of attributes like prototype, refers to,
+people(name, object) -> get's people you can refer to
+crockford(object) -> gets a list of Douglas Crockford quotes about objects.
+
+gets full docs on conceptual type
+
+general approach:
+
+get some structured set of information about the object as a shortcut for having to look at all those things.
+
+what is it's prototype?
+what is its toString value?
+what is its valueOf value? 
+who refers to it?
+what does it refer to?
+
+
+help(Array)
+
+Looking things up:
+
+To get information about a built-in constructor function:
+
+>> var o = new Object;
+
+>> help(o)
+
+Object 
+~~~~~~
+
+    The Object constructor creates an object wrapper for the given value. If the value is null or 
+    undefined, it will create and return an empty object, otherwise, it will return an object of a 
+    Type that corresponds to the given value. If the value is an object already, it will return the 
+    value.  When called in a non-constructor context, Object behaves identically to new Object(). 
+    Objects can be initialized using new Object(), Object.create(), or using the literal notation 
+    (initializer notation). An object initializer is a list of zero or more pairs of property names 
+    and associated values of an object, enclosed in curly braces ({}). An object initializer is an 
+    expression that describes the initialization of an Object. Objects consist of properties, which 
+    are used to describe an object. Values of object properties can either contain primitive data 
+    types or other objects.
+
+
+    isArray 
+    isRegExp
+    isDate 
+    isError
+
+1) determine type
+
+
+is it:
+        'array': object
+        'regex': object
+        'boolean': boolean
+        'object': object, array, regex
+        'number': number
+        'string': string
+        'function': function
+
+if so: does it have a prototype? If not, it MAY be an instantiated object with no link to a prototype.
+
+which ever type it is, call that T.
+
+does T.prototype exist?
+
+If so: what is it?
+
+        T.prototype
+
+    if so: look up [type][method][type.method] in Database:
+
