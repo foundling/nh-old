@@ -1,6 +1,6 @@
 {
     "url": {
-        "description": "Parsed URL objects have some or all of the following fields,\n depending on whether or not they exist in the URL string. Any parts that are not in the URL string will not be in the parsed object. Examples are shown for the URL",
+        "description": "Parsed URL objects have some or all of the following fields,  depending on whether or not they exist in the URL string. Any parts that are not in the URL string will not be in the parsed object. Examples are shown for the URL",
         "methods": {
             "parse": {
                 "name": "URL.parse()",
@@ -17,7 +17,7 @@
         }  
     },
     "Buffer": {
-        "description": "Pure JavaScript is Unicode friendly but not nice to binary data.\n When dealing with TCP streams or the file system, it's necessary to handle octet streams.\n Node.js has several strategies for manipulating, creating, and consuming octet streams. \n Raw data is stored in instances of the Buffer class.\n A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap. A Buffer cannot be resized.\n The Buffer class is a global, making it very rare that one would need to ever require('buffer').",
+        "description": "Pure JavaScript is Unicode friendly but not nice to binary data.  When dealing with TCP streams or the file system, it's necessary to handle octet streams.  Node.js has several strategies for manipulating, creating, and consuming octet streams.   Raw data is stored in instances of the Buffer class.  A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap. A Buffer cannot be resized.  The Buffer class is a global, making it very rare that one would need to ever require('buffer').",
         "properties": {
             "length": {
                 "name": "buf.length",
@@ -31,11 +31,11 @@
             },
             "toJSON":{
                 "name": "Buffer.toJSON()",
-                "description": "Returns a JSON-representation of the Buffer instance.\n JSON.stringify implicitly calls this function when stringifying a Buffer instance."
+                "description": "Returns a JSON-representation of the Buffer instance.  JSON.stringify implicitly calls this function when stringifying a Buffer instance."
             },
             "slice":{
                 "name": "buf.slice([start[, end]])",
-                "description": "Returns a new buffer which references the same memory as the old,\n but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes.\n Negative indexes start from the end of the buffer."
+                "description": "Returns a new buffer which references the same memory as the old,  but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes.  Negative indexes start from the end of the buffer."
             }
         }  
     }
