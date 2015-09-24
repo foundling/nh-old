@@ -1,5 +1,5 @@
 var expect = require("chai").expect;
-var main = require(__dirname + "/../lib/main");
+var app = require(__dirname + "/../index");
 
 describe("denest", function(){
   it("should return string", function(){
