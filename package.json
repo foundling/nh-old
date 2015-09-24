@@ -39,11 +39,8 @@
   },
   "homepage": "https://github.com/foundling/node-help",
   "dependencies": {
-    "cheerio": "^0.19.0",
     "colors": "^1.1.2",
-    "node-serialize": "0.0.4",
-    "pg": "^4.4.2",
-    "request": "^2.62.0"
+    "node-serialize": "0.0.4"
   },
   "devDependencies": {
     "chai": "^3.3.0",
