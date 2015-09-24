@@ -1,44 +1,60 @@
 # node-help
 [![Build Status](https://travis-ci.org/foundling/node-help.svg?branch=master)](https://travis-ci.org/foundling/node-help)
 
-````node-help```` is a node module that integrates the standard node REPL with documentation and colors. Our sources currently include the Mozilla Developer Network JavaScript language references for ECMAScript5 and the Node api docs for your node version.  
+````node-help```` is a node module that integrates the standard node REPL with documentation and colors. Our sources currently include the Mozilla Developer Network JavaScript language references for ECMAScript5 and the Node api docs for your node version.
 
-To install node-help, run the following commands: 
+To install node-help, run the following commands:
 
 + `npm install -g node-help`
 + `node-help`
-+ in the node-help repl, use the help() or i() functions to get help on something you want to know more about.
++ in the node-help repl, use the doc() function to get documentation on something you want to know more about and the help function to find more about a variable or function.
 
 -------------------------------
 ````
 >> var a =  9.0
->> help(a) 
+>> help(a)
 name: 9.0
 type: Number
 node module: false
-description: 
+description:
 The Number JavaScript object is a wrapper object allowing you to work with numerical
 values. A Number object is created using the Number() constructor.
 ````
 
 ````````bash
->> help(Array) 
+>> docs(Array)
 name: Array
-node module: false
-type: function
 
-description: 
-Arrays are list-like objects whose prototype has methods to perform traversal and 
-mutation operations. Neither the length of a JavaScript array nor the types of 
-its elements are fixed.Since an array's size length grow or shrink at any time, 
-JavaScript arrays are not guaranteed to be dense. In general, these are convenient 
-characteristics; but if these features are not desirable for your particular use, 
+description:
+Arrays are list-like objects whose prototype has methods to perform traversal and
+mutation operations. Neither the length of a JavaScript array nor the types of
+its elements are fixed.Since an array's size length grow or shrink at any time,
+JavaScript arrays are not guaranteed to be dense. In general, these are convenient
+characteristics; but if these features are not desirable for your particular use,
 you might consider using typed arrays. [MDN:XX]
 
+properties:
+
+Array.length
+The Array constructor's length property whose value is 1.
+
+Array.prototype
+Allows the addition of properties to all array objects.
+
+Array.prototype.length
+Reflects the number of elements in an array.
+
+methods:
+
+Array.from()
+Creates a new Array instance from an array-like or iterable object.
+
+Array.isArray()
+Returns true if a variable is an array, if not false.
 ````
 ````````bash
 var WS = require('stream').Writeable;
->> help(new WS()); 
+>> help(new WS());
 name: WS
 type: Stream
 node module: TRUE
