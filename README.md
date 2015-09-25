@@ -4,10 +4,10 @@
 ````node-help```` is a node module that integrates the standard node REPL with documentation and colors. Our sources currently include the Mozilla Developer Network JavaScript language references for ECMAScript5 and the Node api docs for your node version.  
 
 To install node-help, run the following commands: 
-
-+ `npm install -g node-help`
-+ `node-help`
-+ in the node-help repl, use the help() or i() functions to get help on something you want to know more about.
++ assuming you have Node.js and npm installed on your machine
++ type `npm install -g node-help`
++ in your terminal type `node-help` to start the repl
++ Once in the node-help repl, use the help() or i() functions to get help on something you want to know more about.
 
 -------------------------------
 ````
