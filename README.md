@@ -12,7 +12,7 @@ To install node-help, run the following commands:
 -------------------------------
 ````
 >> var a =  9.0
->> help(a) 
+>> i(a) 
 name: 9.0
 type: Number
 node module: false
@@ -22,23 +22,35 @@ values. A Number object is created using the Number() constructor.
 ````
 
 ````````bash
->> help(Array) 
+>> docs('Array') 
 name: Array
 node module: false
 type: function
 
 description: 
-Arrays are list-like objects whose prototype has methods to perform traversal and 
-mutation operations. Neither the length of a JavaScript array nor the types of 
-its elements are fixed.Since an array's size length grow or shrink at any time, 
-JavaScript arrays are not guaranteed to be dense. In general, these are convenient 
-characteristics; but if these features are not desirable for your particular use, 
-you might consider using typed arrays. [MDN:XX]
+  Arrays are list-like objects whose prototype has methods to perform  
+  traversal and mutation operations. Neither the length of a JavaScript array  
+  nor the types of its elements are fixed. Since an array's size length grow  
+  or shrink at any time, JavaScript arrays are not guaranteed to be dense. In  
+  general, these are convenient characteristics; but if these features are not  
+  desirable for your particular use, you might consider using typed arrays.   
+  Some people think that you shouldn't use an array as an associative array.  
+  In any case, you can use plain objects instead, although doing so comes with  
+  its own caveats. See the post Lightweight JavaScript dictionaries with  
+  arbitrary keys as an example.  
 
+isNative :  no
+methods
+   from
+   isArray
+   observe
+   of
+   copyWithinkk
+   ...
 ````
 ````````bash
 var WS = require('stream').Writeable;
->> help(new WS()); 
+>> i(new WS()); 
 name: WS
 type: Stream
 node module: TRUE
