@@ -12,8 +12,7 @@
                 "name": "Object.prototype",
                 "description": "Allows the addition of properties to all objects of type Object.",
                 "childType": "property"
-            }
-        },
+            },
             "assign": {
                 "name": "Object.assign()",
                 "childType": "method",
@@ -607,4 +606,5 @@
                 "description": "Returns the primitive value of the Boolean object. Overrides the Object.prototype.valueOf() method."
             }
         }
+    }
 }
