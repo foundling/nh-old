@@ -1,42 +1,56 @@
 {
     "url": {
+        "isNative": false,
         "description": "Parsed URL objects have some or all of the following fields,  depending on whether or not they exist in the URL string. Any parts that are not in the URL string will not be in the parsed object. Examples are shown for the URL",
-        "methods": {
+        "children": {
             "parse": {
+                "childType": "method",
+                "isNative": false,
                 "name": "URL.parse()",
                 "description": "Take a URL string, and return an object"
             },
             "format": {
+                "childType": "method",
+                "isNative": false,
                 "name": "URL.format()",
                 "description": "Take a parsed URL object, and return a formatted URL string"
             },
             "resolve": {
+                "childType": "method",
+                "isNative": false,
                 "name": "URL.resolve",
                 "description": "take a base URL, and a href URL, and resolve them as a browser would for an anchor tag"
             }
         }  
     },
     "Buffer": {
+        "isNative":false,
         "description": "Pure JavaScript is Unicode friendly but not nice to binary data.  When dealing with TCP streams or the file system, it's necessary to handle octet streams.  Node.js has several strategies for manipulating, creating, and consuming octet streams.   Raw data is stored in instances of the Buffer class.  A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap. A Buffer cannot be resized.  The Buffer class is a global, making it very rare that one would need to ever require('buffer').",
-        "properties": {
+        "children": {
             "length": {
+                "childType":"property",
+                "isNative":false,
                 "name": "buf.length",
                 "description": "return length of buffer"
-            }
-        },
-        "methods": {
+            },
             "isBuffer":{
+                "childType":"property",
+                "isNative":false,
                 "name": "Buffer.isBuffer(obj)",
                 "description": "Return if obj is a buffer"
             },
             "toJSON":{
+                "childType":"method",
+                "isNative":false,
                 "name": "Buffer.toJSON()",
                 "description": "Returns a JSON-representation of the Buffer instance.  JSON.stringify implicitly calls this function when stringifying a Buffer instance."
             },
             "slice":{
+                "childType":"method",
+                "isNative":false,
                 "name": "buf.slice([start[, end]])",
                 "description": "Returns a new buffer which references the same memory as the old,  but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes.  Negative indexes start from the end of the buffer."
             }
-        }  
+        }
     }
 }
