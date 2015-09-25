@@ -17,7 +17,8 @@
     "node",
     "repl",
     "help",
-    "user-friendly"
+    "user-friendly",
+    "documentation"
   ],
   "author": {
     "name": "Alex Ramsdell",
