@@ -1,5 +1,5 @@
 {
-  "name": "node-help",
+  "name": "nodehelp",
   "version": "1.0.0",
   "description": "A node repl module that provides user-friendly in-repl documentation.",
   "main": "index.js",

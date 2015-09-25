@@ -8,7 +8,7 @@
             "prototype" : {
                 "description": "Allows the addition of properties to a str obj.",
                 "isNative":true,
-                "childType": "property",
+                "childType": "method",
                 "children" : {
                     "splice" : {
                         "description": "splice takes an array and ...",
