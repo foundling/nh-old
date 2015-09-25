@@ -52,7 +52,7 @@
     "jshint": "^2.8.0",
     "mocha": "^2.3.3"
   }, 
-  "bin" : {
+  "bin": {
     "node-help": "bin/node-help",
   }
 }
