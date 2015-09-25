@@ -69,3 +69,4 @@ process.stdout, process.stderr
 
 ````
 --------------------------------
+Contributors: Alex Ramsdell, Stan Zhao, Kassim Siddiqui
