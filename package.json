@@ -53,6 +53,6 @@
     "mocha": "^2.3.3"
   }, 
   "bin": {
-    "node-help": "bin/node-help",
+    "node-help": "bin/node-help"
   }
 }
