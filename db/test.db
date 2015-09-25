@@ -1,0 +1,31 @@
+{
+    "String" : {
+        "description" : "A string is a read-only sequence of characters",
+        "isNative" : true,
+        "children" : {
+            "prototype" : {
+                "description": "Allows the addition of properties to a str obj.",
+                "isNative":true,
+                "childType": "property",
+                "children" : {
+                    "splice" : {
+                        "description": "splice takes an array and ...",
+                        "childType": "method", 
+                        "isNative":true
+                    },
+                    "length" : {
+                        "description" : "the number of children",
+                        "childType" : "property",
+                        "isNative": true 
+                    }
+
+                }
+            },
+            "fromCharCode" : {
+                "description":"converts a char code to a string",
+                "isNative": true,
+                "childType": "method"
+            }
+        }
+    }
+}
