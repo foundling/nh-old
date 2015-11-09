@@ -1,0 +1,266 @@
+Topic: ArrayBuffer 
+Syntax:  new ArrayBuffer(length)
+ 
+
+Topic: Boolean 
+Syntax:  new Boolean([value]) 
+
+Topic: Collator 
+Syntax:  new Intl.Collator([locales[, options]])
+Intl.Collator.call(this[, locales[, options]]) 
+
+Topic: DataView 
+ Syntax:  new DataView(buffer [, byteOffset [, byteLength]]) 
+
+Topic: Date 
+ Syntax:  new Date();
+new Date(value);
+new Date(dateString);
+new Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);
+ 
+
+Topic: DateTimeFormat 
+ Syntax:  new Intl.DateTimeFormat([locales[, options]])
+Intl.DateTimeFormat.call(this[, locales[, options]]) 
+
+Topic: Error 
+ Syntax:  new Error([message[, fileName[, lineNumber]]]) 
+
+Topic: EvalError 
+ Syntax:  new EvalError([message[, fileName[, lineNumber]]]) 
+
+Topic: Float32Array 
+ Syntax:  new Float32Array(length);
+new Float32Array(typedArray);
+new Float32Array(object);
+new Float32Array(buffer [, byteOffset [, length]]); 
+
+Topic: Float32x4 
+ Syntax:  SIMD.Float32x4(x, y, z, w); 
+
+Topic: Float64Array 
+ Syntax:  new Float64Array(length);
+new Float64Array(typedArray);
+new Float64Array(object);
+new Float64Array(buffer [, byteOffset [, length]]); 
+
+Topic: Float64x2 
+ Syntax:  SIMD.Float64x2(x, y); 
+
+Topic: Function 
+ Syntax:  new Function ([arg1[, arg2[, ...argN]],] functionBody) 
+
+Topic: Generator 
+ Syntax:  function* gen() { 
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var g = gen(); // "Generator { }" 
+
+Topic: GeneratorFunction 
+ Syntax:  new GeneratorFunction ([arg1[, arg2[, ...argN]],] functionBody) 
+
+Topic: Infinity 
+ Syntax:  Infinity  
+
+Topic: Int16Array 
+ Syntax:  new Int16Array(length);
+new Int16Array(typedArray);
+new Int16Array(object);
+new Int16Array(buffer [, byteOffset [, length]]); 
+
+Topic: Int16x8 
+ Syntax:  SIMD.Int16x8(s0, s1, s2, s3, s4, s5, s6, s7); 
+
+Topic: Int32Array 
+ Syntax:  new Int32Array(length);
+new Int32Array(typedArray);
+new Int32Array(object);
+new Int32Array(buffer [, byteOffset [, length]]); 
+
+Topic: Int32x4 
+ Syntax:  SIMD.Int32x4(x, y, z, w); 
+
+Topic: Int8Array 
+ Syntax:  new Int8Array(length);
+new Int8Array(typedArray);
+new Int8Array(object);
+new Int8Array(buffer [, byteOffset [, length]]); 
+
+Topic: Array 
+ Syntax:  [element0, element1, ..., elementN]
+new Array(element0, element1[, ...[, elementN]])
+new Array(arrayLength) 
+
+Topic: Int8x16 
+ Syntax:  SIMD.Int8x16(s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15); 
+
+Topic: InternalError 
+ Syntax:  new InternalError([message[, fileName[, lineNumber]]]) 
+
+Topic: Intl 
+ Syntax:   
+
+Topic: Iterator 
+ Syntax:  Iterator(object, [keyOnly]) 
+
+Topic: JSON 
+ Syntax:   
+
+Topic: Map 
+ Syntax:  new Map([iterable])
+ 
+
+Topic: Number 
+ Syntax:  new Number(value); 
+
+Topic: Math 
+ Syntax:   
+
+Topic: NumberFormat 
+ Syntax:  new Intl.NumberFormat([locales[, options]])
+Intl.NumberFormat.call(this[, locales[, options]])
+ 
+
+Topic: Object 
+ Syntax:  // Object initialiser or literal
+{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }
+
+// Called as a constructor
+new Object([value]) 
+
+Topic: ParallelArray 
+ Syntax:  new ParallelArray()
+new ParallelArray([element0, element1, ...])
+new ParallelArray(arrayLength, elementalFunction) 
+
+Topic: NaN 
+ Syntax:  NaN 
+
+Topic: Promise 
+ Syntax:  new Promise(executor);
+new Promise(function(resolve, reject) { ... }); 
+
+Topic: ReferenceError 
+ Syntax:  new ReferenceError([message[, fileName[, lineNumber]]]) 
+
+Topic: RegExp 
+ Syntax:  /pattern/flags
+new RegExp(pattern[, flags])
+ 
+
+Topic: RangeError 
+ Syntax:  new RangeError([message[, fileName[, lineNumber]]]) 
+
+Topic: SIMD 
+ Syntax:   
+
+Topic: Set 
+ Syntax:  new Set([iterable]); 
+
+Topic: StopIteration 
+ Syntax:  StopIteration 
+
+Topic: String 
+ Syntax:  'string text'
+"string text"
+"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்"String(thing)
+new String(thing) 
+
+Topic: Symbol 
+ Syntax:  Symbol([description]) 
+
+Topic: SyntaxError 
+ Syntax:  new SyntaxError([message[, fileName[, lineNumber]]]) 
+
+Topic: TypeError 
+ Syntax:  new TypeError([message[, fileName[, lineNumber]]]) 
+
+Topic: URIError 
+ Syntax:  new URIError([message[, fileName[, lineNumber]]]) 
+
+Topic: Proxy 
+ Syntax:  var p = new Proxy(target, handler);
+ 
+
+Topic: Uint8Array 
+ Syntax:  new Uint8Array(length);
+new Uint8Array(typedArray);
+new Uint8Array(object);
+new Uint8Array(buffer [, byteOffset [, length]]); 
+
+Topic: Uint32Array 
+ Syntax:  new Uint32Array(length);
+new Uint32Array(typedArray);
+new Uint32Array(object);
+new Uint32Array(buffer [, byteOffset [, length]]); 
+
+Topic: Uint8ClampedArray 
+ Syntax:  new Uint8ClampedArray(length);
+new Uint8ClampedArray(typedArray);
+new Uint8ClampedArray(object);
+new Uint8ClampedArray(buffer [, byteOffset [, length]]); 
+
+Topic: WeakMap 
+ Syntax:  new WeakMap([iterable])
+ 
+
+Topic: arguments 
+ Syntax:  arguments 
+
+Topic: WeakSet 
+ Syntax:   new WeakSet([iterable]); 
+
+Topic: Uint16Array 
+ Syntax:  new Uint16Array(length);
+new Uint16Array(typedArray);
+new Uint16Array(object);
+new Uint16Array(buffer [, byteOffset [, length]]); 
+
+Topic: decodeURIComponent 
+ Syntax:  decodeURIComponent(encodedURI) 
+
+Topic: encodeURI 
+ Syntax:  encodeURI(URI) 
+
+Topic: Reflect 
+ Syntax:   
+
+Topic: decodeURI 
+ Syntax:  decodeURI(encodedURI) 
+
+Topic: eval 
+ Syntax:  eval(string) 
+
+Topic: isNaN 
+ Syntax:  isNaN(testValue) 
+
+Topic: isFinite 
+ Syntax:  isFinite(testValue) 
+
+Topic: null 
+ Syntax:  null  
+
+Topic: parseFloat 
+ Syntax:  parseFloat(string) 
+
+Topic: parseInt 
+ Syntax:  parseInt(string, radix); 
+
+Topic: undefined 
+ Syntax:  undefined 
+
+Topic: escape 
+ Syntax:  escape(str) 
+
+Topic: unescape 
+ Syntax:  unescape(str) 
+
+Topic: uneval 
+ Syntax:  uneval(object) 
+
+Topic: encodeURIComponent 
+ Syntax:  encodeURIComponent(str); 
+
