@@ -1,0 +1,11 @@
+{
+  "RegExp": {
+    "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
+    "syntax": "/pattern/flags\nnew RegExp(pattern[, flags])\n",
+    "properties": {
+      "RegExp.prototype": "Allows the addition of properties to all objects.",
+      "RegExp.length": "The value of RegExp.length is 2.",
+      "RegExp.lastIndex": "The index at which to start the next match."
+    }
+  }
+}
