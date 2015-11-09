@@ -8,7 +8,7 @@ var testing = true;
 var objectDB = {};
 
 var specialCases = {
-  // need to build an object with fields for each global object
+  // need to build an object with fields for each top-level category 
     isNaN: {
         description: 'h2#Examples',  
     },
@@ -30,43 +30,62 @@ fs.readdir(DOCSPATH, function(err, files){
       fs.readFile(DOCSPATH + '/' + filename, function(err, html) {
           if (err)  throw err;
 
-          var $ = cheerio.load(html);
-          var specialCase = specialCases[filename];
-          var shortDescription = $('#Description').nextUntil(specialCase || 'h2,h3').text(); 
-          var syntax = $('.syntaxbox').text();
+          var $ = cheerio.load(html),
+              specialCase = specialCases[filename];
 
-          var constructorProperties = {};
+          // top-level object categories
+          var name,
+              syntax,
+              parameters,
+              description,
+              constructorMethods = {},
+              constructorProperties = {},
+              prototypeMethods = {},
+              prototypeProperties = {};
+
+
+          name = filename; 
+          description = $('#Description').nextUntil(specialCase || 'h2,h3').text(); 
+          syntax = $('.syntaxbox').text();
+          parameters = $('#Parameters').next().find('dt').each(function(i,el) {
+            // dt = list item name, dd = list item's accompanying caption text
+            //
+            // note:
+            // this func should really grab a dt and a dd inside of a dl, and for any nested ones, e.g. RegExp 'flags',
+            // it should grab dt and a dd nested inside of the 'flags' dd.
+          });
+
+          // constructor methods
+          $('#Methods').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
+            var methodName = $(el).text(),
+                methodDescription = $(el).next().text();
+            constructorMethods[methodName] = methodDescription;
+          });
+          
+          // constructor properties
           $('#Properties').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
-            var propertyName = $(el).text();
-            var propertyDescription = $(el).next().text();
+            var propertyName = $(el).text(),
+                propertyDescription = $(el).next().text();
             constructorProperties[propertyName] = propertyDescription;
           });
 
-          var constructorMethods = {};
-          $('#Methods').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
-            var methodName = $(el).text();
-            var methodDescription = $(el).next().text();
-            constructorMethods[methodName] = methodDescription;
-          });
-
-          // different structure than the constructor info
-          var prototypeProperties = {};
-          $('#Properties_2').next().find('dl').find('dt').each(function(i, el) {
-            var propertyName = $(el).text();
-            var propertyDescription = $(el).next().text();
-            prototypeProperties[propertyName] = propertyDescription;
-          });
-
-          var prototypeMethods = {};
+          //prototype methods 
           $('#Methods_2').next().find('dl').find('dt').each(function(i, el) {
-            var methodName = $(el).text();
-            var methodDescription = $(el).next().text();
+            var methodName = $(el).text(),
+                methodDescription = $(el).next().text();
             prototypeMethods[methodName] = methodDescription;
           });
 
-          // add all of this parsed to the objectDB 
+          // prototype properties
+          $('#Properties_2').next().find('dl').find('dt').each(function(i, el) {
+            var propertyName = $(el).text(),
+                propertyDescription = $(el).next().text();
+            prototypeProperties[propertyName] = propertyDescription;
+          });
+
+          // add everything to the objectDB
           objectDB[filename] = {
-            shortDescription: shortDescription,
+            description: description,
             syntax: syntax,
             prototypeProperties: prototypeProperties,
             prototypeMethods: prototypeMethods,
@@ -74,7 +93,7 @@ fs.readdir(DOCSPATH, function(err, files){
             constructorMethods: constructorMethods,
           };
 
-          // then write it out as json
+          // then write objectDB to file as json
           fs.writeFile(DBFILE, JSON.stringify(objectDB, null, 2), function(err) {
             if (err) throw err;
           });
