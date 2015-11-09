@@ -6,6 +6,4 @@ var url = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Glo
 request(url, function(err, response, html) {
   if (err) throw err;
   var $ = cheerio.load(html);
-  var result = $('.syntaxbox').text();
-  console.log(result);
 });
