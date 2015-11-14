@@ -4,7 +4,7 @@ var objFormat = require('./lib/obj_format');
 var DOCSPATH = 'docs';
 var DBFILE = 'db/db.json';
 
-var testing = true;
+var testing = false;
 var objectDB = {};
 
 var specialCases = {
@@ -20,9 +20,9 @@ fs.readdir(DOCSPATH, function(err, files){
    
     // override for testing single topics
     if (testing) files = [
-//      'RegExp',
+      'RegExp',
       'Array',
-//      'isNaN',
+      'isNaN',
       'Error'
     ]; 
 
