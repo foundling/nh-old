@@ -18,7 +18,7 @@ var specialCases = {
 fs.readdir(DOCSPATH, function(err, files){
     if (err)  throw err;
    
-    // for testing single topics
+    // override for testing single topics
     if (testing) files = [
       'RegExp',
       'Array',
@@ -36,8 +36,8 @@ fs.readdir(DOCSPATH, function(err, files){
           // top-level object categories
           var name,
               syntax,
-              parameters,
               description,
+              parameters = {},
               constructorMethods = {},
               constructorProperties = {},
               prototypeMethods = {},
@@ -47,13 +47,24 @@ fs.readdir(DOCSPATH, function(err, files){
           name = filename; 
           description = $('#Description').nextUntil(specialCase || 'h2,h3').text(); 
           syntax = $('.syntaxbox').text();
-          parameters = $('#Parameters').next().find('dt').each(function(i,el) {
-            // dt = list item name, dd = list item's accompanying caption text
-            //
-            // note:
-            // this func should really grab a dt and a dd inside of a dl, and for any nested ones, e.g. RegExp 'flags',
-            // it should grab dt and a dd nested inside of the 'flags' dd.
-          });
+
+          var maxLength;
+          var names = [];
+          var descriptions = [];
+          var i;
+
+          $('#Parameters').next().find('dt code').each(function(i,el){
+            names.push($(el).text());
+          }.bind(this));
+
+          $('#Parameters').next().find('dd').each(function(i,el){
+            descriptions.push($(el).text());
+          }.bind(this));
+
+          for (i = 0; i < names.length; i++){
+            parameters[names[i]] = descriptions[i];
+          }
+
 
           // constructor methods
           $('#Methods').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
@@ -87,6 +98,7 @@ fs.readdir(DOCSPATH, function(err, files){
           objectDB[filename] = {
             description: description,
             syntax: syntax,
+            parameters: parameters,
             prototypeProperties: prototypeProperties,
             prototypeMethods: prototypeMethods,
             constructorProperties: constructorProperties,
