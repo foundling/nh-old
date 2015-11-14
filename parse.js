@@ -20,9 +20,9 @@ fs.readdir(DOCSPATH, function(err, files){
    
     // override for testing single topics
     if (testing) files = [
-      'RegExp',
+//      'RegExp',
       'Array',
-      'isNaN',
+//      'isNaN',
       'Error'
     ]; 
 
@@ -70,20 +70,20 @@ fs.readdir(DOCSPATH, function(err, files){
           $('#Methods').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
             var methodName = $(el).text(),
                 methodDescription = $(el).next().text();
-            constructorMethods[methodName] = methodDescription;
+            constructorMethods[methodName.replace('()','').trim()] = methodDescription;
           });
           
           // constructor properties
           $('#Properties').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
             var propertyName = $(el).text(),
                 propertyDescription = $(el).next().text();
-            constructorProperties[propertyName] = propertyDescription;
+            constructorProperties[propertyName.replace('()','').trim()] = propertyDescription;
           });
 
           //prototype methods 
           $('#Methods_2').next().find('dl').find('dt').each(function(i, el) {
             var methodName = $(el).text(),
-                methodDescription = $(el).next().text();
+                methodDescription = $(el).next().text().replace('()','');
             prototypeMethods[methodName] = methodDescription;
           });
 
