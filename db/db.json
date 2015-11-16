@@ -36,6 +36,31 @@
       "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
     }
   },
+  "Collator": {
+    "description": "The Intl.Collator object has the following properties and methods:",
+    "syntax": "new Intl.Collator([locales[, options]])\nIntl.Collator.call(this[, locales[, options]])",
+    "parameters": {
+      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension keys are allowed:\n\n \n  co\n  Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).\n  kn\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n  kf\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n \n ",
+      "co": "Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).",
+      "kn": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
+      "kf": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
+      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  usage\n  Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".\n  sensitivity\n  \n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  \n  ignore­Punctua­tion\n  Whether punctuation should be ignored. Possible values are true and false; the default is false.\n  numeric\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n  caseFirst\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n \n ",
+      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
+      "usage": "Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".",
+      "sensitivity": "\n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  ",
+      "ignore­Punctua­tion": "Whether punctuation should be ignored. Possible values are true and false; the default is false.",
+      "numeric": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.",
+      "caseFirst": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Intl.Collator.prototype": "Allows the addition of properties to all objects."
+    },
+    "constructorMethods": {
+      "Intl.Collator.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    }
+  },
   "DataView": {
     "description": "",
     "syntax": "new DataView(buffer [, byteOffset [, byteLength]])",
@@ -71,59 +96,6 @@
       "Boolean.prototype": "Represents the prototype for the Boolean constructor."
     },
     "constructorMethods": {}
-  },
-  "Error": {
-    "description": "Runtime errors result in new Error objects being created and thrown.This page documents the use of the Error object itself and its use as a constructor function. For a list of properties and methods inherited by Error instances, see Error.prototype.",
-    "syntax": "new Error([message[, fileName[, lineNumber]]])",
-    "parameters": {
-      "message": "Optional. Human-readable description of the error.",
-      "fileName": "Optional. The value for the fileName property on the created Error object. Defaults to the name of the file containing the code that called the Error() constructor.",
-      "lineNumber": "Optional. The value for the lineNumber property on the created Error object. Defaults to the line number containing the Error() constructor invocation."
-    },
-    "prototypeProperties": {
-      "Error.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "Error.prototype.message": "Error message.",
-      "Error.prototype.name": "Error name.",
-      "Error.prototype.description": "Error description. Similar to message.",
-      "Error.prototype.number": "Error number.",
-      "Error.prototype.fileName": "Path to file that raised this error.",
-      "Error.prototype.lineNumber": "Line number in file that raised this error.",
-      "Error.prototype.columnNumber": "Column number in line that raised this error.",
-      "Error.prototype.stack": "Stack trace."
-    },
-    "prototypeMethods": {
-      "Error.prototype.toSource()  ": "Returns a string containing the source of the specified Error object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
-      "Error.prototype.toString()": "Returns a string representing the specified object. Overrides the Object.prototype.toString method."
-    },
-    "constructorProperties": {
-      "Error.prototype": "Allows the addition of properties to Error instances."
-    },
-    "constructorMethods": {}
-  },
-  "Collator": {
-    "description": "The Intl.Collator object has the following properties and methods:",
-    "syntax": "new Intl.Collator([locales[, options]])\nIntl.Collator.call(this[, locales[, options]])",
-    "parameters": {
-      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension keys are allowed:\n\n \n  co\n  Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).\n  kn\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n  kf\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n \n ",
-      "co": "Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).",
-      "kn": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
-      "kf": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
-      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  usage\n  Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".\n  sensitivity\n  \n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  \n  ignore­Punctua­tion\n  Whether punctuation should be ignored. Possible values are true and false; the default is false.\n  numeric\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n  caseFirst\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n \n ",
-      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
-      "usage": "Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".",
-      "sensitivity": "\n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  ",
-      "ignore­Punctua­tion": "Whether punctuation should be ignored. Possible values are true and false; the default is false.",
-      "numeric": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.",
-      "caseFirst": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.Collator.prototype": "Allows the addition of properties to all objects."
-    },
-    "constructorMethods": {
-      "Intl.Collator.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
-    }
   },
   "Date": {
     "description": "\n If no arguments are provided, the constructor creates a JavaScript Date object for the current date and time according to system settings.\n If at least two arguments are supplied, missing arguments are either set to 1 (if day is missing) or 0 for all others.\n The JavaScript date is based on a time value that is milliseconds since midnight 01 January, 1970 UTC. A day holds 86,400,000 milliseconds. The JavaScript Date object range is -100,000,000 days to 100,000,000 days relative to 01 January, 1970 UTC.\n The JavaScript Date object provides uniform behavior across platforms. The time value can be passed between systems to represent the same moment in time and if used to create a local date object, will reflect the local equivalent of the time.\n The JavaScript Date object supports a number of UTC (universal) methods, as well as local time methods. UTC, also known as Greenwich Mean Time (GMT), refers to the time as set by the World Time Standard. The local time is the time known to the computer where JavaScript is executed.\n Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.\n",
@@ -164,61 +136,6 @@
     },
     "constructorMethods": {}
   },
-  "Float32x4": {
-    "description": "",
-    "syntax": "SIMD.Float32x4(x, y, z, w);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "Float32Array": {
-    "description": "",
-    "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Float32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Float32Array.",
-      "Float32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Float32Array.prototype.length.",
-      "Float32Array.name": "Returns the string value of the constructor name. In the case of the Float32Array type: \"Float32Array\".",
-      "Float32Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Float32Array.from": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
-      "Float32Array.of": "Creates a new Float32Array with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "Float64Array": {
-    "description": "",
-    "syntax": "new Float64Array(length);\nnew Float64Array(typedArray);\nnew Float64Array(object);\nnew Float64Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Float64Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 8 in the case of an Float64Array.",
-      "Float64Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Float64Array.prototype.length.",
-      "Float64Array.name": "Returns the string value of the constructor name. In the case of the Float64Array type: \"Float64Array\".",
-      "Float64Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Float64Array.from": "Creates a new Float64Array from an array-like or iterable object. See also Array.from().",
-      "Float64Array.of": "Creates a new Float64Array with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "Float64x2": {
-    "description": "",
-    "syntax": "SIMD.Float64x2(x, y);",
-    "parameters": {
-      "x": "An double specifying the value of the first lane. Defaults to NaN.",
-      "y": "An double specifying the value of the second lane. Defaults to NaN."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "DateTimeFormat": {
     "description": "",
     "syntax": "new Intl.DateTimeFormat([locales[, options]])\nIntl.DateTimeFormat.call(this[, locales[, options]])",
@@ -249,6 +166,89 @@
     "constructorMethods": {
       "Intl.DateTimeFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
     }
+  },
+  "Float32Array": {
+    "description": "",
+    "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Float32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Float32Array.",
+      "Float32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Float32Array.prototype.length.",
+      "Float32Array.name": "Returns the string value of the constructor name. In the case of the Float32Array type: \"Float32Array\".",
+      "Float32Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Float32Array.from": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
+      "Float32Array.of": "Creates a new Float32Array with a variable number of arguments. See also Array.of()."
+    }
+  },
+  "Float32x4": {
+    "description": "",
+    "syntax": "SIMD.Float32x4(x, y, z, w);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "Float64Array": {
+    "description": "",
+    "syntax": "new Float64Array(length);\nnew Float64Array(typedArray);\nnew Float64Array(object);\nnew Float64Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Float64Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 8 in the case of an Float64Array.",
+      "Float64Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Float64Array.prototype.length.",
+      "Float64Array.name": "Returns the string value of the constructor name. In the case of the Float64Array type: \"Float64Array\".",
+      "Float64Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Float64Array.from": "Creates a new Float64Array from an array-like or iterable object. See also Array.from().",
+      "Float64Array.of": "Creates a new Float64Array with a variable number of arguments. See also Array.of()."
+    }
+  },
+  "Error": {
+    "description": "Runtime errors result in new Error objects being created and thrown.This page documents the use of the Error object itself and its use as a constructor function. For a list of properties and methods inherited by Error instances, see Error.prototype.",
+    "syntax": "new Error([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error.",
+      "fileName": "Optional. The value for the fileName property on the created Error object. Defaults to the name of the file containing the code that called the Error() constructor.",
+      "lineNumber": "Optional. The value for the lineNumber property on the created Error object. Defaults to the line number containing the Error() constructor invocation."
+    },
+    "prototypeProperties": {
+      "Error.prototype.constructor": "Specifies the function that created an instance's prototype.",
+      "Error.prototype.message": "Error message.",
+      "Error.prototype.name": "Error name.",
+      "Error.prototype.description": "Error description. Similar to message.",
+      "Error.prototype.number": "Error number.",
+      "Error.prototype.fileName": "Path to file that raised this error.",
+      "Error.prototype.lineNumber": "Line number in file that raised this error.",
+      "Error.prototype.columnNumber": "Column number in line that raised this error.",
+      "Error.prototype.stack": "Stack trace."
+    },
+    "prototypeMethods": {
+      "Error.prototype.toSource()  ": "Returns a string containing the source of the specified Error object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
+      "Error.prototype.toString()": "Returns a string representing the specified object. Overrides the Object.prototype.toString method."
+    },
+    "constructorProperties": {
+      "Error.prototype": "Allows the addition of properties to Error instances."
+    },
+    "constructorMethods": {}
+  },
+  "Float64x2": {
+    "description": "",
+    "syntax": "SIMD.Float64x2(x, y);",
+    "parameters": {
+      "x": "An double specifying the value of the first lane. Defaults to NaN.",
+      "y": "An double specifying the value of the second lane. Defaults to NaN."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "Function": {
     "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
@@ -772,41 +772,6 @@
       "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
     }
   },
-  "RegExp": {
-    "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
-    "syntax": "/pattern/flags\nnew RegExp(pattern[, flags])\n",
-    "parameters": {
-      "pattern": "The text of the regular expression.",
-      "flags": "\n If specified, flags can have any combination of the following values:\n\n \n  g\n  global match\n  i\n  ignore case\n  m\n  multiline; treat beginning and end characters (^ and $) as working over multiple lines (i.e., match the beginning or end of each line (delimited by \\n or \\r), not only the very beginning or end of the whole input string)\n  y  \n  sticky; matches only from the index indicated by the lastIndex property of this regular expression in the target string (and does not attempt to match from any later indexes).\n \n ",
-      "g": "global match",
-      "i": "ignore case",
-      "m": "multiline; treat beginning and end characters (^ and $) as working over multiple lines (i.e., match the beginning or end of each line (delimited by \\n or \\r), not only the very beginning or end of the whole input string)",
-      "y": "sticky; matches only from the index indicated by the lastIndex property of this regular expression in the target string (and does not attempt to match from any later indexes)."
-    },
-    "prototypeProperties": {
-      "RegExp.prototype.constructor": "Specifies the function that creates an object's prototype.",
-      "RegExp.prototype.flags  ": "A string that contains the flags of the RegExp object.",
-      "RegExp.prototype.global": "Whether to test the regular expression against all possible matches in a string, or only against the first.",
-      "RegExp.prototype.ignoreCase": "Whether to ignore case while attempting a match in a string.",
-      "RegExp.prototype.multiline": "Whether or not to search in strings across multiple lines.",
-      "RegExp.prototype.source": "The text of the pattern.",
-      "RegExp.prototype.sticky  ": "Whether or not the search is sticky.",
-      "RegExp.prototype.unicode  ": "Whether or not Unicode features are enabled."
-    },
-    "prototypeMethods": {
-      "RegExp.prototype.compile()  ": "(Re-)compiles a regular expression during execution of a script.",
-      "RegExp.prototype.exec()": "Executes a search for a match in its string parameter.",
-      "RegExp.prototype.test()": "Tests for a match in its string parameter.",
-      "RegExp.prototype.toSource()  ": "Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
-      "RegExp.prototype.toString()": "Returns a string representing the specified object. Overrides the Object.prototype.toString method."
-    },
-    "constructorProperties": {
-      "RegExp.prototype": "Allows the addition of properties to all objects.",
-      "RegExp.length": "The value of RegExp.length is 2.",
-      "RegExp.lastIndex": "The index at which to start the next match."
-    },
-    "constructorMethods": {}
-  },
   "StopIteration": {
     "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
     "syntax": "StopIteration",
@@ -854,6 +819,64 @@
       "String.raw": "Returns a string created from a raw template string."
     }
   },
+  "SyntaxError": {
+    "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
+    "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
+    "prototypeProperties": {
+      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
+      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
+      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
+    },
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
+    },
+    "constructorMethods": {}
+  },
+  "RegExp": {
+    "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
+    "syntax": "/pattern/flags\nnew RegExp(pattern[, flags])\n",
+    "parameters": {
+      "pattern": "The text of the regular expression.",
+      "flags": "\n If specified, flags can have any combination of the following values:\n\n \n  g\n  global match\n  i\n  ignore case\n  m\n  multiline; treat beginning and end characters (^ and $) as working over multiple lines (i.e., match the beginning or end of each line (delimited by \\n or \\r), not only the very beginning or end of the whole input string)\n  y  \n  sticky; matches only from the index indicated by the lastIndex property of this regular expression in the target string (and does not attempt to match from any later indexes).\n \n ",
+      "g": "global match",
+      "i": "ignore case",
+      "m": "multiline; treat beginning and end characters (^ and $) as working over multiple lines (i.e., match the beginning or end of each line (delimited by \\n or \\r), not only the very beginning or end of the whole input string)",
+      "y": "sticky; matches only from the index indicated by the lastIndex property of this regular expression in the target string (and does not attempt to match from any later indexes)."
+    },
+    "prototypeProperties": {
+      "RegExp.prototype.constructor": "Specifies the function that creates an object's prototype.",
+      "RegExp.prototype.flags  ": "A string that contains the flags of the RegExp object.",
+      "RegExp.prototype.global": "Whether to test the regular expression against all possible matches in a string, or only against the first.",
+      "RegExp.prototype.ignoreCase": "Whether to ignore case while attempting a match in a string.",
+      "RegExp.prototype.multiline": "Whether or not to search in strings across multiple lines.",
+      "RegExp.prototype.source": "The text of the pattern.",
+      "RegExp.prototype.sticky  ": "Whether or not the search is sticky.",
+      "RegExp.prototype.unicode  ": "Whether or not Unicode features are enabled."
+    },
+    "prototypeMethods": {
+      "RegExp.prototype.compile()  ": "(Re-)compiles a regular expression during execution of a script.",
+      "RegExp.prototype.exec()": "Executes a search for a match in its string parameter.",
+      "RegExp.prototype.test()": "Tests for a match in its string parameter.",
+      "RegExp.prototype.toSource()  ": "Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
+      "RegExp.prototype.toString()": "Returns a string representing the specified object. Overrides the Object.prototype.toString method."
+    },
+    "constructorProperties": {
+      "RegExp.prototype": "Allows the addition of properties to all objects.",
+      "RegExp.length": "The value of RegExp.length is 2.",
+      "RegExp.lastIndex": "The index at which to start the next match."
+    },
+    "constructorMethods": {}
+  },
   "TypeError": {
     "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
     "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
@@ -897,29 +920,6 @@
     "prototypeMethods": {},
     "constructorProperties": {
       "URIError.prototype": "Allows the addition of properties to a URIError object."
-    },
-    "constructorMethods": {}
-  },
-  "SyntaxError": {
-    "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
-    "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
-    "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
-    },
-    "prototypeProperties": {
-      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
     },
     "constructorMethods": {}
   },
@@ -991,6 +991,23 @@
       "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
     }
   },
+  "WeakSet": {
+    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
+    "syntax": " new WeakSet([iterable]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "WeakSet.length": "The value of the length property is 0.",
+      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
+    },
+    "constructorMethods": {
+      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
+      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
+      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
+      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
+    }
+  },
   "WeakMap": {
     "description": "Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed (e.g. a Symbol can't be a WeakMap key).The key in a WeakMap is held weakly.  What this means is that, if there are no other strong references to the key, then the entire entry will be removed from the WeakMap by the garbage collector.",
     "syntax": "new WeakMap([iterable])\n",
@@ -1009,23 +1026,6 @@
       "WeakMap.prototype.has(key)": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
       "WeakMap.prototype.set(key, value)": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
       "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
-    }
-  },
-  "WeakSet": {
-    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
-    "syntax": " new WeakSet([iterable]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "WeakSet.length": "The value of the length property is 0.",
-      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
-    },
-    "constructorMethods": {
-      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
-      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
-      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
-      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
     }
   },
   "decodeURI": {
@@ -1138,6 +1138,15 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
+  "undefined": {
+    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
+    "syntax": "undefined",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "parseFloat": {
     "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
     "syntax": "parseFloat(string)",
@@ -1160,10 +1169,12 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "undefined": {
-    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
-    "syntax": "undefined",
-    "parameters": {},
+  "uneval": {
+    "description": "uneval() is a top-level function and is not associated with any object.",
+    "syntax": "uneval(object)",
+    "parameters": {
+      "object": "A JavaScript expression or statement."
+    },
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
@@ -1174,17 +1185,6 @@
     "syntax": "unescape(str)",
     "parameters": {
       "str": "A string to be decoded."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "uneval": {
-    "description": "uneval() is a top-level function and is not associated with any object.",
-    "syntax": "uneval(object)",
-    "parameters": {
-      "object": "A JavaScript expression or statement."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
