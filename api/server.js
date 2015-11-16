@@ -1,12 +1,13 @@
 var http = require('http');
 var PORT = 3000;
+var testingString = '{"String":"js string"}'; 
 
-function getDocs(f) {
-  f(null, '{"String":"js string"}');
+function getDocs(func) {
+  func(null, testingString);
 }
 
 function buildDocs(f) {
-  f(null, '{"String":"js string"}');
+  func(null, testingString);
 }
 
 var server = http.createServer(function(req, res){ 
