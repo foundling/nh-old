@@ -1,6 +1,7 @@
 var http = require('http');
 var PORT = 3000;
 var testingString = '{"String":"js string"}'; 
+var generateDocHash = require('./generate_doc_hash');
 var buildDocs = require('./build/build_documentation');
 var getDocs = require('./build/get_documentation');
 
@@ -14,11 +15,17 @@ function buildDocs(f) {
 }
 */
 
+var DOCHASH = generateDocHash('build/testdocs');
+
 var server = http.createServer(function(req, res){ 
   console.log(req.url);
 
   var lastUpdate = new Date('Sun Nov 15 2015 18:27:57 GMT-0800 (PST)'); 
 
+  if (req.url === '/api/nodehelp/version') {
+    res.writeHead('200', {'Content-Type':'application/JSON'});
+    res.end({});
+  }
 
   if (req.url === '/api/nodehelp') {
     getDocs(function(err) {
@@ -26,7 +33,7 @@ var server = http.createServer(function(req, res){
       buildDocs(function(err, docDb) {
         if (err) throw err;
         res.writeHead('200', {'Content-Type': 'application/JSON'});
-        res.end(data);
+        res.end({msg: data});
         console.log(JSON.stringify(docDb));
       });
     });
