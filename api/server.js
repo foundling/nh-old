@@ -1,7 +1,10 @@
 var http = require('http');
 var PORT = 3000;
 var testingString = '{"String":"js string"}'; 
+var buildDocs = require('./build/build_documentation');
+var getDocs = require('./build/get_documentation');
 
+/*
 function getDocs(func) {
   func(null, testingString);
 }
@@ -9,6 +12,7 @@ function getDocs(func) {
 function buildDocs(f) {
   func(null, testingString);
 }
+*/
 
 var server = http.createServer(function(req, res){ 
   console.log(req.url);
@@ -17,20 +21,14 @@ var server = http.createServer(function(req, res){
 
 
   if (req.url === '/api/nodehelp') {
-    console.log('test1');
-    getDocs(function(err, docs) {
-      console.log('test2');
+    getDocs(function(err) {
       if (err) throw err;
-      if (docs) {
-        buildDocs(function(err, docDb) {
-          console.log('test3');
-          if (err) throw err;
-          var data = JSON.stringify(docDb);
-          console.log(data);
-          res.writeHead('200', {'Content-Type': 'application/JSON'});
-          res.end(data);
-        });
-      }
+      buildDocs(function(err, docDb) {
+        if (err) throw err;
+        res.writeHead('200', {'Content-Type': 'application/JSON'});
+        res.end(data);
+        console.log(JSON.stringify(docDb));
+      });
     });
   }
 });

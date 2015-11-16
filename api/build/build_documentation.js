@@ -29,7 +29,7 @@ var buildDocs = function() {
         'Error'
       ]; 
 
-      files.forEach(function(filename){
+      files.forEach(function(filename, index, arr){
         fs.readFile(DOCSPATH + '/' + filename, function(err, html) {
             if (err)  throw err;
 
@@ -107,13 +107,16 @@ var buildDocs = function() {
               constructorProperties: constructorProperties,
               constructorMethods: constructorMethods,
             };
-
-            // then write objectDB to file as json
-            fs.writeFile(DBFILE, JSON.stringify(objectDB, null, 2), function(err) {
-              if (err) throw err;
-              else console.log('Documentation Built Successfully!');
-            });
+            
+            // if last file written
+            if (index === files.length - 1) {
+              fs.writeFile(DBFILE, JSON.stringify(objectDB, null, 2), function(err) {
+                if (err) throw err;
+                  console.log('documentation built successfully');
+              });
+            }
         });
+        // then write objectDB to file as json
     });
   });
 };
