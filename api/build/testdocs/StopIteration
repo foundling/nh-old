@@ -72,6 +72,8 @@
     
     // dimension9 == "Section editing"
     
+    // dimension10 == "Watch Menu"
+    
     (function() {
         // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
         var win = window;
@@ -193,7 +195,7 @@
 
                     (function(){
   var FLAGS = {
-    'compat_api': false,'helpfulness': false,'kumaediting': false,'mdn10_logo': true,'mdn10_tile': true,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'share_links': true,'spam_checks_enabled': false,'wiki_samples': false,'wiki_spam_exempted': false
+    'compat_api': false,'helpfulness': false,'kumaediting': false,'mdn10_logo': true,'mdn10_tile': true,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'share_links': true,'spam_checks_enabled': false,'watch_menu': false,'wiki_samples': false,'wiki_spam_exempted': false
     },
     SWITCHES = {
     'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': true,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true
@@ -377,8 +379,9 @@
         
         
         
-
-  <ul class="page-buttons" data-sticky="false"><li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+  
+  <ul class="page-buttons" data-sticky="false">
+            <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
 
         <div class="submenu js-submenu" id="languages-menu-submenu">
           <div class="submenu-column">
@@ -389,13 +392,17 @@
                               <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/StopIteration$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
                           </ul>
           </div>
-        </div></li><li class="page-buttons-edit"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/StopIteration$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li><li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
+        </div>
+      </li>
+      <li class="page-buttons-edit"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/StopIteration$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
 
+        
+        <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
         <div class="submenu js-submenu" id="advanced-menu-submenu">
           <!-- this page -->
           <div class="submenu-column">
             <div class="title">Advanced</div>
-            <ul>
+                            <ul>
                 <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/StopIteration$history" rel="nofollow, noindex">History</a></li>
                                                                 
                 
@@ -840,7 +847,7 @@ for (var n in f()) {
       </script>
 
       
-    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.e1276955ef4c.js" charset="utf-8"></script>
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.ab000df6a15e.js" charset="utf-8"></script>
     <script type="text/javascript">
             mdn.optimizely.push(['activate', 2796520257]);
   </script>

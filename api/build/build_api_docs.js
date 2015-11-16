@@ -1,10 +1,9 @@
 var fs = require('fs');
-
 var cheerio = require('cheerio');
-
-var DOCSPATH = 'testdocs';
-var DBFILE = 'testdb/db.json';
+var DOCSPATH = 'build/testdocs';
+var DBFILE = 'build/testdb/db.json';
 var objectDB = {};
+var callback = require('./generate_doc_hash');
 
 
 var TESTING = false;
@@ -15,7 +14,7 @@ var specialCases = {
     },
 };
 
-var buildDocs = function() {
+var buildApiDocs = function(callback) {
 
   // we have cached MDN html JS Reference files, so parse each one, and add to global 
   fs.readdir(DOCSPATH, function(err, files){
@@ -30,6 +29,7 @@ var buildDocs = function() {
       ]; 
 
       files.forEach(function(filename, index, arr){
+        var remaining = files.length;
         fs.readFile(DOCSPATH + '/' + filename, function(err, html) {
             if (err)  throw err;
 
@@ -107,12 +107,13 @@ var buildDocs = function() {
               constructorProperties: constructorProperties,
               constructorMethods: constructorMethods,
             };
-            
-            // if last file written
-            if (index === files.length - 1) {
+
+            remaining -= 1;
+            if (remaining === 0) {
               fs.writeFile(DBFILE, JSON.stringify(objectDB, null, 2), function(err) {
                 if (err) throw err;
-                  console.log('documentation built successfully');
+                console.log('docs built successfully');
+                callback();
               });
             }
         });
@@ -121,4 +122,4 @@ var buildDocs = function() {
   });
 };
 
-module.exports = exports = buildDocs;
+module.exports = exports = buildApiDocs;

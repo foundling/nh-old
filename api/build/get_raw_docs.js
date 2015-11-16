@@ -3,7 +3,7 @@ var request = require('request');
 var fs = require('fs');
 var domain = 'https://developer.mozilla.org';
 var globalObjectsUrlPath = '/en-US/docs/Web/JavaScript/Reference/Global_Objects';
-var DOCSPATH = 'testdocs';
+var DOCSPATH = 'build/testdocs';
 
 var getDocs = function(callback){
   // for each global object, get its href, write it to a new file
