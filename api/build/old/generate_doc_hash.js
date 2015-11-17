@@ -7,7 +7,9 @@ var hash = crypto.createHash('sha1');
 hash.setEncoding('hex');
 var DOCSPATH = 'build/testdocs';
 
-var generateDocHash = function(callback) {
+var buildApiDocs = require('build/build_api_docs');
+
+var generateDocHash = function(buildApiDocs) {
   // string cache
   var src = '';
 
@@ -34,7 +36,7 @@ var generateDocHash = function(callback) {
             hash.write(src);
             hash.end();
             var sha1sum = hash.read();
-            callback(sha1sum);
+            buildApiDocs(sha1sum);
         } 
       });
     }

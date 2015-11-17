@@ -1,4 +1,21 @@
 {
+  "ArrayBuffer": {
+    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
+    "syntax": "new ArrayBuffer(length)\n",
+    "parameters": {
+      "length": "The size, in bytes, of the array buffer to create."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
+      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
+    },
+    "constructorMethods": {
+      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
+      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
+    }
+  },
   "Array": {
     "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.Some people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
     "syntax": "[element0, element1, ..., elementN]\nnew Array(element0, element1[, ...[, elementN]])\nnew Array(arrayLength)",
@@ -17,23 +34,6 @@
       "Array.isArray": "Returns true if a variable is an array, if not false.",
       "Array.observe": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence.",
       "Array.of": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
-    }
-  },
-  "ArrayBuffer": {
-    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
-    "syntax": "new ArrayBuffer(length)\n",
-    "parameters": {
-      "length": "The size, in bytes, of the array buffer to create."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
-      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
-    },
-    "constructorMethods": {
-      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
-      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
     }
   },
   "Boolean": {
@@ -97,22 +97,6 @@
     },
     "constructorMethods": {}
   },
-  "Date": {
-    "description": "\n If no arguments are provided, the constructor creates a JavaScript Date object for the current date and time according to system settings.\n If at least two arguments are supplied, missing arguments are either set to 1 (if day is missing) or 0 for all others.\n The JavaScript date is based on a time value that is milliseconds since midnight 01 January, 1970 UTC. A day holds 86,400,000 milliseconds. The JavaScript Date object range is -100,000,000 days to 100,000,000 days relative to 01 January, 1970 UTC.\n The JavaScript Date object provides uniform behavior across platforms. The time value can be passed between systems to represent the same moment in time and if used to create a local date object, will reflect the local equivalent of the time.\n The JavaScript Date object supports a number of UTC (universal) methods, as well as local time methods. UTC, also known as Greenwich Mean Time (GMT), refers to the time as set by the World Time Standard. The local time is the time known to the computer where JavaScript is executed.\n Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.\n",
-    "syntax": "new Date();\nnew Date(value);\nnew Date(dateString);\nnew Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);\n",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Date.prototype": "Allows the addition of properties to a JavaScript Date object.",
-      "Date.length": "The value of Date.length is 7. This is the number of arguments handled by the constructor."
-    },
-    "constructorMethods": {
-      "Date.now": "Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.",
-      "Date.parse": "Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC.",
-      "Date.UTC": "Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC."
-    }
-  },
   "DateTimeFormat": {
     "description": "",
     "syntax": "new Intl.DateTimeFormat([locales[, options]])\nIntl.DateTimeFormat.call(this[, locales[, options]])",
@@ -142,6 +126,22 @@
     },
     "constructorMethods": {
       "Intl.DateTimeFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    }
+  },
+  "Date": {
+    "description": "\n If no arguments are provided, the constructor creates a JavaScript Date object for the current date and time according to system settings.\n If at least two arguments are supplied, missing arguments are either set to 1 (if day is missing) or 0 for all others.\n The JavaScript date is based on a time value that is milliseconds since midnight 01 January, 1970 UTC. A day holds 86,400,000 milliseconds. The JavaScript Date object range is -100,000,000 days to 100,000,000 days relative to 01 January, 1970 UTC.\n The JavaScript Date object provides uniform behavior across platforms. The time value can be passed between systems to represent the same moment in time and if used to create a local date object, will reflect the local equivalent of the time.\n The JavaScript Date object supports a number of UTC (universal) methods, as well as local time methods. UTC, also known as Greenwich Mean Time (GMT), refers to the time as set by the World Time Standard. The local time is the time known to the computer where JavaScript is executed.\n Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.\n",
+    "syntax": "new Date();\nnew Date(value);\nnew Date(dateString);\nnew Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);\n",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Date.prototype": "Allows the addition of properties to a JavaScript Date object.",
+      "Date.length": "The value of Date.length is 7. This is the number of arguments handled by the constructor."
+    },
+    "constructorMethods": {
+      "Date.now": "Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.",
+      "Date.parse": "Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC.",
+      "Date.UTC": "Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC."
     }
   },
   "Error": {
@@ -740,38 +740,6 @@
       "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
     }
   },
-  "Set": {
-    "description": "Set objects are collections of values, you can iterate its elements in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.",
-    "syntax": "new Set([iterable]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Set.length": "The value of the length property is 0.",
-      "get Set[@@species]": "The constructor function that is used to create derived objects.",
-      "Set.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all Set objects."
-    },
-    "constructorMethods": {
-      "Set.prototype.add(value)": "Appends a new element with the given value to the Set object. Returns the Set object.",
-      "Set.prototype.clear": "Removes all elements from the Set object.",
-      "Set.prototype.delete(value)": "Removes the element associated to the value and returns the value that Set.prototype.has(value) would have previously returned. Set.prototype.has(value) will return false afterwards.",
-      "Set.prototype.entries": "Returns a new Iterator object that contains an array of [value, value] for each element in the Set object, in insertion order. This is kept similar to the Map object, so that each entry has the same value for its key and value here.",
-      "Set.prototype.forEach(callbackFn[, thisArg])": "Calls callbackFn once for each value present in the Set object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
-      "Set.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the Set object or not.",
-      "Set.prototype.keys": "Is the same function as the values() function and returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
-      "Set.prototype.values": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
-      "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
-    }
-  },
-  "SIMD": {
-    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "RegExp": {
     "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
     "syntax": "/pattern/flags\nnew RegExp(pattern[, flags])\n",
@@ -807,6 +775,38 @@
     },
     "constructorMethods": {}
   },
+  "SIMD": {
+    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "Set": {
+    "description": "Set objects are collections of values, you can iterate its elements in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.",
+    "syntax": "new Set([iterable]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Set.length": "The value of the length property is 0.",
+      "get Set[@@species]": "The constructor function that is used to create derived objects.",
+      "Set.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all Set objects."
+    },
+    "constructorMethods": {
+      "Set.prototype.add(value)": "Appends a new element with the given value to the Set object. Returns the Set object.",
+      "Set.prototype.clear": "Removes all elements from the Set object.",
+      "Set.prototype.delete(value)": "Removes the element associated to the value and returns the value that Set.prototype.has(value) would have previously returned. Set.prototype.has(value) will return false afterwards.",
+      "Set.prototype.entries": "Returns a new Iterator object that contains an array of [value, value] for each element in the Set object, in insertion order. This is kept similar to the Map object, so that each entry has the same value for its key and value here.",
+      "Set.prototype.forEach(callbackFn[, thisArg])": "Calls callbackFn once for each value present in the Set object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
+      "Set.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the Set object or not.",
+      "Set.prototype.keys": "Is the same function as the values() function and returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
+      "Set.prototype.values": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
+      "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
+    }
+  },
   "StopIteration": {
     "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
     "syntax": "StopIteration",
@@ -815,6 +815,23 @@
     "prototypeMethods": {},
     "constructorProperties": {},
     "constructorMethods": {}
+  },
+  "Symbol": {
+    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
+    "syntax": "Symbol([description])",
+    "parameters": {
+      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Symbol.length": "Length property whose value is 0.",
+      "Symbol.prototype": "Represents the prototype for the Symbol constructor."
+    },
+    "constructorMethods": {
+      "Symbol.for(key)": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
+      "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
+    }
   },
   "String": {
     "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
@@ -835,23 +852,6 @@
       "String.fromCharCode": "Returns a string created by using the specified sequence of Unicode values.",
       "String.fromCodePoint": "Returns a string created by using the specified sequence of code points.",
       "String.raw": "Returns a string created from a raw template string."
-    }
-  },
-  "Symbol": {
-    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
-    "syntax": "Symbol([description])",
-    "parameters": {
-      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Symbol.length": "Length property whose value is 0.",
-      "Symbol.prototype": "Represents the prototype for the Symbol constructor."
-    },
-    "constructorMethods": {
-      "Symbol.for(key)": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
-      "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
     }
   },
   "SyntaxError": {
@@ -923,6 +923,23 @@
     },
     "constructorMethods": {}
   },
+  "Uint16Array": {
+    "description": "",
+    "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
+      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
+      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
+      "Uint16Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
+      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
+    }
+  },
   "Uint32Array": {
     "description": "",
     "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
@@ -972,23 +989,6 @@
     "constructorMethods": {
       "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
       "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "Uint16Array": {
-    "description": "",
-    "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
-      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
-      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
-      "Uint16Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
-      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
     }
   },
   "WeakMap": {
@@ -1138,17 +1138,6 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "parseInt": {
-    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
-    "syntax": "parseInt(string, radix);",
-    "parameters": {
-      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "parseFloat": {
     "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
     "syntax": "parseFloat(string)",
@@ -1160,10 +1149,12 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "undefined": {
-    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
-    "syntax": "undefined",
-    "parameters": {},
+  "parseInt": {
+    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
+    "syntax": "parseInt(string, radix);",
+    "parameters": {
+      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
+    },
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
@@ -1175,6 +1166,15 @@
     "parameters": {
       "str": "A string to be decoded."
     },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "undefined": {
+    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
+    "syntax": "undefined",
+    "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},

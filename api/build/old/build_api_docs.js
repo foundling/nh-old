@@ -2,8 +2,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var DOCSPATH = 'build/testdocs';
 var DBFILE = 'build/testdb/db.json';
-var objectDB = {};
-var callback = require('./generate_doc_hash');
+var startServer = require('./../server');
 
 
 var TESTING = false;
@@ -14,7 +13,8 @@ var specialCases = {
     },
 };
 
-var buildApiDocs = function(callback) {
+var objectDB = {};
+var buildApiDocs = function(docHash,startServer) {
 
   // we have cached MDN html JS Reference files, so parse each one, and add to global 
   fs.readdir(DOCSPATH, function(err, files){
@@ -113,7 +113,7 @@ var buildApiDocs = function(callback) {
               fs.writeFile(DBFILE, JSON.stringify(objectDB, null, 2), function(err) {
                 if (err) throw err;
                 console.log('docs built successfully');
-                callback(objectDB,versionHash);
+                startServer(objectDB,versionHash);
               });
             }
         });
