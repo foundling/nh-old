@@ -5,15 +5,14 @@ var fs = require('fs');
 var crypto = require('crypto');
 var hash = crypto.createHash('sha1');
 hash.setEncoding('hex');
-var server = require('./../server');
 var DOCSPATH = 'build/testdocs';
 
-var generateDocHash = function(docDirectory, callback) {
+var generateDocHash = function(callback) {
   // string cache
   var src = '';
 
   // read dir, get filenames
-  fs.readdir(docDirectory, function(err, files){
+  fs.readdir(DOCSPATH, function(err, files){
     if (err) throw err;
 
     // sort filenames

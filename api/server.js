@@ -1,20 +1,10 @@
 var http = require('http');
 var PORT = 3000;
 var testingString = '{"String":"js string"}'; 
-var generateDocHash = require('./generate_doc_hash');
-var buildDocs = require('./build/build_documentation');
-var getDocs = require('./build/get_documentation');
 
-/*
-function getDocs(func) {
-  func(null, testingString);
-}
-
-function buildDocs(f) {
-  func(null, testingString);
-}
-*/
-
+var getRawDocs = require('./build/get_raw_docs');
+var generateDocHash = require('./build/generate_doc_hash');
+var buildApiDocs = require('./build/build_api_docs');
 
 var startServer = function(hash) {
   var server = http.createServer(function(req, res){ 
@@ -44,5 +34,10 @@ var startServer = function(hash) {
     console.log('SERVER UP ON PORT ', PORT);
   });
 };
+
+getRawDocs(function() {
+  generateDocHash(DOCSPATH);
+  buildApiDocs();
+});
 
 generateDocHash('build/testdocs', startServer);

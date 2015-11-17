@@ -113,7 +113,7 @@ var buildApiDocs = function(callback) {
               fs.writeFile(DBFILE, JSON.stringify(objectDB, null, 2), function(err) {
                 if (err) throw err;
                 console.log('docs built successfully');
-                callback();
+                callback(objectDB,versionHash);
               });
             }
         });
