@@ -1,10 +1,10 @@
-var fs = require('fs');
-var cheerio = require('cheerio');
-var DOCS_PATH = './build/testdocs';
-var TESTING = false;
-var DB_FILE = './build/testdb/db.json';
+var fs = require('fs'),
+    cheerio = require('cheerio'),
+    DOCS_PATH = './build/testdocs',
+    DB_FILE = './build/testdb/db.json',
+    TESTING = false;
 
-var buildApiDocs = module.exports = exports = function(hash, callback) {
+var buildApiDocs = module.exports = exports = function(callback) {
   console.log('Building Api Docs ... ');
   var objectDB = {};
   var specialCases = {
@@ -112,9 +112,9 @@ var buildApiDocs = module.exports = exports = function(hash, callback) {
             if (remaining === 0) {
               fs.writeFile(DB_FILE, JSON.stringify(objectDB, null, 2), function(err) {
                 if (err) throw err;
-                console.log('Documenation built successfully');
+                console.log('Documenation built successfully to %s', DB_FILE);
                 console.log('Starting Server ...');
-                callback(null, objectDB, hash);
+                callback(null, objectDB);
               });
             }
         });

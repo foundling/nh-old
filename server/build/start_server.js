@@ -5,7 +5,7 @@ var serverUp = function() {
   console.log('SERVER UP ON PORT', PORT);
 };
 
-var startServer = module.exports = exports = function(err, docs, versionHash) {
+var startServer = module.exports = exports = function(docs, versionHash) {
   console.log('Starting Server ...');
   http.createServer(function(req, res){ 
     console.log(req.url);

@@ -1,14 +1,17 @@
-var request = require('request');
-var cheerio = require('cheerio');
-var fs = require('fs');
+const request = require('request'),
+      cheerio = require('cheerio'),
+      fs = require('fs'),
+      DOCS_PATH = 'build/testdocs', 
+      MDN_DOMAIN = 'https://developer.mozilla.org',
+      MDN_GLOBALS_PATH = '/en-US/docs/Web/JavaScript/Reference/Global_Objects',
+      TESTING = true;
 
-var DOCS_PATH = 'build/testdocs'; 
-var MDN_DOMAIN = 'https://developer.mozilla.org';
-var MDN_GLOBALS_PATH = '/en-US/docs/Web/JavaScript/Reference/Global_Objects';
 
 var getRawDocs = module.exports = exports = function(callback){
-  console.log('getRawDocs');
+  console.log('Getting HTML Documentation from MDN ...');
   // for each global object, get its href, write it to a new file
+  if (TESTING) return callback(null);
+
   request(MDN_DOMAIN + MDN_GLOBALS_PATH, function(err, response, html) {
     if (err) throw err;
     var $ = cheerio.load(html);

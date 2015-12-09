@@ -1,21 +1,4 @@
 {
-  "ArrayBuffer": {
-    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
-    "syntax": "new ArrayBuffer(length)\n",
-    "parameters": {
-      "length": "The size, in bytes, of the array buffer to create."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
-      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
-    },
-    "constructorMethods": {
-      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
-      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
-    }
-  },
   "Array": {
     "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.Some people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
     "syntax": "[element0, element1, ..., elementN]\nnew Array(element0, element1[, ...[, elementN]])\nnew Array(arrayLength)",
@@ -34,6 +17,23 @@
       "Array.isArray": "Returns true if a variable is an array, if not false.",
       "Array.observe": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence.",
       "Array.of": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
+    }
+  },
+  "ArrayBuffer": {
+    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
+    "syntax": "new ArrayBuffer(length)\n",
+    "parameters": {
+      "length": "The size, in bytes, of the array buffer to create."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
+      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
+    },
+    "constructorMethods": {
+      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
+      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
     }
   },
   "Boolean": {
@@ -195,6 +195,15 @@
     },
     "constructorMethods": {}
   },
+  "Float32x4": {
+    "description": "",
+    "syntax": "SIMD.Float32x4(x, y, z, w);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "Float32Array": {
     "description": "",
     "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
@@ -211,15 +220,6 @@
       "Float32Array.from": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
       "Float32Array.of": "Creates a new Float32Array with a variable number of arguments. See also Array.of()."
     }
-  },
-  "Float32x4": {
-    "description": "",
-    "syntax": "SIMD.Float32x4(x, y, z, w);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
   },
   "Float64Array": {
     "description": "",
@@ -250,18 +250,6 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "Function": {
-    "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
-    "syntax": "new Function ([arg1[, arg2[, ...argN]],] functionBody)",
-    "parameters": {
-      "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
-      "functionBody": "A string containing the JavaScript statements comprising the function definition."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "Generator": {
     "description": "",
     "syntax": "function* gen() { \n  yield 1;\n  yield 2;\n  yield 3;\n}\n\nvar g = gen(); // \"Generator { }\"",
@@ -274,6 +262,18 @@
       "Generator.prototype.return": "Returns the given value and finishes the generator.",
       "Generator.prototype.throw": "Throws an error to a generator."
     }
+  },
+  "Function": {
+    "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
+    "syntax": "new Function ([arg1[, arg2[, ...argN]],] functionBody)",
+    "parameters": {
+      "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
+      "functionBody": "A string containing the JavaScript statements comprising the function definition."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "GeneratorFunction": {
     "description": "generator function objects created with the GeneratorFunction constructor are parsed when the function is created. This is less efficient than declaring a generator function with a function* expression and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: generator function created with the GeneratorFunction constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the GeneratorFunction constructor was called. This is different from using eval with code for a generator function expression.\nInvoking the GeneratorFunction constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
@@ -425,6 +425,18 @@
     },
     "constructorMethods": {}
   },
+  "JSON": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {
+      "JSON.parse": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
+      "JSON.stringify": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner."
+    }
+  },
   "Iterator": {
     "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
     "syntax": "Iterator(object, [keyOnly])",
@@ -439,18 +451,6 @@
     },
     "constructorMethods": {
       "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
-    }
-  },
-  "JSON": {
-    "description": "",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "JSON.parse": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
-      "JSON.stringify": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner."
     }
   },
   "Map": {
@@ -543,6 +543,33 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
+  "NumberFormat": {
+    "description": "",
+    "syntax": "new Intl.NumberFormat([locales[, options]])\nIntl.NumberFormat.call(this[, locales[, options]])\n",
+    "parameters": {
+      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension key is allowed:\n\n \n  nu\n  The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".\n \n ",
+      "nu": "The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".",
+      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  style\n  The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".\n  currency\n  The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.\n  currencyDisplay\n  How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".\n  useGrouping\n  Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.\n \n\n The following properties fall into two groups: minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group, minimumSignificantDigits and maximumSignificantDigits in the other. If at least one property from the second group is defined, then the first group is ignored.\n\n \n  minimumIntegerDigits\n  The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.\n  minimumFractionDigits\n  The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).\n  maximumFractionDigits\n  The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.\n  minimumSignificantDigits\n  The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.\n  maximumSignificantDigits\n  The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.\n \n ",
+      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
+      "style": "The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".",
+      "currency": "The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.",
+      "currencyDisplay": "How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".",
+      "useGrouping": "Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.",
+      "minimumIntegerDigits": "The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.",
+      "minimumFractionDigits": "The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).",
+      "maximumFractionDigits": "The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.",
+      "minimumSignificantDigits": "The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.",
+      "maximumSignificantDigits": "The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Intl.NumberFormat.prototype": "Allows the addition of properties to all objects."
+    },
+    "constructorMethods": {
+      "Intl.NumberFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    }
+  },
   "Number": {
     "description": "The primary uses for the Number object are:\n If the argument cannot be converted into a number, it returns NaN.\n In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.\n",
     "syntax": "new Number(value);",
@@ -578,33 +605,6 @@
       "Number.toInteger": "Used to evaluate the passed value and convert it to an integer (or Infinity), but has been removed.",
       "Number.parseFloat": "The value is the same as parseFloat() of the global object.",
       "Number.parseInt": "The value is the same as parseInt() of the global object."
-    }
-  },
-  "NumberFormat": {
-    "description": "",
-    "syntax": "new Intl.NumberFormat([locales[, options]])\nIntl.NumberFormat.call(this[, locales[, options]])\n",
-    "parameters": {
-      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension key is allowed:\n\n \n  nu\n  The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".\n \n ",
-      "nu": "The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".",
-      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  style\n  The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".\n  currency\n  The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.\n  currencyDisplay\n  How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".\n  useGrouping\n  Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.\n \n\n The following properties fall into two groups: minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group, minimumSignificantDigits and maximumSignificantDigits in the other. If at least one property from the second group is defined, then the first group is ignored.\n\n \n  minimumIntegerDigits\n  The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.\n  minimumFractionDigits\n  The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).\n  maximumFractionDigits\n  The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.\n  minimumSignificantDigits\n  The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.\n  maximumSignificantDigits\n  The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.\n \n ",
-      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
-      "style": "The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".",
-      "currency": "The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.",
-      "currencyDisplay": "How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".",
-      "useGrouping": "Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.",
-      "minimumIntegerDigits": "The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.",
-      "minimumFractionDigits": "The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).",
-      "maximumFractionDigits": "The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.",
-      "minimumSignificantDigits": "The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.",
-      "maximumSignificantDigits": "The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.NumberFormat.prototype": "Allows the addition of properties to all objects."
-    },
-    "constructorMethods": {
-      "Intl.NumberFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
     }
   },
   "Object": {
@@ -974,6 +974,23 @@
       "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
     }
   },
+  "Uint8ClampedArray": {
+    "description": "",
+    "syntax": "new Uint8ClampedArray(length);\nnew Uint8ClampedArray(typedArray);\nnew Uint8ClampedArray(object);\nnew Uint8ClampedArray(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Uint8ClampedArray.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8ClampedArray.",
+      "Uint8ClampedArray.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8ClampedArray.prototype.length.",
+      "Uint8ClampedArray.name": "Returns the string value of the constructor name. In the case of the Uint8ClampedArray type: \"Uint8ClampedArray\".",
+      "Uint8ClampedArray.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
+      "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
+    }
+  },
   "WeakMap": {
     "description": "Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed (e.g. a Symbol can't be a WeakMap key).The key in a WeakMap is held weakly.  What this means is that, if there are no other strong references to the key, then the entire entry will be removed from the WeakMap by the garbage collector.",
     "syntax": "new WeakMap([iterable])\n",
@@ -992,23 +1009,6 @@
       "WeakMap.prototype.has(key)": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
       "WeakMap.prototype.set(key, value)": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
       "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
-    }
-  },
-  "Uint8ClampedArray": {
-    "description": "",
-    "syntax": "new Uint8ClampedArray(length);\nnew Uint8ClampedArray(typedArray);\nnew Uint8ClampedArray(object);\nnew Uint8ClampedArray(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint8ClampedArray.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8ClampedArray.",
-      "Uint8ClampedArray.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8ClampedArray.prototype.length.",
-      "Uint8ClampedArray.name": "Returns the string value of the constructor name. In the case of the Uint8ClampedArray type: \"Uint8ClampedArray\".",
-      "Uint8ClampedArray.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
-      "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
     }
   },
   "WeakSet": {
