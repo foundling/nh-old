@@ -17,8 +17,6 @@ var generateDocHash = module.exports = exports = function(dbObj, callback) {
   hash.write(JSON.stringify(jsonArray));
   hash.end();
   sha1sum = hash.read();
-
-  console.log('JSON ARRAY\n',jsonArray);
   
   callback(dbObj, sha1sum);
 };

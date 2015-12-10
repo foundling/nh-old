@@ -1,16 +1,13 @@
-var http = require('http');
-var PORT = 3000;
+'use strict';
 
-var serverUp = function() { 
-  console.log('SERVER UP ON PORT', PORT);
-};
+var http = require('http'),
+    PORT = 3000,
+    checkForUpdates = require('./check_for_updates');
 
 var startServer = module.exports = exports = function(docs, versionHash) {
-  console.log('Starting Server ...');
-  http.createServer(function(req, res){ 
-    console.log(req.url);
 
-    var lastUpdate = new Date('Sun Nov 15 2015 18:27:57 GMT-0800 (PST)'); 
+  http.createServer(function(req, res) { 
+    console.log('request at %s', req.url);
 
     if (req.url === '/api/nodehelp/version') {
       res.writeHead('200', {'Content-Type':'application/JSON'});
@@ -21,5 +18,18 @@ var startServer = module.exports = exports = function(docs, versionHash) {
     } else {
       res.end();
     }
-  }).listen(PORT, serverUp);
+  }).listen(PORT, function() { 
+    console.log('Server Up On Port %d ... ', PORT); 
+  });
+
+  checkForUpdates();
+
+  process.on('update', function(updatedDocs, updatedHash) {
+    if (updatedHash.length && updatedHash !== versionHash) {
+      console.log('Documentation has Been Updated');
+      versionHash = updatedHash;
+      docs = updatedDocs;
+    }
+  });
+
 };

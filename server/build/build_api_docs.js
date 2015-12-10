@@ -27,6 +27,7 @@ var buildApiDocs = module.exports = exports = function(callback) {
       ]; 
 
       var remaining = files.length;
+      console.log("Remaining Documentation Files:");
       files.forEach(function(filename, index, arr){
 
         fs.readFile(DOCS_PATH + '/' + filename, function(err, html) {
@@ -108,11 +109,11 @@ var buildApiDocs = module.exports = exports = function(callback) {
             };
 
             remaining -= 1;
-            console.log("Remaining Documentation Files: %d ... ",remaining);
+            process.stdout.write(" " + remaining + " ");
             if (remaining === 0) {
               fs.writeFile(DB_FILE, JSON.stringify(objectDB, null, 2), function(err) {
                 if (err) throw err;
-                console.log('Documenation built successfully to %s', DB_FILE);
+                console.log('\nDocumenation built successfully to %s', DB_FILE);
                 console.log('Starting Server ...');
                 callback(null, objectDB);
               });
