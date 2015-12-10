@@ -25,7 +25,7 @@ var getRawDocs = module.exports = exports = function(callback){
       request(MDN_DOMAIN + relativeLink, function(err, response, html) {
         if (err) throw err;
         var objectName = relativeLink.slice(relativeLink.lastIndexOf('/') + 1);
-        fs.writeFile(DOCS_PATH + '/' + objectName, html, function(err) {
+        fs.writeFile(DOCS_PATH + '/' + objectName + '.nodehelp', html, function(err) {
           if (err) throw err;
           if (index === linksToGlobals.length - 1) {
             console.log(index + ' topics written to ' + DOCS_PATH);

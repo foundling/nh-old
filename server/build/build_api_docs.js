@@ -17,18 +17,13 @@ var buildApiDocs = module.exports = exports = function(callback) {
   // we have cached MDN html JS Reference files, so parse each one, and add to global 
   fs.readdir(DOCS_PATH, function(err, files){
       if (err)  throw err;
-     
-      // override for testing single topics
-      if (TESTING) files = [
-        'RegExp',
-        'Array',
-        'isNaN',
-        'Error'
-      ]; 
 
       var remaining = files.length;
       console.log("Remaining Documentation Files:");
-      files.forEach(function(filename, index, arr){
+
+      files.filter(function(filename){
+        return /.*\.nodehelp$/.test(filename);
+      }).forEach(function(filename, index, arr){
 
         fs.readFile(DOCS_PATH + '/' + filename, function(err, html) {
             if (err)  throw err;

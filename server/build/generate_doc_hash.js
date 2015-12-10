@@ -1,9 +1,6 @@
 var fs = require('fs'),
     crypto = require('crypto'),
-    hash = crypto.createHash('sha1'),
     DOCS_PATH = 'build/testdocs';
-
-hash.setEncoding('hex');
 
 var generateDocHash = module.exports = exports = function(dbObj, callback) {
   var jsonArray = [];
@@ -14,6 +11,8 @@ var generateDocHash = module.exports = exports = function(dbObj, callback) {
     jsonArray.push(dbObj[key]);
   });
 
+  hash = crypto.createHash('sha1');
+  hash.setEncoding('hex');
   hash.write(JSON.stringify(jsonArray));
   hash.end();
   sha1sum = hash.read();
