@@ -1,0 +1,918 @@
+{
+    "Object": {
+        "isNative":true,
+        "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.  When called in a non-constructor context, Object behaves identically to new Object(). Objects can be initialized using new Object(), Object.create(), or using the literal notation (initializer notation). An object initializer is a list of zero or more pairs of property names and associated values of an object, enclosed in curly braces ({}). An object initializer is an expression that describes the initialization of an Object. Objects consist of properties, which are used to describe an object. Values of object properties can either contain primitive data types or other objects.",
+     "children": {
+            "length": {
+                "name": "Object.length",
+                "description": "Has a value of 1.",
+                "childType": "property",
+                "isNative":true
+            },
+            "prototype": {
+                "name": "Object.prototype",
+                "description": "Allows the addition of properties to all objects of type Object.",
+                "childType": "property",
+                "isNative":true
+            },
+            "assign": {
+                "isNative":true,
+                "name": "Object.assign()",
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object."
+            },
+            "create": {
+                "isNative":true,
+                "name": "Object.create()",
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "description": "Creates a new object with the specified prototype object and properties."
+            },
+            "defineProperty": {
+                "isNative":true,
+                "name": "Object.defineProperty()",
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "description": "Adds the named property described by a given descriptor to an object."
+            },
+            "defineProperties": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.defineProperties()",
+                "description": "Adds the named properties described by the given descriptors to an object."
+            },
+            "freeze": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.freeze()",
+                "description": "Freezes an object: other code can't delete or change any properties."
+            },
+            "getOwnPropertyDescriptor": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.getOwnPropertyDescriptor()",
+                "description": "Returns a property descriptor for a named property on an object."
+            },
+            "getOwnPropertyNames": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.getOwnPropertyNames()",
+                "description": "Returns an array containing the names of all of the given object's own enumerable and non-enumerable properties."
+            },
+            "getOwnPropertySymbols": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.getOwnPropertySymbols()",
+                "description": "Returns an array of all symbol properties found directly upon a given object."
+            },
+            "getPrototypeOf": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.getPrototypeOf()",
+                "description": "Returns the prototype of the specified object."
+            },
+            "is": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.is()",
+                "description": "Compares if two values are distinguishable (ie. the same)"
+            },
+            "isExtensible": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.isExtensible()",
+                "description": "Determines if extending of an object is allowed."
+            },
+            "isFrozen": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.isFrozen()",
+                "description": "Determines if an object was frozen."
+            },
+            "isSealed": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.isSealed()",
+                "description": "Determines if an object is sealed."
+            },
+            "keys": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.keys()",
+                "description": "Returns an array containing the names of all of the given object's own enumerable properties."
+            },
+            "observe": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.observe()",
+                "description": "Asynchronously observes changes to an object."
+            },
+            "getNotifier": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.getNotifier()",
+                "description": "Get a notifier with which to create object changes manually."
+            },
+            "preventExtensions": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.preventExtensions()",
+                "description": "Prevents any extensions of an object."
+            },
+            "seal": {
+                "isNative":true,
+                "childType": "method",
+                "description": "Creates a new object by copying the values of all enumerable own properties from one or more source objects to a target object.",
+                "name": "Object.seal()",
+                "description": "Prevents other code from deleting properties of an object."
+            },
+            "setPrototypeOf": {
+                "isNative":true,
+                "childType": "method",
+                "name": "Object.setPrototypeOf()",
+                "description": "Sets the prototype (i.e., the internal [[Prototype]] property)"
+            }
+        }
+    },
+
+    "String": {
+        "isNative":true,
+        "description": "The String global object is a constructor for strings, or a sequence of characters. Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
+        "children": {
+            "prototype": {
+                "isNative":true,
+                "childType":"property",
+                "name": "String.prototype",
+                "description": "Allows the addition of properties to a String object."
+            },
+            "constructor": {
+                "isNative":true,
+                "childType":"property",
+                "name": "String.prototype.constructor",
+                "description": "Specifies the function that creates an object's prototype."
+            },
+            "length": {
+                "isNative":true,
+                "childType":"property",
+                "name": "String.prototype.length",
+                "description": "Reflects the length of the string."
+            },
+            "fromCharCode": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.fromCharCode()",
+                "description": "Returns a string created by using the specified sequence of Unicode values."
+            },
+            "fromCodePoint": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.fromCodePoint()",
+                "description": "Returns a string created by using the specified sequence of code points."
+            },
+            "raw": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.raw()",
+                "description": "Returns a string created from a raw template string."
+            },
+            "charCodeAt": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.charCodeAt()",
+                "description": "Returns a non-negative integer that is the UTF-16 encoded code point value at the given position."
+            },
+            "concat": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.concat()",
+                "description": "Combines the text of two strings and returns a new string."
+            },
+            "includes": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.includes()",
+                "description": "Determines whether one string may be found within another string."
+            },
+            "endsWith": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.endsWith()",
+                "description": "Determines whether a string ends with the characters of another string."
+            },
+            "indexOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.indexOf()",
+                "description": "Returns the index within the calling String object of the first occurrence of the specified value, or -1 if not found."
+            },
+            "lastIndexOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.lastIndexOf()",
+                "description": "Returns the index within the calling String object of the last occurrence of the specified value, or -1 if not found."
+            },
+            "localCompare": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.localCompare()",
+                "description": "Returns a number indicating whether a reference string comes before or after or is the same as the given string in sort order."
+            },
+            "match": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.match()",
+                "description": "Used to match a regular expression against a string."
+            },
+            "normalize": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.normalize()",
+                "description": "Returns the Unicode Normalization Form of the calling string value."
+            },
+            "repeat": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.repeat()",
+                "description": "Returns a string consisting of the elements of the object repeated the given times."
+            },
+            "replace": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.replace()",
+                "description": "Used to find a match between a regular expression and a string, and to replace the matched substring with a new substring."
+            },
+            "search": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.search()",
+                "description": "Executes the search for a match between a regular expression and a specified string."
+            },
+            "slice": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.slice()",
+                "description": "Extracts a section of a string and returns a new string."
+            },
+            "split": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.split()",
+                "description": "Splits a String object into an array of strings by separating the string into substrings."
+            },
+            "startsWith": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.startsWith()",
+                "description": "Determines whether a string begins with the characters of another string."
+            },
+            "substr": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.substr()",
+                "description": "Returns the characters in a string beginning at the specified location through the specified number of characters."
+            },
+            "substring": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.substring()",
+                "description": "Returns the characters in a string between two indexes into the string."
+            },
+            "toLocaleLowerCase": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.toLocaleLowerCase()",
+                "description": "The characters within a string are converted to lower case while respecting the current locale. For most languages, this will return the same as toLowerCase()."
+            },
+            "toLocaleUpperCase": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.toLocaleUpperCase()",
+                "description": "The characters within a string are converted to upper case while respecting the current locale. For most languages, this will return the same as toUpperCase()."
+            },
+            "toLowerCase": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.toLowerCase()",
+                "description": "Returns the calling string value converted to lower case."
+            },
+            "toSource": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.toSource()",
+                "description": "Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the Object.prototype.toSource() method. The toSource() method returns a string representing the source code of the object."
+            },
+            "toString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.toString()",
+                "description": "Returns a string representing the specified object. Overrides the Object.prototype.toString() method."
+            },
+            "toUpperCase": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.toUpperCase()",
+                "description": "Returns the calling string value converted to uppercase."
+            },
+            "trim": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.trim()",
+                "description": "Trims whitespace from the beginning and end of the string. Part of the ECMAScript 5 standard"
+            },
+            "trimLeft": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.trimLeft()",
+                "description": "Trims whitespace from the left side of the string."
+            },
+            "trimRight": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.trimRight()",
+                "description": "Trims whitespace from the right side of the string."
+            },
+            "valueOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype.valueOf()",
+                "description": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf() method."
+            },
+            "[@@iterator]": {
+                "isNative":true,
+                "childType":"method",
+                "name": "String.prototype[@@iterator]()",
+                "description": "Returns a new Iterator object that iterates over the code points of a String value, returning each code point as a String value."
+            }
+        }
+    },
+    "Array": {
+        "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.  Some people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
+        "children": {
+            "length": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Array.length",
+                "description": "The Array constructor's length property whose value is 1."
+            },
+            "prototype": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Array.prototype",
+                "description": "Allows the addition of properties to all array objects."
+            },
+            "constructor": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Array.prototype.constructor",
+                "description": "Specifies the function that creates an object's prototype."
+            },
+            "length": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Array.prototype.length",
+                "description": "Reflects the number of elements in an array."
+            },
+            "from": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.from()",
+                "description": "Creates a new Array instance from an array-like or iterable object."
+            },
+            "isArray": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.isArray()",
+                "description": "Returns true if a variable is an array, if not false."
+            },
+            "observe": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.observe()",
+                "description": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence."
+            },
+            "of": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.of()",
+                "description": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
+            },
+            "copyWithin": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.copyWithin()",
+                "description": "Copies a sequence of array elements within the array."
+            },
+            "fill": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.fill()",
+                "description": "Fills all the elements of an array from a start index to an end index with a static value."
+            },
+            "pop": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.pop()",
+                "description": "Removes the last element from an array and returns that element."
+            },
+            "push": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.push()",
+                "description": "Adds one or more elements to the end of an array and returns the new length of the array."
+            },
+            "reverse": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.reverse()",
+                "description": "Reverses the order of the elements of an array in place — the first becomes the last, and the last becomes the first."
+            },
+            "shift": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.shift()",
+                "description": "Removes the first element from an array and returns that element."
+            },
+            "sort": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.sort()",
+                "description": "Sorts the elements of an array in place and returns the array."
+            },
+            "splice": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.splice()",
+                "description": "Adds and/or removes elements from an array."
+            },
+            "unshift": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.unshift()",
+                "description": "Adds one or more elements to the front of an array and returns the new length of the array."
+            },
+            "concat": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.concat()",
+                "description": "Returns a new array comprised of this array joined with other array(s) and/or value(s)."
+            },
+            "includes": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.includes()",
+                "description": "Determines whether an array contains a certain element, returning true or false as appropriate."
+            },
+            "join": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.join()",
+                "description": "Joins all elements of an array into a string."
+            },
+            "slice": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.slice()",
+                "description": "Extracts a section of an array and returns a new array."
+            },
+            "toSource": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.toSource()",
+                "description": "Returns an array literal representing the specified array; you can use this value to create a new array. Overrides the Object.prototype.toSource() method."
+            },
+            "toString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.toString()",
+                "description": "Returns a string representing the array and its elements. Overrides the Object.prototype.toString() method."
+            },
+            "toLocaleString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.toLocaleString()",
+                "description": "Returns a localized string representing the array and its elements. Overrides the Object.prototype.toLocaleString() method."
+            },
+            "indexOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.indexOf()",
+                "description": "Returns the first (least) index of an element within the array equal to the specified value, or -1 if none is found."
+            },
+            "lastIndexOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.lastIndexOf()",
+                "description": "Returns the last (greatest) index of an element within the array equal to the specified value, or -1 if none is found."
+            },
+            "forEach": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.forEach()",
+                "description": "Calls a function for each element in the array."
+            },
+            "entries": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.entries()",
+                "description": "Returns a new Array Iterator object that contains the key/value pairs for each index in the array."
+            },
+            "every": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.every()",
+                "description": "Returns true if every element in this array satisfies the provided testing function."
+            },
+            "some": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.some()",
+                "description": "Returns true if at least one element in this array satisfies the provided testing function."
+            },
+            "filter": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.filter()",
+                "description": "Creates a new array with all of the elements of this array for which the provided filtering function returns true."
+            },
+            "find": {
+                "name": "Array.prototype.find()",
+                "description": "Returns the found value in the array, if an element in the array satisfies the provided testing function or undefined if not found."
+            },
+            "findIndex": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.findIndex()",
+                "description": "Returns the found index in the array, if an element in the array satisfies the provided testing function or -1 if not found."
+            },
+            "keys": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.keys()",
+                "description": "Returns a new Array Iterator that contains the keys for each index in the array."
+            },
+            "maps": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.maps()",
+                "description": "Creates a new array with the results of calling a provided function on every element in this array."
+            },
+            "reduce": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.reduce()",
+                "description": "Apply a function against an accumulator and each value of the array (from left-to-right) as to reduce it to a single value."
+            },
+            "reduceRight": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.reduceRight()",
+                "description": "Apply a function against an accumulator and each value of the array (from right-to-left) as to reduce it to a single value."
+            },
+            "values": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype.values()",
+                "description": "Returns a new Array Iterator object that contains the values for each index in the array."
+            },
+            "[@@iterator]": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Array.prototype[@@iterator]()",
+                "description": "Returns a new Array Iterator object that contains the values for each index in the array."
+            }
+        }
+    },
+    "Function": {
+        "description": "The Function constructor creates a new Function object. In JavaScript every function is actually a Function object. Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.  All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.",
+        "children": {
+            "arguments": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Function.arguments",
+                "description": "An array corresponding to the arguments passed to a function. This is deprecated as property of Function, use the arguments object available within the function instead."
+            },
+            "caller": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Function.caller ",
+                "description": "Specifies the function that invoked the currently executing function."
+            },
+            "length": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Function.length",
+                "description": "Specifies the number of arguments expected by the function."
+            },
+            "name": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Function.name",
+                "description": "The name of the function."
+            },
+            "displayName": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Function.displayName",
+                "description": "The display name of the function."
+            },
+            "constructor": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Function.prototype.constructor",
+                "description": "Specifies the function that creates an object's prototype. See Object.prototype.constructor for more details."
+            },
+            "apply": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Function.prototype.apply()",
+                "description": "Applies the method of another object in the context of a different object (the calling object); arguments can be passed as an Array object."
+            },
+            "bind": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Function.prototype.bind()",
+                "description": "Creates a new function which, when called, itself calls this function in the context of the provided value, with a given sequence of arguments preceding any provided when the new function was called."
+            },
+            "call": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Function.prototype.call()",
+                "description": "Calls (executes) a method of another object in the context of a different object (the calling object); arguments can be passed as they are."
+            },
+            "isGenerator": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Function.prototype.isGenerator()",
+                "description": "Returns true if the function is a generator; otherwise returns false."
+            },
+            "toSource": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Function.prototype.toSource()",
+                "description": "Returns a string representing the source code of the function. Overrides the Object.prototype.toSource method."
+            },
+            "toString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Function.prototype.toString()",
+                "description": "Returns a string representing the source code of the function. Overrides the Object.prototype.toString method."
+            }
+        }
+    },
+    "Number": {
+        "isNative": true,
+        "description": "The Number JavaScript object is a wrapper object allowing you to work with numerical values. A Number object is created using the Number() constructor.The primary uses for the Number object are:  If the argument cannot be converted into a number, it returns NaN.  In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.",
+        "children": {
+            "EPSILON": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.EPSILON",
+                "description": "The smallest interval between two representable numbers."
+            },
+            "MAX_SAFE_INTEGER": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.MAX_SAFE_INTEGER",
+                "description": "The maximum safe integer in JavaScript (2^53 - 1)."
+            },
+            "MAX_VALUE": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.MAX_VALUE",
+                "description": "The largest positive representable number."
+            },
+            "MIN_SAFE_INTEGER": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.MIN_SAFE_INTEGER",
+                "description": "The minimum safe integer in JavaScript (-(2^53 - 1))."
+            },
+            "MIN_VALUE": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.MIN_VALUE",
+                "description": "The smallest positive representable number - that is, the positive number closest to zero (without actually being zero)."
+            },
+            "NaN": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.NaN",
+                "description": "Special 'not a number' value."
+            },
+            "NEGATIVE_INFINITY": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.NEGATIVE_INFINITY",
+                "description": "Special value representing negative infinity; returned on overflow."
+            },
+            "POSITIVE_INFINITY": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.POSITIVE_INFINITY ",
+                "description": "Special value representing infinity; returned on overflow."
+            },
+            "prototype": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.prototype",
+                "description": "Allows the addition of properties to a Number object."
+            },
+            "constructor": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Number.prototype.constructor",
+                "description": "Returns the function that created this object's instance. By default this is the Number object."
+            },
+            "isNaN": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.isNaN()",
+                "description": "Determine whether the passed value is NaN."
+            },
+            "isFinite": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.isFinite()",
+                "description": "Determine whether the passed value is a finite number."
+            },
+            "isInteger": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.isInteger()",
+                "description": "Determine whether the passed value is an integer."
+            },
+            "isSafeInteger": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.isSafeInteger()",
+                "description": "Determine whether the passed value is a safe integer (number between -(2^53 - 1) and 2^53 - 1)."
+            },
+            "parseFloat": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.parseFloat()",
+                "description": "The value is the same as parseFloat() of the global object. The parseFloat() function parses a string argument and returns a floating point number."
+            },
+            "parseInt": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.parseInt()",
+                "description": "The value is the same as parseInt() of the global object. The parseInt() function parses a string argument and returns an integer of the specified radix (the base in mathematical numeral systems)."
+            },
+            "toExponential": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.toExponential()",
+                "description": "Returns a string representing the number in exponential notation."
+            },
+            "toFixed": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.toFixed()",
+                "description": "Returns a string representing the number in fixed-point notation."
+            },
+            "toLocaleString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.toLocaleString()",
+                "description": "Returns a string with a language sensitive representation of this number. Overrides the Object.prototype.toLocaleString() method"
+            },
+            "toPrecision": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.toPrecision()",
+                "description": "Returns a string representing the number to a specified precision in fixed-point or exponential notation."
+            },
+            "toSource": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.toSource()",
+                "description": "Returns an object literal representing the specified Number object; you can use this value to create a new object. Overrides the Object.prototype.toSource() method."
+            },
+            "toString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.toString()",
+                "description": "Returns a string representing the specified object in the specified radix (base). Overrides the Object.prototype.toString() method."
+            },
+            "valueOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Number.prototype.valueOf()",
+                "description": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf() method."
+            }
+        }
+    },
+    "Boolean": {
+        "isNative" : true,
+        "description": "The Boolean object is an object wrapper for a boolean value. The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (''), the object has an initial value of false. All other values, including any object or the string 'false', create an object with an initial value of true. Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object. Any object whose value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement.",
+        "children": {
+            "length": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Boolean.length",
+                "isNative":true,
+                "childType":"property",
+                "description": "Length property whose value is 1."
+            },
+            "prototype": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Boolean.prototype",
+                "description": "Represents the prototype for the Boolean constructor."
+            },
+            "constructor": {
+                "isNative":true,
+                "childType":"property",
+                "name": "Boolean.prototype.constructor",
+                "description": "Returns the function that created an instance's prototype. This is the Boolean function by default."
+            },
+            "toSource": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Boolean.prototype.toSource()",
+                "description": "Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object. Overrides the Object.prototype.toSource() method."
+            },
+            "toString": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Boolean.prototype.toString()",
+                "description": "Returns a string of either 'true or 'false' depending upon the value of the object. Overrides the Object.prototype.toString() method."
+            },
+            "valueOf": {
+                "isNative":true,
+                "childType":"method",
+                "name": "Boolean.prototype.valueOf()",
+                "description": "Returns the primitive value of the Boolean object. Overrides the Object.prototype.valueOf() method."
+            }
+        }
+    },
+    "url": {
+        "isNative": false,
+        "description": "Parsed URL objects have some or all of the following fields,  depending on whether or not they exist in the URL string. Any parts that are not in the URL string will not be in the parsed object. Examples are shown for the URL",
+        "children": {
+            "parse": {
+                "childType": "method",
+                "isNative": false,
+                "name": "URL.parse()",
+                "description": "Take a URL string, and return an object"
+            },
+            "format": {
+                "childType": "method",
+                "isNative": false,
+                "name": "URL.format()",
+                "description": "Take a parsed URL object, and return a formatted URL string"
+            },
+            "resolve": {
+                "childType": "method",
+                "isNative": false,
+                "name": "URL.resolve",
+                "description": "take a base URL, and a href URL, and resolve them as a browser would for an anchor tag"
+            }
+        }  
+    },
+    "Buffer": {
+        "isNative":false,
+        "description": "Pure JavaScript is Unicode friendly but not nice to binary data.  When dealing with TCP streams or the file system, it's necessary to handle octet streams.  Node.js has several strategies for manipulating, creating, and consuming octet streams.   Raw data is stored in instances of the Buffer class.  A Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap. A Buffer cannot be resized.  The Buffer class is a global, making it very rare that one would need to ever require('buffer').",
+        "children": {
+            "length": {
+                "childType":"property",
+                "isNative":false,
+                "name": "buf.length",
+                "description": "return length of buffer"
+            },
+            "isBuffer":{
+                "childType":"property",
+                "isNative":false,
+                "name": "Buffer.isBuffer(obj)",
+                "description": "Return if obj is a buffer"
+            },
+            "toJSON":{
+                "childType":"method",
+                "isNative":false,
+                "name": "Buffer.toJSON()",
+                "description": "Returns a JSON-representation of the Buffer instance.  JSON.stringify implicitly calls this function when stringifying a Buffer instance."
+            },
+            "slice":{
+                "childType":"method",
+                "isNative":false,
+                "name": "buf.slice([start[, end]])",
+                "description": "Returns a new buffer which references the same memory as the old,  but offset and cropped by the start (defaults to 0) and end (defaults to buffer.length) indexes.  Negative indexes start from the end of the buffer."
+            }
+        }
+    }
+}

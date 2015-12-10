@@ -1,5 +1,6 @@
 .docs_backup
 node_modules
-.swp
-.swo
-
+.DS_Store
+*.swp
+*.swo
+LICENSE
