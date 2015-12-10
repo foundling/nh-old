@@ -319,17 +319,6 @@
       "Int16Array.of": "Creates a new Int16Array with a variable number of arguments. See also Array.of()."
     }
   },
-  "Int16x8.nodehelp": {
-    "description": "",
-    "syntax": "SIMD.Int16x8(s0, s1, s2, s3, s4, s5, s6, s7);",
-    "parameters": {
-      "s[0-7]": "An integer specifying the value of the lane. Defaults to 0."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "Int32Array.nodehelp": {
     "description": "",
     "syntax": "new Int32Array(length);\nnew Int32Array(typedArray);\nnew Int32Array(object);\nnew Int32Array(buffer [, byteOffset [, length]]);",
@@ -346,6 +335,17 @@
       "Int32Array.from": "Creates a new Int32Array from an array-like or iterable object. See also Array.from().",
       "Int32Array.of": "Creates a new Int32Array with a variable number of arguments. See also Array.of()."
     }
+  },
+  "Int16x8.nodehelp": {
+    "description": "",
+    "syntax": "SIMD.Int16x8(s0, s1, s2, s3, s4, s5, s6, s7);",
+    "parameters": {
+      "s[0-7]": "An integer specifying the value of the lane. Defaults to 0."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "Int32x4.nodehelp": {
     "description": "",
@@ -534,6 +534,15 @@
       "Math.trunc(x)": "Returns the integral part of the number x, removing any fractional digits."
     }
   },
+  "NaN.nodehelp": {
+    "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
+    "syntax": "NaN",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "Number.nodehelp": {
     "description": "The primary uses for the Number object are:\n If the argument cannot be converted into a number, it returns NaN.\n In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.\n",
     "syntax": "new Number(value);",
@@ -571,6 +580,45 @@
       "Number.parseInt": "The value is the same as parseInt() of the global object."
     }
   },
+  "NumberFormat.nodehelp": {
+    "description": "",
+    "syntax": "new Intl.NumberFormat([locales[, options]])\nIntl.NumberFormat.call(this[, locales[, options]])\n",
+    "parameters": {
+      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension key is allowed:\n\n \n  nu\n  The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".\n \n ",
+      "nu": "The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".",
+      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  style\n  The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".\n  currency\n  The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.\n  currencyDisplay\n  How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".\n  useGrouping\n  Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.\n \n\n The following properties fall into two groups: minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group, minimumSignificantDigits and maximumSignificantDigits in the other. If at least one property from the second group is defined, then the first group is ignored.\n\n \n  minimumIntegerDigits\n  The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.\n  minimumFractionDigits\n  The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).\n  maximumFractionDigits\n  The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.\n  minimumSignificantDigits\n  The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.\n  maximumSignificantDigits\n  The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.\n \n ",
+      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
+      "style": "The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".",
+      "currency": "The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.",
+      "currencyDisplay": "How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".",
+      "useGrouping": "Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.",
+      "minimumIntegerDigits": "The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.",
+      "minimumFractionDigits": "The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).",
+      "maximumFractionDigits": "The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.",
+      "minimumSignificantDigits": "The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.",
+      "maximumSignificantDigits": "The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Intl.NumberFormat.prototype": "Allows the addition of properties to all objects."
+    },
+    "constructorMethods": {
+      "Intl.NumberFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    }
+  },
+  "Object.nodehelp": {
+    "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.When called in a non-constructor context, Object behaves identically to new Object().See also the object initializer / literal syntax.",
+    "syntax": "// Object initialiser or literal\n{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }\n\n// Called as a constructor\nnew Object([value])",
+    "parameters": {
+      "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
+      "value": "Any value."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "ParallelArray.nodehelp": {
     "description": "",
     "syntax": "new ParallelArray()\nnew ParallelArray([element0, element1, ...])\nnew ParallelArray(arrayLength, elementalFunction)",
@@ -590,18 +638,6 @@
       "partition": "get",
       "get": ""
     }
-  },
-  "Object.nodehelp": {
-    "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.When called in a non-constructor context, Object behaves identically to new Object().See also the object initializer / literal syntax.",
-    "syntax": "// Object initialiser or literal\n{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }\n\n// Called as a constructor\nnew Object([value])",
-    "parameters": {
-      "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
-      "value": "Any value."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
   },
   "Promise.nodehelp": {
     "description": "A Promise represents a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers to an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future.A Promise is in one of these states:\n pending: initial state, not fulfilled or rejected.\n fulfilled: meaning that the operation completed successfully.\n rejected: meaning that the operation failed.\nA pending promise can become either fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained—an operation called composition.\nNote: A promise is said to be settled if it is either fulfilled or rejected, but not pending. You will also hear the term resolved used with promises — this means that the promise is settled, or it is locked into a promise chain. Domenic Denicola's States and fates contains more details about promise terminology.\n",
@@ -739,36 +775,9 @@
     },
     "constructorMethods": {}
   },
-  "NumberFormat.nodehelp": {
-    "description": "",
-    "syntax": "new Intl.NumberFormat([locales[, options]])\nIntl.NumberFormat.call(this[, locales[, options]])\n",
-    "parameters": {
-      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension key is allowed:\n\n \n  nu\n  The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".\n \n ",
-      "nu": "The numbering system to be used. Possible values include: \"arab\", \"arabext\", \"bali\", \"beng\", \"deva\", \"fullwide\", \"gujr\", \"guru\", \"hanidec\", \"khmr\", \"knda\", \"laoo\", \"latn\", \"limb\", \"mlym\", \"mong\", \"mymr\", \"orya\", \"tamldec\", \"telu\", \"thai\", \"tibt\".",
-      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  style\n  The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".\n  currency\n  The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.\n  currencyDisplay\n  How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".\n  useGrouping\n  Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.\n \n\n The following properties fall into two groups: minimumIntegerDigits, minimumFractionDigits, and maximumFractionDigits in one group, minimumSignificantDigits and maximumSignificantDigits in the other. If at least one property from the second group is defined, then the first group is ignored.\n\n \n  minimumIntegerDigits\n  The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.\n  minimumFractionDigits\n  The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).\n  maximumFractionDigits\n  The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.\n  minimumSignificantDigits\n  The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.\n  maximumSignificantDigits\n  The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits.\n \n ",
-      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
-      "style": "The formatting style to use. Possible values are \"decimal\" for plain number formatting, \"currency\" for currency formatting, and \"percent\" for percent formatting; the default is \"decimal\".",
-      "currency": "The currency to use in currency formatting. Possible values are the ISO 4217 currency codes, such as \"USD\" for the US dollar, \"EUR\" for the euro, or \"CNY\" for the Chinese RMB — see the Current currency & funds code list. There is no default value; if the style is \"currency\", the currency property must be provided.",
-      "currencyDisplay": "How to display the currency in currency formatting. Possible values are \"symbol\" to use a localized currency symbol such as €, \"code\" to use the ISO currency code, \"name\" to use a localized currency name such as \"dollar\"; the default is \"symbol\".",
-      "useGrouping": "Whether to use grouping separators, such as thousands separators or thousand/lakh/crore separators. Possible values are true and false; the default is true.",
-      "minimumIntegerDigits": "The minimum number of integer digits to use. Possible values are from 1 to 21; the default is 1.",
-      "minimumFractionDigits": "The minimum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number and percent formatting is 0; the default for currency formatting is the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information).",
-      "maximumFractionDigits": "The maximum number of fraction digits to use. Possible values are from 0 to 20; the default for plain number formatting is the larger of minimumFractionDigits and 3; the default for currency formatting is the larger of minimumFractionDigits and the number of minor unit digits provided by the ISO 4217 currency code list (2 if the list doesn't provide that information); the default for percent formatting is the larger of minimumFractionDigits and 0.",
-      "minimumSignificantDigits": "The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.",
-      "maximumSignificantDigits": "The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.NumberFormat.prototype": "Allows the addition of properties to all objects."
-    },
-    "constructorMethods": {
-      "Intl.NumberFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
-    }
-  },
-  "NaN.nodehelp": {
-    "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
-    "syntax": "NaN",
+  "SIMD.nodehelp": {
+    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
+    "syntax": "",
     "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -798,6 +807,15 @@
       "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
     }
   },
+  "StopIteration.nodehelp": {
+    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
+    "syntax": "StopIteration",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "Symbol.nodehelp": {
     "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
     "syntax": "Symbol([description])",
@@ -815,14 +833,26 @@
       "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
     }
   },
-  "StopIteration.nodehelp": {
-    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
-    "syntax": "StopIteration",
-    "parameters": {},
-    "prototypeProperties": {},
+  "String.nodehelp": {
+    "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
+    "syntax": "'string text'\n\"string text\"\n\"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்\"String(thing)\nnew String(thing)",
+    "parameters": {
+      "thing": "Anything to be converted to a string."
+    },
+    "prototypeProperties": {
+      "String.prototype.constructor": "Specifies the function that creates an object's prototype.",
+      "String.prototype.length": "Reflects the length of the string.",
+      "N": "Used to access the character in the Nth position where N is a positive integer between 0 and one less than the value of length. These properties are read-only."
+    },
     "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "constructorProperties": {
+      "String.prototype": "Allows the addition of properties to a String object."
+    },
+    "constructorMethods": {
+      "String.fromCharCode": "Returns a string created by using the specified sequence of Unicode values.",
+      "String.fromCodePoint": "Returns a string created by using the specified sequence of code points.",
+      "String.raw": "Returns a string created from a raw template string."
+    }
   },
   "SyntaxError.nodehelp": {
     "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
@@ -893,6 +923,23 @@
     },
     "constructorMethods": {}
   },
+  "Uint32Array.nodehelp": {
+    "description": "",
+    "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Uint32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
+      "Uint32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
+      "Uint32Array.name": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
+      "Uint32Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint32Array.from": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
+      "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
+    }
+  },
   "Uint16Array.nodehelp": {
     "description": "",
     "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
@@ -908,32 +955,6 @@
     "constructorMethods": {
       "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
       "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "SIMD.nodehelp": {
-    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "Uint8ClampedArray.nodehelp": {
-    "description": "",
-    "syntax": "new Uint8ClampedArray(length);\nnew Uint8ClampedArray(typedArray);\nnew Uint8ClampedArray(object);\nnew Uint8ClampedArray(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint8ClampedArray.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8ClampedArray.",
-      "Uint8ClampedArray.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8ClampedArray.prototype.length.",
-      "Uint8ClampedArray.name": "Returns the string value of the constructor name. In the case of the Uint8ClampedArray type: \"Uint8ClampedArray\".",
-      "Uint8ClampedArray.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
-      "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
     }
   },
   "WeakMap.nodehelp": {
@@ -954,6 +975,23 @@
       "WeakMap.prototype.has(key)": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
       "WeakMap.prototype.set(key, value)": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
       "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
+    }
+  },
+  "WeakSet.nodehelp": {
+    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
+    "syntax": " new WeakSet([iterable]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "WeakSet.length": "The value of the length property is 0.",
+      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
+    },
+    "constructorMethods": {
+      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
+      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
+      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
+      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
     }
   },
   "Uint8Array.nodehelp": {
@@ -986,61 +1024,6 @@
     },
     "constructorMethods": {}
   },
-  "WeakSet.nodehelp": {
-    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
-    "syntax": " new WeakSet([iterable]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "WeakSet.length": "The value of the length property is 0.",
-      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
-    },
-    "constructorMethods": {
-      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
-      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
-      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
-      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
-    }
-  },
-  "Uint32Array.nodehelp": {
-    "description": "",
-    "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
-      "Uint32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
-      "Uint32Array.name": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
-      "Uint32Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint32Array.from": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
-      "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "String.nodehelp": {
-    "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
-    "syntax": "'string text'\n\"string text\"\n\"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்\"String(thing)\nnew String(thing)",
-    "parameters": {
-      "thing": "Anything to be converted to a string."
-    },
-    "prototypeProperties": {
-      "String.prototype.constructor": "Specifies the function that creates an object's prototype.",
-      "String.prototype.length": "Reflects the length of the string.",
-      "N": "Used to access the character in the Nth position where N is a positive integer between 0 and one less than the value of length. These properties are read-only."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "String.prototype": "Allows the addition of properties to a String object."
-    },
-    "constructorMethods": {
-      "String.fromCharCode": "Returns a string created by using the specified sequence of Unicode values.",
-      "String.fromCodePoint": "Returns a string created by using the specified sequence of code points.",
-      "String.raw": "Returns a string created from a raw template string."
-    }
-  },
   "decodeURI.nodehelp": {
     "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
     "syntax": "decodeURI(encodedURI)",
@@ -1063,11 +1046,28 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "escape.nodehelp": {
-    "description": "The escape function is a property of the global object. Special characters are encoded with the exception of: @*_+-./The hexadecimal form for characters, whose code unit value is 0xFF or less, is a two-digit escape sequence: %xx. For characters with a greater code unit, the four-digit format %uxxxx is used.",
-    "syntax": "escape(str)",
+  "Uint8ClampedArray.nodehelp": {
+    "description": "",
+    "syntax": "new Uint8ClampedArray(length);\nnew Uint8ClampedArray(typedArray);\nnew Uint8ClampedArray(object);\nnew Uint8ClampedArray(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Uint8ClampedArray.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8ClampedArray.",
+      "Uint8ClampedArray.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8ClampedArray.prototype.length.",
+      "Uint8ClampedArray.name": "Returns the string value of the constructor name. In the case of the Uint8ClampedArray type: \"Uint8ClampedArray\".",
+      "Uint8ClampedArray.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
+      "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
+    }
+  },
+  "encodeURI.nodehelp": {
+    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
+    "syntax": "encodeURI(URI)",
     "parameters": {
-      "str": "A string to be encoded."
+      "URI": "A complete Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1079,17 +1079,6 @@
     "syntax": "eval(string)",
     "parameters": {
       "string": "A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "encodeURI.nodehelp": {
-    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
-    "syntax": "encodeURI(URI)",
-    "parameters": {
-      "URI": "A complete Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1118,11 +1107,11 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "parseInt.nodehelp": {
-    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
-    "syntax": "parseInt(string, radix);",
+  "isNaN.nodehelp": {
+    "description": "",
+    "syntax": "isNaN(testValue)",
     "parameters": {
-      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
+      "testValue": "The value to be tested."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1133,6 +1122,39 @@
     "description": "The value null is a literal (not a property of the global object like undefined can be). In APIs, null is often retrieved in place where an object can be expected but no object is relevant. When checking for null or undefined beware of the differences between equality (==) and identity (===) operators (type-conversion is performed with the former).// foo does not exist, it is not defined and has never been initialized:\n> foo\n\"ReferenceError: foo is not defined\"\n\n// foo is known to exist now but it has no type or value:\n> var foo = null; foo\n\"null\"\n",
     "syntax": "null ",
     "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "escape.nodehelp": {
+    "description": "The escape function is a property of the global object. Special characters are encoded with the exception of: @*_+-./The hexadecimal form for characters, whose code unit value is 0xFF or less, is a two-digit escape sequence: %xx. For characters with a greater code unit, the four-digit format %uxxxx is used.",
+    "syntax": "escape(str)",
+    "parameters": {
+      "str": "A string to be encoded."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "parseFloat.nodehelp": {
+    "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
+    "syntax": "parseFloat(string)",
+    "parameters": {
+      "string": "A string that represents the value you want to parse."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "parseInt.nodehelp": {
+    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
+    "syntax": "parseInt(string, radix);",
+    "parameters": {
+      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
+    },
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
@@ -1163,28 +1185,6 @@
     "syntax": "uneval(object)",
     "parameters": {
       "object": "A JavaScript expression or statement."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "parseFloat.nodehelp": {
-    "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
-    "syntax": "parseFloat(string)",
-    "parameters": {
-      "string": "A string that represents the value you want to parse."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "isNaN.nodehelp": {
-    "description": "",
-    "syntax": "isNaN(testValue)",
-    "parameters": {
-      "testValue": "The value to be tested."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
