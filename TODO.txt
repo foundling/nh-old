@@ -1,14 +1,2 @@
-api server:
-  - checks date against last update
-  - if date is a week past the last update, rerun doc download/parse and send new version
-  - concatenate each doc set and generate a hash to indicate uniqueness. send this hash before
-    sending the docs. 
-
-local client:
-  - when user starts node-help, hit api at [ api/nodehelp/version ] for updated docs.
-  - api gives a docset unique  hash. if matches client's, exit without updating, docs up
-    to date.
-  - if it doesn't match, hit server again at [ api/nodehelp ]
-  - again for data 
-
+[todo] 1. add native boolean field to distinguish between node and native objs. 2. workout the db recursive traversal algorithm, 3. fix it to take into account the new { version: docs } structure
 
