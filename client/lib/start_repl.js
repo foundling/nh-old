@@ -4,9 +4,10 @@ var replGlobals = require('./repl_globals');
 
 
 
-var startRepl = function() {
+var startRepl = function(userNotifications) {
 
-  tools.printHeader(configManager.get('header'));
+  tools.printHeader();
+  tools.notifyUser(userNotifications);
   var repl = require('repl').start({
     prompt: 'node-help > ',
     ignoreUndefined: true

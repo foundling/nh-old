@@ -15,6 +15,10 @@ ConfigManager.prototype.set = function(key, value) {
   return this._nconf.set(key, value); 
 };
 
+ConfigManager.prototype.save = function() {
+  this._nconf.save(); 
+};
+
 module.exports = exports = (function(configFile) {
   return new ConfigManager(configFile);
 }('./config.json'));

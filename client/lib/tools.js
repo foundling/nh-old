@@ -9,17 +9,14 @@ var wrap = function(text, maxWidth, paddingLength, paddingChar) {
     var lines = textToLines(text, maxWidth);
     var formattedText = format(lines, padding, true); 
     return formattedText;
-
 };
 
 var buildPadding = function(paddingLength, padChar) {
-
     var output = ''; 
     while (paddingLength > 0) {
-        output += padChar;
-        paddingLength--;
+      output += padChar;
+      paddingLength--;
     }
-
     return output;
 };
 
@@ -128,6 +125,10 @@ function printResults(object){
     }
 }
 
+var notifyUser = function(msg) {
+  if (msg) console.log(msg.cyan.bgWhite);
+};
+
 module.exports = {
     wrap: wrap,
     clear: clear,
@@ -137,4 +138,5 @@ module.exports = {
     buildPadding: buildPadding,
     printHeader: printHeader, 
     printResults: printResults,
+    notifyUser: notifyUser
 };
