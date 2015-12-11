@@ -20,7 +20,8 @@ var update = function(startRepl) {
       request(docsUrl, function(err, response, body) {
          if (err) throw err;
          var newDocs = JSON.parse(body).docs;
-         var newDocsObj = {newDocsVersion: newDocs};
+         var newDocsObj = {};
+         newDocsObj[newDocsVersion] = newDocs;
         fs.writeFile(configManager.get('dbPath'), JSON.stringify(newDocsObj), function(err) {
           if (err) throw err; 
         });
