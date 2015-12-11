@@ -1,9 +1,5 @@
 var request = require('request');
 var startRepl = require('./start_repl');
-var nconf = require('./nconf');
-
-nconf.use('file', { file: './config.json' });
-nconf.load();
 
 var update = function(startRepl) {
   // future method should be:

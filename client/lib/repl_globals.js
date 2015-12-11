@@ -1,5 +1,5 @@
 var docStore = require('./doc_store');
-var config = require('./config');
+var configManager = require('./config_manager');
 
 /* NODEHELP REPL GLOBAL FUNCTIONS  */
 var docs = function(queryString) {

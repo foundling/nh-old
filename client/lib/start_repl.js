@@ -1,4 +1,4 @@
-var config = require('./config');
+var configManager = require('./config_manager');
 var tools = require('./tools');
 var replGlobals = require('./repl_globals');
 
@@ -6,7 +6,7 @@ var replGlobals = require('./repl_globals');
 
 var startRepl = function() {
 
-  tools.printHeader(config);
+  tools.printHeader(configManager.get('header'));
   var repl = require('repl').start({
     prompt: 'node-help > ',
     ignoreUndefined: true

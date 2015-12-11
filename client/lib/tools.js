@@ -1,5 +1,6 @@
 var fs = require('fs');
 var colors = require('colors');
+var configManager = require('./config_manager.js');
 
 var wrap = function(text, maxWidth, paddingLength, paddingChar) {  
 
@@ -75,16 +76,16 @@ var clear = function () {
   process.stdout.write('\u001B[2J\u001B[0;0f');
 };
 
-var printHeader = function(appInfo) {
-    var marquee = fs.readFileSync(__dirname + '/marquee.txt').toString();
+var printHeader = function() {
+    var marquee = configManager.get('header'); 
     var help_string = 
     [    
          marquee,
          '* run help() for nodehelp usage information   ',
          '                                              ',
-         'node-help version: ' + appInfo.nodeHelpVersion.magenta.bgWhite,
-         'your node version: '.cyan + (' ' + appInfo.nodeVersion + ' ').magenta.bgWhite,
-         'source repo:' + appInfo.sourceRepo,
+         'node-help version: ' + configManager.get('nodeHelpVersion').magenta.bgWhite,
+         'your node version: '.cyan + (' ' + configManager.get('nodeVersion') + ' ').magenta.bgWhite,
+         'source repo:' + configManager.get('sourceRepo'),
     ]
     .join('\n');
 

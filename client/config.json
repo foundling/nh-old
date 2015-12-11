@@ -1,1 +1,6 @@
-{"nodeVersion":"v0.10.35","nodeHelpVersion":"0.2.0","sourceRepo":"https://github.com/foundling/node-help"}
+{
+  "nodeVersion": "v0.10.35",
+  "nodeHelpVersion": "0.2.0",
+  "sourceRepo": "https://github.com/foundling/node-help",
+  "header": "\n                            .o8            \n                            888            \nooo. .oo.    .ooooo.   .oooo888   .ooooo.  \n 888P\"Y88b  d88' `88b d88' `888  d88' `88b \n 888   888  888   888 888   888  888ooo888 \n 888   888  888   888 888   888  888    .o \no888o o888o `Y8bod8P' `Y8bod88P\" `Y8bod8P' \n\noooo                  oooo             \n 888                   888             \n 888 .oo.    .ooooo.   888  oo.ooooo.  \n 888P\"Y88b  d88' `88b  888   888' `88b \n 888   888  888ooo888  888   888   888 \n 888   888  888    .o  888   888   888 \no888o o888o `Y8bod8P' o888o  888bod8P' \n                             888       \n                            o888o      \n\n"
+}
