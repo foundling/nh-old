@@ -23,7 +23,7 @@ var startServer = module.exports = exports = function(docs, versionHash) {
     console.log('Server Up On Port %d ... ', PORT); 
   });
 
-  checkForUpdates(15000);
+  checkForUpdates();
 
   process.on('update', function(updatedDocs, updatedHash) {
     console.log(updatedHash);
