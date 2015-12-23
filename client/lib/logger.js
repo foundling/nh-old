@@ -1,6 +1,6 @@
 // use this module to write to log file, for example when the system tries to update but is offline.
 var fs = require('fs');
-var _LOG = './../logs/node-help.client.log';
+var _LOG = './logs/node-help.client.log';
 
 var Logger = function(log) {
   if (log) {

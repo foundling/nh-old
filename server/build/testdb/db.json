@@ -250,6 +250,18 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
+  "Function.nodehelp": {
+    "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
+    "syntax": "new Function ([arg1[, arg2[, ...argN]],] functionBody)",
+    "parameters": {
+      "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
+      "functionBody": "A string containing the JavaScript statements comprising the function definition."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "Generator.nodehelp": {
     "description": "",
     "syntax": "function* gen() { \n  yield 1;\n  yield 2;\n  yield 3;\n}\n\nvar g = gen(); // \"Generator { }\"",
@@ -262,18 +274,6 @@
       "Generator.prototype.return": "Returns the given value and finishes the generator.",
       "Generator.prototype.throw": "Throws an error to a generator."
     }
-  },
-  "Function.nodehelp": {
-    "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
-    "syntax": "new Function ([arg1[, arg2[, ...argN]],] functionBody)",
-    "parameters": {
-      "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
-      "functionBody": "A string containing the JavaScript statements comprising the function definition."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
   },
   "GeneratorFunction.nodehelp": {
     "description": "generator function objects created with the GeneratorFunction constructor are parsed when the function is created. This is less efficient than declaring a generator function with a function* expression and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: generator function created with the GeneratorFunction constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the GeneratorFunction constructor was called. This is different from using eval with code for a generator function expression.\nInvoking the GeneratorFunction constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
@@ -378,16 +378,21 @@
       "Int8Array.of": "Creates a new Int8Array with a variable number of arguments. See also Array.of()."
     }
   },
-  "Int8x16.nodehelp": {
-    "description": "",
-    "syntax": "SIMD.Int8x16(s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15);",
+  "Iterator.nodehelp": {
+    "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
+    "syntax": "Iterator(object, [keyOnly])",
     "parameters": {
-      "s[0-15]": "An integer specifying the value of the lane. Defaults to 0."
+      "object": "Object to iterate over properties.",
+      "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "constructorProperties": {
+      "Iterator.prototype[@@iterator]": "Returns a function that returns iterator object, that conforms to iterator protocol."
+    },
+    "constructorMethods": {
+      "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
+    }
   },
   "InternalError.nodehelp": {
     "description": "An InternalError is thrown whenever an internal error in the JavaScript engine occurred.Example cases are mostly when something is too large, e.g.:\n \"too many switch cases\",\n \"too many parentheses in regular expression\",\n \"array initializer too large\",\n \"too much recursion\".\n",
@@ -412,35 +417,6 @@
     },
     "constructorMethods": {}
   },
-  "Intl.nodehelp": {
-    "description": "",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.Collator": "Constructor for collators, objects that enable language sensitive string comparison.",
-      "Intl.DateTimeFormat": "Constructor for objects that enable language sensitive date and time formatting.",
-      "Intl.NumberFormat": "Constructor for objects that enable language sensitive number formatting."
-    },
-    "constructorMethods": {}
-  },
-  "Iterator.nodehelp": {
-    "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
-    "syntax": "Iterator(object, [keyOnly])",
-    "parameters": {
-      "object": "Object to iterate over properties.",
-      "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Iterator.prototype[@@iterator]": "Returns a function that returns iterator object, that conforms to iterator protocol."
-    },
-    "constructorMethods": {
-      "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
-    }
-  },
   "JSON.nodehelp": {
     "description": "",
     "syntax": "",
@@ -452,6 +428,17 @@
       "JSON.parse": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
       "JSON.stringify": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner."
     }
+  },
+  "Int8x16.nodehelp": {
+    "description": "",
+    "syntax": "SIMD.Int8x16(s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15);",
+    "parameters": {
+      "s[0-15]": "An integer specifying the value of the lane. Defaults to 0."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "Map.nodehelp": {
     "description": "A Map object iterates its elements in insertion order — a for...of loop returns an array of [key, value] for each iteration.",
@@ -477,61 +464,6 @@
       "Map.prototype.set(key, value)": "Sets the value for the key in the Map object. Returns the Map object.",
       "Map.prototype.values": "Returns a new Iterator object that contains the values for each element in the Map object in insertion order.",
       "Map.prototype[@@iterator]": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order."
-    }
-  },
-  "Math.nodehelp": {
-    "description": "Unlike the other global objects, Math is not a constructor. All properties and methods of Math are static. You refer to the constant pi as Math.PI and you call the sine function as Math.sin(x), where x is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Math.E": "Euler's constant and the base of natural logarithms, approximately 2.718.",
-      "Math.LN2": "Natural logarithm of 2, approximately 0.693.",
-      "Math.LN10": "Natural logarithm of 10, approximately 2.303.",
-      "Math.LOG2E": "Base 2 logarithm of E, approximately 1.443.",
-      "Math.LOG10E": "Base 10 logarithm of E, approximately 0.434.",
-      "Math.PI": "Ratio of the circumference of a circle to its diameter, approximately 3.14159.",
-      "Math.SQRT1_2": "Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.",
-      "Math.SQRT2": "Square root of 2, approximately 1.414."
-    },
-    "constructorMethods": {
-      "Math.abs(x)": "Returns the absolute value of a number.",
-      "Math.acos(x)": "Returns the arccosine of a number.",
-      "Math.acosh(x)": "Returns the hyperbolic arccosine of a number.",
-      "Math.asin(x)": "Returns the arcsine of a number.",
-      "Math.asinh(x)": "Returns the hyperbolic arcsine of a number.",
-      "Math.atan(x)": "Returns the arctangent of a number.",
-      "Math.atanh(x)": "Returns the hyperbolic arctangent of a number.",
-      "Math.atan2(y, x)": "Returns the arctangent of the quotient of its arguments.",
-      "Math.cbrt(x)": "Returns the cube root of a number.",
-      "Math.ceil(x)": "Returns the smallest integer greater than or equal to a number.",
-      "Math.clz32(x)": "Returns the number of leading zeroes of a 32-bit integer.",
-      "Math.cos(x)": "Returns the cosine of a number.",
-      "Math.cosh(x)": "Returns the hyperbolic cosine of a number.",
-      "Math.exp(x)": "Returns Ex, where x is the argument, and E is Euler's constant (2.718…), the base of the natural logarithm.",
-      "Math.expm1(x)": "Returns subtracting 1 from exp(x).",
-      "Math.floor(x)": "Returns the largest integer less than or equal to a number.",
-      "Math.fround(x)": "Returns the nearest single precision float representation of a number.",
-      "Math.hypot([x[, y[, …]]])": "Returns the square root of the sum of squares of its arguments.",
-      "Math.imul(x, y)": "Returns the result of a 32-bit integer multiplication.",
-      "Math.log(x)": "Returns the natural logarithm (loge, also ln) of a number.",
-      "Math.log1p(x)": "Returns the natural logarithm of 1 + x (loge, also ln) of a number.",
-      "Math.log10(x)": "Returns the base 10 logarithm of a number.",
-      "Math.log2(x)": "Returns the base 2 logarithm of a number.",
-      "Math.max([x[, y[, …]]])": "Returns the largest of zero or more numbers.",
-      "Math.min([x[, y[, …]]])": "Returns the smallest of zero or more numbers.",
-      "Math.pow(x, y)": "Returns base to the exponent power, that is, baseexponent.",
-      "Math.random": "Returns a pseudo-random number between 0 and 1.",
-      "Math.round(x)": "Returns the value of a number rounded to the nearest integer.",
-      "Math.sign(x)": "Returns the sign of the x, indicating whether x is positive, negative or zero.",
-      "Math.sin(x)": "Returns the sine of a number.",
-      "Math.sinh(x)": "Returns the hyperbolic sine of a number.",
-      "Math.sqrt(x)": "Returns the positive square root of a number.",
-      "Math.tan(x)": "Returns the tangent of a number.",
-      "Math.tanh(x)": "Returns the hyperbolic tangent of a number.",
-      "Math.toSource": "Returns the string \"Math\".",
-      "Math.trunc(x)": "Returns the integral part of the number x, removing any fractional digits."
     }
   },
   "NaN.nodehelp": {
@@ -639,6 +571,20 @@
       "get": ""
     }
   },
+  "Proxy.nodehelp": {
+    "description": "",
+    "syntax": "var p = new Proxy(target, handler);\n",
+    "parameters": {
+      "target": "A target object (can be any sort of objects, including a native array, a function or even another proxy) or function to wrap with Proxy.",
+      "handler": "An object whose properties are functions which define the behavior of the proxy when an operation is performed on it."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {
+      "Proxy.revocable": "Creates a revocable Proxy object."
+    }
+  },
   "Promise.nodehelp": {
     "description": "A Promise represents a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers to an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future.A Promise is in one of these states:\n pending: initial state, not fulfilled or rejected.\n fulfilled: meaning that the operation completed successfully.\n rejected: meaning that the operation failed.\nA pending promise can become either fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained—an operation called composition.\nNote: A promise is said to be settled if it is either fulfilled or rejected, but not pending. You will also hear the term resolved used with promises — this means that the promise is settled, or it is locked into a promise chain. Domenic Denicola's States and fates contains more details about promise terminology.\n",
     "syntax": "new Promise(executor);\nnew Promise(function(resolve, reject) { ... });",
@@ -655,6 +601,29 @@
       "Promise.reject(reason)": "Returns a Promise object that is rejected with the given reason.",
       "Promise.resolve(value)": "Returns a Promise object that is resolved with the given value. If the value is a thenable (i.e. has a then method), the returned promise will \"follow\" that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value. Generally, if you want to know if a value is a promise or not - Promise.resolve(value) it instead and work with the return value as a promise."
     }
+  },
+  "RangeError.nodehelp": {
+    "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
+    "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
+    "prototypeProperties": {
+      "\n  RangeError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
+      "\n  RangeError.prototype.message": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "\n  RangeError.prototype.name": "\n  Error name. Inherited from Error.",
+      "\n  RangeError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
+      "\n  RangeError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
+      "\n  RangeError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
+      "\n  RangeError.prototype.stack": "\n  Stack trace. Inherited from Error."
+    },
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "RangeError.prototype": "Allows the addition of properties to an RangeError object."
+    },
+    "constructorMethods": {}
   },
   "ReferenceError.nodehelp": {
     "description": "A ReferenceError is thrown when trying to dereference a variable that has not been declared.",
@@ -678,6 +647,30 @@
       "ReferenceError.prototype": "Allows the addition of properties to an ReferenceError object."
     },
     "constructorMethods": {}
+  },
+  "Reflect.nodehelp": {
+    "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {
+      "Reflect.apply": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
+      "Reflect.construct": " The new operator as a function. Equivalent to calling new target(...args).",
+      "Reflect.defineProperty": "Similar to Object.defineProperty(). Returns a Boolean.",
+      "Reflect.deleteProperty": "The delete operator as a function. Equivalent to calling delete target[name].",
+      "Reflect.enumerate": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
+      "Reflect.get": "A function that returns the value of properties.",
+      "Reflect.getOwnPropertyDescriptor": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
+      "Reflect.getPrototypeOf": "Same as Object.getPrototypeOf().",
+      "Reflect.has": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
+      "Reflect.isExtensible": "Same as Object.isExtensible().",
+      "Reflect.ownKeys": "Returns an array of the target object's own (not inherited) property keys.",
+      "Reflect.preventExtensions": "Similar to Object.preventExtensions(). Returns a Boolean.",
+      "Reflect.set": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
+      "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
+    }
   },
   "RegExp.nodehelp": {
     "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
@@ -715,39 +708,6 @@
     },
     "constructorMethods": {}
   },
-  "Reflect.nodehelp": {
-    "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "Reflect.apply": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
-      "Reflect.construct": " The new operator as a function. Equivalent to calling new target(...args).",
-      "Reflect.defineProperty": "Similar to Object.defineProperty(). Returns a Boolean.",
-      "Reflect.deleteProperty": "The delete operator as a function. Equivalent to calling delete target[name].",
-      "Reflect.enumerate": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
-      "Reflect.get": "A function that returns the value of properties.",
-      "Reflect.getOwnPropertyDescriptor": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
-      "Reflect.getPrototypeOf": "Same as Object.getPrototypeOf().",
-      "Reflect.has": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
-      "Reflect.isExtensible": "Same as Object.isExtensible().",
-      "Reflect.ownKeys": "Returns an array of the target object's own (not inherited) property keys.",
-      "Reflect.preventExtensions": "Similar to Object.preventExtensions(). Returns a Boolean.",
-      "Reflect.set": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
-      "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
-    }
-  },
-  "SIMD.nodehelp": {
-    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "Set.nodehelp": {
     "description": "Set objects are collections of values, you can iterate its elements in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.",
     "syntax": "new Set([iterable]);",
@@ -770,6 +730,15 @@
       "Set.prototype.values": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
       "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
     }
+  },
+  "SIMD.nodehelp": {
+    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "String.nodehelp": {
     "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
@@ -801,63 +770,104 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "Proxy.nodehelp": {
-    "description": "",
-    "syntax": "var p = new Proxy(target, handler);\n",
-    "parameters": {
-      "target": "A target object (can be any sort of objects, including a native array, a function or even another proxy) or function to wrap with Proxy.",
-      "handler": "An object whose properties are functions which define the behavior of the proxy when an operation is performed on it."
-    },
+  "Math.nodehelp": {
+    "description": "Unlike the other global objects, Math is not a constructor. All properties and methods of Math are static. You refer to the constant pi as Math.PI and you call the sine function as Math.sin(x), where x is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.",
+    "syntax": "",
+    "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
-    "constructorProperties": {},
+    "constructorProperties": {
+      "Math.E": "Euler's constant and the base of natural logarithms, approximately 2.718.",
+      "Math.LN2": "Natural logarithm of 2, approximately 0.693.",
+      "Math.LN10": "Natural logarithm of 10, approximately 2.303.",
+      "Math.LOG2E": "Base 2 logarithm of E, approximately 1.443.",
+      "Math.LOG10E": "Base 10 logarithm of E, approximately 0.434.",
+      "Math.PI": "Ratio of the circumference of a circle to its diameter, approximately 3.14159.",
+      "Math.SQRT1_2": "Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.",
+      "Math.SQRT2": "Square root of 2, approximately 1.414."
+    },
     "constructorMethods": {
-      "Proxy.revocable": "Creates a revocable Proxy object."
+      "Math.abs(x)": "Returns the absolute value of a number.",
+      "Math.acos(x)": "Returns the arccosine of a number.",
+      "Math.acosh(x)": "Returns the hyperbolic arccosine of a number.",
+      "Math.asin(x)": "Returns the arcsine of a number.",
+      "Math.asinh(x)": "Returns the hyperbolic arcsine of a number.",
+      "Math.atan(x)": "Returns the arctangent of a number.",
+      "Math.atanh(x)": "Returns the hyperbolic arctangent of a number.",
+      "Math.atan2(y, x)": "Returns the arctangent of the quotient of its arguments.",
+      "Math.cbrt(x)": "Returns the cube root of a number.",
+      "Math.ceil(x)": "Returns the smallest integer greater than or equal to a number.",
+      "Math.clz32(x)": "Returns the number of leading zeroes of a 32-bit integer.",
+      "Math.cos(x)": "Returns the cosine of a number.",
+      "Math.cosh(x)": "Returns the hyperbolic cosine of a number.",
+      "Math.exp(x)": "Returns Ex, where x is the argument, and E is Euler's constant (2.718…), the base of the natural logarithm.",
+      "Math.expm1(x)": "Returns subtracting 1 from exp(x).",
+      "Math.floor(x)": "Returns the largest integer less than or equal to a number.",
+      "Math.fround(x)": "Returns the nearest single precision float representation of a number.",
+      "Math.hypot([x[, y[, …]]])": "Returns the square root of the sum of squares of its arguments.",
+      "Math.imul(x, y)": "Returns the result of a 32-bit integer multiplication.",
+      "Math.log(x)": "Returns the natural logarithm (loge, also ln) of a number.",
+      "Math.log1p(x)": "Returns the natural logarithm of 1 + x (loge, also ln) of a number.",
+      "Math.log10(x)": "Returns the base 10 logarithm of a number.",
+      "Math.log2(x)": "Returns the base 2 logarithm of a number.",
+      "Math.max([x[, y[, …]]])": "Returns the largest of zero or more numbers.",
+      "Math.min([x[, y[, …]]])": "Returns the smallest of zero or more numbers.",
+      "Math.pow(x, y)": "Returns base to the exponent power, that is, baseexponent.",
+      "Math.random": "Returns a pseudo-random number between 0 and 1.",
+      "Math.round(x)": "Returns the value of a number rounded to the nearest integer.",
+      "Math.sign(x)": "Returns the sign of the x, indicating whether x is positive, negative or zero.",
+      "Math.sin(x)": "Returns the sine of a number.",
+      "Math.sinh(x)": "Returns the hyperbolic sine of a number.",
+      "Math.sqrt(x)": "Returns the positive square root of a number.",
+      "Math.tan(x)": "Returns the tangent of a number.",
+      "Math.tanh(x)": "Returns the hyperbolic tangent of a number.",
+      "Math.toSource": "Returns the string \"Math\".",
+      "Math.trunc(x)": "Returns the integral part of the number x, removing any fractional digits."
     }
   },
-  "RangeError.nodehelp": {
-    "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
-    "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
+  "TypeError.nodehelp": {
+    "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
+    "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
     "parameters": {
       "message": "Optional. Human-readable description of the error",
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
     "prototypeProperties": {
-      "\n  RangeError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  RangeError.prototype.message": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  RangeError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  RangeError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.stack": "\n  Stack trace. Inherited from Error."
+      "TypeError.prototype.constructor": "Specifies the function that created an instance's prototype.",
+      "TypeError.prototype.message": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "TypeError.prototype.name": "Error name. Inherited from Error.",
+      "TypeError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
+      "TypeError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
+      "TypeError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
+      "TypeError.prototype.stack": "Stack trace. Inherited from Error."
     },
     "prototypeMethods": {},
     "constructorProperties": {
-      "RangeError.prototype": "Allows the addition of properties to an RangeError object."
+      "TypeError.prototype": "Allows the addition of properties to a TypeError object."
     },
     "constructorMethods": {}
   },
-  "SyntaxError.nodehelp": {
-    "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
-    "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
+  "URIError.nodehelp": {
+    "description": "A URIError is thrown when the global URI handling functions are passed a malformed URI.",
+    "syntax": "new URIError([message[, fileName[, lineNumber]]])",
     "parameters": {
       "message": "Optional. Human-readable description of the error",
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
     "prototypeProperties": {
-      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
+      "URIError.prototype.constructor": "Specifies the function that created an instance's prototype.",
+      "URIError.prototype.message": "Error message. Although ECMA-262 specifies that URIError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "URIError.prototype.name": "Error name. Inherited from Error.",
+      "URIError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
+      "URIError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
+      "URIError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
+      "URIError.prototype.stack": "Stack trace. Inherited from Error."
     },
     "prototypeMethods": {},
     "constructorProperties": {
-      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
+      "URIError.prototype": "Allows the addition of properties to a URIError object."
     },
     "constructorMethods": {}
   },
@@ -894,29 +904,6 @@
       "Uint32Array.from": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
       "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
     }
-  },
-  "TypeError.nodehelp": {
-    "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
-    "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
-    "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
-    },
-    "prototypeProperties": {
-      "TypeError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "TypeError.prototype.message": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "TypeError.prototype.name": "Error name. Inherited from Error.",
-      "TypeError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "TypeError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "TypeError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "TypeError.prototype.stack": "Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "TypeError.prototype": "Allows the addition of properties to a TypeError object."
-    },
-    "constructorMethods": {}
   },
   "Uint8Array.nodehelp": {
     "description": "",
@@ -972,6 +959,29 @@
       "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
     }
   },
+  "SyntaxError.nodehelp": {
+    "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
+    "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
+    "prototypeProperties": {
+      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
+      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
+      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
+    },
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
+    },
+    "constructorMethods": {}
+  },
   "WeakSet.nodehelp": {
     "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
     "syntax": " new WeakSet([iterable]);",
@@ -988,17 +998,6 @@
       "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
       "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
     }
-  },
-  "decodeURI.nodehelp": {
-    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
-    "syntax": "decodeURI(encodedURI)",
-    "parameters": {
-      "encodedURI": "A complete, encoded Uniform Resource Identifier."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
   },
   "arguments.nodehelp": {
     "description": "The arguments object is a local variable available within all functions. arguments as a property of Function can no longer be used.You can refer to a function's arguments within the function by using the arguments object. This object contains an entry for each argument passed to the function, the first entry's index starting at 0. For example, if a function is passed three arguments, you can refer to the argument as follows:arguments[0]\narguments[1]\narguments[2]\nThe arguments can also be set:arguments[1] = 'new value';The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. For example, it does not have the pop method. However it can be converted to a real Array:var args = Array.prototype.slice.call(arguments);\nImportant: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object. More information.\nThe arguments object is available only within a function body. Attempting to access the arguments object outside a function declaration results in an error.You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. You can use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. (To determine the number of arguments declared when a function was defined, use the Function.length property.)",
@@ -1030,56 +1029,24 @@
       "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
     }
   },
-  "encodeURI.nodehelp": {
-    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
-    "syntax": "encodeURI(URI)",
-    "parameters": {
-      "URI": "A complete Uniform Resource Identifier."
-    },
+  "Intl.nodehelp": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
     "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "encodeURIComponent.nodehelp": {
-    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
-    "syntax": "encodeURIComponent(str);",
-    "parameters": {
-      "str": "String. A component of a URI."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "URIError.nodehelp": {
-    "description": "A URIError is thrown when the global URI handling functions are passed a malformed URI.",
-    "syntax": "new URIError([message[, fileName[, lineNumber]]])",
-    "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
-    },
-    "prototypeProperties": {
-      "URIError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "URIError.prototype.message": "Error message. Although ECMA-262 specifies that URIError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "URIError.prototype.name": "Error name. Inherited from Error.",
-      "URIError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "URIError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "URIError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "URIError.prototype.stack": "Stack trace. Inherited from Error."
-    },
     "prototypeMethods": {},
     "constructorProperties": {
-      "URIError.prototype": "Allows the addition of properties to a URIError object."
+      "Intl.Collator": "Constructor for collators, objects that enable language sensitive string comparison.",
+      "Intl.DateTimeFormat": "Constructor for objects that enable language sensitive date and time formatting.",
+      "Intl.NumberFormat": "Constructor for objects that enable language sensitive number formatting."
     },
     "constructorMethods": {}
   },
-  "decodeURIComponent.nodehelp": {
-    "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
-    "syntax": "decodeURIComponent(encodedURI)",
+  "decodeURI.nodehelp": {
+    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
+    "syntax": "decodeURI(encodedURI)",
     "parameters": {
-      "encodedURI": "An encoded component of a Uniform Resource Identifier."
+      "encodedURI": "A complete, encoded Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1097,11 +1064,44 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
+  "eval.nodehelp": {
+    "description": "eval() is a function property of the global object.The argument of the eval() function is a string. If the string represents an expression, eval() evaluates the expression. If the argument represents one or more JavaScript statements, eval() evaluates the statements. Do not call eval() to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.If you construct an arithmetic expression as a string, you can use eval() to evaluate it at a later time. For example, suppose you have a variable x. You can postpone evaluation of an expression involving x by assigning the string value of the expression, say \"3 * x + 2\", to a variable, and then calling eval() at a later point in your script.If the argument of eval() is not a string, eval() returns the argument unchanged. In the following example, the String constructor is specified, and eval() returns a String object rather than evaluating the string.eval(new String(\"2 + 2\")); // returns a String object containing \"2 + 2\"\neval(\"2 + 2\");             // returns 4\nYou can work around this limitation in a generic fashion by using toString().var expression = new String(\"2 + 2\");\neval(expression.toString());\nIf you use the eval function indirectly, by invoking it via a reference other than eval, as of ECMAScript 5 it works at global scope rather than local scope; this means, for instance, that function declarations create global functions, and that the code being evaluated doesn't have access to local variables within the scope where it's being called.function test() {\n  var x = 2, y = 4;\n  console.log(eval(\"x + y\"));  // Direct call, uses local scope, result is 6\n  var geval = eval;\n  console.log(geval(\"x + y\")); // Indirect call, uses global scope, throws ReferenceError because `x` is undefined\n}\n",
+    "syntax": "eval(string)",
+    "parameters": {
+      "string": "A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "encodeURI.nodehelp": {
+    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
+    "syntax": "encodeURI(URI)",
+    "parameters": {
+      "URI": "A complete Uniform Resource Identifier."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "isFinite.nodehelp": {
     "description": "isFinite is a top-level function and is not associated with any object.You can use this function to determine whether a number is a finite number. The isFinite function examines the number in its argument. If the argument is NaN, positive infinity, or negative infinity, this method returns false; otherwise, it returns true.",
     "syntax": "isFinite(testValue)",
     "parameters": {
       "testValue": "The value to be tested for finiteness."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "decodeURIComponent.nodehelp": {
+    "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
+    "syntax": "decodeURIComponent(encodedURI)",
+    "parameters": {
+      "encodedURI": "An encoded component of a Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1181,11 +1181,11 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "eval.nodehelp": {
-    "description": "eval() is a function property of the global object.The argument of the eval() function is a string. If the string represents an expression, eval() evaluates the expression. If the argument represents one or more JavaScript statements, eval() evaluates the statements. Do not call eval() to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.If you construct an arithmetic expression as a string, you can use eval() to evaluate it at a later time. For example, suppose you have a variable x. You can postpone evaluation of an expression involving x by assigning the string value of the expression, say \"3 * x + 2\", to a variable, and then calling eval() at a later point in your script.If the argument of eval() is not a string, eval() returns the argument unchanged. In the following example, the String constructor is specified, and eval() returns a String object rather than evaluating the string.eval(new String(\"2 + 2\")); // returns a String object containing \"2 + 2\"\neval(\"2 + 2\");             // returns 4\nYou can work around this limitation in a generic fashion by using toString().var expression = new String(\"2 + 2\");\neval(expression.toString());\nIf you use the eval function indirectly, by invoking it via a reference other than eval, as of ECMAScript 5 it works at global scope rather than local scope; this means, for instance, that function declarations create global functions, and that the code being evaluated doesn't have access to local variables within the scope where it's being called.function test() {\n  var x = 2, y = 4;\n  console.log(eval(\"x + y\"));  // Direct call, uses local scope, result is 6\n  var geval = eval;\n  console.log(geval(\"x + y\")); // Indirect call, uses global scope, throws ReferenceError because `x` is undefined\n}\n",
-    "syntax": "eval(string)",
+  "encodeURIComponent.nodehelp": {
+    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
+    "syntax": "encodeURIComponent(str);",
     "parameters": {
-      "string": "A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects."
+      "str": "String. A component of a URI."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},

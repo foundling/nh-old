@@ -1,5 +1,5 @@
 {
-  "docsVersion": "89d5e1a88fe59d53ea9cb164b686f4ee27610e02",
+  "docsVersion": "4ae6653e0fe56526f6f7c08ba452726725ffc57a",
   "dbPath": "db/db.json",
   "versionUrl": "http://localhost:3000/api/nodehelp/version",
   "docsUrl": "http://localhost:3000/api/nodehelp/docs",
