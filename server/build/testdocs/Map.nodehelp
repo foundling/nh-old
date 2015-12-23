@@ -13,9 +13,9 @@
   <link rel="home" href="/en-US/">
   <link rel="copyright" href="#copyright">
 
-              <link href="https://developer.cdn.mozilla.net/static/build/styles/mdn.8f155d648f13.css" rel="stylesheet" type="text/css" />
+              <link href="https://developer.cdn.mozilla.net/static/build/styles/mdn.e21f8f108f4d.css" rel="stylesheet" type="text/css" />
       
-    <link href="https://developer.cdn.mozilla.net/static/build/styles/wiki.2362a4d7665f.css" rel="stylesheet" type="text/css" />
+    <link href="https://developer.cdn.mozilla.net/static/build/styles/wiki.c111c90f5784.css" rel="stylesheet" type="text/css" />
     
     
   <!-- common social tags -->
@@ -149,7 +149,7 @@
             // Assets that need to be dynamically injected
             assets: {
                 css: {
-                    'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.108cc7dfe70f.css',],
+                    'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.8be7a72e9603.css',],
                     'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.391e4a87df2f.css',]
                 },
                 js: {
@@ -351,21 +351,9 @@
 
         <h1>Map</h1>
 
-        
-            
-            
-    <div class="share">
-        <strong>Share:</strong>
-        <ul>
-            <li><a href="http://twitter.com/share?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FMap%3Futm_campaign%3Dshare%26utm_medium%3Ddoc%2Bshare%2Blink%26utm_source%3Dtwitter.com&amp;text=I+learned+about+Map+on+MDN." target="_blank" data-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=twitter.com" data-title="I learned about Map on MDN." class="share-link twitter"><i aria-hidden="true" class="icon-twitter"></i>Twitter</a></li>
-            <li><a href="http://facebook.com/sharer.php?s=100&amp;p[url]=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=facebook.com" target="_blank" data-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=facebook.com" data-title="I learned about Map on MDN." class="share-link facebook"><i aria-hidden="true" class="icon-facebook"></i>Facebook</a></li>
-            <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FMap%3Futm_campaign%3Dshare%26utm_medium%3Ddoc%2Bshare%2Blink%26utm_source%3Dplus.google.com" target="_blank" data-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=plus.google.com" data-title="I learned about Map on MDN." class="share-link gplus"><i aria-hidden="true" class="icon-google-plus"></i>Google+</a></li>
-        </ul>
-    </div>
-
                 <div class="contributor-avatars" data-all-text="Show all&hellip;<span class='hidden'>contributors</span>" data-has-hidden="1">
             <span class="quickstat">
-            By 38 contributors:            </span>
+            by 38 contributors:            </span>
             <ul>
                             <li class="shown">
                 <a href="/en-US/profiles/cdbajorin" title="View profile: cdbajorin">
@@ -1024,6 +1012,18 @@ console.log(uneval([...myMap.keys()])); // Will show ["key1", "key2"]
                                                 </article>
 
               
+            
+            
+    <div class="share">
+        <strong>Share:</strong>
+        <ul>
+            <li><a href="http://twitter.com/share?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FMap%3Futm_campaign%3Dshare%26utm_medium%3Ddoc%2Bshare%2Blink%26utm_source%3Dtwitter.com&amp;text=I+learned+about+Map+on+MDN." target="_blank" data-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=twitter.com" data-title="I learned about Map on MDN." class="share-link twitter"><i aria-hidden="true" class="icon-twitter"></i>Twitter</a></li>
+            <li><a href="http://facebook.com/sharer.php?s=100&amp;p[url]=https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=facebook.com" target="_blank" data-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=facebook.com" data-title="I learned about Map on MDN." class="share-link facebook"><i aria-hidden="true" class="icon-facebook"></i>Facebook</a></li>
+            <li><a href="https://plus.google.com/share?url=https%3A%2F%2Fdeveloper.mozilla.org%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FMap%3Futm_campaign%3Dshare%26utm_medium%3Ddoc%2Bshare%2Blink%26utm_source%3Dplus.google.com" target="_blank" data-url="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map?utm_campaign=share&amp;utm_medium=doc+share+link&amp;utm_source=plus.google.com" data-title="I learned about Map on MDN." class="share-link gplus"><i aria-hidden="true" class="icon-google-plus"></i>Google+</a></li>
+        </ul>
+    </div>
+
+              
                 <!-- contributors -->
                 <div class="wiki-block contributors">
                   <h2 class="offscreen">Document Tags and Contributors</h2>
@@ -1140,7 +1140,7 @@ console.log(uneval([...myMap.keys()])); // Will show ["key1", "key2"]
 
         <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.4fef8f9a3076.js"></script>
   
-    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.db70ef370eab.js" charset="utf-8"></script>
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.70da51c1ba8d.js" charset="utf-8"></script>
   
   
 </body>

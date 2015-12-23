@@ -1,4 +1,4 @@
-var run = require('./lib/main');
-run();
+var updateAndRun = require('./lib/main');
+updateAndRun();
 
 
