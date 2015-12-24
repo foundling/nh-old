@@ -80,9 +80,10 @@ var printHeader = function() {
          marquee,
          '* run help() for nodehelp usage information   ',
          '                                              ',
-         'node-help version: ' + configManager.get('nodeHelpVersion').magenta.bgWhite,
-         'your node version: '.cyan + (' ' + configManager.get('nodeVersion') + ' ').magenta.bgWhite,
-         'source repo:' + configManager.get('sourceRepo'),
+         'Node-Help Version: ' + configManager.get('nodeHelpVersion').magenta.bgWhite,
+         'Your node Version: '.cyan + (' ' + configManager.get('nodeVersion') + ' ').magenta.bgWhite,
+         'Source Repo:' + configManager.get('sourceRepo'),
+         'Docs Last Updated:' + configManager.get('lastUpdate').magenta.bgWhite,
     ]
     .join('\n');
 

@@ -10,7 +10,10 @@ var errHandler = require('./err_handler');
 
 var update = function(startRepl) {
 
-  var userNotification;
+  var userNotification,
+      newDocs,
+      newDocsObj,
+      newDocsVersion;
 
   request(versionUrl, function(err, response, body){ 
     if (err) {
@@ -22,18 +25,19 @@ var update = function(startRepl) {
 
     if (body) {
 
-      var newDocsVersion = JSON.parse(body).version;
+      newDocsVersion = JSON.parse(body).version;
 
       // If changes have happened to the JS docs since the last use of node-help
       // update information 
       if (newDocsVersion && newDocsVersion !== currentDocsVersion) {
         configManager.set('docsVersion',newDocsVersion);
+        configManager.set('lastUpdate',new Date().toString());
         configManager.save();
         userNotification = 'Node Help Documentation Updated!';
         request(docsUrl, function(err, response, body) {
           if (err) throw err;
-          var newDocs = JSON.parse(body).docs;
-          var newDocsObj = {};
+          newDocs = JSON.parse(body).docs;
+          newDocsObj = {};
           newDocsObj[newDocsVersion] = newDocs;
           fs.writeFile(configManager.get('dbPath'), JSON.stringify(newDocsObj), function(err) {
             if (err) throw err; 

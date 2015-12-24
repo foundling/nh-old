@@ -19,23 +19,6 @@
       "Array.of": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
     }
   },
-  "ArrayBuffer": {
-    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
-    "syntax": "new ArrayBuffer(length)\n",
-    "parameters": {
-      "length": "The size, in bytes, of the array buffer to create."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
-      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
-    },
-    "constructorMethods": {
-      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
-      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
-    }
-  },
   "Boolean": {
     "description": "The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (\"\"), the object has an initial value of false. All other values, including any object or the string \"false\", create an object with an initial value of true.Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object.Any object whose value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement. For example, the condition in the following if statement evaluates to true:var x = new Boolean(\"false\");\nif (x) {\n  // this code is executed\n}\nThis behavior does not apply to Boolean primitives. For example, the condition in the following if statement evaluates to false:var x = false;\nif (x) {\n  // this code is not executed\n}\nDo not use a Boolean object to convert a non-boolean value to a boolean value. Instead, use Boolean as a function to perform this task:var x = Boolean(expression);     // preferred\nvar x = new Boolean(expression); // don't use\nIf you specify any object, including a Boolean object whose value is false, as the initial value of a Boolean object, the new Boolean object has a value of true.var myFalse = new Boolean(false);   // initial value of false\nvar g = new Boolean(myFalse);       // initial value of true\nvar myString = new String('Hello'); // string object\nvar s = new Boolean(myString);      // initial value of true\nDo not use a Boolean object in place of a Boolean primitive.",
     "syntax": "new Boolean([value])",
@@ -195,15 +178,6 @@
     },
     "constructorMethods": {}
   },
-  "Float32x4": {
-    "description": "",
-    "syntax": "SIMD.Float32x4(x, y, z, w);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "Float32Array": {
     "description": "",
     "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
@@ -220,6 +194,15 @@
       "Float32Array.from": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
       "Float32Array.of": "Creates a new Float32Array with a variable number of arguments. See also Array.of()."
     }
+  },
+  "Float32x4": {
+    "description": "",
+    "syntax": "SIMD.Float32x4(x, y, z, w);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "Float64Array": {
     "description": "",
@@ -437,6 +420,22 @@
     },
     "constructorMethods": {}
   },
+  "Iterator": {
+    "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
+    "syntax": "Iterator(object, [keyOnly])",
+    "parameters": {
+      "object": "Object to iterate over properties.",
+      "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Iterator.prototype[@@iterator]": "Returns a function that returns iterator object, that conforms to iterator protocol."
+    },
+    "constructorMethods": {
+      "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
+    }
+  },
   "Map": {
     "description": "A Map object iterates its elements in insertion order — a for...of loop returns an array of [key, value] for each iteration.",
     "syntax": "new Map([iterable])\n",
@@ -518,33 +517,51 @@
       "Math.trunc(x)": "Returns the integral part of the number x, removing any fractional digits."
     }
   },
-  "Iterator": {
-    "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
-    "syntax": "Iterator(object, [keyOnly])",
-    "parameters": {
-      "object": "Object to iterate over properties.",
-      "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Iterator.prototype[@@iterator]": "Returns a function that returns iterator object, that conforms to iterator protocol."
-    },
-    "constructorMethods": {
-      "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
-    }
-  },
-  "Object": {
-    "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.When called in a non-constructor context, Object behaves identically to new Object().See also the object initializer / literal syntax.",
-    "syntax": "// Object initialiser or literal\n{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }\n\n// Called as a constructor\nnew Object([value])",
-    "parameters": {
-      "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
-      "value": "Any value."
-    },
+  "NaN": {
+    "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
+    "syntax": "NaN",
+    "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
     "constructorMethods": {}
+  },
+  "Number": {
+    "description": "The primary uses for the Number object are:\n If the argument cannot be converted into a number, it returns NaN.\n In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.\n",
+    "syntax": "new Number(value);",
+    "parameters": {
+      "value": "The numeric value of the object being created."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {
+      "Number.prototype.toExponential()": "Returns a string representing the number in exponential notation.",
+      "Number.prototype.toFixed()": "Returns a string representing the number in fixed-point notation.",
+      "Number.prototype.toLocaleString()": "Returns a string with a language sensitive representation of this number. Overrides the Object.prototype.toLocaleString method.",
+      "Number.prototype.toPrecision()": "Returns a string representing the number to a specified precision in fixed-point or exponential notation.",
+      "Number.prototype.toSource()  ": "Returns an object literal representing the specified Number object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
+      "Number.prototype.toString()": "Returns a string representing the specified object in the specified radix (base). Overrides the Object.prototype.toString method.",
+      "Number.prototype.valueOf()": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf method."
+    },
+    "constructorProperties": {
+      "Number.EPSILON": "The smallest interval between two representable numbers.",
+      "Number.MAX_SAFE_INTEGER": "The maximum safe integer in JavaScript (253 - 1).",
+      "Number.MAX_VALUE": "The largest positive representable number.",
+      "Number.MIN_SAFE_INTEGER": "The minimum safe integer in JavaScript (-(253 - 1)).",
+      "Number.MIN_VALUE": "The smallest positive representable number - that is, the positive number closest to zero (without actually being zero).",
+      "Number.NaN": "Special \"not a number\" value.",
+      "Number.NEGATIVE_INFINITY": "Special value representing negative infinity; returned on overflow.",
+      "Number.POSITIVE_INFINITY": "Special value representing infinity; returned on overflow.",
+      "Number.prototype": "Allows the addition of properties to a Number object."
+    },
+    "constructorMethods": {
+      "Number.isNaN": "Determine whether the passed value is NaN.",
+      "Number.isFinite": "Determine whether the passed value is a finite number.",
+      "Number.isInteger": "Determine whether the passed value is an integer.",
+      "Number.isSafeInteger": "Determine whether the passed value is a safe integer (number between -(253 - 1) and 253 - 1).",
+      "Number.toInteger": "Used to evaluate the passed value and convert it to an integer (or Infinity), but has been removed.",
+      "Number.parseFloat": "The value is the same as parseFloat() of the global object.",
+      "Number.parseInt": "The value is the same as parseInt() of the global object."
+    }
   },
   "NumberFormat": {
     "description": "",
@@ -572,6 +589,18 @@
     "constructorMethods": {
       "Intl.NumberFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
     }
+  },
+  "Object": {
+    "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.When called in a non-constructor context, Object behaves identically to new Object().See also the object initializer / literal syntax.",
+    "syntax": "// Object initialiser or literal\n{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }\n\n// Called as a constructor\nnew Object([value])",
+    "parameters": {
+      "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
+      "value": "Any value."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "ParallelArray": {
     "description": "",
@@ -694,14 +723,22 @@
       "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
     }
   },
-  "SIMD": {
-    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
-    "syntax": "",
-    "parameters": {},
+  "ArrayBuffer": {
+    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
+    "syntax": "new ArrayBuffer(length)\n",
+    "parameters": {
+      "length": "The size, in bytes, of the array buffer to create."
+    },
     "prototypeProperties": {},
     "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "constructorProperties": {
+      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
+      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
+    },
+    "constructorMethods": {
+      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
+      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
+    }
   },
   "RegExp": {
     "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
@@ -739,9 +776,9 @@
     },
     "constructorMethods": {}
   },
-  "StopIteration": {
-    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
-    "syntax": "StopIteration",
+  "SIMD": {
+    "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
+    "syntax": "",
     "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -771,23 +808,6 @@
       "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
     }
   },
-  "Symbol": {
-    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
-    "syntax": "Symbol([description])",
-    "parameters": {
-      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Symbol.length": "Length property whose value is 0.",
-      "Symbol.prototype": "Represents the prototype for the Symbol constructor."
-    },
-    "constructorMethods": {
-      "Symbol.for(key)": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
-      "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
-    }
-  },
   "String": {
     "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
     "syntax": "'string text'\n\"string text\"\n\"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்\"String(thing)\nnew String(thing)",
@@ -809,28 +829,48 @@
       "String.raw": "Returns a string created from a raw template string."
     }
   },
-  "SyntaxError": {
-    "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
-    "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
+  "StopIteration": {
+    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
+    "syntax": "StopIteration",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "Symbol": {
+    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
+    "syntax": "Symbol([description])",
     "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
+      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
     },
-    "prototypeProperties": {
-      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
-    },
+    "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {
-      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
+      "Symbol.length": "Length property whose value is 0.",
+      "Symbol.prototype": "Represents the prototype for the Symbol constructor."
     },
-    "constructorMethods": {}
+    "constructorMethods": {
+      "Symbol.for(key)": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
+      "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
+    }
+  },
+  "Uint16Array": {
+    "description": "",
+    "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
+      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
+      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
+      "Uint16Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
+      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
+    }
   },
   "TypeError": {
     "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
@@ -852,6 +892,29 @@
     "prototypeMethods": {},
     "constructorProperties": {
       "TypeError.prototype": "Allows the addition of properties to a TypeError object."
+    },
+    "constructorMethods": {}
+  },
+  "SyntaxError": {
+    "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
+    "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
+    "prototypeProperties": {
+      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
+      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
+      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
+      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
+    },
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
     },
     "constructorMethods": {}
   },
@@ -878,40 +941,6 @@
     },
     "constructorMethods": {}
   },
-  "Uint16Array": {
-    "description": "",
-    "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
-      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
-      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
-      "Uint16Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
-      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "Uint8Array": {
-    "description": "",
-    "syntax": "new Uint8Array(length);\nnew Uint8Array(typedArray);\nnew Uint8Array(object);\nnew Uint8Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint8Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8Array.",
-      "Uint8Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8Array.prototype.length.",
-      "Uint8Array.name": "Returns the string value of the constructor name. In the case of the Uint8Array type: \"Uint8Array\".",
-      "Uint8Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint8Array.from": "Creates a new Uint8Array from an array-like or iterable object. See also Array.from().",
-      "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
-    }
-  },
   "Uint32Array": {
     "description": "",
     "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
@@ -929,41 +958,21 @@
       "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
     }
   },
-  "Number": {
-    "description": "The primary uses for the Number object are:\n If the argument cannot be converted into a number, it returns NaN.\n In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.\n",
-    "syntax": "new Number(value);",
-    "parameters": {
-      "value": "The numeric value of the object being created."
-    },
+  "Uint8Array": {
+    "description": "",
+    "syntax": "new Uint8Array(length);\nnew Uint8Array(typedArray);\nnew Uint8Array(object);\nnew Uint8Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
     "prototypeProperties": {},
-    "prototypeMethods": {
-      "Number.prototype.toExponential()": "Returns a string representing the number in exponential notation.",
-      "Number.prototype.toFixed()": "Returns a string representing the number in fixed-point notation.",
-      "Number.prototype.toLocaleString()": "Returns a string with a language sensitive representation of this number. Overrides the Object.prototype.toLocaleString method.",
-      "Number.prototype.toPrecision()": "Returns a string representing the number to a specified precision in fixed-point or exponential notation.",
-      "Number.prototype.toSource()  ": "Returns an object literal representing the specified Number object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
-      "Number.prototype.toString()": "Returns a string representing the specified object in the specified radix (base). Overrides the Object.prototype.toString method.",
-      "Number.prototype.valueOf()": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf method."
-    },
+    "prototypeMethods": {},
     "constructorProperties": {
-      "Number.EPSILON": "The smallest interval between two representable numbers.",
-      "Number.MAX_SAFE_INTEGER": "The maximum safe integer in JavaScript (253 - 1).",
-      "Number.MAX_VALUE": "The largest positive representable number.",
-      "Number.MIN_SAFE_INTEGER": "The minimum safe integer in JavaScript (-(253 - 1)).",
-      "Number.MIN_VALUE": "The smallest positive representable number - that is, the positive number closest to zero (without actually being zero).",
-      "Number.NaN": "Special \"not a number\" value.",
-      "Number.NEGATIVE_INFINITY": "Special value representing negative infinity; returned on overflow.",
-      "Number.POSITIVE_INFINITY": "Special value representing infinity; returned on overflow.",
-      "Number.prototype": "Allows the addition of properties to a Number object."
+      "Uint8Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8Array.",
+      "Uint8Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8Array.prototype.length.",
+      "Uint8Array.name": "Returns the string value of the constructor name. In the case of the Uint8Array type: \"Uint8Array\".",
+      "Uint8Array.prototype": "Prototype for the TypedArray objects."
     },
     "constructorMethods": {
-      "Number.isNaN": "Determine whether the passed value is NaN.",
-      "Number.isFinite": "Determine whether the passed value is a finite number.",
-      "Number.isInteger": "Determine whether the passed value is an integer.",
-      "Number.isSafeInteger": "Determine whether the passed value is a safe integer (number between -(253 - 1) and 253 - 1).",
-      "Number.toInteger": "Used to evaluate the passed value and convert it to an integer (or Infinity), but has been removed.",
-      "Number.parseFloat": "The value is the same as parseFloat() of the global object.",
-      "Number.parseInt": "The value is the same as parseInt() of the global object."
+      "Uint8Array.from": "Creates a new Uint8Array from an array-like or iterable object. See also Array.from().",
+      "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
     }
   },
   "Uint8ClampedArray": {
@@ -996,6 +1005,23 @@
     },
     "constructorMethods": {}
   },
+  "WeakSet": {
+    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
+    "syntax": " new WeakSet([iterable]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "WeakSet.length": "The value of the length property is 0.",
+      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
+    },
+    "constructorMethods": {
+      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
+      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
+      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
+      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
+    }
+  },
   "WeakMap": {
     "description": "Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed (e.g. a Symbol can't be a WeakMap key).The key in a WeakMap is held weakly.  What this means is that, if there are no other strong references to the key, then the entire entry will be removed from the WeakMap by the garbage collector.",
     "syntax": "new WeakMap([iterable])\n",
@@ -1016,17 +1042,6 @@
       "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
     }
   },
-  "decodeURI": {
-    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
-    "syntax": "decodeURI(encodedURI)",
-    "parameters": {
-      "encodedURI": "A complete, encoded Uniform Resource Identifier."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "decodeURIComponent": {
     "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
     "syntax": "decodeURIComponent(encodedURI)",
@@ -1038,33 +1053,22 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "encodeURI": {
-    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
-    "syntax": "encodeURI(URI)",
-    "parameters": {
-      "URI": "A complete Uniform Resource Identifier."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "encodeURIComponent": {
-    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
-    "syntax": "encodeURIComponent(str);",
-    "parameters": {
-      "str": "String. A component of a URI."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "escape": {
     "description": "The escape function is a property of the global object. Special characters are encoded with the exception of: @*_+-./The hexadecimal form for characters, whose code unit value is 0xFF or less, is a two-digit escape sequence: %xx. For characters with a greater code unit, the four-digit format %uxxxx is used.",
     "syntax": "escape(str)",
     "parameters": {
       "str": "A string to be encoded."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "encodeURI": {
+    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
+    "syntax": "encodeURI(URI)",
+    "parameters": {
+      "URI": "A complete Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1113,22 +1117,16 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "WeakSet": {
-    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
-    "syntax": " new WeakSet([iterable]);",
-    "parameters": {},
+  "parseInt": {
+    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
+    "syntax": "parseInt(string, radix);",
+    "parameters": {
+      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
+    },
     "prototypeProperties": {},
     "prototypeMethods": {},
-    "constructorProperties": {
-      "WeakSet.length": "The value of the length property is 0.",
-      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
-    },
-    "constructorMethods": {
-      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
-      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
-      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
-      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
-    }
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "parseFloat": {
     "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
@@ -1141,22 +1139,31 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "unescape": {
-    "description": "The unescape function is a property of the global object.",
-    "syntax": "unescape(str)",
+  "decodeURI": {
+    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
+    "syntax": "decodeURI(encodedURI)",
     "parameters": {
-      "str": "A string to be decoded."
+      "encodedURI": "A complete, encoded Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "parseInt": {
-    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
-    "syntax": "parseInt(string, radix);",
+  "undefined": {
+    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
+    "syntax": "undefined",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "unescape": {
+    "description": "The unescape function is a property of the global object.",
+    "syntax": "unescape(str)",
     "parameters": {
-      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
+      "str": "A string to be decoded."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1174,19 +1181,12 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "undefined": {
-    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
-    "syntax": "undefined",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "NaN": {
-    "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
-    "syntax": "NaN",
-    "parameters": {},
+  "encodeURIComponent": {
+    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
+    "syntax": "encodeURIComponent(str);",
+    "parameters": {
+      "str": "String. A component of a URI."
+    },
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
