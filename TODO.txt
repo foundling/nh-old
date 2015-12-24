@@ -1,2 +1,4 @@
-[todo] 1. add native boolean field to distinguish between node and native objs. 2. workout the db recursive traversal algorithm, 3. fix it to take into account the new { version: docs } structure
+[todo]
+1. add native boolean field to distinguish between node and native objs. 
+2. workout the db recursive traversal algorithm, 3. fix it to take into account the new { version: docs } structure
 

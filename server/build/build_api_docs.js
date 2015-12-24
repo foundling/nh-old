@@ -42,7 +42,7 @@ var buildApiDocs = module.exports = exports = function(callback) {
                 prototypeProperties = {};
 
 
-            name = filename; 
+            name = filename.replace('.nodehelp',''); 
             description = $('#Description').nextUntil(specialCase || 'h2,h3').text(); 
             syntax = $('.syntaxbox').text();
 
@@ -93,7 +93,7 @@ var buildApiDocs = module.exports = exports = function(callback) {
             });
 
             // add everything to the objectDB
-            objectDB[filename] = {
+            objectDB[name] = {
               description: description,
               syntax: syntax,
               parameters: parameters,
