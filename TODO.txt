@@ -1,9 +1,13 @@
 [todo]
-1. add native boolean field to distinguish between node and native objs. 
-2. workout the db recursive traversal algorithm, 3. fix it to take into account the new { version: docs } structure
 
-MOST IMPORTANT AT THIS POINT:
 
-3. Need to get documentation for each method and object, in 'get_raw_docs' function, so this will be a recursive function.
+1. MOST IMPORTANT AT THIS POINT: Need to get documentation for each method and object, in 'get_raw_docs' function, so this will be a recursive function.
 example: Array.from() has the same visual structure as Array, so verify that you can scrape it in the same way, then implement the recursion.
+
+2. separate out the MDN scraping from the building api docs functionality
+
+3. add native boolean field to distinguish between node and native objs. 
+4. workout the db recursive traversal algorithm, 3. fix it to take into account the new { version: docs } structure
+
+
 
