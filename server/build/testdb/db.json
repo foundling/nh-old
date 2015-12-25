@@ -3,20 +3,39 @@
     "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.Some people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
     "syntax": "[element0, element1, ..., elementN]\nnew Array(element0, element1[, ...[, elementN]])\nnew Array(arrayLength)",
     "parameters": {},
-    "prototypeProperties": {
-      "Array.prototype.constructor": "Specifies the function that creates an object's prototype.",
-      "Array.prototype.length": "Reflects the number of elements in an array."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Array.length": "The Array constructor's length property whose value is 1.",
-      "Array.prototype": "Allows the addition of properties to all array objects."
-    },
-    "constructorMethods": {
-      "Array.from": "Creates a new Array instance from an array-like or iterable object.",
-      "Array.isArray": "Returns true if a variable is an array, if not false.",
-      "Array.observe": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence.",
-      "Array.of": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
+    "children": {
+      "Array.from": {
+        "description": "Creates a new Array instance from an array-like or iterable object.",
+        "childType": "method"
+      },
+      "Array.isArray": {
+        "description": "Returns true if a variable is an array, if not false.",
+        "childType": "method"
+      },
+      "Array.observe": {
+        "description": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence.",
+        "childType": "method"
+      },
+      "Array.of": {
+        "description": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments.",
+        "childType": "method"
+      },
+      "Array.length": {
+        "description": "The Array constructor's length property whose value is 1.",
+        "childType": "property"
+      },
+      "Array.prototype": {
+        "description": "Allows the addition of properties to all array objects.",
+        "childType": "property"
+      },
+      "Array.prototype.constructor": {
+        "description": "Specifies the function that creates an object's prototype.",
+        "childType": "property"
+      },
+      "Array.prototype.length": {
+        "description": "Reflects the number of elements in an array.",
+        "childType": "property"
+      }
     }
   },
   "ArrayBuffer": {
@@ -25,15 +44,23 @@
     "parameters": {
       "length": "The size, in bytes, of the array buffer to create."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
-      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
-    },
-    "constructorMethods": {
-      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
-      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
+    "children": {
+      "ArrayBuffer.isView(arg)": {
+        "description": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
+        "childType": "method"
+      },
+      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": {
+        "description": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n ",
+        "childType": "method"
+      },
+      "ArrayBuffer.length": {
+        "description": "The ArrayBuffer constructor's length property whose value is 1.",
+        "childType": "property"
+      },
+      "ArrayBuffer.prototype": {
+        "description": "Allows the addition of properties to all ArrayBuffer objects.",
+        "childType": "property"
+      }
     }
   },
   "Boolean": {
@@ -42,19 +69,32 @@
     "parameters": {
       "value": "Optional. The initial value of the Boolean object."
     },
-    "prototypeProperties": {
-      "Boolean.prototype.constructor": "Returns the function that created an instance's prototype. This is the Boolean function by default."
-    },
-    "prototypeMethods": {
-      "Boolean.prototype.toSource()  ": "Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object. Overrides the Object.prototype.toSource method.",
-      "Boolean.prototype.toString()": "Returns a string of either \"true\" or \"false\" depending upon the value of the object. Overrides the Object.prototype.toString method.",
-      "Boolean.prototype.valueOf()": "Returns the primitive value of the Boolean object. Overrides the Object.prototype.valueOf method."
-    },
-    "constructorProperties": {
-      "Boolean.length": "Length property whose value is 1.",
-      "Boolean.prototype": "Represents the prototype for the Boolean constructor."
-    },
-    "constructorMethods": {}
+    "children": {
+      "Boolean.length": {
+        "description": "Length property whose value is 1.",
+        "childType": "property"
+      },
+      "Boolean.prototype": {
+        "description": "Represents the prototype for the Boolean constructor.",
+        "childType": "property"
+      },
+      "Boolean.prototype.toSource()  ": {
+        "description": "Returns a string containing the source of the Boolean object; you can use this string to create an equivalent object. Overrides the Object.prototype.toSource method.",
+        "childType": "method"
+      },
+      "Boolean.prototype.toString()": {
+        "description": "Returns a string of either \"true\" or \"false\" depending upon the value of the object. Overrides the Object.prototype.toString method.",
+        "childType": "method"
+      },
+      "Boolean.prototype.valueOf()": {
+        "description": "Returns the primitive value of the Boolean object. Overrides the Object.prototype.valueOf method.",
+        "childType": "method"
+      },
+      "Boolean.prototype.constructor": {
+        "description": "Returns the function that created an instance's prototype. This is the Boolean function by default.",
+        "childType": "property"
+      }
+    }
   },
   "Collator": {
     "description": "The Intl.Collator object has the following properties and methods:",
@@ -72,13 +112,15 @@
       "numeric": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.",
       "caseFirst": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.Collator.prototype": "Allows the addition of properties to all objects."
-    },
-    "constructorMethods": {
-      "Intl.Collator.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    "children": {
+      "Intl.Collator.supportedLocalesOf": {
+        "description": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale.",
+        "childType": "method"
+      },
+      "Intl.Collator.prototype": {
+        "description": "Allows the addition of properties to all objects.",
+        "childType": "property"
+      }
     }
   },
   "DataView": {
@@ -89,28 +131,42 @@
       "byteOffset": "The offset, in bytes, to the first byte in the specified buffer for the new view to reference. If not specified, the view of the buffer will start with the first byte.",
       "byteLength": "The number of elements in the byte array. If unspecified, length of the view will match the buffer's length."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "DataView.length": "The DataView constructor's length property whose value is 3.",
-      "DataView.prototype": "Allows the addition of properties to all DataView objects."
-    },
-    "constructorMethods": {}
+    "children": {
+      "DataView.length": {
+        "description": "The DataView constructor's length property whose value is 3.",
+        "childType": "property"
+      },
+      "DataView.prototype": {
+        "description": "Allows the addition of properties to all DataView objects.",
+        "childType": "property"
+      }
+    }
   },
   "Date": {
     "description": "\n If no arguments are provided, the constructor creates a JavaScript Date object for the current date and time according to system settings.\n If at least two arguments are supplied, missing arguments are either set to 1 (if day is missing) or 0 for all others.\n The JavaScript date is based on a time value that is milliseconds since midnight 01 January, 1970 UTC. A day holds 86,400,000 milliseconds. The JavaScript Date object range is -100,000,000 days to 100,000,000 days relative to 01 January, 1970 UTC.\n The JavaScript Date object provides uniform behavior across platforms. The time value can be passed between systems to represent the same moment in time and if used to create a local date object, will reflect the local equivalent of the time.\n The JavaScript Date object supports a number of UTC (universal) methods, as well as local time methods. UTC, also known as Greenwich Mean Time (GMT), refers to the time as set by the World Time Standard. The local time is the time known to the computer where JavaScript is executed.\n Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.\n",
     "syntax": "new Date();\nnew Date(value);\nnew Date(dateString);\nnew Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);\n",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Date.prototype": "Allows the addition of properties to a JavaScript Date object.",
-      "Date.length": "The value of Date.length is 7. This is the number of arguments handled by the constructor."
-    },
-    "constructorMethods": {
-      "Date.now": "Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.",
-      "Date.parse": "Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC.",
-      "Date.UTC": "Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC."
+    "children": {
+      "Date.now": {
+        "description": "Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.",
+        "childType": "method"
+      },
+      "Date.parse": {
+        "description": "Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC.",
+        "childType": "method"
+      },
+      "Date.UTC": {
+        "description": "Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC.",
+        "childType": "method"
+      },
+      "Date.prototype": {
+        "description": "Allows the addition of properties to a JavaScript Date object.",
+        "childType": "property"
+      },
+      "Date.length": {
+        "description": "The value of Date.length is 7. This is the number of arguments handled by the constructor.",
+        "childType": "property"
+      }
     }
   },
   "DateTimeFormat": {
@@ -135,13 +191,15 @@
       "second": "The representation of the second. Possible values are \"numeric\", \"2-digit\".",
       "timeZoneName": "The representation of the time zone name. Possible values are \"short\", \"long\"."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.DateTimeFormat.prototype": "Allows the addition of properties to all objects."
-    },
-    "constructorMethods": {
-      "Intl.DateTimeFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    "children": {
+      "Intl.DateTimeFormat.supportedLocalesOf": {
+        "description": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale.",
+        "childType": "method"
+      },
+      "Intl.DateTimeFormat.prototype": {
+        "description": "Allows the addition of properties to all objects.",
+        "childType": "property"
+      }
     }
   },
   "Error": {
@@ -152,25 +210,62 @@
       "fileName": "Optional. The value for the fileName property on the created Error object. Defaults to the name of the file containing the code that called the Error() constructor.",
       "lineNumber": "Optional. The value for the lineNumber property on the created Error object. Defaults to the line number containing the Error() constructor invocation."
     },
-    "prototypeProperties": {
-      "Error.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "Error.prototype.message": "Error message.",
-      "Error.prototype.name": "Error name.",
-      "Error.prototype.description": "Error description. Similar to message.",
-      "Error.prototype.number": "Error number.",
-      "Error.prototype.fileName": "Path to file that raised this error.",
-      "Error.prototype.lineNumber": "Line number in file that raised this error.",
-      "Error.prototype.columnNumber": "Column number in line that raised this error.",
-      "Error.prototype.stack": "Stack trace."
-    },
-    "prototypeMethods": {
-      "Error.prototype.toSource()  ": "Returns a string containing the source of the specified Error object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
-      "Error.prototype.toString()": "Returns a string representing the specified object. Overrides the Object.prototype.toString method."
-    },
-    "constructorProperties": {
-      "Error.prototype": "Allows the addition of properties to Error instances."
-    },
-    "constructorMethods": {}
+    "children": {
+      "Error.prototype": {
+        "description": "Allows the addition of properties to Error instances.",
+        "childType": "property"
+      },
+      "Error.prototype.toSource()  ": {
+        "description": "Returns a string containing the source of the specified Error object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
+        "childType": "method"
+      },
+      "Error.prototype.toString()": {
+        "description": "Returns a string representing the specified object. Overrides the Object.prototype.toString method.",
+        "childType": "method"
+      },
+      "Error.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "Error.prototype.message": {
+        "description": "Error message.",
+        "childType": "property"
+      },
+      "Error.prototype.name": {
+        "description": "Error name.",
+        "childType": "property"
+      },
+      "Error.prototype.description": {
+        "description": "Error description. Similar to message.",
+        "childType": "property"
+      },
+      "Error.prototype.number": {
+        "description": "Error number.",
+        "childType": "property"
+      },
+      "Error.prototype.fileName": {
+        "description": "Path to file that raised this error.",
+        "childType": "property"
+      },
+      "Error.prototype.lineNumber": {
+        "description": "Line number in file that raised this error.",
+        "childType": "property"
+      },
+      "Error.prototype.columnNumber": {
+        "description": "Column number in line that raised this error.",
+        "childType": "property"
+      },
+      "Error.prototype.stack": {
+        "description": "Stack trace.",
+        "childType": "property"
+      }
+    }
+  },
+  "Float32x4": {
+    "description": "",
+    "syntax": "SIMD.Float32x4(x, y, z, w);",
+    "parameters": {},
+    "children": {}
   },
   "EvalError": {
     "description": "An EvalError is thrown when the global eval() function is used improperly.",
@@ -180,62 +275,101 @@
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
-    "prototypeProperties": {
-      "EvalError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "EvalError.prototype.message": "Error message. Although ECMA-262 specifies that EvalError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "EvalError.prototype.name": "Error name. Inherited from Error.",
-      "EvalError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "EvalError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "EvalError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "EvalError.prototype.stack": "Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "EvalError.prototype": "Allows the addition of properties to an EvalError object."
-    },
-    "constructorMethods": {}
+    "children": {
+      "EvalError.prototype": {
+        "description": "Allows the addition of properties to an EvalError object.",
+        "childType": "property"
+      },
+      "EvalError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "EvalError.prototype.message": {
+        "description": "Error message. Although ECMA-262 specifies that EvalError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+        "childType": "property"
+      },
+      "EvalError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "EvalError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "EvalError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "EvalError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "EvalError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
+    }
   },
   "Float32Array": {
     "description": "",
     "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Float32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Float32Array.",
-      "Float32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Float32Array.prototype.length.",
-      "Float32Array.name": "Returns the string value of the constructor name. In the case of the Float32Array type: \"Float32Array\".",
-      "Float32Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Float32Array.from": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
-      "Float32Array.of": "Creates a new Float32Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Float32Array.from": {
+        "description": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Float32Array.of": {
+        "description": "Creates a new Float32Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Float32Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 4 in the case of an Float32Array.",
+        "childType": "property"
+      },
+      "Float32Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Float32Array.prototype.length.",
+        "childType": "property"
+      },
+      "Float32Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Float32Array type: \"Float32Array\".",
+        "childType": "property"
+      },
+      "Float32Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
-  },
-  "Float32x4": {
-    "description": "",
-    "syntax": "SIMD.Float32x4(x, y, z, w);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
   },
   "Float64Array": {
     "description": "",
     "syntax": "new Float64Array(length);\nnew Float64Array(typedArray);\nnew Float64Array(object);\nnew Float64Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Float64Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 8 in the case of an Float64Array.",
-      "Float64Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Float64Array.prototype.length.",
-      "Float64Array.name": "Returns the string value of the constructor name. In the case of the Float64Array type: \"Float64Array\".",
-      "Float64Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Float64Array.from": "Creates a new Float64Array from an array-like or iterable object. See also Array.from().",
-      "Float64Array.of": "Creates a new Float64Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Float64Array.from": {
+        "description": "Creates a new Float64Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Float64Array.of": {
+        "description": "Creates a new Float64Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Float64Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 8 in the case of an Float64Array.",
+        "childType": "property"
+      },
+      "Float64Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Float64Array.prototype.length.",
+        "childType": "property"
+      },
+      "Float64Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Float64Array type: \"Float64Array\".",
+        "childType": "property"
+      },
+      "Float64Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
   },
   "Float64x2": {
@@ -245,10 +379,7 @@
       "x": "An double specifying the value of the first lane. Defaults to NaN.",
       "y": "An double specifying the value of the second lane. Defaults to NaN."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "Function": {
     "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
@@ -257,22 +388,31 @@
       "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
       "functionBody": "A string containing the JavaScript statements comprising the function definition."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
+  },
+  "Infinity": {
+    "description": "Infinity is a property of the global object, i.e. it is a variable in global scope.The initial value of Infinity is Number.POSITIVE_INFINITY. The value Infinity (positive infinity) is greater than any other number. This value behaves mathematically like infinity; for example, any positive number multiplied by Infinity is Infinity, and anything divided by Infinity is 0.Per the ECMAScript 5 specification, Infinity is read only (implemented in JavaScript 1.8.5 / Firefox 4).",
+    "syntax": "Infinity ",
+    "parameters": {},
+    "children": {}
   },
   "Generator": {
     "description": "",
     "syntax": "function* gen() { \n  yield 1;\n  yield 2;\n  yield 3;\n}\n\nvar g = gen(); // \"Generator { }\"",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "Generator.prototype.next": "Returns a value yielded by the yield expression.",
-      "Generator.prototype.return": "Returns the given value and finishes the generator.",
-      "Generator.prototype.throw": "Throws an error to a generator."
+    "children": {
+      "Generator.prototype.next": {
+        "description": "Returns a value yielded by the yield expression.",
+        "childType": "method"
+      },
+      "Generator.prototype.return": {
+        "description": "Returns the given value and finishes the generator.",
+        "childType": "method"
+      },
+      "Generator.prototype.throw": {
+        "description": "Throws an error to a generator.",
+        "childType": "method"
+      }
     }
   },
   "GeneratorFunction": {
@@ -282,32 +422,54 @@
       "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
       "functionBody": "A string containing the JavaScript statements comprising the function definition."
     },
-    "prototypeProperties": {
-      "\n  GeneratorFunction.constructor": "\n  The initial value is GeneratorFunction.",
-      "\n  GeneratorFunction.prototype.prototype": "\n  The value is %GeneratorPrototype%."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "GeneratorFunction.length": "The GeneratorFunction constructor's length property whose value is 1.",
-      "GeneratorFunction.prototype": "Allows the addition of properties to all generator function objects."
-    },
-    "constructorMethods": {}
+    "children": {
+      "GeneratorFunction.length": {
+        "description": "The GeneratorFunction constructor's length property whose value is 1.",
+        "childType": "property"
+      },
+      "GeneratorFunction.prototype": {
+        "description": "Allows the addition of properties to all generator function objects.",
+        "childType": "property"
+      },
+      "\n  GeneratorFunction.constructor": {
+        "description": "\n  The initial value is GeneratorFunction.",
+        "childType": "property"
+      },
+      "\n  GeneratorFunction.prototype.prototype": {
+        "description": "\n  The value is %GeneratorPrototype%.",
+        "childType": "property"
+      }
+    }
   },
   "Int16Array": {
     "description": "",
     "syntax": "new Int16Array(length);\nnew Int16Array(typedArray);\nnew Int16Array(object);\nnew Int16Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Int16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Int16Array.",
-      "Int16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Int16Array.prototype.length.",
-      "Int16Array.name": "Returns the string value of the constructor name. In the case of the Int16Array type: \"Int16Array\".",
-      "Int16Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Int16Array.from": "Creates a new Int16Array from an array-like or iterable object. See also Array.from().",
-      "Int16Array.of": "Creates a new Int16Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Int16Array.from": {
+        "description": "Creates a new Int16Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Int16Array.of": {
+        "description": "Creates a new Int16Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Int16Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 2 in the case of an Int16Array.",
+        "childType": "property"
+      },
+      "Int16Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Int16Array.prototype.length.",
+        "childType": "property"
+      },
+      "Int16Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Int16Array type: \"Int16Array\".",
+        "childType": "property"
+      },
+      "Int16Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
   },
   "Int16x8": {
@@ -316,27 +478,7 @@
     "parameters": {
       "s[0-7]": "An integer specifying the value of the lane. Defaults to 0."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "Int32Array": {
-    "description": "",
-    "syntax": "new Int32Array(length);\nnew Int32Array(typedArray);\nnew Int32Array(object);\nnew Int32Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Int32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Int32Array.",
-      "Int32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Int32Array.prototype.length.",
-      "Int32Array.name": "Returns the string value of the constructor name. In the case of the Int32Array type: \"Int32Array\".",
-      "Int32Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Int32Array.from": "Creates a new Int32Array from an array-like or iterable object. See also Array.from().",
-      "Int32Array.of": "Creates a new Int32Array with a variable number of arguments. See also Array.of()."
-    }
+    "children": {}
   },
   "Int32x4": {
     "description": "",
@@ -347,26 +489,68 @@
       "z": "An integer specifying the value of the third lane. Defaults to 0.",
       "w": "An integer specifying the value of the fourth lane. Defaults to 0."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
+  },
+  "Int32Array": {
+    "description": "",
+    "syntax": "new Int32Array(length);\nnew Int32Array(typedArray);\nnew Int32Array(object);\nnew Int32Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "children": {
+      "Int32Array.from": {
+        "description": "Creates a new Int32Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Int32Array.of": {
+        "description": "Creates a new Int32Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Int32Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 4 in the case of an Int32Array.",
+        "childType": "property"
+      },
+      "Int32Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Int32Array.prototype.length.",
+        "childType": "property"
+      },
+      "Int32Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Int32Array type: \"Int32Array\".",
+        "childType": "property"
+      },
+      "Int32Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
+    }
   },
   "Int8Array": {
     "description": "",
     "syntax": "new Int8Array(length);\nnew Int8Array(typedArray);\nnew Int8Array(object);\nnew Int8Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Int8Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Int8Array.",
-      "Int8Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Int8Array.prototype.length.",
-      "Int8Array.name": "Returns the string value of the constructor name. In the case of the Int8Array type: \"Int8Array\".",
-      "Int8Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Int8Array.from": "Creates a new Int8Array from an array-like or iterable object. See also Array.from().",
-      "Int8Array.of": "Creates a new Int8Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Int8Array.from": {
+        "description": "Creates a new Int8Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Int8Array.of": {
+        "description": "Creates a new Int8Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Int8Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 1 in the case of an Int8Array.",
+        "childType": "property"
+      },
+      "Int8Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Int8Array.prototype.length.",
+        "childType": "property"
+      },
+      "Int8Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Int8Array type: \"Int8Array\".",
+        "childType": "property"
+      },
+      "Int8Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
   },
   "Int8x16": {
@@ -375,10 +559,7 @@
     "parameters": {
       "s[0-15]": "An integer specifying the value of the lane. Defaults to 0."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "InternalError": {
     "description": "An InternalError is thrown whenever an internal error in the JavaScript engine occurred.Example cases are mostly when something is too large, e.g.:\n \"too many switch cases\",\n \"too many parentheses in regular expression\",\n \"array initializer too large\",\n \"too much recursion\".\n",
@@ -388,33 +569,74 @@
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
-    "prototypeProperties": {
-      "InternalError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "InternalError.prototype.message": "Error message. Inherited from Error.",
-      "InternalError.prototype.name": "Error name. Inherited from Error.",
-      "InternalError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "InternalError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "InternalError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "InternalError.prototype.stack": "Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "InternalError.prototype": "Allows the addition of properties to an InternalError object."
-    },
-    "constructorMethods": {}
+    "children": {
+      "InternalError.prototype": {
+        "description": "Allows the addition of properties to an InternalError object.",
+        "childType": "property"
+      },
+      "InternalError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "InternalError.prototype.message": {
+        "description": "Error message. Inherited from Error.",
+        "childType": "property"
+      },
+      "InternalError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "InternalError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "InternalError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "InternalError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "InternalError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
+    }
   },
   "Intl": {
     "description": "",
     "syntax": "",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.Collator": "Constructor for collators, objects that enable language sensitive string comparison.",
-      "Intl.DateTimeFormat": "Constructor for objects that enable language sensitive date and time formatting.",
-      "Intl.NumberFormat": "Constructor for objects that enable language sensitive number formatting."
-    },
-    "constructorMethods": {}
+    "children": {
+      "Intl.Collator": {
+        "description": "Constructor for collators, objects that enable language sensitive string comparison.",
+        "childType": "property"
+      },
+      "Intl.DateTimeFormat": {
+        "description": "Constructor for objects that enable language sensitive date and time formatting.",
+        "childType": "property"
+      },
+      "Intl.NumberFormat": {
+        "description": "Constructor for objects that enable language sensitive number formatting.",
+        "childType": "property"
+      }
+    }
+  },
+  "JSON": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
+    "children": {
+      "JSON.parse": {
+        "description": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
+        "childType": "method"
+      },
+      "JSON.stringify": {
+        "description": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner.",
+        "childType": "method"
+      }
+    }
   },
   "Iterator": {
     "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
@@ -423,25 +645,15 @@
       "object": "Object to iterate over properties.",
       "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Iterator.prototype[@@iterator]": "Returns a function that returns iterator object, that conforms to iterator protocol."
-    },
-    "constructorMethods": {
-      "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
-    }
-  },
-  "JSON": {
-    "description": "",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "JSON.parse": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
-      "JSON.stringify": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner."
+    "children": {
+      "Iterator.prototype.next": {
+        "description": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items.",
+        "childType": "method"
+      },
+      "Iterator.prototype[@@iterator]": {
+        "description": "Returns a function that returns iterator object, that conforms to iterator protocol.",
+        "childType": "property"
+      }
     }
   },
   "Map": {
@@ -450,89 +662,249 @@
     "parameters": {
       "iterable": "Iterable is an Array or other iterable object whose elements are key-value pairs (2-element Arrays). Each key-value pair is added to the new Map. null is treated as undefined."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Map.length": "The value of the length property is 0.",
-      "get Map[@@species]": "The constructor function that is used to create derived objects.",
-      "Map.prototype": "Represents the prototype for the Map constructor. Allows the addition of properties to all Map objects."
-    },
-    "constructorMethods": {
-      "Map.prototype.clear": "Removes all key/value pairs from the Map object.",
-      "Map.prototype.delete(key)": "Removes any value associated to the key and returns the value that Map.prototype.has(value) would have previously returned. Map.prototype.has(key) will return false afterwards.",
-      "Map.prototype.entries": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.",
-      "Map.prototype.forEach(callbackFn[, thisArg])": "Calls callbackFn once for each key-value pair present in the Map object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
-      "Map.prototype.get(key)": "Returns the value associated to the key, or undefined if there is none.",
-      "Map.prototype.has(key)": "Returns a boolean asserting whether a value has been associated to the key in the Map object or not.",
-      "Map.prototype.keys": "Returns a new Iterator object that contains the keys for each element in the Map object in insertion order.",
-      "Map.prototype.set(key, value)": "Sets the value for the key in the Map object. Returns the Map object.",
-      "Map.prototype.values": "Returns a new Iterator object that contains the values for each element in the Map object in insertion order.",
-      "Map.prototype[@@iterator]": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order."
+    "children": {
+      "Map.prototype.clear": {
+        "description": "Removes all key/value pairs from the Map object.",
+        "childType": "method"
+      },
+      "Map.prototype.delete(key)": {
+        "description": "Removes any value associated to the key and returns the value that Map.prototype.has(value) would have previously returned. Map.prototype.has(key) will return false afterwards.",
+        "childType": "method"
+      },
+      "Map.prototype.entries": {
+        "description": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.",
+        "childType": "method"
+      },
+      "Map.prototype.forEach(callbackFn[, thisArg])": {
+        "description": "Calls callbackFn once for each key-value pair present in the Map object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
+        "childType": "method"
+      },
+      "Map.prototype.get(key)": {
+        "description": "Returns the value associated to the key, or undefined if there is none.",
+        "childType": "method"
+      },
+      "Map.prototype.has(key)": {
+        "description": "Returns a boolean asserting whether a value has been associated to the key in the Map object or not.",
+        "childType": "method"
+      },
+      "Map.prototype.keys": {
+        "description": "Returns a new Iterator object that contains the keys for each element in the Map object in insertion order.",
+        "childType": "method"
+      },
+      "Map.prototype.set(key, value)": {
+        "description": "Sets the value for the key in the Map object. Returns the Map object.",
+        "childType": "method"
+      },
+      "Map.prototype.values": {
+        "description": "Returns a new Iterator object that contains the values for each element in the Map object in insertion order.",
+        "childType": "method"
+      },
+      "Map.prototype[@@iterator]": {
+        "description": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.",
+        "childType": "method"
+      },
+      "Map.length": {
+        "description": "The value of the length property is 0.",
+        "childType": "property"
+      },
+      "get Map[@@species]": {
+        "description": "The constructor function that is used to create derived objects.",
+        "childType": "property"
+      },
+      "Map.prototype": {
+        "description": "Represents the prototype for the Map constructor. Allows the addition of properties to all Map objects.",
+        "childType": "property"
+      }
     }
   },
   "Math": {
     "description": "Unlike the other global objects, Math is not a constructor. All properties and methods of Math are static. You refer to the constant pi as Math.PI and you call the sine function as Math.sin(x), where x is the method's argument. Constants are defined with the full precision of real numbers in JavaScript.",
     "syntax": "",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Math.E": "Euler's constant and the base of natural logarithms, approximately 2.718.",
-      "Math.LN2": "Natural logarithm of 2, approximately 0.693.",
-      "Math.LN10": "Natural logarithm of 10, approximately 2.303.",
-      "Math.LOG2E": "Base 2 logarithm of E, approximately 1.443.",
-      "Math.LOG10E": "Base 10 logarithm of E, approximately 0.434.",
-      "Math.PI": "Ratio of the circumference of a circle to its diameter, approximately 3.14159.",
-      "Math.SQRT1_2": "Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.",
-      "Math.SQRT2": "Square root of 2, approximately 1.414."
-    },
-    "constructorMethods": {
-      "Math.abs(x)": "Returns the absolute value of a number.",
-      "Math.acos(x)": "Returns the arccosine of a number.",
-      "Math.acosh(x)": "Returns the hyperbolic arccosine of a number.",
-      "Math.asin(x)": "Returns the arcsine of a number.",
-      "Math.asinh(x)": "Returns the hyperbolic arcsine of a number.",
-      "Math.atan(x)": "Returns the arctangent of a number.",
-      "Math.atanh(x)": "Returns the hyperbolic arctangent of a number.",
-      "Math.atan2(y, x)": "Returns the arctangent of the quotient of its arguments.",
-      "Math.cbrt(x)": "Returns the cube root of a number.",
-      "Math.ceil(x)": "Returns the smallest integer greater than or equal to a number.",
-      "Math.clz32(x)": "Returns the number of leading zeroes of a 32-bit integer.",
-      "Math.cos(x)": "Returns the cosine of a number.",
-      "Math.cosh(x)": "Returns the hyperbolic cosine of a number.",
-      "Math.exp(x)": "Returns Ex, where x is the argument, and E is Euler's constant (2.718…), the base of the natural logarithm.",
-      "Math.expm1(x)": "Returns subtracting 1 from exp(x).",
-      "Math.floor(x)": "Returns the largest integer less than or equal to a number.",
-      "Math.fround(x)": "Returns the nearest single precision float representation of a number.",
-      "Math.hypot([x[, y[, …]]])": "Returns the square root of the sum of squares of its arguments.",
-      "Math.imul(x, y)": "Returns the result of a 32-bit integer multiplication.",
-      "Math.log(x)": "Returns the natural logarithm (loge, also ln) of a number.",
-      "Math.log1p(x)": "Returns the natural logarithm of 1 + x (loge, also ln) of a number.",
-      "Math.log10(x)": "Returns the base 10 logarithm of a number.",
-      "Math.log2(x)": "Returns the base 2 logarithm of a number.",
-      "Math.max([x[, y[, …]]])": "Returns the largest of zero or more numbers.",
-      "Math.min([x[, y[, …]]])": "Returns the smallest of zero or more numbers.",
-      "Math.pow(x, y)": "Returns base to the exponent power, that is, baseexponent.",
-      "Math.random": "Returns a pseudo-random number between 0 and 1.",
-      "Math.round(x)": "Returns the value of a number rounded to the nearest integer.",
-      "Math.sign(x)": "Returns the sign of the x, indicating whether x is positive, negative or zero.",
-      "Math.sin(x)": "Returns the sine of a number.",
-      "Math.sinh(x)": "Returns the hyperbolic sine of a number.",
-      "Math.sqrt(x)": "Returns the positive square root of a number.",
-      "Math.tan(x)": "Returns the tangent of a number.",
-      "Math.tanh(x)": "Returns the hyperbolic tangent of a number.",
-      "Math.toSource": "Returns the string \"Math\".",
-      "Math.trunc(x)": "Returns the integral part of the number x, removing any fractional digits."
+    "children": {
+      "Math.abs(x)": {
+        "description": "Returns the absolute value of a number.",
+        "childType": "method"
+      },
+      "Math.acos(x)": {
+        "description": "Returns the arccosine of a number.",
+        "childType": "method"
+      },
+      "Math.acosh(x)": {
+        "description": "Returns the hyperbolic arccosine of a number.",
+        "childType": "method"
+      },
+      "Math.asin(x)": {
+        "description": "Returns the arcsine of a number.",
+        "childType": "method"
+      },
+      "Math.asinh(x)": {
+        "description": "Returns the hyperbolic arcsine of a number.",
+        "childType": "method"
+      },
+      "Math.atan(x)": {
+        "description": "Returns the arctangent of a number.",
+        "childType": "method"
+      },
+      "Math.atanh(x)": {
+        "description": "Returns the hyperbolic arctangent of a number.",
+        "childType": "method"
+      },
+      "Math.atan2(y, x)": {
+        "description": "Returns the arctangent of the quotient of its arguments.",
+        "childType": "method"
+      },
+      "Math.cbrt(x)": {
+        "description": "Returns the cube root of a number.",
+        "childType": "method"
+      },
+      "Math.ceil(x)": {
+        "description": "Returns the smallest integer greater than or equal to a number.",
+        "childType": "method"
+      },
+      "Math.clz32(x)": {
+        "description": "Returns the number of leading zeroes of a 32-bit integer.",
+        "childType": "method"
+      },
+      "Math.cos(x)": {
+        "description": "Returns the cosine of a number.",
+        "childType": "method"
+      },
+      "Math.cosh(x)": {
+        "description": "Returns the hyperbolic cosine of a number.",
+        "childType": "method"
+      },
+      "Math.exp(x)": {
+        "description": "Returns Ex, where x is the argument, and E is Euler's constant (2.718…), the base of the natural logarithm.",
+        "childType": "method"
+      },
+      "Math.expm1(x)": {
+        "description": "Returns subtracting 1 from exp(x).",
+        "childType": "method"
+      },
+      "Math.floor(x)": {
+        "description": "Returns the largest integer less than or equal to a number.",
+        "childType": "method"
+      },
+      "Math.fround(x)": {
+        "description": "Returns the nearest single precision float representation of a number.",
+        "childType": "method"
+      },
+      "Math.hypot([x[, y[, …]]])": {
+        "description": "Returns the square root of the sum of squares of its arguments.",
+        "childType": "method"
+      },
+      "Math.imul(x, y)": {
+        "description": "Returns the result of a 32-bit integer multiplication.",
+        "childType": "method"
+      },
+      "Math.log(x)": {
+        "description": "Returns the natural logarithm (loge, also ln) of a number.",
+        "childType": "method"
+      },
+      "Math.log1p(x)": {
+        "description": "Returns the natural logarithm of 1 + x (loge, also ln) of a number.",
+        "childType": "method"
+      },
+      "Math.log10(x)": {
+        "description": "Returns the base 10 logarithm of a number.",
+        "childType": "method"
+      },
+      "Math.log2(x)": {
+        "description": "Returns the base 2 logarithm of a number.",
+        "childType": "method"
+      },
+      "Math.max([x[, y[, …]]])": {
+        "description": "Returns the largest of zero or more numbers.",
+        "childType": "method"
+      },
+      "Math.min([x[, y[, …]]])": {
+        "description": "Returns the smallest of zero or more numbers.",
+        "childType": "method"
+      },
+      "Math.pow(x, y)": {
+        "description": "Returns base to the exponent power, that is, baseexponent.",
+        "childType": "method"
+      },
+      "Math.random": {
+        "description": "Returns a pseudo-random number between 0 and 1.",
+        "childType": "method"
+      },
+      "Math.round(x)": {
+        "description": "Returns the value of a number rounded to the nearest integer.",
+        "childType": "method"
+      },
+      "Math.sign(x)": {
+        "description": "Returns the sign of the x, indicating whether x is positive, negative or zero.",
+        "childType": "method"
+      },
+      "Math.sin(x)": {
+        "description": "Returns the sine of a number.",
+        "childType": "method"
+      },
+      "Math.sinh(x)": {
+        "description": "Returns the hyperbolic sine of a number.",
+        "childType": "method"
+      },
+      "Math.sqrt(x)": {
+        "description": "Returns the positive square root of a number.",
+        "childType": "method"
+      },
+      "Math.tan(x)": {
+        "description": "Returns the tangent of a number.",
+        "childType": "method"
+      },
+      "Math.tanh(x)": {
+        "description": "Returns the hyperbolic tangent of a number.",
+        "childType": "method"
+      },
+      "Math.toSource": {
+        "description": "Returns the string \"Math\".",
+        "childType": "method"
+      },
+      "Math.trunc(x)": {
+        "description": "Returns the integral part of the number x, removing any fractional digits.",
+        "childType": "method"
+      },
+      "Math.E": {
+        "description": "Euler's constant and the base of natural logarithms, approximately 2.718.",
+        "childType": "property"
+      },
+      "Math.LN2": {
+        "description": "Natural logarithm of 2, approximately 0.693.",
+        "childType": "property"
+      },
+      "Math.LN10": {
+        "description": "Natural logarithm of 10, approximately 2.303.",
+        "childType": "property"
+      },
+      "Math.LOG2E": {
+        "description": "Base 2 logarithm of E, approximately 1.443.",
+        "childType": "property"
+      },
+      "Math.LOG10E": {
+        "description": "Base 10 logarithm of E, approximately 0.434.",
+        "childType": "property"
+      },
+      "Math.PI": {
+        "description": "Ratio of the circumference of a circle to its diameter, approximately 3.14159.",
+        "childType": "property"
+      },
+      "Math.SQRT1_2": {
+        "description": "Square root of 1/2; equivalently, 1 over the square root of 2, approximately 0.707.",
+        "childType": "property"
+      },
+      "Math.SQRT2": {
+        "description": "Square root of 2, approximately 1.414.",
+        "childType": "property"
+      }
     }
   },
   "NaN": {
     "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
     "syntax": "NaN",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "Number": {
     "description": "The primary uses for the Number object are:\n If the argument cannot be converted into a number, it returns NaN.\n In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.\n",
@@ -540,35 +912,99 @@
     "parameters": {
       "value": "The numeric value of the object being created."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {
-      "Number.prototype.toExponential()": "Returns a string representing the number in exponential notation.",
-      "Number.prototype.toFixed()": "Returns a string representing the number in fixed-point notation.",
-      "Number.prototype.toLocaleString()": "Returns a string with a language sensitive representation of this number. Overrides the Object.prototype.toLocaleString method.",
-      "Number.prototype.toPrecision()": "Returns a string representing the number to a specified precision in fixed-point or exponential notation.",
-      "Number.prototype.toSource()  ": "Returns an object literal representing the specified Number object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
-      "Number.prototype.toString()": "Returns a string representing the specified object in the specified radix (base). Overrides the Object.prototype.toString method.",
-      "Number.prototype.valueOf()": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf method."
-    },
-    "constructorProperties": {
-      "Number.EPSILON": "The smallest interval between two representable numbers.",
-      "Number.MAX_SAFE_INTEGER": "The maximum safe integer in JavaScript (253 - 1).",
-      "Number.MAX_VALUE": "The largest positive representable number.",
-      "Number.MIN_SAFE_INTEGER": "The minimum safe integer in JavaScript (-(253 - 1)).",
-      "Number.MIN_VALUE": "The smallest positive representable number - that is, the positive number closest to zero (without actually being zero).",
-      "Number.NaN": "Special \"not a number\" value.",
-      "Number.NEGATIVE_INFINITY": "Special value representing negative infinity; returned on overflow.",
-      "Number.POSITIVE_INFINITY": "Special value representing infinity; returned on overflow.",
-      "Number.prototype": "Allows the addition of properties to a Number object."
-    },
-    "constructorMethods": {
-      "Number.isNaN": "Determine whether the passed value is NaN.",
-      "Number.isFinite": "Determine whether the passed value is a finite number.",
-      "Number.isInteger": "Determine whether the passed value is an integer.",
-      "Number.isSafeInteger": "Determine whether the passed value is a safe integer (number between -(253 - 1) and 253 - 1).",
-      "Number.toInteger": "Used to evaluate the passed value and convert it to an integer (or Infinity), but has been removed.",
-      "Number.parseFloat": "The value is the same as parseFloat() of the global object.",
-      "Number.parseInt": "The value is the same as parseInt() of the global object."
+    "children": {
+      "Number.isNaN": {
+        "description": "Determine whether the passed value is NaN.",
+        "childType": "method"
+      },
+      "Number.isFinite": {
+        "description": "Determine whether the passed value is a finite number.",
+        "childType": "method"
+      },
+      "Number.isInteger": {
+        "description": "Determine whether the passed value is an integer.",
+        "childType": "method"
+      },
+      "Number.isSafeInteger": {
+        "description": "Determine whether the passed value is a safe integer (number between -(253 - 1) and 253 - 1).",
+        "childType": "method"
+      },
+      "Number.toInteger": {
+        "description": "Used to evaluate the passed value and convert it to an integer (or Infinity), but has been removed.",
+        "childType": "method"
+      },
+      "Number.parseFloat": {
+        "description": "The value is the same as parseFloat() of the global object.",
+        "childType": "method"
+      },
+      "Number.parseInt": {
+        "description": "The value is the same as parseInt() of the global object.",
+        "childType": "method"
+      },
+      "Number.EPSILON": {
+        "description": "The smallest interval between two representable numbers.",
+        "childType": "property"
+      },
+      "Number.MAX_SAFE_INTEGER": {
+        "description": "The maximum safe integer in JavaScript (253 - 1).",
+        "childType": "property"
+      },
+      "Number.MAX_VALUE": {
+        "description": "The largest positive representable number.",
+        "childType": "property"
+      },
+      "Number.MIN_SAFE_INTEGER": {
+        "description": "The minimum safe integer in JavaScript (-(253 - 1)).",
+        "childType": "property"
+      },
+      "Number.MIN_VALUE": {
+        "description": "The smallest positive representable number - that is, the positive number closest to zero (without actually being zero).",
+        "childType": "property"
+      },
+      "Number.NaN": {
+        "description": "Special \"not a number\" value.",
+        "childType": "property"
+      },
+      "Number.NEGATIVE_INFINITY": {
+        "description": "Special value representing negative infinity; returned on overflow.",
+        "childType": "property"
+      },
+      "Number.POSITIVE_INFINITY": {
+        "description": "Special value representing infinity; returned on overflow.",
+        "childType": "property"
+      },
+      "Number.prototype": {
+        "description": "Allows the addition of properties to a Number object.",
+        "childType": "property"
+      },
+      "Number.prototype.toExponential()": {
+        "description": "Returns a string representing the number in exponential notation.",
+        "childType": "method"
+      },
+      "Number.prototype.toFixed()": {
+        "description": "Returns a string representing the number in fixed-point notation.",
+        "childType": "method"
+      },
+      "Number.prototype.toLocaleString()": {
+        "description": "Returns a string with a language sensitive representation of this number. Overrides the Object.prototype.toLocaleString method.",
+        "childType": "method"
+      },
+      "Number.prototype.toPrecision()": {
+        "description": "Returns a string representing the number to a specified precision in fixed-point or exponential notation.",
+        "childType": "method"
+      },
+      "Number.prototype.toSource()  ": {
+        "description": "Returns an object literal representing the specified Number object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
+        "childType": "method"
+      },
+      "Number.prototype.toString()": {
+        "description": "Returns a string representing the specified object in the specified radix (base). Overrides the Object.prototype.toString method.",
+        "childType": "method"
+      },
+      "Number.prototype.valueOf()": {
+        "description": "Returns the primitive value of the specified object. Overrides the Object.prototype.valueOf method.",
+        "childType": "method"
+      }
     }
   },
   "NumberFormat": {
@@ -589,13 +1025,15 @@
       "minimumSignificantDigits": "The minimum number of significant digits to use. Possible values are from 1 to 21; the default is 1.",
       "maximumSignificantDigits": "The maximum number of significant digits to use. Possible values are from 1 to 21; the default is minimumSignificantDigits."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.NumberFormat.prototype": "Allows the addition of properties to all objects."
-    },
-    "constructorMethods": {
-      "Intl.NumberFormat.supportedLocalesOf": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale."
+    "children": {
+      "Intl.NumberFormat.supportedLocalesOf": {
+        "description": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale.",
+        "childType": "method"
+      },
+      "Intl.NumberFormat.prototype": {
+        "description": "Allows the addition of properties to all objects.",
+        "childType": "property"
+      }
     }
   },
   "Object": {
@@ -605,46 +1043,137 @@
       "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
       "value": "Any value."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "ParallelArray": {
     "description": "",
     "syntax": "new ParallelArray()\nnew ParallelArray([element0, element1, ...])\nnew ParallelArray(arrayLength, elementalFunction)",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "length": "Reflects the number of elements in the ParallelArray."
-    },
-    "constructorMethods": {
-      "map": "reduce",
-      "reduce": "scan",
-      "scan": "scatter",
-      "scatter": "filter",
-      "filter": "flatten",
-      "flatten": "partition",
-      "partition": "get",
-      "get": ""
+    "children": {
+      "map": {
+        "description": "reduce",
+        "childType": "method"
+      },
+      "reduce": {
+        "description": "scan",
+        "childType": "method"
+      },
+      "scan": {
+        "description": "scatter",
+        "childType": "method"
+      },
+      "scatter": {
+        "description": "filter",
+        "childType": "method"
+      },
+      "filter": {
+        "description": "flatten",
+        "childType": "method"
+      },
+      "flatten": {
+        "description": "partition",
+        "childType": "method"
+      },
+      "partition": {
+        "description": "get",
+        "childType": "method"
+      },
+      "get": {
+        "description": "",
+        "childType": "method"
+      },
+      "length": {
+        "description": "Reflects the number of elements in the ParallelArray.",
+        "childType": "property"
+      }
     }
   },
   "Promise": {
     "description": "A Promise represents a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers to an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future.A Promise is in one of these states:\n pending: initial state, not fulfilled or rejected.\n fulfilled: meaning that the operation completed successfully.\n rejected: meaning that the operation failed.\nA pending promise can become either fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained—an operation called composition.\nNote: A promise is said to be settled if it is either fulfilled or rejected, but not pending. You will also hear the term resolved used with promises — this means that the promise is settled, or it is locked into a promise chain. Domenic Denicola's States and fates contains more details about promise terminology.\n",
     "syntax": "new Promise(executor);\nnew Promise(function(resolve, reject) { ... });",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Promise.length": "Length property whose value is 1 (number of constructor arguments).",
-      "Promise.prototype": "Represents the prototype for the Promise constructor."
+    "children": {
+      "Promise.all(iterable)": {
+        "description": "Returns a promise that resolves when all of the promises in the iterable argument have resolved. This is useful for aggregating results of multiple promises together.",
+        "childType": "method"
+      },
+      "Promise.race(iterable)": {
+        "description": "Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.",
+        "childType": "method"
+      },
+      "Promise.reject(reason)": {
+        "description": "Returns a Promise object that is rejected with the given reason.",
+        "childType": "method"
+      },
+      "Promise.resolve(value)": {
+        "description": "Returns a Promise object that is resolved with the given value. If the value is a thenable (i.e. has a then method), the returned promise will \"follow\" that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value. Generally, if you want to know if a value is a promise or not - Promise.resolve(value) it instead and work with the return value as a promise.",
+        "childType": "method"
+      },
+      "Promise.length": {
+        "description": "Length property whose value is 1 (number of constructor arguments).",
+        "childType": "property"
+      },
+      "Promise.prototype": {
+        "description": "Represents the prototype for the Promise constructor.",
+        "childType": "property"
+      }
+    }
+  },
+  "Proxy": {
+    "description": "",
+    "syntax": "var p = new Proxy(target, handler);\n",
+    "parameters": {
+      "target": "A target object (can be any sort of objects, including a native array, a function or even another proxy) or function to wrap with Proxy.",
+      "handler": "An object whose properties are functions which define the behavior of the proxy when an operation is performed on it."
     },
-    "constructorMethods": {
-      "Promise.all(iterable)": "Returns a promise that resolves when all of the promises in the iterable argument have resolved. This is useful for aggregating results of multiple promises together.",
-      "Promise.race(iterable)": "Returns a promise that resolves or rejects as soon as one of the promises in the iterable resolves or rejects, with the value or reason from that promise.",
-      "Promise.reject(reason)": "Returns a Promise object that is rejected with the given reason.",
-      "Promise.resolve(value)": "Returns a Promise object that is resolved with the given value. If the value is a thenable (i.e. has a then method), the returned promise will \"follow\" that thenable, adopting its eventual state; otherwise the returned promise will be fulfilled with the value. Generally, if you want to know if a value is a promise or not - Promise.resolve(value) it instead and work with the return value as a promise."
+    "children": {
+      "Proxy.revocable": {
+        "description": "Creates a revocable Proxy object.",
+        "childType": "method"
+      }
+    }
+  },
+  "RangeError": {
+    "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
+    "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
+    "children": {
+      "RangeError.prototype": {
+        "description": "Allows the addition of properties to an RangeError object.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.constructor": {
+        "description": "\n  Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.message": {
+        "description": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.name": {
+        "description": "\n  Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.fileName": {
+        "description": "\n  Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.lineNumber": {
+        "description": "\n  Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.columnNumber": {
+        "description": "\n  Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  RangeError.prototype.stack": {
+        "description": "\n  Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
     }
   },
   "ReferenceError": {
@@ -655,66 +1184,102 @@
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
-    "prototypeProperties": {
-      "\n  ReferenceError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  ReferenceError.prototype.message": "\n  Error message. Although ECMA-262 specifies that ReferenceError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  ReferenceError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  ReferenceError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  ReferenceError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  ReferenceError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  ReferenceError.prototype.stack": "\n  Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "ReferenceError.prototype": "Allows the addition of properties to an ReferenceError object."
-    },
-    "constructorMethods": {}
-  },
-  "RangeError": {
-    "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
-    "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
-    "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
-    },
-    "prototypeProperties": {
-      "\n  RangeError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  RangeError.prototype.message": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  RangeError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  RangeError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.stack": "\n  Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "RangeError.prototype": "Allows the addition of properties to an RangeError object."
-    },
-    "constructorMethods": {}
+    "children": {
+      "ReferenceError.prototype": {
+        "description": "Allows the addition of properties to an ReferenceError object.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.constructor": {
+        "description": "\n  Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.message": {
+        "description": "\n  Error message. Although ECMA-262 specifies that ReferenceError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.name": {
+        "description": "\n  Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.fileName": {
+        "description": "\n  Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.lineNumber": {
+        "description": "\n  Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.columnNumber": {
+        "description": "\n  Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  ReferenceError.prototype.stack": {
+        "description": "\n  Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
+    }
   },
   "Reflect": {
     "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
     "syntax": "",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "Reflect.apply": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
-      "Reflect.construct": " The new operator as a function. Equivalent to calling new target(...args).",
-      "Reflect.defineProperty": "Similar to Object.defineProperty(). Returns a Boolean.",
-      "Reflect.deleteProperty": "The delete operator as a function. Equivalent to calling delete target[name].",
-      "Reflect.enumerate": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
-      "Reflect.get": "A function that returns the value of properties.",
-      "Reflect.getOwnPropertyDescriptor": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
-      "Reflect.getPrototypeOf": "Same as Object.getPrototypeOf().",
-      "Reflect.has": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
-      "Reflect.isExtensible": "Same as Object.isExtensible().",
-      "Reflect.ownKeys": "Returns an array of the target object's own (not inherited) property keys.",
-      "Reflect.preventExtensions": "Similar to Object.preventExtensions(). Returns a Boolean.",
-      "Reflect.set": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
-      "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
+    "children": {
+      "Reflect.apply": {
+        "description": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
+        "childType": "method"
+      },
+      "Reflect.construct": {
+        "description": " The new operator as a function. Equivalent to calling new target(...args).",
+        "childType": "method"
+      },
+      "Reflect.defineProperty": {
+        "description": "Similar to Object.defineProperty(). Returns a Boolean.",
+        "childType": "method"
+      },
+      "Reflect.deleteProperty": {
+        "description": "The delete operator as a function. Equivalent to calling delete target[name].",
+        "childType": "method"
+      },
+      "Reflect.enumerate": {
+        "description": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
+        "childType": "method"
+      },
+      "Reflect.get": {
+        "description": "A function that returns the value of properties.",
+        "childType": "method"
+      },
+      "Reflect.getOwnPropertyDescriptor": {
+        "description": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
+        "childType": "method"
+      },
+      "Reflect.getPrototypeOf": {
+        "description": "Same as Object.getPrototypeOf().",
+        "childType": "method"
+      },
+      "Reflect.has": {
+        "description": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
+        "childType": "method"
+      },
+      "Reflect.isExtensible": {
+        "description": "Same as Object.isExtensible().",
+        "childType": "method"
+      },
+      "Reflect.ownKeys": {
+        "description": "Returns an array of the target object's own (not inherited) property keys.",
+        "childType": "method"
+      },
+      "Reflect.preventExtensions": {
+        "description": "Similar to Object.preventExtensions(). Returns a Boolean.",
+        "childType": "method"
+      },
+      "Reflect.set": {
+        "description": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
+        "childType": "method"
+      },
+      "Reflect.setPrototypeOf": {
+        "description": "A function that sets the prototype of an object.",
+        "childType": "method"
+      }
     }
   },
   "RegExp": {
@@ -729,60 +1294,163 @@
       "u ": "unicode; treat pattern as a sequence of unicode code points",
       "y ": "sticky; matches only from the index indicated by the lastIndex property of this regular expression in the target string (and does not attempt to match from any later indexes)."
     },
-    "prototypeProperties": {
-      "RegExp.prototype.constructor": "Specifies the function that creates an object's prototype.",
-      "RegExp.prototype.flags  ": "A string that contains the flags of the RegExp object.",
-      "RegExp.prototype.global": "Whether to test the regular expression against all possible matches in a string, or only against the first.",
-      "RegExp.prototype.ignoreCase": "Whether to ignore case while attempting a match in a string.",
-      "RegExp.prototype.multiline": "Whether or not to search in strings across multiple lines.",
-      "RegExp.prototype.source": "The text of the pattern.",
-      "RegExp.prototype.sticky  ": "Whether or not the search is sticky.",
-      "RegExp.prototype.unicode  ": "Whether or not Unicode features are enabled."
-    },
-    "prototypeMethods": {
-      "RegExp.prototype.compile()  ": "(Re-)compiles a regular expression during execution of a script.",
-      "RegExp.prototype.exec()": "Executes a search for a match in its string parameter.",
-      "RegExp.prototype.test()": "Tests for a match in its string parameter.",
-      "RegExp.prototype.toSource()  ": "Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
-      "RegExp.prototype.toString()": "Returns a string representing the specified object. Overrides the Object.prototype.toString method."
-    },
-    "constructorProperties": {
-      "RegExp.prototype": "Allows the addition of properties to all objects.",
-      "RegExp.length": "The value of RegExp.length is 2.",
-      "RegExp.lastIndex": "The index at which to start the next match."
-    },
-    "constructorMethods": {}
+    "children": {
+      "RegExp.prototype": {
+        "description": "Allows the addition of properties to all objects.",
+        "childType": "property"
+      },
+      "RegExp.length": {
+        "description": "The value of RegExp.length is 2.",
+        "childType": "property"
+      },
+      "RegExp.lastIndex": {
+        "description": "The index at which to start the next match.",
+        "childType": "property"
+      },
+      "RegExp.prototype.compile()  ": {
+        "description": "(Re-)compiles a regular expression during execution of a script.",
+        "childType": "method"
+      },
+      "RegExp.prototype.exec()": {
+        "description": "Executes a search for a match in its string parameter.",
+        "childType": "method"
+      },
+      "RegExp.prototype.test()": {
+        "description": "Tests for a match in its string parameter.",
+        "childType": "method"
+      },
+      "RegExp.prototype.toSource()  ": {
+        "description": "Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the Object.prototype.toSource method.",
+        "childType": "method"
+      },
+      "RegExp.prototype.toString()": {
+        "description": "Returns a string representing the specified object. Overrides the Object.prototype.toString method.",
+        "childType": "method"
+      },
+      "RegExp.prototype.constructor": {
+        "description": "Specifies the function that creates an object's prototype.",
+        "childType": "property"
+      },
+      "RegExp.prototype.flags  ": {
+        "description": "A string that contains the flags of the RegExp object.",
+        "childType": "property"
+      },
+      "RegExp.prototype.global": {
+        "description": "Whether to test the regular expression against all possible matches in a string, or only against the first.",
+        "childType": "property"
+      },
+      "RegExp.prototype.ignoreCase": {
+        "description": "Whether to ignore case while attempting a match in a string.",
+        "childType": "property"
+      },
+      "RegExp.prototype.multiline": {
+        "description": "Whether or not to search in strings across multiple lines.",
+        "childType": "property"
+      },
+      "RegExp.prototype.source": {
+        "description": "The text of the pattern.",
+        "childType": "property"
+      },
+      "RegExp.prototype.sticky  ": {
+        "description": "Whether or not the search is sticky.",
+        "childType": "property"
+      },
+      "RegExp.prototype.unicode  ": {
+        "description": "Whether or not Unicode features are enabled.",
+        "childType": "property"
+      }
+    }
   },
   "SIMD": {
     "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
     "syntax": "",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "Set": {
     "description": "Set objects are collections of values, you can iterate its elements in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.",
     "syntax": "new Set([iterable]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Set.length": "The value of the length property is 0.",
-      "get Set[@@species]": "The constructor function that is used to create derived objects.",
-      "Set.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all Set objects."
+    "children": {
+      "Set.prototype.add(value)": {
+        "description": "Appends a new element with the given value to the Set object. Returns the Set object.",
+        "childType": "method"
+      },
+      "Set.prototype.clear": {
+        "description": "Removes all elements from the Set object.",
+        "childType": "method"
+      },
+      "Set.prototype.delete(value)": {
+        "description": "Removes the element associated to the value and returns the value that Set.prototype.has(value) would have previously returned. Set.prototype.has(value) will return false afterwards.",
+        "childType": "method"
+      },
+      "Set.prototype.entries": {
+        "description": "Returns a new Iterator object that contains an array of [value, value] for each element in the Set object, in insertion order. This is kept similar to the Map object, so that each entry has the same value for its key and value here.",
+        "childType": "method"
+      },
+      "Set.prototype.forEach(callbackFn[, thisArg])": {
+        "description": "Calls callbackFn once for each value present in the Set object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
+        "childType": "method"
+      },
+      "Set.prototype.has(value)": {
+        "description": "Returns a boolean asserting whether an element is present with the given value in the Set object or not.",
+        "childType": "method"
+      },
+      "Set.prototype.keys": {
+        "description": "Is the same function as the values() function and returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
+        "childType": "method"
+      },
+      "Set.prototype.values": {
+        "description": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
+        "childType": "method"
+      },
+      "Set.prototype[@@iterator]": {
+        "description": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
+        "childType": "method"
+      },
+      "Set.length": {
+        "description": "The value of the length property is 0.",
+        "childType": "property"
+      },
+      "get Set[@@species]": {
+        "description": "The constructor function that is used to create derived objects.",
+        "childType": "property"
+      },
+      "Set.prototype": {
+        "description": "Represents the prototype for the Set constructor. Allows the addition of properties to all Set objects.",
+        "childType": "property"
+      }
+    }
+  },
+  "StopIteration": {
+    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
+    "syntax": "StopIteration",
+    "parameters": {},
+    "children": {}
+  },
+  "Symbol": {
+    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
+    "syntax": "Symbol([description])",
+    "parameters": {
+      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
     },
-    "constructorMethods": {
-      "Set.prototype.add(value)": "Appends a new element with the given value to the Set object. Returns the Set object.",
-      "Set.prototype.clear": "Removes all elements from the Set object.",
-      "Set.prototype.delete(value)": "Removes the element associated to the value and returns the value that Set.prototype.has(value) would have previously returned. Set.prototype.has(value) will return false afterwards.",
-      "Set.prototype.entries": "Returns a new Iterator object that contains an array of [value, value] for each element in the Set object, in insertion order. This is kept similar to the Map object, so that each entry has the same value for its key and value here.",
-      "Set.prototype.forEach(callbackFn[, thisArg])": "Calls callbackFn once for each value present in the Set object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
-      "Set.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the Set object or not.",
-      "Set.prototype.keys": "Is the same function as the values() function and returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
-      "Set.prototype.values": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order.",
-      "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
+    "children": {
+      "Symbol.for(key)": {
+        "description": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
+        "childType": "method"
+      },
+      "Symbol.keyFor(sym)": {
+        "description": "Retrieves a shared symbol key from the global symbol registry for the given symbol.",
+        "childType": "method"
+      },
+      "Symbol.length": {
+        "description": "Length property whose value is 0.",
+        "childType": "property"
+      },
+      "Symbol.prototype": {
+        "description": "Represents the prototype for the Symbol constructor.",
+        "childType": "property"
+      }
     }
   },
   "String": {
@@ -791,45 +1459,35 @@
     "parameters": {
       "thing": "Anything to be converted to a string."
     },
-    "prototypeProperties": {
-      "String.prototype.constructor": "Specifies the function that creates an object's prototype.",
-      "String.prototype.length": "Reflects the length of the string.",
-      "N": "Used to access the character in the Nth position where N is a positive integer between 0 and one less than the value of length. These properties are read-only."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "String.prototype": "Allows the addition of properties to a String object."
-    },
-    "constructorMethods": {
-      "String.fromCharCode": "Returns a string created by using the specified sequence of Unicode values.",
-      "String.fromCodePoint": "Returns a string created by using the specified sequence of code points.",
-      "String.raw": "Returns a string created from a raw template string."
-    }
-  },
-  "StopIteration": {
-    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
-    "syntax": "StopIteration",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "Symbol": {
-    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
-    "syntax": "Symbol([description])",
-    "parameters": {
-      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Symbol.length": "Length property whose value is 0.",
-      "Symbol.prototype": "Represents the prototype for the Symbol constructor."
-    },
-    "constructorMethods": {
-      "Symbol.for(key)": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
-      "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
+    "children": {
+      "String.fromCharCode": {
+        "description": "Returns a string created by using the specified sequence of Unicode values.",
+        "childType": "method"
+      },
+      "String.fromCodePoint": {
+        "description": "Returns a string created by using the specified sequence of code points.",
+        "childType": "method"
+      },
+      "String.raw": {
+        "description": "Returns a string created from a raw template string.",
+        "childType": "method"
+      },
+      "String.prototype": {
+        "description": "Allows the addition of properties to a String object.",
+        "childType": "property"
+      },
+      "String.prototype.constructor": {
+        "description": "Specifies the function that creates an object's prototype.",
+        "childType": "property"
+      },
+      "String.prototype.length": {
+        "description": "Reflects the length of the string.",
+        "childType": "property"
+      },
+      "N": {
+        "description": "Used to access the character in the Nth position where N is a positive integer between 0 and one less than the value of length. These properties are read-only.",
+        "childType": "property"
+      }
     }
   },
   "SyntaxError": {
@@ -840,20 +1498,40 @@
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
-    "prototypeProperties": {
-      "\n  SyntaxError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  SyntaxError.prototype.message": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  SyntaxError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  SyntaxError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  SyntaxError.prototype.stack": "\n  Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "SyntaxError.prototype": "Allows the addition of properties to a SyntaxError object."
-    },
-    "constructorMethods": {}
+    "children": {
+      "SyntaxError.prototype": {
+        "description": "Allows the addition of properties to a SyntaxError object.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.constructor": {
+        "description": "\n  Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.message": {
+        "description": "\n  Error message. Although ECMA-262 specifies that SyntaxError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.name": {
+        "description": "\n  Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.fileName": {
+        "description": "\n  Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.lineNumber": {
+        "description": "\n  Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.columnNumber": {
+        "description": "\n  Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "\n  SyntaxError.prototype.stack": {
+        "description": "\n  Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
+    }
   },
   "TypeError": {
     "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
@@ -863,20 +1541,40 @@
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
-    "prototypeProperties": {
-      "TypeError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "TypeError.prototype.message": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "TypeError.prototype.name": "Error name. Inherited from Error.",
-      "TypeError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "TypeError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "TypeError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "TypeError.prototype.stack": "Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "TypeError.prototype": "Allows the addition of properties to a TypeError object."
-    },
-    "constructorMethods": {}
+    "children": {
+      "TypeError.prototype": {
+        "description": "Allows the addition of properties to a TypeError object.",
+        "childType": "property"
+      },
+      "TypeError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "TypeError.prototype.message": {
+        "description": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+        "childType": "property"
+      },
+      "TypeError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
+    }
   },
   "URIError": {
     "description": "A URIError is thrown when the global URI handling functions are passed a malformed URI.",
@@ -886,118 +1584,164 @@
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
-    "prototypeProperties": {
-      "URIError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "URIError.prototype.message": "Error message. Although ECMA-262 specifies that URIError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "URIError.prototype.name": "Error name. Inherited from Error.",
-      "URIError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "URIError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "URIError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "URIError.prototype.stack": "Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "URIError.prototype": "Allows the addition of properties to a URIError object."
-    },
-    "constructorMethods": {}
+    "children": {
+      "URIError.prototype": {
+        "description": "Allows the addition of properties to a URIError object.",
+        "childType": "property"
+      },
+      "URIError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
+        "childType": "property"
+      },
+      "URIError.prototype.message": {
+        "description": "Error message. Although ECMA-262 specifies that URIError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+        "childType": "property"
+      },
+      "URIError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "URIError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "URIError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "URIError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "URIError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
+        "childType": "property"
+      }
+    }
   },
   "Uint16Array": {
     "description": "",
     "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
-      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
-      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
-      "Uint16Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
-      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Uint16Array.from": {
+        "description": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Uint16Array.of": {
+        "description": "Creates a new Uint16Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Uint16Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
+        "childType": "property"
+      },
+      "Uint16Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
+        "childType": "property"
+      },
+      "Uint16Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
+        "childType": "property"
+      },
+      "Uint16Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
   },
   "Uint32Array": {
     "description": "",
     "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
-      "Uint32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
-      "Uint32Array.name": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
-      "Uint32Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint32Array.from": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
-      "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Uint32Array.from": {
+        "description": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Uint32Array.of": {
+        "description": "Creates a new Uint32Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Uint32Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
+        "childType": "property"
+      },
+      "Uint32Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
+        "childType": "property"
+      },
+      "Uint32Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
+        "childType": "property"
+      },
+      "Uint32Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
-  },
-  "Proxy": {
-    "description": "",
-    "syntax": "var p = new Proxy(target, handler);\n",
-    "parameters": {
-      "target": "A target object (can be any sort of objects, including a native array, a function or even another proxy) or function to wrap with Proxy.",
-      "handler": "An object whose properties are functions which define the behavior of the proxy when an operation is performed on it."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "Proxy.revocable": "Creates a revocable Proxy object."
-    }
-  },
-  "Infinity": {
-    "description": "Infinity is a property of the global object, i.e. it is a variable in global scope.The initial value of Infinity is Number.POSITIVE_INFINITY. The value Infinity (positive infinity) is greater than any other number. This value behaves mathematically like infinity; for example, any positive number multiplied by Infinity is Infinity, and anything divided by Infinity is 0.Per the ECMAScript 5 specification, Infinity is read only (implemented in JavaScript 1.8.5 / Firefox 4).",
-    "syntax": "Infinity ",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
   },
   "Uint8Array": {
     "description": "",
     "syntax": "new Uint8Array(length);\nnew Uint8Array(typedArray);\nnew Uint8Array(object);\nnew Uint8Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint8Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8Array.",
-      "Uint8Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8Array.prototype.length.",
-      "Uint8Array.name": "Returns the string value of the constructor name. In the case of the Uint8Array type: \"Uint8Array\".",
-      "Uint8Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint8Array.from": "Creates a new Uint8Array from an array-like or iterable object. See also Array.from().",
-      "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
+    "children": {
+      "Uint8Array.from": {
+        "description": "Creates a new Uint8Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Uint8Array.of": {
+        "description": "Creates a new Uint8Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Uint8Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 1 in the case of an Uint8Array.",
+        "childType": "property"
+      },
+      "Uint8Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Uint8Array.prototype.length.",
+        "childType": "property"
+      },
+      "Uint8Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Uint8Array type: \"Uint8Array\".",
+        "childType": "property"
+      },
+      "Uint8Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
     }
   },
-  "arguments": {
-    "description": "The arguments object is a local variable available within all functions. arguments as a property of Function can no longer be used.You can refer to a function's arguments within the function by using the arguments object. This object contains an entry for each argument passed to the function, the first entry's index starting at 0. For example, if a function is passed three arguments, you can refer to the argument as follows:arguments[0]\narguments[1]\narguments[2]\nThe arguments can also be set:arguments[1] = 'new value';The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. For example, it does not have the pop method. However it can be converted to a real Array:var args = Array.prototype.slice.call(arguments);\nImportant: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object. More information.\nThe arguments object is available only within a function body. Attempting to access the arguments object outside a function declaration results in an error.You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. You can use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. (To determine the number of arguments declared when a function was defined, use the Function.length property.)",
-    "syntax": "arguments",
+  "Uint8ClampedArray": {
+    "description": "",
+    "syntax": "new Uint8ClampedArray(length);\nnew Uint8ClampedArray(typedArray);\nnew Uint8ClampedArray(object);\nnew Uint8ClampedArray(buffer [, byteOffset [, length]]);",
     "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "arguments.callee": "Reference to the currently executing function.",
-      "arguments.caller": "Reference to the function that invoked the currently executing function.",
-      "arguments.length": "Reference to the number of arguments passed to the function."
-    },
-    "constructorMethods": {}
-  },
-  "decodeURI": {
-    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
-    "syntax": "decodeURI(encodedURI)",
-    "parameters": {
-      "encodedURI": "A complete, encoded Uniform Resource Identifier."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {
+      "Uint8ClampedArray.from": {
+        "description": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Uint8ClampedArray.of": {
+        "description": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Uint8ClampedArray.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 1 in the case of an Uint8ClampedArray.",
+        "childType": "property"
+      },
+      "Uint8ClampedArray.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Uint8ClampedArray.prototype.length.",
+        "childType": "property"
+      },
+      "Uint8ClampedArray.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Uint8ClampedArray type: \"Uint8ClampedArray\".",
+        "childType": "property"
+      },
+      "Uint8ClampedArray.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
+    }
   },
   "WeakMap": {
     "description": "Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed (e.g. a Symbol can't be a WeakMap key).The key in a WeakMap is held weakly.  What this means is that, if there are no other strong references to the key, then the entire entry will be removed from the WeakMap by the garbage collector.",
@@ -1005,19 +1749,94 @@
     "parameters": {
       "iterable": "Iterable is an Array or other iterable object whose elements are key-value pairs (2-element Arrays). Each key-value pair will be added to the new WeakMap. null is treated as undefined."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "WeakMap.length": "The value of the length property is 0.",
-      "WeakMap.prototype": "Represents the prototype for the WeakMap constructor. Allows the addition of properties to all WeakMap objects."
-    },
-    "constructorMethods": {
-      "WeakMap.prototype.delete(key)": "Removes any value associated to the key. WeakMap.prototype.has(key) will return false afterwards.",
-      "WeakMap.prototype.get(key)": "Returns the value associated to the key, or undefined if there is none.",
-      "WeakMap.prototype.has(key)": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
-      "WeakMap.prototype.set(key, value)": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
-      "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
+    "children": {
+      "WeakMap.prototype.delete(key)": {
+        "description": "Removes any value associated to the key. WeakMap.prototype.has(key) will return false afterwards.",
+        "childType": "method"
+      },
+      "WeakMap.prototype.get(key)": {
+        "description": "Returns the value associated to the key, or undefined if there is none.",
+        "childType": "method"
+      },
+      "WeakMap.prototype.has(key)": {
+        "description": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
+        "childType": "method"
+      },
+      "WeakMap.prototype.set(key, value)": {
+        "description": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
+        "childType": "method"
+      },
+      "WeakMap.prototype.clear": {
+        "description": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)",
+        "childType": "method"
+      },
+      "WeakMap.length": {
+        "description": "The value of the length property is 0.",
+        "childType": "property"
+      },
+      "WeakMap.prototype": {
+        "description": "Represents the prototype for the WeakMap constructor. Allows the addition of properties to all WeakMap objects.",
+        "childType": "property"
+      }
     }
+  },
+  "WeakSet": {
+    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
+    "syntax": " new WeakSet([iterable]);",
+    "parameters": {},
+    "children": {
+      "WeakSet.prototype.add(value)": {
+        "description": "Appends a new element with the given value to the WeakSet object.",
+        "childType": "method"
+      },
+      "WeakSet.prototype.delete(value)": {
+        "description": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
+        "childType": "method"
+      },
+      "WeakSet.prototype.has(value)": {
+        "description": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
+        "childType": "method"
+      },
+      "WeakSet.prototype.clear": {
+        "description": "Removes all elements from the WeakSet object.",
+        "childType": "method"
+      },
+      "WeakSet.length": {
+        "description": "The value of the length property is 0.",
+        "childType": "property"
+      },
+      "WeakSet.prototype": {
+        "description": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects.",
+        "childType": "property"
+      }
+    }
+  },
+  "arguments": {
+    "description": "The arguments object is a local variable available within all functions. arguments as a property of Function can no longer be used.You can refer to a function's arguments within the function by using the arguments object. This object contains an entry for each argument passed to the function, the first entry's index starting at 0. For example, if a function is passed three arguments, you can refer to the argument as follows:arguments[0]\narguments[1]\narguments[2]\nThe arguments can also be set:arguments[1] = 'new value';The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. For example, it does not have the pop method. However it can be converted to a real Array:var args = Array.prototype.slice.call(arguments);\nImportant: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object. More information.\nThe arguments object is available only within a function body. Attempting to access the arguments object outside a function declaration results in an error.You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. You can use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. (To determine the number of arguments declared when a function was defined, use the Function.length property.)",
+    "syntax": "arguments",
+    "parameters": {},
+    "children": {
+      "arguments.callee": {
+        "description": "Reference to the currently executing function.",
+        "childType": "property"
+      },
+      "arguments.caller": {
+        "description": "Reference to the function that invoked the currently executing function.",
+        "childType": "property"
+      },
+      "arguments.length": {
+        "description": "Reference to the number of arguments passed to the function.",
+        "childType": "property"
+      }
+    }
+  },
+  "decodeURI": {
+    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
+    "syntax": "decodeURI(encodedURI)",
+    "parameters": {
+      "encodedURI": "A complete, encoded Uniform Resource Identifier."
+    },
+    "children": {}
   },
   "decodeURIComponent": {
     "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
@@ -1025,66 +1844,7 @@
     "parameters": {
       "encodedURI": "An encoded component of a Uniform Resource Identifier."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "encodeURI": {
-    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
-    "syntax": "encodeURI(URI)",
-    "parameters": {
-      "URI": "A complete Uniform Resource Identifier."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "Uint8ClampedArray": {
-    "description": "",
-    "syntax": "new Uint8ClampedArray(length);\nnew Uint8ClampedArray(typedArray);\nnew Uint8ClampedArray(object);\nnew Uint8ClampedArray(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint8ClampedArray.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8ClampedArray.",
-      "Uint8ClampedArray.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8ClampedArray.prototype.length.",
-      "Uint8ClampedArray.name": "Returns the string value of the constructor name. In the case of the Uint8ClampedArray type: \"Uint8ClampedArray\".",
-      "Uint8ClampedArray.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
-      "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "WeakSet": {
-    "description": "WeakSet objects are collections of objects. An object in the WeakSet may only occur once; it is unique in the WeakSet's collection.The main differences to the Set object are:\n In contrast to Sets, WeakSets are collections of objects only and not of arbitrary values of any type.\n The WeakSet is weak: References to objects in the collection are held weakly. If there is no other reference to an object stored in the WeakSet, they can be garbage collected. That also means that there is no list of current objects stored in the collection. WeakSets are not enumerable.\n",
-    "syntax": " new WeakSet([iterable]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "WeakSet.length": "The value of the length property is 0.",
-      "WeakSet.prototype": "Represents the prototype for the Set constructor. Allows the addition of properties to all WeakSet objects."
-    },
-    "constructorMethods": {
-      "WeakSet.prototype.add(value)": "Appends a new element with the given value to the WeakSet object.",
-      "WeakSet.prototype.delete(value)": "Removes the element associated to the value. WeakSet.prototype.has(value) will return false afterwards.",
-      "WeakSet.prototype.has(value)": "Returns a boolean asserting whether an element is present with the given value in the WeakSet object or not.",
-      "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
-    }
-  },
-  "encodeURIComponent": {
-    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
-    "syntax": "encodeURIComponent(str);",
-    "parameters": {
-      "str": "String. A component of a URI."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "escape": {
     "description": "The escape function is a property of the global object. Special characters are encoded with the exception of: @*_+-./The hexadecimal form for characters, whose code unit value is 0xFF or less, is a two-digit escape sequence: %xx. For characters with a greater code unit, the four-digit format %uxxxx is used.",
@@ -1092,72 +1852,7 @@
     "parameters": {
       "str": "A string to be encoded."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "null": {
-    "description": "The value null is a literal (not a property of the global object like undefined can be). In APIs, null is often retrieved in place where an object can be expected but no object is relevant. When checking for null or undefined beware of the differences between equality (==) and identity (===) operators (type-conversion is performed with the former).// foo does not exist, it is not defined and has never been initialized:\n> foo\n\"ReferenceError: foo is not defined\"\n\n// foo is known to exist now but it has no type or value:\n> var foo = null; foo\n\"null\"\n",
-    "syntax": "null ",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "isNaN": {
-    "description": "",
-    "syntax": "isNaN(testValue)",
-    "parameters": {
-      "testValue": "The value to be tested."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "parseFloat": {
-    "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
-    "syntax": "parseFloat(string)",
-    "parameters": {
-      "string": "A string that represents the value you want to parse."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "parseInt": {
-    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
-    "syntax": "parseInt(string, radix);",
-    "parameters": {
-      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "undefined": {
-    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
-    "syntax": "undefined",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
-  "unescape": {
-    "description": "The unescape function is a property of the global object.",
-    "syntax": "unescape(str)",
-    "parameters": {
-      "str": "A string to be decoded."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "eval": {
     "description": "eval() is a function property of the global object.The argument of the eval() function is a string. If the string represents an expression, eval() evaluates the expression. If the argument represents one or more JavaScript statements, eval() evaluates the statements. Do not call eval() to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.If you construct an arithmetic expression as a string, you can use eval() to evaluate it at a later time. For example, suppose you have a variable x. You can postpone evaluation of an expression involving x by assigning the string value of the expression, say \"3 * x + 2\", to a variable, and then calling eval() at a later point in your script.If the argument of eval() is not a string, eval() returns the argument unchanged. In the following example, the String constructor is specified, and eval() returns a String object rather than evaluating the string.eval(new String(\"2 + 2\")); // returns a String object containing \"2 + 2\"\neval(\"2 + 2\");             // returns 4\nYou can work around this limitation in a generic fashion by using toString().var expression = new String(\"2 + 2\");\neval(expression.toString());\nIf you use the eval function indirectly, by invoking it via a reference other than eval, as of ECMAScript 5 it works at global scope rather than local scope; this means, for instance, that function declarations create global functions, and that the code being evaluated doesn't have access to local variables within the scope where it's being called.function test() {\n  var x = 2, y = 4;\n  console.log(eval(\"x + y\"));  // Direct call, uses local scope, result is 6\n  var geval = eval;\n  console.log(geval(\"x + y\")); // Indirect call, uses global scope, throws ReferenceError because `x` is undefined\n}\n",
@@ -1165,10 +1860,7 @@
     "parameters": {
       "string": "A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
   },
   "isFinite": {
     "description": "isFinite is a top-level function and is not associated with any object.You can use this function to determine whether a number is a finite number. The isFinite function examines the number in its argument. If the argument is NaN, positive infinity, or negative infinity, this method returns false; otherwise, it returns true.",
@@ -1176,10 +1868,53 @@
     "parameters": {
       "testValue": "The value to be tested for finiteness."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
+  },
+  "isNaN": {
+    "description": "",
+    "syntax": "isNaN(testValue)",
+    "parameters": {
+      "testValue": "The value to be tested."
+    },
+    "children": {}
+  },
+  "null": {
+    "description": "The value null is a literal (not a property of the global object like undefined can be). In APIs, null is often retrieved in place where an object can be expected but no object is relevant. When checking for null or undefined beware of the differences between equality (==) and identity (===) operators (type-conversion is performed with the former).// foo does not exist, it is not defined and has never been initialized:\n> foo\n\"ReferenceError: foo is not defined\"\n\n// foo is known to exist now but it has no type or value:\n> var foo = null; foo\n\"null\"\n",
+    "syntax": "null ",
+    "parameters": {},
+    "children": {}
+  },
+  "encodeURIComponent": {
+    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
+    "syntax": "encodeURIComponent(str);",
+    "parameters": {
+      "str": "String. A component of a URI."
+    },
+    "children": {}
+  },
+  "encodeURI": {
+    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
+    "syntax": "encodeURI(URI)",
+    "parameters": {
+      "URI": "A complete Uniform Resource Identifier."
+    },
+    "children": {}
+  },
+  "parseFloat": {
+    "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
+    "syntax": "parseFloat(string)",
+    "parameters": {
+      "string": "A string that represents the value you want to parse."
+    },
+    "children": {}
+  },
+  "parseInt": {
+    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
+    "syntax": "parseInt(string, radix);",
+    "parameters": {
+      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
+    },
+    "children": {}
   },
   "uneval": {
     "description": "uneval() is a top-level function and is not associated with any object.",
@@ -1187,9 +1922,20 @@
     "parameters": {
       "object": "A JavaScript expression or statement."
     },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "children": {}
+  },
+  "unescape": {
+    "description": "The unescape function is a property of the global object.",
+    "syntax": "unescape(str)",
+    "parameters": {
+      "str": "A string to be decoded."
+    },
+    "children": {}
+  },
+  "undefined": {
+    "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
+    "syntax": "undefined",
+    "parameters": {},
+    "children": {}
   }
 }

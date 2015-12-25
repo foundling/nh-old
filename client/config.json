@@ -1,8 +1,8 @@
 {
   "nodeVersion": "v0.10.35",
   "nodeHelpVersion": "0.2.0",
-  "lastUpdate": "Thu Dec 24 2015 12:52:31 GMT-0800 (PST)",
-  "docsVersion": "4ae6653e0fe56526f6f7c08ba452726725ffc57a",
+  "lastUpdate": "Fri Dec 25 2015 12:38:49 GMT-0800 (PST)",
+  "docsVersion": "f17ab14fe43603e93a821db3a228558e8db8f7e1",
   "versionUrl": "http://localhost:3000/api/nodehelp/version",
   "sourceRepo": "https://github.com/foundling/node-help",
   "docsUrl": "http://localhost:3000/api/nodehelp/docs",

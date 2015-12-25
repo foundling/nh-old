@@ -1,0 +1,24 @@
+objectType
+
+  isNative
+  description
+  syntax
+  parameters
+  children
+   
+    name
+    isNative
+    description
+    childType 
+      Method
+      property
+
+ex:
+
+Array
+
+  isNative: yes
+  description: ...
+  children: 
+
+    prototype

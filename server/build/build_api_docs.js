@@ -1,8 +1,7 @@
 var fs = require('fs'),
     cheerio = require('cheerio'),
     DOCS_PATH = './build/testdocs',
-    DB_FILE = './build/testdb/db.json',
-    TESTING = false;
+    DB_FILE = './build/testdb/db.json';
 
 var buildApiDocs = module.exports = exports = function(callback) {
   console.log('Building Api Docs ... ');
@@ -36,6 +35,9 @@ var buildApiDocs = module.exports = exports = function(callback) {
                 syntax,
                 description,
                 parameters = {},
+                children = {},
+          
+                // these get put into children 
                 constructorMethods = {},
                 constructorProperties = {},
                 prototypeMethods = {},
@@ -51,6 +53,7 @@ var buildApiDocs = module.exports = exports = function(callback) {
             var descriptions = [];
             var i;
 
+            // Parameters
             $('#Parameters').next().find('dt code').each(function(i,el){
               names.push($(el).text());
             }.bind(this));
@@ -63,45 +66,62 @@ var buildApiDocs = module.exports = exports = function(callback) {
               parameters[names[i]] = descriptions[i];
             }
 
-
             // constructor methods
             $('#Methods').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
-              var methodName = $(el).text(),
+              
+              var methodName = $(el).text().replace('()','').trim(),
                   methodDescription = $(el).next().text();
-              constructorMethods[methodName.replace('()','').trim()] = methodDescription;
+
+              children[methodName] = {
+                  description: methodDescription,
+                  childType: 'method'
+              };
             });
             
             // constructor properties
             $('#Properties').nextUntil('h2,h3','dl').find('dt').each(function(i,el) {
-              var propertyName = $(el).text(),
+
+              var propertyName = $(el).text().replace('()','').trim(),
                   propertyDescription = $(el).next().text();
-              constructorProperties[propertyName.replace('()','').trim()] = propertyDescription;
+
+              children[propertyName] = {
+                  description: propertyDescription,
+                  childType: 'property',
+              };
             });
 
             //prototype methods 
             $('#Methods_2').next().find('dl').find('dt').each(function(i, el) {
+
               var methodName = $(el).text(),
                   methodDescription = $(el).next().text().replace('()','');
-              prototypeMethods[methodName] = methodDescription;
+
+              children[methodName] = {
+                  description: methodDescription,
+                  childType: 'method',
+              };
             });
 
             // prototype properties
             $('#Properties_2').next().find('dl').find('dt').each(function(i, el) {
+
               var propertyName = $(el).text(),
                   propertyDescription = $(el).next().text();
-              prototypeProperties[propertyName] = propertyDescription;
+
+              children[propertyName] = {
+                  description : propertyDescription,
+                  childType : 'property',
+              };
             });
 
-            // add everything to the objectDB
+            // start creating objectDB
             objectDB[name] = {
               description: description,
               syntax: syntax,
               parameters: parameters,
-              prototypeProperties: prototypeProperties,
-              prototypeMethods: prototypeMethods,
-              constructorProperties: constructorProperties,
-              constructorMethods: constructorMethods,
+              children: children
             };
+
 
             remaining -= 1;
             process.stdout.write(" " + remaining + " ");

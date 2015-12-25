@@ -3,16 +3,18 @@ const request = require('request'),
   fs = require('fs'),
   DOCS_PATH = 'build/testdocs', 
   MDN_DOMAIN = 'https://developer.mozilla.org',
-  MDN_GLOBALS_PATH = '/en-US/docs/Web/JavaScript/Reference/Global_Objects',
-  TESTING = false; // set to true to use query local pre-built docs
+  MDN_GLOBALS_PATH = '/en-US/docs/Web/JavaScript/Reference/Global_Objects';
 
 
 var getRawDocs = module.exports = exports = function(callback){
 
-  console.log('Getting HTML Documentation from MDN ...');
   
-  if (TESTING) return callback(null);
+  if (process.env.TESTING) {
+    console.log('TESTING: Getting HTML Documentation from cached doc store.');
+    return callback(null);
+  }
 
+  console.log('Getting HTML Documentation from MDN ...');
   // for each global object, get its href, write it to a new file
   request(MDN_DOMAIN + MDN_GLOBALS_PATH, function(err, response, html) {
     if (err) throw err;
