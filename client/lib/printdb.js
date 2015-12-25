@@ -1,3 +1,5 @@
+#!/usr/bin/node 
+
 var fs = require('fs'),
     db = fs.readFileSync('db.json').toString(),
     jsonDb = JSON.parse(db);

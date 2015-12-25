@@ -1,22 +1,19 @@
 {
-  "Array": {
-    "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.Some people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
-    "syntax": "[element0, element1, ..., elementN]\nnew Array(element0, element1[, ...[, elementN]])\nnew Array(arrayLength)",
-    "parameters": {},
-    "prototypeProperties": {
-      "Array.prototype.constructor": "Specifies the function that creates an object's prototype.",
-      "Array.prototype.length": "Reflects the number of elements in an array."
+  "ArrayBuffer": {
+    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
+    "syntax": "new ArrayBuffer(length)\n",
+    "parameters": {
+      "length": "The size, in bytes, of the array buffer to create."
     },
+    "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {
-      "Array.length": "The Array constructor's length property whose value is 1.",
-      "Array.prototype": "Allows the addition of properties to all array objects."
+      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
+      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
     },
     "constructorMethods": {
-      "Array.from": "Creates a new Array instance from an array-like or iterable object.",
-      "Array.isArray": "Returns true if a variable is an array, if not false.",
-      "Array.observe": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence.",
-      "Array.of": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
+      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
+      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
     }
   },
   "Boolean": {
@@ -285,6 +282,26 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
+  "Array": {
+    "description": "Arrays are list-like objects whose prototype has methods to perform traversal and mutation operations. Neither the length of a JavaScript array nor the types of its elements are fixed. Since an array's size length grow or shrink at any time, JavaScript arrays are not guaranteed to be dense. In general, these are convenient characteristics; but if these features are not desirable for your particular use, you might consider using typed arrays.Some people think that you shouldn't use an array as an associative array. In any case, you can use plain objects instead, although doing so comes with its own caveats. See the post Lightweight JavaScript dictionaries with arbitrary keys as an example.",
+    "syntax": "[element0, element1, ..., elementN]\nnew Array(element0, element1[, ...[, elementN]])\nnew Array(arrayLength)",
+    "parameters": {},
+    "prototypeProperties": {
+      "Array.prototype.constructor": "Specifies the function that creates an object's prototype.",
+      "Array.prototype.length": "Reflects the number of elements in an array."
+    },
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Array.length": "The Array constructor's length property whose value is 1.",
+      "Array.prototype": "Allows the addition of properties to all array objects."
+    },
+    "constructorMethods": {
+      "Array.from": "Creates a new Array instance from an array-like or iterable object.",
+      "Array.isArray": "Returns true if a variable is an array, if not false.",
+      "Array.observe": "Asynchronously observes changes to Arrays, similar to Object.observe() for objects. It provides a stream of changes in order of occurrence.",
+      "Array.of": "Creates a new Array instance with a variable number of arguments, regardless of number or type of the arguments."
+    }
+  },
   "Int16Array": {
     "description": "",
     "syntax": "new Int16Array(length);\nnew Int16Array(typedArray);\nnew Int16Array(object);\nnew Int16Array(buffer [, byteOffset [, length]]);",
@@ -372,31 +389,6 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "Intl": {
-    "description": "",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Intl.Collator": "Constructor for collators, objects that enable language sensitive string comparison.",
-      "Intl.DateTimeFormat": "Constructor for objects that enable language sensitive date and time formatting.",
-      "Intl.NumberFormat": "Constructor for objects that enable language sensitive number formatting."
-    },
-    "constructorMethods": {}
-  },
-  "JSON": {
-    "description": "",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "JSON.parse": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
-      "JSON.stringify": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner."
-    }
-  },
   "InternalError": {
     "description": "An InternalError is thrown whenever an internal error in the JavaScript engine occurred.Example cases are mostly when something is too large, e.g.:\n \"too many switch cases\",\n \"too many parentheses in regular expression\",\n \"array initializer too large\",\n \"too much recursion\".\n",
     "syntax": "new InternalError([message[, fileName[, lineNumber]]])",
@@ -434,32 +426,6 @@
     },
     "constructorMethods": {
       "Iterator.prototype.next": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items."
-    }
-  },
-  "Map": {
-    "description": "A Map object iterates its elements in insertion order — a for...of loop returns an array of [key, value] for each iteration.",
-    "syntax": "new Map([iterable])\n",
-    "parameters": {
-      "iterable": "Iterable is an Array or other iterable object whose elements are key-value pairs (2-element Arrays). Each key-value pair is added to the new Map. null is treated as undefined."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Map.length": "The value of the length property is 0.",
-      "get Map[@@species]": "The constructor function that is used to create derived objects.",
-      "Map.prototype": "Represents the prototype for the Map constructor. Allows the addition of properties to all Map objects."
-    },
-    "constructorMethods": {
-      "Map.prototype.clear": "Removes all key/value pairs from the Map object.",
-      "Map.prototype.delete(key)": "Removes any value associated to the key and returns the value that Map.prototype.has(value) would have previously returned. Map.prototype.has(key) will return false afterwards.",
-      "Map.prototype.entries": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.",
-      "Map.prototype.forEach(callbackFn[, thisArg])": "Calls callbackFn once for each key-value pair present in the Map object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
-      "Map.prototype.get(key)": "Returns the value associated to the key, or undefined if there is none.",
-      "Map.prototype.has(key)": "Returns a boolean asserting whether a value has been associated to the key in the Map object or not.",
-      "Map.prototype.keys": "Returns a new Iterator object that contains the keys for each element in the Map object in insertion order.",
-      "Map.prototype.set(key, value)": "Sets the value for the key in the Map object. Returns the Map object.",
-      "Map.prototype.values": "Returns a new Iterator object that contains the values for each element in the Map object in insertion order.",
-      "Map.prototype[@@iterator]": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order."
     }
   },
   "Math": {
@@ -515,6 +481,18 @@
       "Math.tanh(x)": "Returns the hyperbolic tangent of a number.",
       "Math.toSource": "Returns the string \"Math\".",
       "Math.trunc(x)": "Returns the integral part of the number x, removing any fractional digits."
+    }
+  },
+  "JSON": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {
+      "JSON.parse": "Parse a string as JSON, optionally transform the produced value and its properties, and return the value.",
+      "JSON.stringify": "Return a JSON string corresponding to the specified value, optionally including only certain properties or replacing property values in a user-defined manner."
     }
   },
   "NaN": {
@@ -622,6 +600,19 @@
       "get": ""
     }
   },
+  "Intl": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Intl.Collator": "Constructor for collators, objects that enable language sensitive string comparison.",
+      "Intl.DateTimeFormat": "Constructor for objects that enable language sensitive date and time formatting.",
+      "Intl.NumberFormat": "Constructor for objects that enable language sensitive number formatting."
+    },
+    "constructorMethods": {}
+  },
   "Promise": {
     "description": "A Promise represents a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers to an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future.A Promise is in one of these states:\n pending: initial state, not fulfilled or rejected.\n fulfilled: meaning that the operation completed successfully.\n rejected: meaning that the operation failed.\nA pending promise can become either fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained—an operation called composition.\nNote: A promise is said to be settled if it is either fulfilled or rejected, but not pending. You will also hear the term resolved used with promises — this means that the promise is settled, or it is locked into a promise chain. Domenic Denicola's States and fates contains more details about promise terminology.\n",
     "syntax": "new Promise(executor);\nnew Promise(function(resolve, reject) { ... });",
@@ -653,29 +644,6 @@
       "Proxy.revocable": "Creates a revocable Proxy object."
     }
   },
-  "RangeError": {
-    "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
-    "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
-    "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
-    },
-    "prototypeProperties": {
-      "\n  RangeError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
-      "\n  RangeError.prototype.message": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "\n  RangeError.prototype.name": "\n  Error name. Inherited from Error.",
-      "\n  RangeError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
-      "\n  RangeError.prototype.stack": "\n  Stack trace. Inherited from Error."
-    },
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "RangeError.prototype": "Allows the addition of properties to an RangeError object."
-    },
-    "constructorMethods": {}
-  },
   "ReferenceError": {
     "description": "A ReferenceError is thrown when trying to dereference a variable that has not been declared.",
     "syntax": "new ReferenceError([message[, fileName[, lineNumber]]])",
@@ -698,47 +666,6 @@
       "ReferenceError.prototype": "Allows the addition of properties to an ReferenceError object."
     },
     "constructorMethods": {}
-  },
-  "Reflect": {
-    "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
-    "syntax": "",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {
-      "Reflect.apply": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
-      "Reflect.construct": " The new operator as a function. Equivalent to calling new target(...args).",
-      "Reflect.defineProperty": "Similar to Object.defineProperty(). Returns a Boolean.",
-      "Reflect.deleteProperty": "The delete operator as a function. Equivalent to calling delete target[name].",
-      "Reflect.enumerate": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
-      "Reflect.get": "A function that returns the value of properties.",
-      "Reflect.getOwnPropertyDescriptor": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
-      "Reflect.getPrototypeOf": "Same as Object.getPrototypeOf().",
-      "Reflect.has": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
-      "Reflect.isExtensible": "Same as Object.isExtensible().",
-      "Reflect.ownKeys": "Returns an array of the target object's own (not inherited) property keys.",
-      "Reflect.preventExtensions": "Similar to Object.preventExtensions(). Returns a Boolean.",
-      "Reflect.set": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
-      "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
-    }
-  },
-  "ArrayBuffer": {
-    "description": "The ArrayBuffer constructor creates a new ArrayBuffer of the given length in bytes.",
-    "syntax": "new ArrayBuffer(length)\n",
-    "parameters": {
-      "length": "The size, in bytes, of the array buffer to create."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "ArrayBuffer.length": "The ArrayBuffer constructor's length property whose value is 1.",
-      "ArrayBuffer.prototype": "Allows the addition of properties to all ArrayBuffer objects."
-    },
-    "constructorMethods": {
-      "ArrayBuffer.isView(arg)": "Returns true if arg is one of the ArrayBuffer views, such as typed array objects or a DataView. Returns false otherwise.",
-      "ArrayBuffer.transfer(oldBuffer [, newByteLength])": "\n Returns a new ArrayBuffer whose contents are taken from the oldBuffer's data and then is either truncated or zero-extended by newByteLength.\n "
-    }
   },
   "RegExp": {
     "description": "There are 2 ways to create a RegExp object: a literal notation and a constructor. To indicate strings, the parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation marks. So the following expressions create the same regular expression:/ab+c/i;\nnew RegExp('ab+c', 'i');\nnew RegExp(/ab+c/, 'i');\nThe literal notation provides compilation of the regular expression when the expression is evaluated. Use literal notation when the regular expression will remain constant. For example, if you use literal notation to construct a regular expression used in a loop, the regular expression won't be recompiled on each iteration.The constructor of the regular expression object, for example, new RegExp('ab+c'), provides runtime compilation of the regular expression. Use the constructor function when you know the regular expression pattern will be changing, or you don't know the pattern and are getting it from another source, such as user input.Starting with ECMAScript 6, new RegExp(/ab+c/, 'i') no longer throws a TypeError (\"can't supply flags when constructing one RegExp from another\") when the first argument is a RegExp and the second flags argument is present. A new RegExp from the arguments is created instead.When using the constructor function, the normal string escape rules (preceding special characters with \\ when included in a string) are necessary. For example, the following are equivalent:var re = /\\w+/;\nvar re = new RegExp('\\\\w+');\n",
@@ -776,6 +703,30 @@
     },
     "constructorMethods": {}
   },
+  "Reflect": {
+    "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
+    "syntax": "",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {
+      "Reflect.apply": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
+      "Reflect.construct": " The new operator as a function. Equivalent to calling new target(...args).",
+      "Reflect.defineProperty": "Similar to Object.defineProperty(). Returns a Boolean.",
+      "Reflect.deleteProperty": "The delete operator as a function. Equivalent to calling delete target[name].",
+      "Reflect.enumerate": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
+      "Reflect.get": "A function that returns the value of properties.",
+      "Reflect.getOwnPropertyDescriptor": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
+      "Reflect.getPrototypeOf": "Same as Object.getPrototypeOf().",
+      "Reflect.has": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
+      "Reflect.isExtensible": "Same as Object.isExtensible().",
+      "Reflect.ownKeys": "Returns an array of the target object's own (not inherited) property keys.",
+      "Reflect.preventExtensions": "Similar to Object.preventExtensions(). Returns a Boolean.",
+      "Reflect.set": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
+      "Reflect.setPrototypeOf": "A function that sets the prototype of an object."
+    }
+  },
   "SIMD": {
     "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
     "syntax": "",
@@ -808,6 +759,15 @@
       "Set.prototype[@@iterator]": "Returns a new Iterator object that contains the values for each element in the Set object in insertion order."
     }
   },
+  "StopIteration": {
+    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
+    "syntax": "StopIteration",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
   "String": {
     "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
     "syntax": "'string text'\n\"string text\"\n\"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்\"String(thing)\nnew String(thing)",
@@ -829,15 +789,6 @@
       "String.raw": "Returns a string created from a raw template string."
     }
   },
-  "StopIteration": {
-    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
-    "syntax": "StopIteration",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "Symbol": {
     "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
     "syntax": "Symbol([description])",
@@ -855,45 +806,54 @@
       "Symbol.keyFor(sym)": "Retrieves a shared symbol key from the global symbol registry for the given symbol."
     }
   },
-  "Uint16Array": {
-    "description": "",
-    "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {
-      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
-      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
-      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
-      "Uint16Array.prototype": "Prototype for the TypedArray objects."
-    },
-    "constructorMethods": {
-      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
-      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
-    }
-  },
-  "TypeError": {
-    "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
-    "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
+  "RangeError": {
+    "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
+    "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
     "parameters": {
       "message": "Optional. Human-readable description of the error",
       "fileName": "Optional. The name of the file containing the code that caused the exception",
       "lineNumber": "Optional. The line number of the code that caused the exception"
     },
     "prototypeProperties": {
-      "TypeError.prototype.constructor": "Specifies the function that created an instance's prototype.",
-      "TypeError.prototype.message": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
-      "TypeError.prototype.name": "Error name. Inherited from Error.",
-      "TypeError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
-      "TypeError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
-      "TypeError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
-      "TypeError.prototype.stack": "Stack trace. Inherited from Error."
+      "\n  RangeError.prototype.constructor": "\n  Specifies the function that created an instance's prototype.",
+      "\n  RangeError.prototype.message": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "\n  RangeError.prototype.name": "\n  Error name. Inherited from Error.",
+      "\n  RangeError.prototype.fileName": "\n  Path to file that raised this error. Inherited from Error.",
+      "\n  RangeError.prototype.lineNumber": "\n  Line number in file that raised this error. Inherited from Error.",
+      "\n  RangeError.prototype.columnNumber": "\n  Column number in line that raised this error. Inherited from Error.",
+      "\n  RangeError.prototype.stack": "\n  Stack trace. Inherited from Error."
     },
     "prototypeMethods": {},
     "constructorProperties": {
-      "TypeError.prototype": "Allows the addition of properties to a TypeError object."
+      "RangeError.prototype": "Allows the addition of properties to an RangeError object."
     },
     "constructorMethods": {}
+  },
+  "Map": {
+    "description": "A Map object iterates its elements in insertion order — a for...of loop returns an array of [key, value] for each iteration.",
+    "syntax": "new Map([iterable])\n",
+    "parameters": {
+      "iterable": "Iterable is an Array or other iterable object whose elements are key-value pairs (2-element Arrays). Each key-value pair is added to the new Map. null is treated as undefined."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Map.length": "The value of the length property is 0.",
+      "get Map[@@species]": "The constructor function that is used to create derived objects.",
+      "Map.prototype": "Represents the prototype for the Map constructor. Allows the addition of properties to all Map objects."
+    },
+    "constructorMethods": {
+      "Map.prototype.clear": "Removes all key/value pairs from the Map object.",
+      "Map.prototype.delete(key)": "Removes any value associated to the key and returns the value that Map.prototype.has(value) would have previously returned. Map.prototype.has(key) will return false afterwards.",
+      "Map.prototype.entries": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order.",
+      "Map.prototype.forEach(callbackFn[, thisArg])": "Calls callbackFn once for each key-value pair present in the Map object, in insertion order. If a thisArg parameter is provided to forEach, it will be used as the this value for each callback.",
+      "Map.prototype.get(key)": "Returns the value associated to the key, or undefined if there is none.",
+      "Map.prototype.has(key)": "Returns a boolean asserting whether a value has been associated to the key in the Map object or not.",
+      "Map.prototype.keys": "Returns a new Iterator object that contains the keys for each element in the Map object in insertion order.",
+      "Map.prototype.set(key, value)": "Sets the value for the key in the Map object. Returns the Map object.",
+      "Map.prototype.values": "Returns a new Iterator object that contains the values for each element in the Map object in insertion order.",
+      "Map.prototype[@@iterator]": "Returns a new Iterator object that contains an array of [key, value] for each element in the Map object in insertion order."
+    }
   },
   "SyntaxError": {
     "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
@@ -941,39 +901,45 @@
     },
     "constructorMethods": {}
   },
-  "Uint32Array": {
+  "Uint16Array": {
     "description": "",
-    "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
+    "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
     "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {
-      "Uint32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
-      "Uint32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
-      "Uint32Array.name": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
-      "Uint32Array.prototype": "Prototype for the TypedArray objects."
+      "Uint16Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 2 in the case of an Uint16Array.",
+      "Uint16Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint16Array.prototype.length.",
+      "Uint16Array.name": "Returns the string value of the constructor name. In the case of the Uint16Array type: \"Uint16Array\".",
+      "Uint16Array.prototype": "Prototype for the TypedArray objects."
     },
     "constructorMethods": {
-      "Uint32Array.from": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
-      "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
+      "Uint16Array.from": "Creates a new Uint16Array from an array-like or iterable object. See also Array.from().",
+      "Uint16Array.of": "Creates a new Uint16Array with a variable number of arguments. See also Array.of()."
     }
   },
-  "Uint8Array": {
-    "description": "",
-    "syntax": "new Uint8Array(length);\nnew Uint8Array(typedArray);\nnew Uint8Array(object);\nnew Uint8Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "prototypeProperties": {},
+  "TypeError": {
+    "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
+    "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
+    "prototypeProperties": {
+      "TypeError.prototype.constructor": "Specifies the function that created an instance's prototype.",
+      "TypeError.prototype.message": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "TypeError.prototype.name": "Error name. Inherited from Error.",
+      "TypeError.prototype.fileName": "Path to file that raised this error. Inherited from Error.",
+      "TypeError.prototype.lineNumber": "Line number in file that raised this error. Inherited from Error.",
+      "TypeError.prototype.columnNumber": "Column number in line that raised this error. Inherited from Error.",
+      "TypeError.prototype.stack": "Stack trace. Inherited from Error."
+    },
     "prototypeMethods": {},
     "constructorProperties": {
-      "Uint8Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8Array.",
-      "Uint8Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8Array.prototype.length.",
-      "Uint8Array.name": "Returns the string value of the constructor name. In the case of the Uint8Array type: \"Uint8Array\".",
-      "Uint8Array.prototype": "Prototype for the TypedArray objects."
+      "TypeError.prototype": "Allows the addition of properties to a TypeError object."
     },
-    "constructorMethods": {
-      "Uint8Array.from": "Creates a new Uint8Array from an array-like or iterable object. See also Array.from().",
-      "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
-    }
+    "constructorMethods": {}
   },
   "Uint8ClampedArray": {
     "description": "",
@@ -990,6 +956,26 @@
     "constructorMethods": {
       "Uint8ClampedArray.from": "Creates a new Uint8ClampedArray from an array-like or iterable object. See also Array.from().",
       "Uint8ClampedArray.of": "Creates a new Uint8ClampedArray with a variable number of arguments. See also Array.of()."
+    }
+  },
+  "WeakMap": {
+    "description": "Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed (e.g. a Symbol can't be a WeakMap key).The key in a WeakMap is held weakly.  What this means is that, if there are no other strong references to the key, then the entire entry will be removed from the WeakMap by the garbage collector.",
+    "syntax": "new WeakMap([iterable])\n",
+    "parameters": {
+      "iterable": "Iterable is an Array or other iterable object whose elements are key-value pairs (2-element Arrays). Each key-value pair will be added to the new WeakMap. null is treated as undefined."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "WeakMap.length": "The value of the length property is 0.",
+      "WeakMap.prototype": "Represents the prototype for the WeakMap constructor. Allows the addition of properties to all WeakMap objects."
+    },
+    "constructorMethods": {
+      "WeakMap.prototype.delete(key)": "Removes any value associated to the key. WeakMap.prototype.has(key) will return false afterwards.",
+      "WeakMap.prototype.get(key)": "Returns the value associated to the key, or undefined if there is none.",
+      "WeakMap.prototype.has(key)": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
+      "WeakMap.prototype.set(key, value)": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
+      "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
     }
   },
   "arguments": {
@@ -1022,25 +1008,16 @@
       "WeakSet.prototype.clear": "Removes all elements from the WeakSet object."
     }
   },
-  "WeakMap": {
-    "description": "Keys of WeakMaps are of the type Object only. Primitive data types as keys are not allowed (e.g. a Symbol can't be a WeakMap key).The key in a WeakMap is held weakly.  What this means is that, if there are no other strong references to the key, then the entire entry will be removed from the WeakMap by the garbage collector.",
-    "syntax": "new WeakMap([iterable])\n",
+  "decodeURI": {
+    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
+    "syntax": "decodeURI(encodedURI)",
     "parameters": {
-      "iterable": "Iterable is an Array or other iterable object whose elements are key-value pairs (2-element Arrays). Each key-value pair will be added to the new WeakMap. null is treated as undefined."
+      "encodedURI": "A complete, encoded Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
-    "constructorProperties": {
-      "WeakMap.length": "The value of the length property is 0.",
-      "WeakMap.prototype": "Represents the prototype for the WeakMap constructor. Allows the addition of properties to all WeakMap objects."
-    },
-    "constructorMethods": {
-      "WeakMap.prototype.delete(key)": "Removes any value associated to the key. WeakMap.prototype.has(key) will return false afterwards.",
-      "WeakMap.prototype.get(key)": "Returns the value associated to the key, or undefined if there is none.",
-      "WeakMap.prototype.has(key)": "Returns a Boolean asserting whether a value has been associated to the key in the WeakMap object or not.",
-      "WeakMap.prototype.set(key, value)": "Sets the value for the key in the WeakMap object. Returns the WeakMap object.",
-      "WeakMap.prototype.clear": "Removes all key/value pairs from the WeakMap object. Note that it is possible to implement a WeakMap-like object that has a .clear() method by encapsulating a WeakMap object that hasn't it (see example on page WeakMap)"
-    }
+    "constructorProperties": {},
+    "constructorMethods": {}
   },
   "decodeURIComponent": {
     "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
@@ -1053,22 +1030,33 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "escape": {
-    "description": "The escape function is a property of the global object. Special characters are encoded with the exception of: @*_+-./The hexadecimal form for characters, whose code unit value is 0xFF or less, is a two-digit escape sequence: %xx. For characters with a greater code unit, the four-digit format %uxxxx is used.",
-    "syntax": "escape(str)",
+  "encodeURI": {
+    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
+    "syntax": "encodeURI(URI)",
     "parameters": {
-      "str": "A string to be encoded."
+      "URI": "A complete Uniform Resource Identifier."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "encodeURI": {
-    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
-    "syntax": "encodeURI(URI)",
+  "encodeURIComponent": {
+    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
+    "syntax": "encodeURIComponent(str);",
     "parameters": {
-      "URI": "A complete Uniform Resource Identifier."
+      "str": "String. A component of a URI."
+    },
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {},
+    "constructorMethods": {}
+  },
+  "escape": {
+    "description": "The escape function is a property of the global object. Special characters are encoded with the exception of: @*_+-./The hexadecimal form for characters, whose code unit value is 0xFF or less, is a two-digit escape sequence: %xx. For characters with a greater code unit, the four-digit format %uxxxx is used.",
+    "syntax": "escape(str)",
+    "parameters": {
+      "str": "A string to be encoded."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1117,17 +1105,6 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "parseInt": {
-    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
-    "syntax": "parseInt(string, radix);",
-    "parameters": {
-      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
-    },
-    "prototypeProperties": {},
-    "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
-  },
   "parseFloat": {
     "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
     "syntax": "parseFloat(string)",
@@ -1139,11 +1116,11 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "decodeURI": {
-    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
-    "syntax": "decodeURI(encodedURI)",
+  "parseInt": {
+    "description": "The parseInt function converts its first argument to a string, parses it, and returns an integer or NaN. If not NaN, the returned value will be the decimal integer representation of the first argument taken as a number in the specified radix (base). For example, a radix of 10 indicates to convert from a decimal number, 8 octal, 16 hexadecimal, and so on. For radices above 10, the letters of the alphabet indicate numerals greater than 9. For example, for hexadecimal numbers (base 16), A through F are used.If parseInt encounters a character that is not a numeral in the specified radix, it ignores it and all succeeding characters and returns the integer value parsed up to that point. parseInt truncates numbers to integer values. Leading and trailing spaces are allowed.If radix is undefined or 0 (or absent), JavaScript assumes the following:\n If the input string begins with \"0x\" or \"0X\", radix is 16 (hexadecimal) and the remainder of the string is parsed.\n If the input string begins with \"0\", radix is eight (octal) or 10 (decimal).  Exactly which radix is chosen is implementation-dependent.  ECMAScript 5 specifies that 10 (decimal) is used, but not all browsers support this yet.  For this reason always specify a radix when using parseInt.\n If the input string begins with any other value, the radix is 10 (decimal).\nIf the first character cannot be converted to a number, parseInt returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseInt is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.To convert number to its string literal in a particular radix use intValue.toString(radix).",
+    "syntax": "parseInt(string, radix);",
     "parameters": {
-      "encodedURI": "A complete, encoded Uniform Resource Identifier."
+      "string": "The value to parse. If string is not a string, then it is converted to a string (using the ToString abstract operation). Leading whitespace in the string is ignored."
     },
     "prototypeProperties": {},
     "prototypeMethods": {},
@@ -1158,6 +1135,23 @@
     "prototypeMethods": {},
     "constructorProperties": {},
     "constructorMethods": {}
+  },
+  "Uint8Array": {
+    "description": "",
+    "syntax": "new Uint8Array(length);\nnew Uint8Array(typedArray);\nnew Uint8Array(object);\nnew Uint8Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "prototypeProperties": {},
+    "prototypeMethods": {},
+    "constructorProperties": {
+      "Uint8Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 1 in the case of an Uint8Array.",
+      "Uint8Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint8Array.prototype.length.",
+      "Uint8Array.name": "Returns the string value of the constructor name. In the case of the Uint8Array type: \"Uint8Array\".",
+      "Uint8Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint8Array.from": "Creates a new Uint8Array from an array-like or iterable object. See also Array.from().",
+      "Uint8Array.of": "Creates a new Uint8Array with a variable number of arguments. See also Array.of()."
+    }
   },
   "unescape": {
     "description": "The unescape function is a property of the global object.",
@@ -1181,15 +1175,21 @@
     "constructorProperties": {},
     "constructorMethods": {}
   },
-  "encodeURIComponent": {
-    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
-    "syntax": "encodeURIComponent(str);",
-    "parameters": {
-      "str": "String. A component of a URI."
-    },
+  "Uint32Array": {
+    "description": "",
+    "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
     "prototypeProperties": {},
     "prototypeMethods": {},
-    "constructorProperties": {},
-    "constructorMethods": {}
+    "constructorProperties": {
+      "Uint32Array.BYTES_PER_ELEMENT": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
+      "Uint32Array.length": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
+      "Uint32Array.name": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
+      "Uint32Array.prototype": "Prototype for the TypedArray objects."
+    },
+    "constructorMethods": {
+      "Uint32Array.from": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
+      "Uint32Array.of": "Creates a new Uint32Array with a variable number of arguments. See also Array.of()."
+    }
   }
 }
