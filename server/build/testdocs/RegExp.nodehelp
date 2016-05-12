@@ -1,25 +1,40 @@
 
+
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" class="redesign no-js"  data-ffo-opensanslight=false data-ffo-opensans=false >
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=Edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VgAEV1RTGwABU1NSAAQ="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:24,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:11,2:10,3:8,4:12,5:3,6:25,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){if(window.addEventListener){var e=t("handle"),n=t("ee");t(1),window.addEventListener("click",function(){e("inc",["ck"])},!1),window.addEventListener("hashchange",function(){e("inc",["hc"])},!1),n.on("pushState-start",function(){e("inc",["ps"])})}},{1:9,ee:"QJf3ax",handle:"D5DuLP"}],6:[function(t){t("loader").features.ins=!0},{loader:"G9z0Bl"}],7:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3);var a=Event;n.on("fn-start",function(t){var e=t[0];e instanceof a&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof a&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:11,2:10,3:9,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],8:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t,e){function n(){return s}if(t[1]){var r=t[1];if("function"==typeof r){var s=a(r,"nr@wrapped",function(){return i(r,"fn-",n,r.name||"anonymous")});this.wrapped=t[1]=s,o.emit("initEventContext",[t,e],this.wrapped)}else"function"==typeof r.handleEvent&&i.inPlace(r,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:26,ee:"QJf3ax",gos:"7eSDFh"}],9:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState","replaceState"],"-")},{1:26,ee:"QJf3ax"}],10:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:26,ee:"QJf3ax"}],11:[function(t,e){function n(t,e,n){t[0]=i(t[0],"fn-",null,n)}function r(t,e,n){function r(){return a}this.ctx={};var a={"nr@context":this.ctx};o.emit("initTimerContext",[t,n],a),t[0]=i(t[0],"fn-",r,n)}var o=t("ee").create(),i=t(1)(o);e.exports=o,i.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),i.inPlace(window,["setInterval"],"setInterval-"),i.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),o.on("setInterval-start",n),o.on("setTimer-start",r)},{1:26,ee:"QJf3ax"}],12:[function(t,e){function n(){f.inPlace(this,p,"fn-",o)}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:8,2:26,ee:"QJf3ax"}],13:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1),u=window.XMLHttpRequest;t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof u&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof u&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:14,3:12,4:8,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],14:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],15:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:24,2:25,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-768.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:24,2:15,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],24:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],25:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],26:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@original",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=t,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:25,ee:"QJf3ax"}]},{},["G9z0Bl",4,13,7,6,5]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"42869b6ed3","agent":"js-agent.newrelic.com/nr-768.min.js","transactionName":"b1QHMUtVDRdSW0YKXVYeIxBXVxcNXFYdCEdVUEsSUF8KSkVRVxRBFlUKBkxZBgpHAlYMUU1cAAtN","applicationID":"3172075","errorBeacon":"bam.nr-data.net","applicationTime":241}</script>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
-        
-    <title>RegExp - JavaScript | MDN</title>
+  
+    
+  
+
+  
+  <title>RegExp - JavaScript | MDN</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow">
   <link rel="home" href="/en-US/">
   <link rel="copyright" href="#copyright">
 
-              <link href="https://developer.cdn.mozilla.net/static/build/styles/mdn.e21f8f108f4d.css" rel="stylesheet" type="text/css" />
-      
-    <link href="https://developer.cdn.mozilla.net/static/build/styles/wiki.c111c90f5784.css" rel="stylesheet" type="text/css" />
+  
     
     
+    <link href="https://developer.cdn.mozilla.net/static/build/styles/mdn.593f20d8c365.css" rel="stylesheet" type="text/css" />
+
+    
+  
+    <link href="https://developer.cdn.mozilla.net/static/build/styles/wiki.13dd9abdfb62.css" rel="stylesheet" type="text/css" />
+
+    
+
+    
+
+
   <!-- common social tags -->
-    <meta property="og:type" content="website">
+  
+  <meta property="og:type" content="website">
   <meta property="og:image" content="https://developer.cdn.mozilla.net/static/img/opengraph-logo.dc4e08e2f6af.png">
   <meta property="og:site_name" content="Mozilla Developer Network">
   <meta name="twitter:card" content="summary">
@@ -38,35 +53,59 @@
   <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
   <link rel="apple-touch-icon-precomposed" href="https://developer.cdn.mozilla.net/static/img/favicon57.a2490b9a2d76.png">
   <!-- basic favicon -->
-          <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
+  
+    
+  
+  <link rel="shortcut icon" href="https://developer.cdn.mozilla.net/static/img/favicon32.e02854fdcf73.png">
   <!--[if IE]>
   <meta http-equiv="imagetoolbar" content="no">
-  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>  <![endif]-->
+  <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
 
-    <link rel="alternate" type="application/json" href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$json">
+  
+  <link rel="alternate" type="application/json" href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$json">
   <link rel="canonical" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" >
 
-            <link rel="alternate" hreflang="de" href="/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="es" href="/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="fa" href="/fa/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="fr" href="/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="ja" href="/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="ko" href="/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="pl" href="/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="ru" href="/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-          <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
-      
+  
+    
+      <link rel="alternate" hreflang="de" href="/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="es" href="/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="fa" href="/fa/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="ko" href="/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="pl" href="/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="ru" href="/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">
+    
+  
+
   <!-- document-specific social tags -->
   <meta property="og:title" content="RegExp">
   <meta property="og:url" content="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
   <meta name="twitter:url" content="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
   <meta name="twitter:title" content="RegExp">
-    <meta property="og:description" content="The RegExp constructor creates a regular expression object for matching text with a pattern.">
+  
+  <meta property="og:description" content="The RegExp constructor creates a regular expression object for matching text with a pattern.">
   <meta name="description" content="The RegExp constructor creates a regular expression object for matching text with a pattern.">
   <meta name="twitter:description" content="The RegExp constructor creates a regular expression object for matching text with a pattern.">
   
-      <script type="text/javascript">
+
+
+  
+    
+
+<script type="text/javascript">
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -77,9 +116,10 @@
     ga('set', 'anonymizeIp', true);
 
     
+
     // dimension9 == "Section editing"
-            ga('set', 'dimension9', 'Enabled');
     
+
     (function() {
         // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
         var win = window;
@@ -93,16 +133,19 @@
         ga('send', 'pageview', {'hitCallback': removeUtms});
     })();
 </script>
-  </head>
+
+  
+</head>
 <body data-slug="Web/JavaScript/Reference/Global_Objects/RegExp" contextmenu="edit-history-menu" data-search-url="" class="document  ">
 
   <script type="text/javascript">
     (function(win) {
         'use strict';
 
-                    (function(){
+        
+            (function(){
   var FLAGS = {
-    'compat_api': false,'kumaediting': false,'mdn10_logo': true,'mdn10_tile': true,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': true,'spam_checks_enabled': false,'wiki_samples': true,'wiki_spam_exempted': false
+    'compat_api': false,'kumaediting': false,'page_move': false,'registration_disabled': false,'search_suggestions': false,'section_edit': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
     },
     SWITCHES = {
     'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true
@@ -130,6 +173,7 @@
 })();
 
         
+
         // This needs to be set before ckeditor.js loads
         window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
 
@@ -144,32 +188,37 @@
             // Optimizely API
             optimizely: win['optimizely'] || [],
             // Site notifications
-                        notifications: [],
-                        // Wiki-specific settings will be placed here
+            
+            notifications: [],
+            
+            // Wiki-specific settings will be placed here
             wiki: {
                 autosuggestTitleUrl: '/en-US/docs/get-documents'
             },
             // Assets that need to be dynamically injected
             assets: {
                 css: {
-                    'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.8be7a72e9603.css',],
-                    'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.391e4a87df2f.css',]
+                    'editor-content': ['https://developer.cdn.mozilla.net/static/build/styles/editor-content.3d79df72080d.css',],
+                    'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/styles/wiki-compat-tables.f3a3bfce97a1.css',]
                 },
                 js: {
                     'syntax-prism': ['https://developer.cdn.mozilla.net/static/build/js/syntax-prism.7a66ddfa68bf.js',],
-                    'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.4d12394b78a8.js',]
+                    'wiki-compat-tables': ['https://developer.cdn.mozilla.net/static/build/js/wiki-compat-tables.14ce5dcb2c3d.js',]
                 }
             }
         };
     })(this);
 </script>
+
   
 
   <ul id="nav-access">
     <li><a href="#document-main" id="skip-main">Skip to main content</a></li>
     <li><a id="skip-language" href="#language">Select language</a></li>
-          <li><a href="#q" id="skip-search">Skip to search</a></li>
-      </ul>
+    
+      <li><a href="#q" id="skip-search">Skip to search</a></li>
+    
+  </ul>
 
   <!-- Header -->
   <header id="main-header"><div class="center">
@@ -180,33 +229,39 @@
 
     <div class="clear header-clear"></div>
 
-            <a href="/en-US/" class="logo logo-mdn10">Mozilla Developer Network</a>
-    
+
+    <a href="/en-US/" class="logo">Mozilla Developer Network</a>
+
+
     <div id="nav-sec">
-                          <ul>
+        
+                  <ul>
                   <li>
+
     
+
     <form>
       <div class="oauth-login-container">
           <div class="oauth-login-options" tabIndex="0">
               <span class="oauth-login-options-text">
-                <span class="oauth-login-options-text-icons">Sign in with</span>
-                <span class="oauth-login-options-text-no-icons">Sign in</span>
+                Sign in
               </span>
-              <span class="oauth-icon oauth-persona launch-persona-login wait-for-persona disabled" data-service="Persona" data-next="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="Persona"><i class="icon-user" aria-hidden="true"></i></span>
               <span class="oauth-icon oauth-github" data-service="GitHub" data-href="/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FRegExp" title="GitHub"><i class="icon-github" aria-hidden="true"></i></span>
+              <span class="oauth-icon oauth-persona launch-persona-login wait-for-persona disabled" data-service="Persona" data-next="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="Persona"><i class="icon-user" aria-hidden="true"></i></span>
           </div>
           <div class="oauth-login-picker" aria-hidden="true">
               <ul>
                   <li class="wait-for-persona disabled"><a href="/en-US/users/signin" class="login-link launch-persona-login" data-next="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" data-service="Persona"><i class="icon-user" aria-hidden="true"></i>Persona</a></li>
                   <li><a href="/users/github/login/?next=%2Fen-US%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FRegExp" class="login-link" data-service="GitHub"><i class="icon-github" aria-hidden="true"></i>GitHub</a></li>
               </ul>
+              
           </div>
       </div>
     </form>
 </li>
                 </ul>
-            </div>
+        
+    </div>
 
     <nav id="main-nav" role="navigation"><ul><li><a href="/en-US/docs/Web">Web Platform<i aria-hidden="true" class="icon-caret-down"></i></a>
 
@@ -230,7 +285,6 @@
               <li><a href="/en-US/docs/Web/Reference">References</a></li>
               <li><a href="/en-US/docs/Web/Guide">Developer Guides</a></li>
               <li><a href="/en-US/docs/Web/Accessibility">Accessibility</a></li>
-              <li><a href="/en-US/demos/">Demos</a></li>
               <li><a href="/en-US/docs/Web">...more docs</a></li>
             </ul>
           </div>
@@ -241,14 +295,14 @@
           <div class="submenu-column">
             <ul>
               <li><a href="/en-US/docs/Mozilla/Add-ons">Add-ons</a></li>
-              <li><a href="/en-US/docs/Firefox">Firefox</a></li>
+              <li><a href="/en-US/docs/Mozilla/Firefox">Firefox</a></li>
               <li><a href="/en-US/docs/Mozilla/Marketplace">Firefox Marketplace</a></li>
-              <li><a href="/en-US/docs/Firefox_OS">Firefox OS</a></li>
+              <li><a href="/en-US/docs/Mozilla/B2G_OS">B2G OS</a></li>
               <li><a href="/en-US/docs/Persona">Persona</a></li>
             </ul>
           </div>
         </div>
-      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/demos/">Demos</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
+      </li><li><a href="/en-US/docs/Tools">Developer Tools</a></li><li><a href="/en-US/docs/MDN/Feedback">Feedback<i aria-hidden="true" class="icon-caret-down"></i></a>
 
         <div class="submenu js-submenu" id="nav-contact-submenu">
           <div class="submenu-column">
@@ -277,41 +331,69 @@
   <!-- Content will go here -->
   <main id="content"><div class="center clear">
   
+
    <!-- end is_zone -->
 
 
     <div class="wiki-main-content" id="document-main"><div class="center">
-            <div class="article-meta">
+      
+      <div class="article-meta">
         <!-- action buttons -->
         
-        
-        
+
   
+    
+  
+
+  
+    
+  
+
+  
+
   <ul class="page-buttons" data-sticky="false">
-            <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
+      
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Languages</span><i aria-hidden="true" class="icon-globe"></i></button>
 
         <div class="submenu js-submenu" id="languages-menu-submenu">
           <div class="submenu-column">
             <ul id="translations">
-                                                <li><bdi><a rel="internal" href="/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">Deutsch</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp" title="RegExp">Español</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/fa/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">فارسی</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp" title="RegExp">Français</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">日本語</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">한국어</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp" title="RegExp">Polski</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">Português (do Brasil)</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">Русский</a></bdi></li>
-                                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">中文 (简体)</a></bdi></li>
-                              
-                              <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
-                          </ul>
+              
+                
+                  <li><bdi><a rel="internal" href="/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">Deutsch</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp" title="RegExp">Español</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fa/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">فارسی</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp" title="RegExp">Français</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">日本語</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">한국어</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp" title="RegExp">Polski</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">Português (do Brasil)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">Русский</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp" title="RegExp">中文 (简体)</a></bdi></li>
+                
+              
+
+              
+                <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$locales" rel="nofollow, noindex" id="translations-add">Add a translation</a></li>
+              
+            </ul>
           </div>
         </div>
       </li>
+
       <li class="page-buttons-edit"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$edit" class="button" data-optimizely-hook="button-edit-doc" id="edit-button">Edit<i aria-hidden="true" class="icon-pencil"></i></a></li>
 
         
+
         <li><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Advanced</span><i aria-hidden="true" class="icon-cog"></i></button>
         <div class="submenu js-submenu" id="advanced-menu-submenu">
           <!-- this page -->
@@ -319,22 +401,37 @@
             <div class="title">Advanced</div>
             <ul>
                 <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$history" rel="nofollow, noindex">History</a></li>
-                                                                
                 
-                                                                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Print this article</a></li>
             </ul>
           </div>
         </div>
   </li></ul>
 
         <!-- crumbs -->
-          <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="breadcrumbs">
     <li typeof="v:Breadcrumb"><a href="/en-US" rel="v:url" property="v:title">MDN</a></li>
-          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
-          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/JavaScript" rel="v:url" property="v:title">JavaScript</a></li>
-          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/JavaScript/Reference" rel="v:url" property="v:title">JavaScript reference</a></li>
-          <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects" rel="v:url" property="v:title">Standard built-in objects</a></li>
-        <li class="crumb" typeof="v:Breadcrumb" property="v:title">RegExp</li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web" rel="v:url" property="v:title">Web technology for developers</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/JavaScript" rel="v:url" property="v:title">JavaScript</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/JavaScript/Reference" rel="v:url" property="v:title">JavaScript reference</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects" rel="v:url" property="v:title">Standard built-in objects</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">RegExp</li>
   </ol></nav>
       </div>
 
@@ -354,367 +451,470 @@
             <a class="button from-search-next only-icon disabled" title="Next Search Result" data-empty-title="No Previous Search Result"><i aria-hidden="true" class="icon-chevron-right"></i></a>
           </span>
 
-        <h1>RegExp</h1>
-
-                <div class="contributor-avatars" data-all-text="Show all&hellip;<span class='hidden'>contributors</span>" data-has-hidden="1">
-            <span class="quickstat">
-            by 75 contributors:            </span>
+        
+        <div class="contributor-avatars" data-all-text="see all contributors" data-alternate-message="hide contributors" data-has-hidden="1">
             <ul>
-                            <li class="shown">
+            
+                <li class="shown">
                 <a href="/en-US/profiles/arai" title="View profile: arai">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="arai" data-src="https://secure.gravatar.com/avatar/0432a84805ea7033f4646049963e3bf1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">arai</noscript></a>
                 </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/andrewschleifer" title="View profile: andrewschleifer">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="andrewschleifer" data-src="https://secure.gravatar.com/avatar/e1cbfd46162f7bed6843976dcf8925e4?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">andrewschleifer</noscript></a>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/jntesteves" title="View profile: jntesteves">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jntesteves" data-src="https://secure.gravatar.com/avatar/e7f0308a26a310d9925552e9ad47ba57?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jntesteves</noscript></a>
                 </li>
-                            <li class="shown">
+            
+                <li class="shown">
                 <a href="/en-US/profiles/SphinxKnight" title="View profile: SphinxKnight">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="SphinxKnight" data-src="https://secure.gravatar.com/avatar/8fb358ea9b7af22f5021a29e122ea069?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">SphinxKnight</noscript></a>
                 </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/jebalert" title="View profile: jebalert">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jebalert" data-src="https://secure.gravatar.com/avatar/3a91f3fbc3ef1c2517f8b21c3472d114?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jebalert</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/fscholz" title="View profile: fscholz">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fscholz" data-src="https://secure.gravatar.com/avatar/e24391c9174352988d819a9b9ea77c9e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fscholz</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/hunan-rostomyan" title="View profile: hunan-rostomyan">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="hunan-rostomyan" data-src="https://secure.gravatar.com/avatar/8e6962c7fd0a4e514b257f2d83302f26?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">hunan-rostomyan</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/nhahtdh" title="View profile: nhahtdh">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="nhahtdh" data-src="https://secure.gravatar.com/avatar/1057358c082e85c763398ea2457bc5be?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">nhahtdh</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/RogerPoon" title="View profile: RogerPoon">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="RogerPoon" data-src="https://secure.gravatar.com/avatar/bd375207a0c4929d0db339605c47d547?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">RogerPoon</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/damphat" title="View profile: damphat">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="damphat" data-src="https://secure.gravatar.com/avatar/11ef7c4b9749807b121e74cd353be3eb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">damphat</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/Mingun" title="View profile: Mingun">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Mingun" data-src="https://secure.gravatar.com/avatar/1df0cfb54ee323991401ff163d80713c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Mingun</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/madarche" title="View profile: madarche">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="madarche" data-src="https://secure.gravatar.com/avatar/a15ce308d52c691ba765d0ac972aac87?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">madarche</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/ziyunfei" title="View profile: ziyunfei">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ziyunfei" data-src="https://secure.gravatar.com/avatar/2dbf9c055c2b32d3ca45d25be0117423?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ziyunfei</noscript></a>
-                </li>
-                            <li class="shown">
-                <a href="/en-US/profiles/alexilyaev" title="View profile: alexilyaev">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alexilyaev" data-src="https://secure.gravatar.com/avatar/f53a0a2b6a145d4fcfe1098bdeb3489c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alexilyaev</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/rhyne24" title="View profile: rhyne24">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rhyne24" data-src="https://secure.gravatar.com/avatar/c2496e5a293cb1f7323cde2df2cefe1a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rhyne24</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/alyssa" title="View profile: alyssa">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alyssa" data-src="https://secure.gravatar.com/avatar/65359e95f578c14b314ba07f113686d5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alyssa</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/havarh" title="View profile: havarh">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="havarh" data-src="https://secure.gravatar.com/avatar/722b654cb8e4f45b3f3ecfa85a25a40b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">havarh</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/AlexChao" title="View profile: AlexChao">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="AlexChao" data-src="https://secure.gravatar.com/avatar/7d409f7ca9f450d094236a1e084dc368?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">AlexChao</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/jviereck" title="View profile: jviereck">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jviereck" data-src="https://secure.gravatar.com/avatar/ab38de92352dcefa63449c7bf133de26?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jviereck</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/jmclerck" title="View profile: jmclerck">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jmclerck" data-src="https://secure.gravatar.com/avatar/497b65e6e64f3a7c02de710f201c71d1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jmclerck</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/mvasilkov" title="View profile: mvasilkov">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="mvasilkov" data-src="https://secure.gravatar.com/avatar/ee4b7f7f470f52385de1df68da930a2a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">mvasilkov</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/KOLANICH" title="View profile: KOLANICH">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="KOLANICH" data-src="https://secure.gravatar.com/avatar/dce6b278914691e3eb31e4442a73cc2a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">KOLANICH</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Vinnl" title="View profile: Vinnl">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Vinnl" data-src="https://secure.gravatar.com/avatar/010564c5d5894e8e22ba40de45917566?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Vinnl</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/pizzaisdavid" title="View profile: pizzaisdavid">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="pizzaisdavid" data-src="https://secure.gravatar.com/avatar/e8979496bd21b1b71ae3aa9bc3e29b7c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">pizzaisdavid</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Nik_Martin" title="View profile: Nik_Martin">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Nik_Martin" data-src="https://secure.gravatar.com/avatar/9786105ef0bd24cf2f599a6a139f8784?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Nik_Martin</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/tehsis" title="View profile: tehsis">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tehsis" data-src="https://secure.gravatar.com/avatar/647b1eea820b3fc8a5aee0383930b888?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tehsis</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/trevorh" title="View profile: trevorh">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="trevorh" data-src="https://secure.gravatar.com/avatar/1638bc67341673005fa05e5def8f3c4d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">trevorh</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Brettz9" title="View profile: Brettz9">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Brettz9" data-src="https://secure.gravatar.com/avatar/4c750582e23fcf068bdde51cc50416d1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Brettz9</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/trupanka" title="View profile: trupanka">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="trupanka" data-src="https://secure.gravatar.com/avatar/30d0eda0ccb196be77f051fcf64385e8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">trupanka</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/xk_id" title="View profile: xk_id">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="xk_id" data-src="https://secure.gravatar.com/avatar/f0034b1adb8d10aaea497a755edc6a00?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">xk_id</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/ethertank" title="View profile: ethertank">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ethertank" data-src="https://secure.gravatar.com/avatar/abac73ba2093b500bf7599c76d80280c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ethertank</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/alex.henrie" title="View profile: alex.henrie">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alex.henrie" data-src="https://secure.gravatar.com/avatar/961adea0c1a2f7e72145b36bbf2b3233?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alex.henrie</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/teoli" title="View profile: teoli">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Ruakh" title="View profile: Ruakh">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Ruakh" data-src="https://secure.gravatar.com/avatar/92d059913eace78a868a3e87f98e0a57?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Ruakh</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Pointy" title="View profile: Pointy">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Pointy" data-src="https://secure.gravatar.com/avatar/b19917aa04a6839aef577f1117c71d48?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Pointy</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/tregagnon" title="View profile: tregagnon">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tregagnon" data-src="https://secure.gravatar.com/avatar/8431892ef37f88fe820096de721c00ba?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tregagnon</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/evilpie" title="View profile: evilpie">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="evilpie" data-src="https://secure.gravatar.com/avatar/6bb31f7207fc068158047b9c8ad4592d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">evilpie</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/bigbossSNK" title="View profile: bigbossSNK">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="bigbossSNK" data-src="https://secure.gravatar.com/avatar/2f4148ef70b435df44ce119d9cde7900?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">bigbossSNK</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/lmorchard" title="View profile: lmorchard">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="lmorchard" data-src="https://secure.gravatar.com/avatar/b45c48fc9e05922e2f368a9d7d7d8de1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">lmorchard</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/Catnips" title="View profile: Catnips">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Catnips" data-src="https://secure.gravatar.com/avatar/b029f965905c39075ec62a7812de573e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Catnips</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/arleytriana" title="View profile: arleytriana">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="arleytriana" data-src="https://secure.gravatar.com/avatar/003907cc8ede15158879fe55ea0f6524?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">arleytriana</noscript></a>
-                </li>
-                            <li class="hidden">
-                <a href="/en-US/profiles/scrapmac" title="View profile: scrapmac">
-                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="scrapmac" data-src="https://secure.gravatar.com/avatar/79dfe51799e3880bcb801a4f6cad59cd?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">scrapmac</noscript></a>
-                </li>
-                            <li class="hidden">
+            
+                <li class="shown">
                 <a href="/en-US/profiles/Sevenspade" title="View profile: Sevenspade">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sevenspade" data-src="https://secure.gravatar.com/avatar/64f1bb62d82df9624a0c21b569fb34fe?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sevenspade</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="shown">
+                <a href="/en-US/profiles/pygy" title="View profile: pygy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="pygy" data-src="https://secure.gravatar.com/avatar/b5601ce080eda59e10f3d7dde97d46a7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">pygy</noscript></a>
+                </li>
+            
+                <li class="shown">
+                <a href="/en-US/profiles/fscholz" title="View profile: fscholz">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="fscholz" data-src="https://secure.gravatar.com/avatar/e24391c9174352988d819a9b9ea77c9e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">fscholz</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/alanmimms" title="View profile: alanmimms">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alanmimms" data-src="https://secure.gravatar.com/avatar/84114dcdf6cc2ba623bbbe7e31f2c180?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alanmimms</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Behnam" title="View profile: Behnam">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Behnam" data-src="https://secure.gravatar.com/avatar/29da87f6f0665b806120f67fa3de0c4b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Behnam</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/andrewschleifer" title="View profile: andrewschleifer">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="andrewschleifer" data-src="https://secure.gravatar.com/avatar/e1cbfd46162f7bed6843976dcf8925e4?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">andrewschleifer</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jebalert" title="View profile: jebalert">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jebalert" data-src="https://secure.gravatar.com/avatar/3a91f3fbc3ef1c2517f8b21c3472d114?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jebalert</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/hunan-rostomyan" title="View profile: hunan-rostomyan">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="hunan-rostomyan" data-src="https://secure.gravatar.com/avatar/8e6962c7fd0a4e514b257f2d83302f26?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">hunan-rostomyan</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/nhahtdh" title="View profile: nhahtdh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="nhahtdh" data-src="https://secure.gravatar.com/avatar/1057358c082e85c763398ea2457bc5be?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">nhahtdh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/RogerPoon" title="View profile: RogerPoon">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="RogerPoon" data-src="https://secure.gravatar.com/avatar/bd375207a0c4929d0db339605c47d547?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">RogerPoon</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/damphat" title="View profile: damphat">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="damphat" data-src="https://secure.gravatar.com/avatar/11ef7c4b9749807b121e74cd353be3eb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">damphat</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Mingun" title="View profile: Mingun">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Mingun" data-src="https://secure.gravatar.com/avatar/1df0cfb54ee323991401ff163d80713c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Mingun</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/madarche" title="View profile: madarche">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="madarche" data-src="https://secure.gravatar.com/avatar/a15ce308d52c691ba765d0ac972aac87?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">madarche</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ziyunfei" title="View profile: ziyunfei">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ziyunfei" data-src="https://secure.gravatar.com/avatar/2dbf9c055c2b32d3ca45d25be0117423?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ziyunfei</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/alexilyaev" title="View profile: alexilyaev">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alexilyaev" data-src="https://secure.gravatar.com/avatar/f53a0a2b6a145d4fcfe1098bdeb3489c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alexilyaev</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/rhyne24" title="View profile: rhyne24">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="rhyne24" data-src="https://secure.gravatar.com/avatar/c2496e5a293cb1f7323cde2df2cefe1a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">rhyne24</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/alyssa" title="View profile: alyssa">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alyssa" data-src="https://secure.gravatar.com/avatar/65359e95f578c14b314ba07f113686d5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alyssa</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/havarh" title="View profile: havarh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="havarh" data-src="https://secure.gravatar.com/avatar/722b654cb8e4f45b3f3ecfa85a25a40b?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">havarh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/AlexChao" title="View profile: AlexChao">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="AlexChao" data-src="https://secure.gravatar.com/avatar/7d409f7ca9f450d094236a1e084dc368?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">AlexChao</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jviereck" title="View profile: jviereck">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jviereck" data-src="https://secure.gravatar.com/avatar/ab38de92352dcefa63449c7bf133de26?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jviereck</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/jmclerck" title="View profile: jmclerck">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="jmclerck" data-src="https://secure.gravatar.com/avatar/497b65e6e64f3a7c02de710f201c71d1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">jmclerck</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/mvasilkov" title="View profile: mvasilkov">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="mvasilkov" data-src="https://secure.gravatar.com/avatar/ee4b7f7f470f52385de1df68da930a2a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">mvasilkov</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/KOLANICH" title="View profile: KOLANICH">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="KOLANICH" data-src="https://secure.gravatar.com/avatar/dce6b278914691e3eb31e4442a73cc2a?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">KOLANICH</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Vinnl" title="View profile: Vinnl">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Vinnl" data-src="https://secure.gravatar.com/avatar/010564c5d5894e8e22ba40de45917566?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Vinnl</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/pizzaisdavid" title="View profile: pizzaisdavid">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="pizzaisdavid" data-src="https://secure.gravatar.com/avatar/e8979496bd21b1b71ae3aa9bc3e29b7c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">pizzaisdavid</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Nik_Martin" title="View profile: Nik_Martin">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Nik_Martin" data-src="https://secure.gravatar.com/avatar/9786105ef0bd24cf2f599a6a139f8784?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Nik_Martin</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/tehsis" title="View profile: tehsis">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tehsis" data-src="https://secure.gravatar.com/avatar/647b1eea820b3fc8a5aee0383930b888?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tehsis</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/trevorh" title="View profile: trevorh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="trevorh" data-src="https://secure.gravatar.com/avatar/1638bc67341673005fa05e5def8f3c4d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">trevorh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Brettz9" title="View profile: Brettz9">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Brettz9" data-src="https://secure.gravatar.com/avatar/4c750582e23fcf068bdde51cc50416d1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Brettz9</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Sheppy" title="View profile: Sheppy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sheppy" data-src="https://secure.gravatar.com/avatar/945076feb88f2d7003891ffbf06f32bf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sheppy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/trupanka" title="View profile: trupanka">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="trupanka" data-src="https://secure.gravatar.com/avatar/30d0eda0ccb196be77f051fcf64385e8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">trupanka</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/xk_id" title="View profile: xk_id">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="xk_id" data-src="https://secure.gravatar.com/avatar/f0034b1adb8d10aaea497a755edc6a00?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">xk_id</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/ethertank" title="View profile: ethertank">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="ethertank" data-src="https://secure.gravatar.com/avatar/abac73ba2093b500bf7599c76d80280c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">ethertank</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/alex.henrie" title="View profile: alex.henrie">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="alex.henrie" data-src="https://secure.gravatar.com/avatar/961adea0c1a2f7e72145b36bbf2b3233?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">alex.henrie</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/teoli" title="View profile: teoli">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="teoli" data-src="https://secure.gravatar.com/avatar/d0d90148e08e3b64ccf75c46f31442c5?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">teoli</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Ruakh" title="View profile: Ruakh">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Ruakh" data-src="https://secure.gravatar.com/avatar/92d059913eace78a868a3e87f98e0a57?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Ruakh</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Pointy" title="View profile: Pointy">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Pointy" data-src="https://secure.gravatar.com/avatar/b19917aa04a6839aef577f1117c71d48?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Pointy</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/tregagnon" title="View profile: tregagnon">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="tregagnon" data-src="https://secure.gravatar.com/avatar/8431892ef37f88fe820096de721c00ba?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">tregagnon</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/evilpie" title="View profile: evilpie">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="evilpie" data-src="https://secure.gravatar.com/avatar/6bb31f7207fc068158047b9c8ad4592d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">evilpie</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/bigbossSNK" title="View profile: bigbossSNK">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="bigbossSNK" data-src="https://secure.gravatar.com/avatar/2f4148ef70b435df44ce119d9cde7900?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">bigbossSNK</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/lmorchard" title="View profile: lmorchard">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="lmorchard" data-src="https://secure.gravatar.com/avatar/b45c48fc9e05922e2f368a9d7d7d8de1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">lmorchard</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/Catnips" title="View profile: Catnips">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Catnips" data-src="https://secure.gravatar.com/avatar/b029f965905c39075ec62a7812de573e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Catnips</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/arleytriana" title="View profile: arleytriana">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="arleytriana" data-src="https://secure.gravatar.com/avatar/003907cc8ede15158879fe55ea0f6524?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">arleytriana</noscript></a>
+                </li>
+            
+                <li class="hidden">
+                <a href="/en-US/profiles/scrapmac" title="View profile: scrapmac">
+                <noscript data-width="34" data-height="34" data-class="avatar" data-alt="scrapmac" data-src="https://secure.gravatar.com/avatar/79dfe51799e3880bcb801a4f6cad59cd?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">scrapmac</noscript></a>
+                </li>
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/user20" title="View profile: user20">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="user20" data-src="https://secure.gravatar.com/avatar/7d973c703583ffcc0b0d8849a7480be3?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">user20</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/shi_zheng" title="View profile: shi_zheng">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="shi_zheng" data-src="https://secure.gravatar.com/avatar/355b3d721b59ba59f3ceb5fe1b4f2f75?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">shi_zheng</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/gpvos" title="View profile: gpvos">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="gpvos" data-src="https://secure.gravatar.com/avatar/95740d81eea6f80f55d1fa72081b6219?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">gpvos</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/paulca" title="View profile: paulca">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="paulca" data-src="https://secure.gravatar.com/avatar/b408c8d259cc9b98cf69da4afcad92fb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">paulca</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/grendel" title="View profile: grendel">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="grendel" data-src="https://secure.gravatar.com/avatar/7bec8ce3caba5f459b16eca80e087be7?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">grendel</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Scipion" title="View profile: Scipion">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Scipion" data-src="https://secure.gravatar.com/avatar/c964eef3937e82b36c3192f91f72f799?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Scipion</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Waldo" title="View profile: Waldo">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Waldo" data-src="https://secure.gravatar.com/avatar/d26a0ca7ae1134e0e1dbdddf82e28929?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Waldo</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Crash" title="View profile: Crash">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Crash" data-src="https://secure.gravatar.com/avatar/d41d8cd98f00b204e9800998ecf8427e?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Crash</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Neil" title="View profile: Neil">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Neil" data-src="https://secure.gravatar.com/avatar/3e42479b6063be4a85f9974d2161dadf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Neil</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Potappo" title="View profile: Potappo">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Potappo" data-src="https://secure.gravatar.com/avatar/f0ee74ffcc558dd3895fde235b2aec42?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Potappo</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/David-Sarah%20Hopwood" title="View profile: David-Sarah Hopwood">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="David-Sarah Hopwood" data-src="https://secure.gravatar.com/avatar/fbd85e1e89e8232c8f6628bb42c9c926?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">David-Sarah Hopwood</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/stepnem" title="View profile: stepnem">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="stepnem" data-src="https://secure.gravatar.com/avatar/e2e2a6cd6df844f1b0f239a48194aacc?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">stepnem</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Sspitzer" title="View profile: Sspitzer">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Sspitzer" data-src="https://secure.gravatar.com/avatar/30bea03e99e03d3de54f7653bdb4e023?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Sspitzer</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/universian" title="View profile: universian">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="universian" data-src="https://secure.gravatar.com/avatar/68d34a3046caa2cbab524139675201e2?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">universian</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Jesdisciple" title="View profile: Jesdisciple">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Jesdisciple" data-src="https://secure.gravatar.com/avatar/a6eda9992c171e9fd308dcf0b51340cf?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Jesdisciple</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Eino" title="View profile: Eino">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Eino" data-src="https://secure.gravatar.com/avatar/b9b76ee7c473decf931f21a01c40c75d?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Eino</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Tgr" title="View profile: Tgr">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Tgr" data-src="https://secure.gravatar.com/avatar/7cca5c3dcfdb11eed67a39f977646f7c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Tgr</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Hamstersoup" title="View profile: Hamstersoup">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Hamstersoup" data-src="https://secure.gravatar.com/avatar/37667c3c8a4d5e6108a8036092807347?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Hamstersoup</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Minh%20Nguyen" title="View profile: Minh Nguyen">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Minh Nguyen" data-src="https://secure.gravatar.com/avatar/b4c330fffda8b9b73e0849ac6e30f886?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Minh Nguyen</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Mgjbot" title="View profile: Mgjbot">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Mgjbot" data-src="https://secure.gravatar.com/avatar/cde356a1ca3e38301f29fda3dbd5de53?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Mgjbot</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/BenoitL" title="View profile: BenoitL">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="BenoitL" data-src="https://secure.gravatar.com/avatar/f383cd79ac30207f746361c2b124db98?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">BenoitL</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Pbb" title="View profile: Pbb">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Pbb" data-src="https://secure.gravatar.com/avatar/a2f19e3a960bbc861e85b69c9c13a8e8?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Pbb</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Joaopaulo1511" title="View profile: Joaopaulo1511">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Joaopaulo1511" data-src="https://secure.gravatar.com/avatar/5e7f3b7c2139cd9daa56c3b9248ab24c?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Joaopaulo1511</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Ptak82" title="View profile: Ptak82">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Ptak82" data-src="https://secure.gravatar.com/avatar/c971ad02ceb36d77de6f9bc8b0c0d5c1?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Ptak82</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Miken32" title="View profile: Miken32">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Miken32" data-src="https://secure.gravatar.com/avatar/ded0aa01132d05884ebf2e46394bddfa?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Miken32</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Linuxmigration1" title="View profile: Linuxmigration1">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Linuxmigration1" data-src="https://secure.gravatar.com/avatar/77f7212585f46ff44939738b35f53dd4?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Linuxmigration1</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/JesseW" title="View profile: JesseW">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="JesseW" data-src="https://secure.gravatar.com/avatar/8eed85131e5866cc13fe2095bb8329e0?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">JesseW</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/B%20I%20R%20D" title="View profile: B I R D">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="B I R D" data-src="https://secure.gravatar.com/avatar/7d98483feef51cde3b0079f0930bbe42?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">B I R D</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Maian" title="View profile: Maian">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Maian" data-src="https://secure.gravatar.com/avatar/f3589ad1aadbcba8e9eaffc046dcff90?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Maian</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Ben%20Karel" title="View profile: Ben Karel">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Ben Karel" data-src="https://secure.gravatar.com/avatar/abd4cf5353b8210ab01faf6ffa4eb5fb?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Ben Karel</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Dria" title="View profile: Dria">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Dria" data-src="https://secure.gravatar.com/avatar/c6c044311a2c98b383718e00964cda72?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Dria</noscript></a>
                 </li>
-                            <li class="hidden">
+            
+                <li class="hidden">
                 <a href="/en-US/profiles/Jesse" title="View profile: Jesse">
                 <noscript data-width="34" data-height="34" data-class="avatar" data-alt="Jesse" data-src="https://secure.gravatar.com/avatar/d2dc9227eafcd0ec5ba3712ee4f19b75?s=34&amp;r=pg&amp;d=https%3A%2F%2Fdeveloper.cdn.mozilla.net%2Fmedia%2Fimg%2Favatar.png">Jesse</noscript></a>
                 </li>
-                        </ul>
+            
+            </ul>
         </div>
         
+
+        <h1>RegExp</h1>
+
       </div>
       
+
       <!-- start the main content container -->
         <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
 
-                    <!-- additional controls row; hidden unless needed -->
-          <div id="wiki-controls" class="column-container column-container-reverse">
-            <div class="column-strip">
-              <!-- Show TOC "show" link -->
-            </div>
-            <div class="column-half">
-            </div>
-            <div class="column-strip quick-links hidden">
-              <a href="#show-quick-links" class="title smaller" id="show-quick-links"><i aria-hidden="true" class="icon-caret-down"></i>Show Sidebar</a>
-            </div>
-          </div>
-          
           <!-- content row with three strips -->
           <div class="column-container column-container-reverse">
 
-                          <!-- TOC, approvals, etc -->
+            
+              <!-- TOC, approvals, etc -->
               <div class="column-strip wiki-column" id="wiki-right">
-                            <!-- table of contents -->
+              
+              <!-- table of contents -->
               <div id="toc" class="toc toggleable">
                 <a href="#toc" class="title toggler" data-open-icon="icon-plus" data-closed-icon="icon-minus">In This Article<i></i></a>
                 <ol class="toggle-container">
-                  <li><a href="#Constructor" rel="internal">Constructor</a><ol><li><a href="#Parameters" rel="internal">Parameters</a></ol></li><li><a href="#Description" rel="internal">Description</a><li><a href="#Special_characters_meaning_in_regular_expressions" rel="internal">Special characters meaning in regular expressions</a><li><a href="#Properties" rel="internal">Properties</a><li><a href="#Methods" rel="internal">Methods</a><li><a href="#RegExp_prototype_objects_and_instances" rel="internal"><code>RegExp</code> prototype objects and instances</a><ol><li><a href="#Properties_2" rel="internal">Properties</a><li><a href="#Methods_2" rel="internal">Methods</a></ol></li><li><a href="#Examples" rel="internal">Examples</a><ol><li><a href="#Using_a_regular_expression_to_change_data_format" rel="internal">Using a regular expression to change data format</a><li><a href="#Using_regular_expression_to_split_lines_with_different_line_endingsends_of_lineline_breaks" rel="internal">Using regular expression to split lines with different line endings/ends of line/line breaks</a><li><a href="#Using_regular_expression_on_multiple_lines" rel="internal">Using regular expression on multiple lines</a><li><a href="#Using_a_regular_expression_with_the_sticky_flag" rel="internal">Using a regular expression with the "sticky" flag</a><li><a href="#Regular_expression_and_Unicode_characters" rel="internal">Regular expression and Unicode characters</a><li><a href="#Extracting_sub-domain_name_from_URL" rel="internal">Extracting sub-domain name from URL</a></ol></li><li><a href="#Specifications" rel="internal">Specifications</a><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><li><a href="#Gecko-specific_notes" rel="internal">Gecko-specific notes</a><li><a href="#See_also" rel="internal">See also</a>
+                  <li><a href="#Syntax" rel="internal">Syntax</a><ol><li><a href="#Parameters" rel="internal">Parameters</a></ol></li><li><a href="#Description" rel="internal">Description</a><li><a href="#Special_characters_meaning_in_regular_expressions" rel="internal">Special characters meaning in regular expressions</a><li><a href="#Properties" rel="internal">Properties</a><li><a href="#Methods" rel="internal">Methods</a><li><a href="#RegExp_prototype_objects_and_instances" rel="internal"><code>RegExp</code> prototype objects and instances</a><ol><li><a href="#Properties_2" rel="internal">Properties</a><li><a href="#Methods_2" rel="internal">Methods</a></ol></li><li><a href="#Examples" rel="internal">Examples</a><ol><li><a href="#Using_a_regular_expression_to_change_data_format" rel="internal">Using a regular expression to change data format</a><li><a href="#Using_regular_expression_to_split_lines_with_different_line_endingsends_of_lineline_breaks" rel="internal">Using regular expression to split lines with different line endings/ends of line/line breaks</a><li><a href="#Using_regular_expression_on_multiple_lines" rel="internal">Using regular expression on multiple lines</a><li><a href="#Using_a_regular_expression_with_the_sticky_flag" rel="internal">Using a regular expression with the sticky flag</a><li><a href="#Regular_expression_and_Unicode_characters" rel="internal">Regular expression and Unicode characters</a><li><a href="#Extracting_sub-domain_name_from_URL" rel="internal">Extracting sub-domain name from URL</a></ol></li><li><a href="#Specifications" rel="internal">Specifications</a><li><a href="#Browser_compatibility" rel="internal">Browser compatibility</a><li><a href="#Gecko-specific_notes" rel="internal">Gecko-specific notes</a><li><a href="#See_also" rel="internal">See also</a>
                 </ol>
               </div>
-                            </div>
+              
+              </div>
             
-                                                  
+
+            
+            
+              
+            
+
             <!-- center: main article content -->
             <div id="wiki-content" class="column-half wiki-column text-content">
 
               
+
               
-                                                                                          
+
+              
+                
+                
+                
+              
+              
+
               <!-- just the article content -->
               <article id="wikiArticle">
-                                                      <div><section id="Quick_Links" class="Quick_links"><!-- --></section></div>
+                
+                  
+                    <div><section id="Quick_Links" class="Quick_links"><!-- --></section></div>
 
 <p>The <strong><code>RegExp</code></strong> constructor creates a regular expression object for matching text with a pattern.</p>
 
 <p>For an introduction to regular expressions, read the <a href="/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">Regular Expressions chapter</a> in the <a href="/en-US/docs/Web/JavaScript/Guide/Regular_Expressions">JavaScript Guide</a>.</p>
 
-<h2 id="Constructor">Constructor</h2>
+<h2 id="Syntax">Syntax</h2>
 
 <p>Literal and constructor notations are possible:</p>
 
-<pre class="syntaxbox"><code>/<var>pattern</var>/<var>flags</var>
-new RegExp(<var>pattern</var>[, <var>flags</var>])</code>
+<pre class="syntaxbox">/<var>pattern</var>/<var>flags</var>
+new RegExp(<var>pattern</var>[, <var>flags</var>])
 </pre>
 
 <h3 id="Parameters">Parameters</h3>
@@ -733,9 +933,9 @@ new RegExp(<var>pattern</var>[, <var>flags</var>])</code>
   <dd>ignore case</dd>
   <dt><code>m</code></dt>
   <dd>multiline; treat beginning and end characters (^ and $) as working over multiple lines (i.e., match the beginning or end of <em>each</em> line (delimited by \n or \r), not only the very beginning or end of the whole input string)</dd>
-  <dt><code>u </code><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></dt>
+  <dt><code>u</code></dt>
   <dd>unicode; treat pattern as a sequence of unicode code points</dd>
-  <dt><code>y </code><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></dt>
+  <dt><code>y</code></dt>
   <dd>sticky; matches only from the index indicated by the <code>lastIndex</code> property of this regular expression in the target string (and does not attempt to match from any later indexes).</dd>
  </dl>
  </dd>
@@ -883,11 +1083,11 @@ var re = new RegExp('\\w+');
   </tr>
   <tr>
    <td><code>\u<em>hhhh</em></code></td>
-   <td>Matches the character with the Unicode value <code><em>hhhh</em></code> (four hexadecimal digits).</td>
+   <td>Matches a UTF-16 code-unit with the value <code><em>hhhh</em></code> (four hexadecimal digits).</td>
   </tr>
   <tr>
-   <td><code>\u<em>{hhhh}</em></code></td>
-   <td>(only when u flag is set) Matches the character with the Unicode value <code><em>hhhh</em></code> (hexadecimal digits).</td>
+   <td><code>\u<em>{hhhh} </em>or <em>\u{hhhhh}</em></code></td>
+   <td>(only when u flag is set) Matches the character with the Unicode value U+<code><em>hhhh</em> or </code>U+<code><em>hhhhh</em></code> (hexadecimal digits).</td>
   </tr>
   <tr>
    <td><code>\</code></td>
@@ -913,17 +1113,21 @@ var re = new RegExp('\\w+');
    <th>Meaning</th>
   </tr>
   <tr>
-   <td><code>[xyz]</code></td>
+   <td><code>[xyz]<br>
+    [a-c]</code></td>
    <td>
-    <p>A character set. Matches any one of the enclosed characters. You can specify a range of characters by using a hyphen.</p>
+    <p>A character set. Matches any one of the enclosed characters. You can specify a range of characters by using a hyphen, but if the hyphen appears as the first or last character enclosed in the square brackets it is taken as a literal hyphen to be included in the character set as a normal character.</p>
 
     <p>For example, <code>[abcd]</code> is the same as <code>[a-d]</code>. They match the "b" in "brisket" and the "c" in "chop".</p>
    </td>
   </tr>
   <tr>
-   <td><code>[^xyz]</code></td>
    <td>
-    <p>A negated or complemented character set. That is, it matches anything that is not enclosed in the brackets. You can specify a range of characters by using a hyphen.</p>
+    <p><code>[^xyz]<br>
+     [^a-c]</code></p>
+   </td>
+   <td>
+    <p>A negated or complemented character set. That is, it matches anything that is not enclosed in the brackets. You can specify a range of characters by using a hyphen, but if the hyphen appears as the first or last character enclosed in the square brackets it is taken as a literal hyphen to be included in the character set as a normal character.</p>
 
     <p>For example, <code>[^abc]</code> is the same as <code>[^a-c]</code>. They initially match "o" in "bacon" and "h" in "chop".</p>
    </td>
@@ -1045,15 +1249,6 @@ var re = new RegExp('\\w+');
    </td>
   </tr>
   <tr>
-   <td><code><em>x</em>*?</code><br>
-    <code><em>x</em>+?</code></td>
-   <td>
-    <p>Matches the preceding item <em>x</em> like <code>*</code> and <code>+</code> from above, however the match is the smallest possible match.</p>
-
-    <p>For example, <code>/".*?"/</code> matches '"foo"' in '"foo" "bar"' and does not match '"foo" "bar"' as without the <code>?</code> behind the <code>*</code>.</p>
-   </td>
-  </tr>
-  <tr>
    <td><code><em>x</em>?</code></td>
    <td>
     <p>Matches the preceding item <em>x</em> 0 or 1 time.</p>
@@ -1085,6 +1280,23 @@ var re = new RegExp('\\w+');
     <p>Where <code><em>n</em></code> and <code><em>m</em></code> are positive integers. Matches at least <code><em>n</em></code> and at most <code><em>m</em></code> occurrences of the preceding item <em>x</em>.</p>
 
     <p>For example, <code>/a{1,3}/</code> matches nothing in "cndy", the "a" in "candy", the two "a"'s in "caandy", and the first three "a"'s in "caaaaaaandy". Notice that when matching "caaaaaaandy", the match is "aaa", even though the original string had more "a"'s in it.</p>
+   </td>
+  </tr>
+  <tr>
+   <td>
+    <p><code><em>x</em>*?</code><br>
+     <code><em>x</em>+?</code><br>
+     <code><em>x</em>??</code><br>
+     <code><em>x</em>{n}?</code><br>
+     <code><em>x</em>{n,}?</code><br>
+     <code><em>x</em>{n,m}?</code></p>
+   </td>
+   <td>
+    <p>Matches the preceding item <em>x</em> like <code>*</code>, <code>+</code>, <code>?</code>, and <code>{...}</code> from above, however the match is the smallest possible match.</p>
+
+    <p>For example, <code>/&lt;.*?&gt;/</code> matches "&lt;foo&gt;" in "&lt;foo&gt; &lt;bar&gt;", whereas <code>/&lt;.*&gt;/</code> matches "&lt;foo&gt; &lt;bar&gt;".</p>
+
+    <p>Quantifiers without <code>?</code> are said to be greedy. Those with <code>?</code> are called "non-greedy".</p>
    </td>
   </tr>
  </tbody>
@@ -1124,6 +1336,8 @@ var re = new RegExp('\\w+');
  <dd>Allows the addition of properties to all objects.</dd>
  <dt><code>RegExp.length</code></dt>
  <dd>The value of <code>RegExp.length</code> is 2.</dd>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@species" title="The RegExp[@@species] accessor property returns the RegExp constructor."><code>get RegExp[@@species]</code></a></dt>
+ <dd>The constructor function that is used to create derived objects.</dd>
  <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex" title="The lastIndex is a read/write integer property of regular expressions that specifies the index at which to start the next match."><code>RegExp.lastIndex</code></a></dt>
  <dd>The index at which to start the next match.</dd>
 </dl>
@@ -1142,7 +1356,7 @@ var re = new RegExp('\\w+');
 
 <dl><dt><code>RegExp.prototype.constructor</code></dt>
  <dd>Specifies the function that creates an object's prototype.</dd>
- <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags" title="The flags property returns a string consisting of the flags of the current regular expression object."><code>RegExp.prototype.flags</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></dt>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags" title="The flags property returns a string consisting of the flags of the current regular expression object."><code>RegExp.prototype.flags</code></a></dt>
  <dd>A string that contains the flags of the <code>RegExp</code> object.</dd>
  <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global" title='The global property indicates whether or not the "g" flag is used with the regular expression. global is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.global</code></a></dt>
  <dd>Whether to test the regular expression against all possible matches in a string, or only against the first.</dd>
@@ -1152,9 +1366,9 @@ var re = new RegExp('\\w+');
  <dd>Whether or not to search in strings across multiple lines.</dd>
  <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source" title="The source property returns a String containing the source text of the regexp object, and it doesn't contain the two forward slashes on both sides and any flags."><code>RegExp.prototype.source</code></a></dt>
  <dd>The text of the pattern.</dd>
- <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky" title="The sticky property reflects whether or not the search is sticky (searches in strings only from the index indicated by the lastIndex property of this regular expression). sticky is a read-only property of an individual regular expression object."><code>RegExp.prototype.sticky</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></dt>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky" title="The sticky property reflects whether or not the search is sticky (searches in strings only from the index indicated by the lastIndex property of this regular expression). sticky is a read-only property of an individual regular expression object."><code>RegExp.prototype.sticky</code></a></dt>
  <dd>Whether or not the search is sticky.</dd>
- <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode" title='The unicode property indicates whether or not the "u" flag is used with the regular expression. unicode is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.unicode</code></a> <span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></dt>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode" title='The unicode property indicates whether or not the "u" flag is used with a regular expression. unicode is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.unicode</code></a></dt>
  <dd>Whether or not Unicode features are enabled.</dd>
 </dl></div>
 
@@ -1166,6 +1380,14 @@ var re = new RegExp('\\w+');
  <dd>Executes a search for a match in its string parameter.</dd>
  <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" title="The test() method executes a search for a match between a regular expression and a specified string. Returns true or false."><code>RegExp.prototype.test()</code></a></dt>
  <dd>Tests for a match in its string parameter.</dd>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match" title="The [@@match]() method retrieves the matches when matching a string against a regular expression."><code>RegExp.prototype[@@match]()</code></a></dt>
+ <dd>Performs match to given string and returns match result.</dd>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace" title="The [@@replace]() method replaces the some or all matches of a this pattern in a string by a replacement, and returns the result of the replacement as a new string. The replacement can be a string or a function to be called for each match."><code>RegExp.prototype[@@replace]()</code></a></dt>
+ <dd>Replaces matches in given string with new substring.</dd>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search" title="The [@@search]() method executes a search for a match between a this regular expression and a string."><code>RegExp.prototype[@@search]()</code></a></dt>
+ <dd>Searches the match in given string and returns the index the pattern found in the string.</dd>
+ <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@split" title="The [@@split]() method splits a String object into an array of strings by separating the string into substrings."><code>RegExp.prototype[@@split]()</code></a></dt>
+ <dd>Splits given string into an array by separating the string into substring.</dd>
  <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toSource" title="The toSource() method returns a string representing the source code of the object."><code>RegExp.prototype.toSource()</code></a> <span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></dt>
  <dd>Returns an object literal representing the specified object; you can use this value to create a new object. Overrides the <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource" title="The toSource() method returns a string representing the source code of the object."><code>Object.prototype.toSource()</code></a> method.</dd>
  <dt><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString" title="The toString() method returns a string representing the regular expression."><code>RegExp.prototype.toString()</code></a></dt>
@@ -1206,32 +1428,18 @@ s.match(/yes[^]*day/);
 // Returns 'yes\nmake my day'
 </pre>
 
-<h3 id="Using_a_regular_expression_with_the_sticky_flag">Using a regular expression with the "sticky" flag</h3>
+<h3 id="Using_a_regular_expression_with_the_sticky_flag">Using a regular expression with the sticky flag</h3>
 
-<p>This example demonstrates how one could use the sticky flag on regular expressions to match individual lines of multiline input.</p>
+<p>The <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky">sticky flag</a> indicates that the regular expression performs sticky matching in the target string by attempting to match starting at <a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex" title="The lastIndex is a read/write integer property of regular expressions that specifies the index at which to start the next match."><code>RegExp.prototype.lastIndex</code></a>.</p>
 
-<pre class="brush: js">var text = 'First line\nSecond line';
-var regex = /(\S+) line\n?/y;
+<pre class="brush: js">var str = '#foo#';
+var regex = /foo/y;
 
-var match = regex.exec(text);
-console.log(match[1]);        // logs 'First'
-console.log(regex.lastIndex); // logs '11'
-
-var match2 = regex.exec(text);
-console.log(match2[1]);       // logs 'Second'
-console.log(regex.lastIndex); // logs '22'
-
-var match3 = regex.exec(text);
-console.log(match3 === null); // logs 'true'
-</pre>
-
-<p>One can test at run-time whether the sticky flag is supported, using <code>try { … } catch { … }</code>. For this, either an <code>eval(…)</code> expression or the <code>RegExp(<var>regex-string</var>, <var>flags-string</var>)</code> syntax must be used (since the <code>/<var>regex</var>/<var>flags</var></code> notation is processed at compile-time, so throws an exception before the <code>catch</code> block is encountered). For example:</p>
-
-<pre class="brush: js">var supports_sticky;
-try { RegExp('', 'y'); supports_sticky = true; }
-catch(e) { supports_sticky = false; }
-console.log(supports_sticky); // logs 'true'
-</pre>
+regex.lastIndex; // 0
+regex.test(str); // true
+regex.lastIndex = 5;
+regex.test(str); // false (lastIndex is taken into account with sticky flag)
+regex.lastIndex; // 0 (reset after match failure)</pre>
 
 <h3 id="Regular_expression_and_Unicode_characters">Regular expression and Unicode characters</h3>
 
@@ -1281,7 +1489,12 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
   <tr>
    <td><a href="http://www.ecma-international.org/ecma-262/6.0/#sec-regexp-regular-expression-objects" class="external" lang="en" hreflang="en">ECMAScript 2015 (6th Edition, ECMA-262)<br><small lang="en-US">The definition of 'RegExp' in that specification.</small></a></td>
    <td><span class="spec-Standard">Standard</span></td>
-   <td>The <code>RegExp</code> constructor no longer throws when the first argument is a <code>RegExp</code> and the second argument is present.</td>
+   <td>The <code>RegExp</code> constructor no longer throws when the first argument is a <code>RegExp</code> and the second argument is present. Introduces Unicode and sticky flags.</td>
+  </tr>
+  <tr>
+   <td><a href="https://tc39.github.io/ecma262/#sec-regexp-regular-expression-objects" class="external" lang="en" hreflang="en">ECMAScript 2017 Draft (ECMA-262)<br><small lang="en-US">The definition of 'RegExp' in that specification.</small></a></td>
+   <td><span class="spec-Draft">Draft</span></td>
+   <td> </td>
   </tr>
  </tbody>
 </table>
@@ -1319,13 +1532,13 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
    <td>Sticky flag ("y")</td>
    <td>39 [1]</td>
    <td><a href="/en-US/Firefox/Releases/3" title="Released on 2008-06-17.">3.0</a> (1.9)</td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
   </tr>
   <tr>
    <td>Unicode flag ("u")</td>
-   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td>50</td>
    <td><a href="/en-US/Firefox/Releases/46" title="Released on 2016-04-19.">46</a> (46)</td>
    <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
    <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
@@ -1333,11 +1546,11 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
   </tr>
   <tr>
    <td><code>RegExp(RegExp object, flags)</code> no longer throws</td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
    <td><a href="/en-US/Firefox/Releases/39" title="Released on 2015-06-30.">39</a> (39)</td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
   </tr>
  </tbody>
 </table>
@@ -1366,12 +1579,12 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
   </tr>
   <tr>
    <td>Sticky flag ("y")</td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
    <td>1.0 (1.9)</td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
   </tr>
   <tr>
    <td>Unicode flag ("u")</td>
@@ -1383,12 +1596,12 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
   </tr>
   <tr>
    <td><code>RegExp(RegExp object, flags)</code> no longer throws</td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
    <td>39.0 (39)</td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
-   <td><span style="color: #f00;">Not supported</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
+   <td><span style="color: #f00;">No support</span></td>
   </tr>
  </tbody>
 </table>
@@ -1420,11 +1633,20 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
  <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/match" title="The match() method retrieves the matches when matching a string against a regular expression."><code>String.prototype.match()</code></a></li>
  <li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace" title="The replace() method returns a new string with some or all matches of a pattern replaced by a replacement. The pattern can be a string or a RegExp, and the replacement can be a string or a function to be called for each match."><code>String.prototype.replace()</code></a></li>
 </ul>
-                                                </article>
+                  
+                
+              </article>
 
               
-            
-            
+
+    
+    
+    
+
+    
+    
+    
+
     <div class="share">
         <strong>Share:</strong>
         <ul>
@@ -1435,52 +1657,231 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
     </div>
 
               
+
                 <!-- contributors -->
                 <div class="wiki-block contributors">
                   <h2 class="offscreen">Document Tags and Contributors</h2>
-                                      <div class="tag-attach-list contributors-sub">
+                  
+                  
+  <div class="tag-attach-list contributors-sub">
     <i aria-hidden="true" class="icon-tags icon-fw"></i>
     <strong>Tags:</strong>&nbsp;
     <ul class="tags tags-small">
-              <li><a href="/en-US/docs/tag/Constructor">Constructor</a></li>
-              <li><a href="/en-US/docs/tag/Javascript">Javascript</a></li>
-              <li><a href="/en-US/docs/tag/JavaScript">JavaScript</a></li>
-              <li><a href="/en-US/docs/tag/Reference">Reference</a></li>
-              <li><a href="/en-US/docs/tag/RegExp">RegExp</a></li>
-              <li><a href="/en-US/docs/tag/Regular%20Expressions">Regular Expressions</a></li>
-          </ul>
+      
+        <li><a href="/en-US/docs/tag/Constructor">Constructor</a></li>
+      
+        <li><a href="/en-US/docs/tag/JavaScript">JavaScript</a></li>
+      
+        <li><a href="/en-US/docs/tag/Reference">Reference</a></li>
+      
+        <li><a href="/en-US/docs/tag/RegExp">RegExp</a></li>
+      
+        <li><a href="/en-US/docs/tag/Regular%20Expressions">Regular Expressions</a></li>
+      
+    </ul>
   </div>
 
-                                      <div class="contributors-sub">
-                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong>         <a href="/en-US/profiles/arai">arai</a>,             <a href="/en-US/profiles/andrewschleifer">andrewschleifer</a>,             <a href="/en-US/profiles/SphinxKnight">SphinxKnight</a>,             <a href="/en-US/profiles/jebalert">jebalert</a>,             <a href="/en-US/profiles/fscholz">fscholz</a>,             <a href="/en-US/profiles/hunan-rostomyan">hunan-rostomyan</a>,             <a href="/en-US/profiles/nhahtdh">nhahtdh</a>,             <a href="/en-US/profiles/RogerPoon">RogerPoon</a>,             <a href="/en-US/profiles/damphat">damphat</a>,             <a href="/en-US/profiles/Mingun">Mingun</a>,             <a href="/en-US/profiles/madarche">madarche</a>,             <a href="/en-US/profiles/ziyunfei">ziyunfei</a>,             <a href="/en-US/profiles/alexilyaev">alexilyaev</a>,             <a href="/en-US/profiles/rhyne24">rhyne24</a>,             <a href="/en-US/profiles/alyssa">alyssa</a>,             <a href="/en-US/profiles/havarh">havarh</a>,             <a href="/en-US/profiles/AlexChao">AlexChao</a>,             <a href="/en-US/profiles/jviereck">jviereck</a>,             <a href="/en-US/profiles/jmclerck">jmclerck</a>,             <a href="/en-US/profiles/mvasilkov">mvasilkov</a>,             <a href="/en-US/profiles/KOLANICH">KOLANICH</a>,             <a href="/en-US/profiles/Vinnl">Vinnl</a>,             <a href="/en-US/profiles/pizzaisdavid">pizzaisdavid</a>,             <a href="/en-US/profiles/Nik_Martin">Nik_Martin</a>,             <a href="/en-US/profiles/tehsis">tehsis</a>,             <a href="/en-US/profiles/trevorh">trevorh</a>,             <a href="/en-US/profiles/Brettz9">Brettz9</a>,             <a href="/en-US/profiles/Sheppy">Sheppy</a>,             <a href="/en-US/profiles/trupanka">trupanka</a>,             <a href="/en-US/profiles/xk_id">xk_id</a>,             <a href="/en-US/profiles/ethertank">ethertank</a>,             <a href="/en-US/profiles/alex.henrie">alex.henrie</a>,             <a href="/en-US/profiles/teoli">teoli</a>,             <a href="/en-US/profiles/Ruakh">Ruakh</a>,             <a href="/en-US/profiles/Pointy">Pointy</a>,             <a href="/en-US/profiles/tregagnon">tregagnon</a>,             <a href="/en-US/profiles/evilpie">evilpie</a>,             <a href="/en-US/profiles/bigbossSNK">bigbossSNK</a>,             <a href="/en-US/profiles/lmorchard">lmorchard</a>,             <a href="/en-US/profiles/Catnips">Catnips</a>,             <a href="/en-US/profiles/arleytriana">arleytriana</a>,             <a href="/en-US/profiles/scrapmac">scrapmac</a>,             <a href="/en-US/profiles/Sevenspade">Sevenspade</a>,             <a href="/en-US/profiles/user20">user20</a>,             <a href="/en-US/profiles/shi_zheng">shi_zheng</a>,             <a href="/en-US/profiles/gpvos">gpvos</a>,             <a href="/en-US/profiles/paulca">paulca</a>,             <a href="/en-US/profiles/grendel">grendel</a>,             <a href="/en-US/profiles/Scipion">Scipion</a>,             <a href="/en-US/profiles/Waldo">Waldo</a>,             <a href="/en-US/profiles/Crash">Crash</a>,             <a href="/en-US/profiles/Neil">Neil</a>,             <a href="/en-US/profiles/Potappo">Potappo</a>,             <a href="/en-US/profiles/David-Sarah%20Hopwood">David-Sarah Hopwood</a>,             <a href="/en-US/profiles/stepnem">stepnem</a>,             <a href="/en-US/profiles/Sspitzer">Sspitzer</a>,             <a href="/en-US/profiles/universian">universian</a>,             <a href="/en-US/profiles/Jesdisciple">Jesdisciple</a>,             <a href="/en-US/profiles/Eino">Eino</a>,             <a href="/en-US/profiles/Tgr">Tgr</a>,             <a href="/en-US/profiles/Hamstersoup">Hamstersoup</a>,             <a href="/en-US/profiles/Minh%20Nguyen">Minh Nguyen</a>,             <a href="/en-US/profiles/Mgjbot">Mgjbot</a>,             <a href="/en-US/profiles/BenoitL">BenoitL</a>,             <a href="/en-US/profiles/Pbb">Pbb</a>,             <a href="/en-US/profiles/Joaopaulo1511">Joaopaulo1511</a>,             <a href="/en-US/profiles/Ptak82">Ptak82</a>,             <a href="/en-US/profiles/Miken32">Miken32</a>,             <a href="/en-US/profiles/Linuxmigration1">Linuxmigration1</a>,             <a href="/en-US/profiles/JesseW">JesseW</a>,             <a href="/en-US/profiles/B%20I%20R%20D">B I R D</a>,             <a href="/en-US/profiles/Maian">Maian</a>,             <a href="/en-US/profiles/Ben%20Karel">Ben Karel</a>,             <a href="/en-US/profiles/Dria">Dria</a>,             <a href="/en-US/profiles/Jesse">Jesse</a>    
+
+                  
+                    <div class="contributors-sub">
+                      <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Contributors to this page:</strong> 
+        <a href="/en-US/profiles/arai">arai</a>, 
+    
+        <a href="/en-US/profiles/jntesteves">jntesteves</a>, 
+    
+        <a href="/en-US/profiles/SphinxKnight">SphinxKnight</a>, 
+    
+        <a href="/en-US/profiles/Sevenspade">Sevenspade</a>, 
+    
+        <a href="/en-US/profiles/pygy">pygy</a>, 
+    
+        <a href="/en-US/profiles/fscholz">fscholz</a>, 
+    
+        <a href="/en-US/profiles/alanmimms">alanmimms</a>, 
+    
+        <a href="/en-US/profiles/Behnam">Behnam</a>, 
+    
+        <a href="/en-US/profiles/andrewschleifer">andrewschleifer</a>, 
+    
+        <a href="/en-US/profiles/jebalert">jebalert</a>, 
+    
+        <a href="/en-US/profiles/hunan-rostomyan">hunan-rostomyan</a>, 
+    
+        <a href="/en-US/profiles/nhahtdh">nhahtdh</a>, 
+    
+        <a href="/en-US/profiles/RogerPoon">RogerPoon</a>, 
+    
+        <a href="/en-US/profiles/damphat">damphat</a>, 
+    
+        <a href="/en-US/profiles/Mingun">Mingun</a>, 
+    
+        <a href="/en-US/profiles/madarche">madarche</a>, 
+    
+        <a href="/en-US/profiles/ziyunfei">ziyunfei</a>, 
+    
+        <a href="/en-US/profiles/alexilyaev">alexilyaev</a>, 
+    
+        <a href="/en-US/profiles/rhyne24">rhyne24</a>, 
+    
+        <a href="/en-US/profiles/alyssa">alyssa</a>, 
+    
+        <a href="/en-US/profiles/havarh">havarh</a>, 
+    
+        <a href="/en-US/profiles/AlexChao">AlexChao</a>, 
+    
+        <a href="/en-US/profiles/jviereck">jviereck</a>, 
+    
+        <a href="/en-US/profiles/jmclerck">jmclerck</a>, 
+    
+        <a href="/en-US/profiles/mvasilkov">mvasilkov</a>, 
+    
+        <a href="/en-US/profiles/KOLANICH">KOLANICH</a>, 
+    
+        <a href="/en-US/profiles/Vinnl">Vinnl</a>, 
+    
+        <a href="/en-US/profiles/pizzaisdavid">pizzaisdavid</a>, 
+    
+        <a href="/en-US/profiles/Nik_Martin">Nik_Martin</a>, 
+    
+        <a href="/en-US/profiles/tehsis">tehsis</a>, 
+    
+        <a href="/en-US/profiles/trevorh">trevorh</a>, 
+    
+        <a href="/en-US/profiles/Brettz9">Brettz9</a>, 
+    
+        <a href="/en-US/profiles/Sheppy">Sheppy</a>, 
+    
+        <a href="/en-US/profiles/trupanka">trupanka</a>, 
+    
+        <a href="/en-US/profiles/xk_id">xk_id</a>, 
+    
+        <a href="/en-US/profiles/ethertank">ethertank</a>, 
+    
+        <a href="/en-US/profiles/alex.henrie">alex.henrie</a>, 
+    
+        <a href="/en-US/profiles/teoli">teoli</a>, 
+    
+        <a href="/en-US/profiles/Ruakh">Ruakh</a>, 
+    
+        <a href="/en-US/profiles/Pointy">Pointy</a>, 
+    
+        <a href="/en-US/profiles/tregagnon">tregagnon</a>, 
+    
+        <a href="/en-US/profiles/evilpie">evilpie</a>, 
+    
+        <a href="/en-US/profiles/bigbossSNK">bigbossSNK</a>, 
+    
+        <a href="/en-US/profiles/lmorchard">lmorchard</a>, 
+    
+        <a href="/en-US/profiles/Catnips">Catnips</a>, 
+    
+        <a href="/en-US/profiles/arleytriana">arleytriana</a>, 
+    
+        <a href="/en-US/profiles/scrapmac">scrapmac</a>, 
+    
+        <a href="/en-US/profiles/user20">user20</a>, 
+    
+        <a href="/en-US/profiles/shi_zheng">shi_zheng</a>, 
+    
+        <a href="/en-US/profiles/gpvos">gpvos</a>, 
+    
+        <a href="/en-US/profiles/paulca">paulca</a>, 
+    
+        <a href="/en-US/profiles/grendel">grendel</a>, 
+    
+        <a href="/en-US/profiles/Scipion">Scipion</a>, 
+    
+        <a href="/en-US/profiles/Waldo">Waldo</a>, 
+    
+        <a href="/en-US/profiles/Crash">Crash</a>, 
+    
+        <a href="/en-US/profiles/Neil">Neil</a>, 
+    
+        <a href="/en-US/profiles/Potappo">Potappo</a>, 
+    
+        <a href="/en-US/profiles/David-Sarah%20Hopwood">David-Sarah Hopwood</a>, 
+    
+        <a href="/en-US/profiles/stepnem">stepnem</a>, 
+    
+        <a href="/en-US/profiles/Sspitzer">Sspitzer</a>, 
+    
+        <a href="/en-US/profiles/universian">universian</a>, 
+    
+        <a href="/en-US/profiles/Jesdisciple">Jesdisciple</a>, 
+    
+        <a href="/en-US/profiles/Eino">Eino</a>, 
+    
+        <a href="/en-US/profiles/Tgr">Tgr</a>, 
+    
+        <a href="/en-US/profiles/Hamstersoup">Hamstersoup</a>, 
+    
+        <a href="/en-US/profiles/Minh%20Nguyen">Minh Nguyen</a>, 
+    
+        <a href="/en-US/profiles/Mgjbot">Mgjbot</a>, 
+    
+        <a href="/en-US/profiles/BenoitL">BenoitL</a>, 
+    
+        <a href="/en-US/profiles/Pbb">Pbb</a>, 
+    
+        <a href="/en-US/profiles/Joaopaulo1511">Joaopaulo1511</a>, 
+    
+        <a href="/en-US/profiles/Ptak82">Ptak82</a>, 
+    
+        <a href="/en-US/profiles/Miken32">Miken32</a>, 
+    
+        <a href="/en-US/profiles/Linuxmigration1">Linuxmigration1</a>, 
+    
+        <a href="/en-US/profiles/JesseW">JesseW</a>, 
+    
+        <a href="/en-US/profiles/B%20I%20R%20D">B I R D</a>, 
+    
+        <a href="/en-US/profiles/Maian">Maian</a>, 
+    
+        <a href="/en-US/profiles/Ben%20Karel">Ben Karel</a>, 
+    
+        <a href="/en-US/profiles/Dria">Dria</a>, 
+    
+        <a href="/en-US/profiles/Jesse">Jesse</a>
+    
                     </div>
                   
-                                      <div class="contributors-sub">
+
+                  
+                    <div class="contributors-sub">
                       <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Last updated by:</strong>
                       <a href="/en-US/profiles/arai">arai</a>,
-                      <time datetime="2015-12-21T21:25:23-08:00">Dec 21, 2015, 9:25:23 PM</time>
+                      <time datetime="2016-04-09T06:32:53-07:00">Apr 9, 2016, 6:32:53 AM</time>
                     </div>
-                                  </div>
-                          </div>
+                  
+                </div>
+              
+            </div>
 
-                          <!-- quick links and zone subnav strip -->
+            
+              <!-- quick links and zone subnav strip -->
               <div id="wiki-left" class="column-strip wiki-column">
 
               
-                <a href="#quick-links" class="title smaller" id="quick-links-toggle"><i aria-hidden="true" class="icon-caret-up"></i>Hide Sidebar</a>
 
                 
-                                  <!-- quick links -->
-                    <div class="quick-links" id="quick-links">
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
     <div class="title see-also">See also</div>
-    <ol><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/">Standard built-in objects</a></strong></li><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a></strong></li><li data-default-state="open"><a href="#"><strong>Properties</strong></a><ol><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/n" title="The non-standard $1, $2, $3, $4, $5, $6, $7, $8, $9 properties are static and read-only properties of regular expressions that contain parenthesized substring matches."><code>RegExp.$1-$9</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/input" title="The non-standard input property is a static property of regular expressions that contains the string against which a regular expression is matched. RegExp.$_ is an alias for this property."><code>RegExp.input ($_)</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex" title="The lastIndex is a read/write integer property of regular expressions that specifies the index at which to start the next match."><code>RegExp.lastIndex</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastMatch" title="The non-standard lastMatch property is a static and read-only property of regular expressions that contains the last matched characters. RegExp.$&amp; is an alias for this property."><code>RegExp.lastMatch ($&amp;)</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastParen" title="The non-standard lastParen property is a static and read-only property of regular expressions that contains the last parenthesized substring match, if any. RegExp.$+ is an alias for this property."><code>RegExp.lastParen ($+)</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/leftContext" title="The non-standard leftContext property is a static and read-only property of regular expressions that contains the substring preceding the most recent match. RegExp.$` is an alias for this property."><code>RegExp.leftContext ($`)</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/prototype" title="The RegExp.prototype property represents the prototype object for the RegExp constructor."><code>RegExp.prototype</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags" title="The flags property returns a string consisting of the flags of the current regular expression object."><code>RegExp.prototype.flags</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global" title='The global property indicates whether or not the "g" flag is used with the regular expression. global is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.global</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase" title='The ignoreCase property indicates whether or not the "i" flag is used with the regular expression. ignoreCase is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.ignoreCase</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline" title='The multiline property indicates whether or not the "m" flag is used with the regular expression. multiline is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.multiline</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source" title="The source property returns a String containing the source text of the regexp object, and it doesn't contain the two forward slashes on both sides and any flags."><code>RegExp.prototype.source</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky" title="The sticky property reflects whether or not the search is sticky (searches in strings only from the index indicated by the lastIndex property of this regular expression). sticky is a read-only property of an individual regular expression object."><code>RegExp.prototype.sticky</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode" title='The unicode property indicates whether or not the "u" flag is used with the regular expression. unicode is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.unicode</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/rightContext" title="The non-standard rightContext property is a static and read-only property of regular expressions that contains the substring following the most recent match. RegExp.$' is an alias for this property."><code>RegExp.rightContext ($')</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Methods</strong></a><ol><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/compile" title="The deprecated compile() method is used to (re-)compile a regular expression during execution of a script. It is basically the same as the RegExp constructor."><code>RegExp.prototype.compile()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec" title="The exec() method executes a search for a match in a specified string. Returns a result array, or null."><code>RegExp.prototype.exec()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" title="The test() method executes a search for a match between a regular expression and a specified string. Returns true or false."><code>RegExp.prototype.test()</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toSource" title="The toSource() method returns a string representing the source code of the object."><code>RegExp.prototype.toSource()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString" title="The toString() method returns a string representing the regular expression."><code>RegExp.prototype.toString()</code></a></li></ol></li><li><strong>Inheritance:</strong></li><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"><code>Function</code></a></strong></li><li><a href="#"><strong>Properties</strong></a><ol><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments" title="The function.arguments property refers to an an array-like object corresponding to the arguments passed to a function. Use the simple variable arguments instead."><code>Function.arguments</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arity" title="The arity property used to return the number of arguments expected by the function, however, it no longer exists and has been replaced by the Function.prototype.length property."><code>Function.arity</code></a></s></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller" title="The function.caller property returns the function that invoked the specified function."><code>Function.caller</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/displayName" title="The function.displayName property returns the display name of the function."><code>Function.displayName</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length" title="The length property specifies the number of arguments expected by the function."><code>Function.length</code></a></li><li><span class="sidebar-icon"><span title="This is an experimental API that should not be used in production code."><i class="icon-beaker"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name" title="The function.name property returns the name of the function."><code>Function.name</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype" title="The Function.prototype property represents the Function prototype object."><code>Function.prototype</code></a></li></ol></li><li><a href="#"><strong>Methods</strong></a><ol><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" title="The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object)."><code>Function.prototype.apply()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" title="The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called."><code>Function.prototype.bind()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" title="The call() method calls a function with a given this value and arguments provided individually."><code>Function.prototype.call()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/isGenerator" title="The isGenerator() method determines whether or not a function is a generator."><code>Function.prototype.isGenerator()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toSource" title="The toSource() method returns a string representing the source code of the object."><code>Function.prototype.toSource()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString" title="The toString() method returns a string representing the source code of the function."><code>Function.prototype.toString()</code></a></li></ol></li><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a></strong></li><li><a href="#"><strong>Properties</strong></a><ol><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/count" title="The __count__ property used to store the count of enumerable properties on the object, but it has been removed."><code>Object.prototype.__count__</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/noSuchMethod" title="The __noSuchMethod__ property used to reference a function to be executed when a non-existent method is called on an object, but this function is no longer available."><code>Object.prototype.__noSuchMethod__</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Parent" title="The __parent__ property used to point to an object's context, but it has been removed."><code>Object.prototype.__parent__</code></a></s></li><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto" title="The __proto__ property of Object.prototype is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed."><code>Object.prototype.__proto__</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor" title="Returns a reference to the Object function that created the instance's prototype. Note that the value of this property is a reference to the function itself, not a string containing the function's name. The value is only read-only for primitive values such as 1, true and &quot;test&quot;."><code>Object.prototype.constructor</code></a></li></ol></li><li><a href="#"><strong>Methods</strong></a><ol><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="The __defineGetter__ method binds an object's property to a function to be called when that property is looked up."><code>Object.prototype.__defineGetter__()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="The __defineSetter__ method binds an object's property to a function to be called when an attempt is made to set that property."><code>Object.prototype.__defineSetter__()</code></a></li><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="The __lookupGetter__ method returns the function bound as a getter to the specified property."><code>Object.prototype.__lookupGetter__()</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="The __lookupSetter__ method returns the function bound as a setter to the specified property."><code>Object.prototype.__lookupSetter__()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty" title="The hasOwnProperty() method returns a boolean indicating whether the object has the specified property."><code>Object.prototype.hasOwnProperty()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf" title="The isPrototypeOf() method tests for an object in another object's prototype chain."><code>Object.prototype.isPrototypeOf()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable" title="The propertyIsEnumerable() method returns a Boolean indicating whether the specified property is enumerable."><code>Object.prototype.propertyIsEnumerable()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString" title="The toLocaleString() method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes."><code>Object.prototype.toLocaleString()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource" title="The toSource() method returns a string representing the source code of the object."><code>Object.prototype.toSource()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" title="The toString() method returns a string representing object."><code>Object.prototype.toString()</code></a></li><li><span class="sidebar-icon"><span title="This API has not been standardized."><i class="icon-warning-sign"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch" title="The unwatch() method removes a watchpoint set with the watch() method."><code>Object.prototype.unwatch()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf" title="The valueOf() method returns the primitive value of the specified object."><code>Object.prototype.valueOf()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch" title="The watch() method watches for a property to be assigned a value and runs a function when that occurs."><code>Object.prototype.watch()</code></a></li></ol></li></ol>
+    <ol><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/">Standard built-in objects</a></strong></li><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp"><code>RegExp</code></a></strong></li><li data-default-state="open"><a href="#"><strong>Properties</strong></a><ol><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/n" title="The non-standard $1, $2, $3, $4, $5, $6, $7, $8, $9 properties are static and read-only properties of regular expressions that contain parenthesized substring matches."><code>RegExp.$1-$9</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/input" title="The non-standard input property is a static property of regular expressions that contains the string against which a regular expression is matched. RegExp.$_ is an alias for this property."><code>RegExp.input ($_)</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastIndex" title="The lastIndex is a read/write integer property of regular expressions that specifies the index at which to start the next match."><code>RegExp.lastIndex</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastMatch" title="The non-standard lastMatch property is a static and read-only property of regular expressions that contains the last matched characters. RegExp.$&amp; is an alias for this property."><code>RegExp.lastMatch ($&amp;)</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/lastParen" title="The non-standard lastParen property is a static and read-only property of regular expressions that contains the last parenthesized substring match, if any. RegExp.$+ is an alias for this property."><code>RegExp.lastParen ($+)</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/leftContext" title="The non-standard leftContext property is a static and read-only property of regular expressions that contains the substring preceding the most recent match. RegExp.$` is an alias for this property."><code>RegExp.leftContext ($`)</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/prototype" title="The RegExp.prototype property represents the prototype object for the RegExp constructor."><code>RegExp.prototype</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags" title="The flags property returns a string consisting of the flags of the current regular expression object."><code>RegExp.prototype.flags</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/global" title='The global property indicates whether or not the "g" flag is used with the regular expression. global is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.global</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/ignoreCase" title='The ignoreCase property indicates whether or not the "i" flag is used with the regular expression. ignoreCase is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.ignoreCase</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/multiline" title='The multiline property indicates whether or not the "m" flag is used with the regular expression. multiline is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.multiline</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/source" title="The source property returns a String containing the source text of the regexp object, and it doesn't contain the two forward slashes on both sides and any flags."><code>RegExp.prototype.source</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/sticky" title="The sticky property reflects whether or not the search is sticky (searches in strings only from the index indicated by the lastIndex property of this regular expression). sticky is a read-only property of an individual regular expression object."><code>RegExp.prototype.sticky</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/unicode" title='The unicode property indicates whether or not the "u" flag is used with a regular expression. unicode is a read-only property of an individual regular expression instance.'><code>RegExp.prototype.unicode</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/rightContext" title="The non-standard rightContext property is a static and read-only property of regular expressions that contains the substring following the most recent match. RegExp.$' is an alias for this property."><code>RegExp.rightContext ($')</code></a></li></ol></li><li data-default-state="open"><a href="#"><strong>Methods</strong></a><ol><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/compile" title="The deprecated compile() method is used to (re-)compile a regular expression during execution of a script. It is basically the same as the RegExp constructor."><code>RegExp.prototype.compile()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/exec" title="The exec() method executes a search for a match in a specified string. Returns a result array, or null."><code>RegExp.prototype.exec()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test" title="The test() method executes a search for a match between a regular expression and a specified string. Returns true or false."><code>RegExp.prototype.test()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toSource" title="The toSource() method returns a string representing the source code of the object."><code>RegExp.prototype.toSource()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/toString" title="The toString() method returns a string representing the regular expression."><code>RegExp.prototype.toString()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@match" title="The [@@match]() method retrieves the matches when matching a string against a regular expression."><code>RegExp.prototype[@@match]()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@replace" title="The [@@replace]() method replaces the some or all matches of a this pattern in a string by a replacement, and returns the result of the replacement as a new string. The replacement can be a string or a function to be called for each match."><code>RegExp.prototype[@@replace]()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@search" title="The [@@search]() method executes a search for a match between a this regular expression and a string."><code>RegExp.prototype[@@search]()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@split" title="The [@@split]() method splits a String object into an array of strings by separating the string into substrings."><code>RegExp.prototype[@@split]()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/@@species" title="The RegExp[@@species] accessor property returns the RegExp constructor."><code>get RegExp[@@species]</code></a></li></ol></li><li><strong>Inheritance:</strong></li><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function"><code>Function</code></a></strong></li><li><a href="#"><strong>Properties</strong></a><ol><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arguments" title="The function.arguments property refers to an an array-like object corresponding to the arguments passed to a function. Use the simple variable arguments instead."><code>Function.arguments</code></a></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/arity" title="The arity property used to return the number of arguments expected by the function, however, it no longer exists and has been replaced by the Function.prototype.length property."><code>Function.arity</code></a></s></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/caller" title="The function.caller property returns the function that invoked the specified function."><code>Function.caller</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/displayName" title="The function.displayName property returns the display name of the function."><code>Function.displayName</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/length" title="The length property specifies the number of arguments expected by the function."><code>Function.length</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/name" title="The function.name property returns the name of the function."><code>Function.name</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/prototype" title="The Function.prototype property represents the Function prototype object."><code>Function.prototype</code></a></li></ol></li><li><a href="#"><strong>Methods</strong></a><ol><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" title="The apply() method calls a function with a given this value and arguments provided as an array (or an array-like object)."><code>Function.prototype.apply()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" title="The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called."><code>Function.prototype.bind()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/call" title="The call() method calls a function with a given this value and arguments provided individually."><code>Function.prototype.call()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/isGenerator" title="The isGenerator() method determines whether or not a function is a generator."><code>Function.prototype.isGenerator()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toSource" title="The toSource() method returns a string representing the source code of the object."><code>Function.prototype.toSource()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/toString" title="The toString() method returns a string representing the source code of the function."><code>Function.prototype.toString()</code></a></li></ol></li><li><strong><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object"><code>Object</code></a></strong></li><li><a href="#"><strong>Properties</strong></a><ol><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/count" title="The __count__ property used to store the count of enumerable properties on the object, but it has been removed."><code>Object.prototype.__count__</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/noSuchMethod" title="The __noSuchMethod__ property used to reference a function to be executed when a non-existent method is called on an object, but this function is no longer available."><code>Object.prototype.__noSuchMethod__</code></a></s></li><li><span class="sidebar-icon"><span title="This is an obsolete API and is no longer guaranteed to work."><i class="icon-trash"> </i></span></span><s class="obsoleteElement"><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/Parent" title="The __parent__ property used to point to an object's context, but it has been removed."><code>Object.prototype.__parent__</code></a></s></li><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/proto" title="The __proto__ property of Object.prototype is an accessor property (a getter function and a setter function) that exposes the internal [[Prototype]] (either an object or null) of the object through which it is accessed."><code>Object.prototype.__proto__</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/constructor" title="Returns a reference to the Object function that created the instance's prototype. Note that the value of this property is a reference to the function itself, not a string containing the function's name. The value is only read-only for primitive values such as 1, true and &quot;test&quot;."><code>Object.prototype.constructor</code></a></li></ol></li><li><a href="#"><strong>Methods</strong></a><ol><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineGetter__" title="The __defineGetter__ method binds an object's property to a function to be called when that property is looked up."><code>Object.prototype.__defineGetter__()</code></a></li><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__defineSetter__" title="The __defineSetter__ method binds an object's property to a function to be called when an attempt is made to set that property."><code>Object.prototype.__defineSetter__()</code></a></li><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupGetter__" title="The __lookupGetter__ method returns the function bound as a getter to the specified property."><code>Object.prototype.__lookupGetter__()</code></a></li><li><span class="sidebar-icon"><span title="This deprecated API should no longer be used, but will probably still work."><i class="icon-thumbs-down-alt"> </i></span></span><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/__lookupSetter__" title="The __lookupSetter__ method returns the function bound as a setter to the specified property."><code>Object.prototype.__lookupSetter__()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty" title="The hasOwnProperty() method returns a boolean indicating whether the object has the specified property."><code>Object.prototype.hasOwnProperty()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/isPrototypeOf" title="The isPrototypeOf() method tests for an object in another object's prototype chain."><code>Object.prototype.isPrototypeOf()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/propertyIsEnumerable" title="The propertyIsEnumerable() method returns a Boolean indicating whether the specified property is enumerable."><code>Object.prototype.propertyIsEnumerable()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toLocaleString" title="The toLocaleString() method returns a string representing the object. This method is meant to be overridden by derived objects for locale-specific purposes."><code>Object.prototype.toLocaleString()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toSource" title="The toSource() method returns a string representing the source code of the object."><code>Object.prototype.toSource()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/toString" title="The toString() method returns a string representing object."><code>Object.prototype.toString()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/unwatch" title="The unwatch() method removes a watchpoint set with the watch() method."><code>Object.prototype.unwatch()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/valueOf" title="Technical review completed."><code>Object.prototype.valueOf()</code></a></li><li><a href="/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/watch" title="The watch() method watches for a property to be assigned a value and runs a function when that occurs."><code>Object.prototype.watch()</code></a></li></ol></li></ol>
   </div>
                 
+
                 <!-- approvals -->
                 
+
               
+
               </div>
-                      </div>
+            
+          </div>
         </div>
       </div>
     </div> <!-- ends "main-content" -->
@@ -1489,14 +1890,17 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
     <menuitem data-action="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$edit" label="Edit page"></menuitem>
     <menuitem data-action="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$history" label="View page history"></menuitem>
   </menu>
+
   </div></main>
 
   <!-- Footer -->
   <footer><div class="center">
     <div class="column-container">
       <div class="column-main">
-                <div class="contentinfo">
-          <p>&copy; 2005-2015 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>          <ul>
+        
+        <div class="contentinfo">
+          <p>&copy; 2005-2016 Mozilla Developer Network and individual contributors.</p> <p>Content is available under <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">these licenses</a>.</p>
+          <ul>
             <li><a href="/docs/MDN/About">About MDN</a></li>
             <li><a href="//www.mozilla.org/about/legal/terms/mozilla">Terms</a></li>
             <li><a href="//www.mozilla.org/privacy/websites/">Privacy</a></li>
@@ -1504,44 +1908,64 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
             <li><a href="//github.com/mozilla/kuma">Contribute to the code</a></li>
           </ul>
         </p>
-                </div>
+        
+        </div>
       </div>
       <div class="column-strip">
-                        <form class="languages go" method="get" action="/en-US/docs/Web">
+        
+          
+  
+    <form class="languages go" method="get" action="/en-US/docs/Web">
       <label for="language">Other languages:</label>
       <select id="language" class="wiki-l10n" name="next" dir="ltr">
         <option value="/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp" selected>
           English (US)
         </option>
-                  <option value="/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+        
+          <option value="/de/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             Deutsch
-          </option>          <option value="/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp">
+          </option>
+          <option value="/es/docs/Web/JavaScript/Referencia/Objetos_globales/RegExp">
             Español
-          </option>          <option value="/fa/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+          </option>
+          <option value="/fa/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             فارسی
-          </option>          <option value="/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp">
+          </option>
+          <option value="/fr/docs/Web/JavaScript/Reference/Objets_globaux/RegExp">
             Français
-          </option>          <option value="/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+          </option>
+          <option value="/ja/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             日本語
-          </option>          <option value="/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+          </option>
+          <option value="/ko/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             한국어
-          </option>          <option value="/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp">
+          </option>
+          <option value="/pl/docs/Web/JavaScript/Referencje/Obiekty/RegExp">
             Polski
-          </option>          <option value="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+          </option>
+          <option value="/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             Português (do Brasil)
-          </option>          <option value="/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+          </option>
+          <option value="/ru/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             Русский
-          </option>          <option value="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
+          </option>
+          <option value="/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp">
             中文 (简体)
-          </option>      </select>
+          </option>
+      </select>
       <noscript><button type="submit">Go</button></noscript>
     </form>
-                </div>
+  
+
+        
+      </div>
     </div>
   </div></footer>
 
   <!-- site js -->
-          <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
 
     <form id="_persona_login" method="post" action="/users/persona/signin" data-csrf-token-url="/users/persona/csrf" data-request='{"siteName": "Mozilla Developer Network", "siteLogo": "/static/img/opengraph-logo.png"}' data-persona-script="https://login.persona.org/include.js">
   <input type="hidden" name="csrfmiddlewaretoken" value="" id="_persona_csrf_token" />
@@ -1550,44 +1974,25 @@ console.log(/[^.]+/.exec(url)[0].substr(7)); // logs 'xxx'
   <input type="hidden" name="assertion" id="_persona_assertion"/>
 </form>
 
-    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.a52455fd6782.js" charset="utf-8"></script>
+
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/main.a7b27a25fb9c.js" charset="utf-8"></script>
+
       <script>
         if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
       </script>
 
-        <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.4fef8f9a3076.js"></script>
+    
+    <script type="text/javascript" src="https://developer.cdn.mozilla.net/static/jsi18n/en-us/javascript.4fef8f9a3076.js"></script>
   
-    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.70da51c1ba8d.js" charset="utf-8"></script>
-  
-      <script type="text/javascript">
-        (function($) {
-            $('#wikiArticle').children('h2[id]').each(function() {
-                var id = $(this).attr('id');
-                var href = '/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp$edit#' + id;
+    <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/wiki.bd71ca9fd27d.js" charset="utf-8"></script>
 
-                $('<a>').attr({
-                    href: href,
-                    'class': 'button section-edit only-icon'
-                })
-                .append($('<i aria-hidden="true" class="icon-pencil"></i>'))
-                .append($('<span>'))
-                .find('span')
-                .text(gettext('Edit'))
-                .end()
-                .on('click', function(e) {
-                    e.preventDefault();
 
-                    mdn.analytics.trackEvent({
-                        category: 'Section Edit',
-                        action: id
-                    }, function() {
-                        window.location = href;
-                    });
-                })
-                .appendTo(this);
-            });
-        })(jQuery);
-    </script>
   
+
+  <script async type="text/javascript" src="https://developer.cdn.mozilla.net/static/build/js/helpfulness.7b208a764d28.js" charset="utf-8"></script>
+
+  
+
+
 </body>
 </html>

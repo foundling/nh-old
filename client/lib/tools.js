@@ -81,7 +81,7 @@ var printHeader = function() {
          '* run help() for nodehelp usage information   ',
          '                                              ',
          'Node-Help Version: ' + configManager.get('nodeHelpVersion').magenta.bgWhite,
-         'Your node Version: '.cyan + (' ' + configManager.get('nodeVersion') + ' ').magenta.bgWhite,
+         'Your node Version: '.cyan + (' ' + process.version + ' ').magenta.bgWhite,
          'Source Repo:' + configManager.get('sourceRepo'),
          'Docs Last Updated:' + configManager.get('lastUpdate').magenta.bgWhite,
     ]

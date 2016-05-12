@@ -29,10 +29,13 @@ var DocStore = function(sourceFile) {
   }; 
 
   var get = function(queryString) {
+    if (!queryString) {
+        return;
+    }
     if (queryString in db) {
       return format(buildResult(queryString));
     } else {
-      return 'No Documentation available for ' + queryString;
+      return 'No documentation available for ' + queryString;
     }
   };
 

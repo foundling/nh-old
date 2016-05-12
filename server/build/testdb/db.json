@@ -57,11 +57,32 @@
         "description": "The ArrayBuffer constructor's length property whose value is 1.",
         "childType": "property"
       },
+      "get ArrayBuffer[@@species]": {
+        "description": "The constructor function that is used to create derived objects.",
+        "childType": "property"
+      },
       "ArrayBuffer.prototype": {
         "description": "Allows the addition of properties to all ArrayBuffer objects.",
         "childType": "property"
       }
     }
+  },
+  "Atomics": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
+    "children": {}
+  },
+  "Bool32x4": {
+    "description": "",
+    "syntax": "SIMD.Bool32x4(x, y, z, w);",
+    "parameters": {
+      "x": "A boolean specifying the value of the first lane. Defaults to false.",
+      "y": "A boolean specifying the value of the second lane. Defaults to false.",
+      "z": "A boolean specifying the value of the third lane. Defaults to false.",
+      "w": "A boolean specifying the value of the fourth lane. Defaults to false."
+    },
+    "children": {}
   },
   "Boolean": {
     "description": "The value passed as the first parameter is converted to a boolean value, if necessary. If value is omitted or is 0, -0, null, false, NaN, undefined, or the empty string (\"\"), the object has an initial value of false. All other values, including any object or the string \"false\", create an object with an initial value of true.Do not confuse the primitive Boolean values true and false with the true and false values of the Boolean object.Any object whose value is not undefined or null, including a Boolean object whose value is false, evaluates to true when passed to a conditional statement. For example, the condition in the following if statement evaluates to true:var x = new Boolean(\"false\");\nif (x) {\n  // this code is executed\n}\nThis behavior does not apply to Boolean primitives. For example, the condition in the following if statement evaluates to false:var x = false;\nif (x) {\n  // this code is not executed\n}\nDo not use a Boolean object to convert a non-boolean value to a boolean value. Instead, use Boolean as a function to perform this task:var x = Boolean(expression);     // preferred\nvar x = new Boolean(expression); // don't use\nIf you specify any object, including a Boolean object whose value is false, as the initial value of a Boolean object, the new Boolean object has a value of true.var myFalse = new Boolean(false);   // initial value of false\nvar g = new Boolean(myFalse);       // initial value of true\nvar myString = new String('Hello'); // string object\nvar s = new Boolean(myString);      // initial value of true\nDo not use a Boolean object in place of a Boolean primitive.",
@@ -96,29 +117,29 @@
       }
     }
   },
-  "Collator": {
-    "description": "The Intl.Collator object has the following properties and methods:",
-    "syntax": "new Intl.Collator([locales[, options]])\nIntl.Collator.call(this[, locales[, options]])",
-    "parameters": {
-      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension keys are allowed:\n\n \n  co\n  Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).\n  kn\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n  kf\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n \n ",
-      "co": "Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).",
-      "kn": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
-      "kf": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
-      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  usage\n  Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".\n  sensitivity\n  \n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  \n  ignore­Punctua­tion\n  Whether punctuation should be ignored. Possible values are true and false; the default is false.\n  numeric\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n  caseFirst\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n \n ",
-      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
-      "usage": "Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".",
-      "sensitivity": "\n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  ",
-      "ignore­Punctua­tion": "Whether punctuation should be ignored. Possible values are true and false; the default is false.",
-      "numeric": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.",
-      "caseFirst": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property."
-    },
+  "Date": {
+    "description": "\n If no arguments are provided, the constructor creates a JavaScript Date object for the current date and time according to system settings.\n If at least two arguments are supplied, missing arguments are either set to 1 (if day is missing) or 0 for all others.\n The JavaScript date is based on a time value that is milliseconds since midnight 01 January, 1970 UTC. A day holds 86,400,000 milliseconds. The JavaScript Date object range is -100,000,000 days to 100,000,000 days relative to 01 January, 1970 UTC.\n The JavaScript Date object provides uniform behavior across platforms. The time value can be passed between systems to represent the same moment in time and if used to create a local date object, will reflect the local equivalent of the time.\n The JavaScript Date object supports a number of UTC (universal) methods, as well as local time methods. UTC, also known as Greenwich Mean Time (GMT), refers to the time as set by the World Time Standard. The local time is the time known to the computer where JavaScript is executed.\n Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.\n",
+    "syntax": "new Date();\nnew Date(value);\nnew Date(dateString);\nnew Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);\n",
+    "parameters": {},
     "children": {
-      "Intl.Collator.supportedLocalesOf": {
-        "description": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale.",
+      "Date.now": {
+        "description": "Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.",
         "childType": "method"
       },
-      "Intl.Collator.prototype": {
-        "description": "Allows the addition of properties to all objects.",
+      "Date.parse": {
+        "description": "Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC.\n \n Note: Parsing of strings with Date.parse is strongly discouraged due to browser differences and inconsistencies.\n \n ",
+        "childType": "method"
+      },
+      "Date.UTC": {
+        "description": "Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC.",
+        "childType": "method"
+      },
+      "Date.prototype": {
+        "description": "Allows the addition of properties to a JavaScript Date object.",
+        "childType": "property"
+      },
+      "Date.length": {
+        "description": "The value of Date.length is 7. This is the number of arguments handled by the constructor.",
         "childType": "property"
       }
     }
@@ -138,33 +159,6 @@
       },
       "DataView.prototype": {
         "description": "Allows the addition of properties to all DataView objects.",
-        "childType": "property"
-      }
-    }
-  },
-  "Date": {
-    "description": "\n If no arguments are provided, the constructor creates a JavaScript Date object for the current date and time according to system settings.\n If at least two arguments are supplied, missing arguments are either set to 1 (if day is missing) or 0 for all others.\n The JavaScript date is based on a time value that is milliseconds since midnight 01 January, 1970 UTC. A day holds 86,400,000 milliseconds. The JavaScript Date object range is -100,000,000 days to 100,000,000 days relative to 01 January, 1970 UTC.\n The JavaScript Date object provides uniform behavior across platforms. The time value can be passed between systems to represent the same moment in time and if used to create a local date object, will reflect the local equivalent of the time.\n The JavaScript Date object supports a number of UTC (universal) methods, as well as local time methods. UTC, also known as Greenwich Mean Time (GMT), refers to the time as set by the World Time Standard. The local time is the time known to the computer where JavaScript is executed.\n Invoking JavaScript Date as a function (i.e., without the new operator) will return a string representing the current date and time.\n",
-    "syntax": "new Date();\nnew Date(value);\nnew Date(dateString);\nnew Date(year, month[, day[, hour[, minutes[, seconds[, milliseconds]]]]]);\n",
-    "parameters": {},
-    "children": {
-      "Date.now": {
-        "description": "Returns the numeric value corresponding to the current time - the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC.",
-        "childType": "method"
-      },
-      "Date.parse": {
-        "description": "Parses a string representation of a date and returns the number of milliseconds since 1 January, 1970, 00:00:00, UTC.",
-        "childType": "method"
-      },
-      "Date.UTC": {
-        "description": "Accepts the same parameters as the longest form of the constructor (i.e. 2 to 7) and returns the number of milliseconds since 1 January, 1970, 00:00:00 UTC.",
-        "childType": "method"
-      },
-      "Date.prototype": {
-        "description": "Allows the addition of properties to a JavaScript Date object.",
-        "childType": "property"
-      },
-      "Date.length": {
-        "description": "The value of Date.length is 7. This is the number of arguments handled by the constructor.",
         "childType": "property"
       }
     }
@@ -261,14 +255,54 @@
       }
     }
   },
+  "Float32Array": {
+    "description": "",
+    "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "children": {
+      "Float32Array.from": {
+        "description": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Float32Array.of": {
+        "description": "Creates a new Float32Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Float32Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 4 in the case of an Float32Array.",
+        "childType": "property"
+      },
+      "Float32Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Float32Array.prototype.length.",
+        "childType": "property"
+      },
+      "Float32Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Float32Array type: \"Float32Array\".",
+        "childType": "property"
+      },
+      "Float32Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
+    }
+  },
   "Float32x4": {
     "description": "",
     "syntax": "SIMD.Float32x4(x, y, z, w);",
     "parameters": {},
     "children": {}
   },
+  "Float64x2": {
+    "description": "",
+    "syntax": "SIMD.Float64x2(x, y);",
+    "parameters": {
+      "x": "A double specifying the value of the first lane. Defaults to NaN.",
+      "y": "A double specifying the value of the second lane. Defaults to NaN."
+    },
+    "children": {}
+  },
   "EvalError": {
-    "description": "An EvalError is thrown when the global eval() function is used improperly.",
+    "description": "",
     "syntax": "new EvalError([message[, fileName[, lineNumber]]])",
     "parameters": {
       "message": "Optional. Human-readable description of the error",
@@ -310,37 +344,6 @@
       }
     }
   },
-  "Float32Array": {
-    "description": "",
-    "syntax": "new Float32Array(length);\nnew Float32Array(typedArray);\nnew Float32Array(object);\nnew Float32Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "children": {
-      "Float32Array.from": {
-        "description": "Creates a new Float32Array from an array-like or iterable object. See also Array.from().",
-        "childType": "method"
-      },
-      "Float32Array.of": {
-        "description": "Creates a new Float32Array with a variable number of arguments. See also Array.of().",
-        "childType": "method"
-      },
-      "Float32Array.BYTES_PER_ELEMENT": {
-        "description": "Returns a number value of the element size. 4 in the case of an Float32Array.",
-        "childType": "property"
-      },
-      "Float32Array.length": {
-        "description": "Static length property whose value is 3. For the actual length (number of elements), see Float32Array.prototype.length.",
-        "childType": "property"
-      },
-      "Float32Array.name": {
-        "description": "Returns the string value of the constructor name. In the case of the Float32Array type: \"Float32Array\".",
-        "childType": "property"
-      },
-      "Float32Array.prototype": {
-        "description": "Prototype for the TypedArray objects.",
-        "childType": "property"
-      }
-    }
-  },
   "Float64Array": {
     "description": "",
     "syntax": "new Float64Array(length);\nnew Float64Array(typedArray);\nnew Float64Array(object);\nnew Float64Array(buffer [, byteOffset [, length]]);",
@@ -372,29 +375,32 @@
       }
     }
   },
-  "Float64x2": {
-    "description": "",
-    "syntax": "SIMD.Float64x2(x, y);",
+  "Collator": {
+    "description": "The Intl.Collator object has the following properties and methods:",
+    "syntax": "new Intl.Collator([locales[, options]])\nIntl.Collator.call(this[, locales[, options]])",
     "parameters": {
-      "x": "An double specifying the value of the first lane. Defaults to NaN.",
-      "y": "An double specifying the value of the second lane. Defaults to NaN."
+      "locales": "\n Optional. A string with a BCP 47 language tag, or an array of such strings. For the general form and interpretation of the locales argument, see the Intl page. The following Unicode extension keys are allowed:\n\n \n  co\n  Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).\n  kn\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n  kf\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.\n \n ",
+      "co": "Variant collations for certain locales. Possible values include: \"big5han\", \"dict\", \"direct\", \"ducet\", \"gb2312\", \"phonebk\", \"phonetic\", \"pinyin\", \"reformed\", \"searchjl\", \"stroke\", \"trad\", \"unihan\". The \"standard\" and \"search\" values are ignored; they are replaced by the options property usage (see below).",
+      "kn": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are \"true\" and \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
+      "kf": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default). This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence.",
+      "options": "\n Optional. An object with some or all of the following properties:\n\n \n  localeMatcher\n  The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.\n  usage\n  Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".\n  sensitivity\n  \n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  \n  ignore­Punctua­tion\n  Whether punctuation should be ignored. Possible values are true and false; the default is false.\n  numeric\n  Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n  caseFirst\n  Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.\n \n ",
+      "localeMatcher": "The locale matching algorithm to use. Possible values are \"lookup\" and \"best fit\"; the default is \"best fit\". For information about this option, see the Intl page.",
+      "usage": "Whether the comparison is for sorting or for searching for matching strings. Possible values are \"sort\" and \"search\"; the default is \"sort\".",
+      "sensitivity": "\n  Which differences in the strings should lead to non-zero result values. Possible values are:\n\n  \n   \"base\": Only strings that differ in base letters compare as unequal. Examples: a ≠ b, a = á, a = A.\n   \"accent\": Only strings that differ in base letters or accents and other diacritic marks compare as unequal. Examples: a ≠ b, a ≠ á, a = A.\n   \"case\": Only strings that differ in base letters or case compare as unequal. Examples: a ≠ b, a = á, a ≠ A.\n   \"variant\": Strings that differ in base letters, accents and other diacritic marks, or case compare as unequal. Other differences may also be taken into consideration. Examples: a ≠ b, a ≠ á, a ≠ A.\n  \n\n  The default is \"variant\" for usage \"sort\"; it's locale dependent for usage \"search\".\n  ",
+      "ignore­Punctua­tion": "Whether punctuation should be ignored. Possible values are true and false; the default is false.",
+      "numeric": "Whether numeric collation should be used, such that \"1\" < \"2\" < \"10\". Possible values are true and false; the default is false. This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property.",
+      "caseFirst": "Whether upper case or lower case should sort first. Possible values are \"upper\", \"lower\", or \"false\" (use the locale's default); the default is \"false\". This option can be set through an options property or through a Unicode extension key; if both are provided, the options property takes precedence. Implementations are not required to support this property."
     },
-    "children": {}
-  },
-  "Function": {
-    "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
-    "syntax": "new Function ([arg1[, arg2[, ...argN]],] functionBody)",
-    "parameters": {
-      "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
-      "functionBody": "A string containing the JavaScript statements comprising the function definition."
-    },
-    "children": {}
-  },
-  "Infinity": {
-    "description": "Infinity is a property of the global object, i.e. it is a variable in global scope.The initial value of Infinity is Number.POSITIVE_INFINITY. The value Infinity (positive infinity) is greater than any other number. This value behaves mathematically like infinity; for example, any positive number multiplied by Infinity is Infinity, and anything divided by Infinity is 0.Per the ECMAScript 5 specification, Infinity is read only (implemented in JavaScript 1.8.5 / Firefox 4).",
-    "syntax": "Infinity ",
-    "parameters": {},
-    "children": {}
+    "children": {
+      "Intl.Collator.supportedLocalesOf": {
+        "description": "Returns an array containing those of the provided locales that are supported without having to fall back to the runtime's default locale.",
+        "childType": "method"
+      },
+      "Intl.Collator.prototype": {
+        "description": "Allows the addition of properties to all objects.",
+        "childType": "property"
+      }
+    }
   },
   "Generator": {
     "description": "",
@@ -441,53 +447,12 @@
       }
     }
   },
-  "Int16Array": {
-    "description": "",
-    "syntax": "new Int16Array(length);\nnew Int16Array(typedArray);\nnew Int16Array(object);\nnew Int16Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
-    "children": {
-      "Int16Array.from": {
-        "description": "Creates a new Int16Array from an array-like or iterable object. See also Array.from().",
-        "childType": "method"
-      },
-      "Int16Array.of": {
-        "description": "Creates a new Int16Array with a variable number of arguments. See also Array.of().",
-        "childType": "method"
-      },
-      "Int16Array.BYTES_PER_ELEMENT": {
-        "description": "Returns a number value of the element size. 2 in the case of an Int16Array.",
-        "childType": "property"
-      },
-      "Int16Array.length": {
-        "description": "Static length property whose value is 3. For the actual length (number of elements), see Int16Array.prototype.length.",
-        "childType": "property"
-      },
-      "Int16Array.name": {
-        "description": "Returns the string value of the constructor name. In the case of the Int16Array type: \"Int16Array\".",
-        "childType": "property"
-      },
-      "Int16Array.prototype": {
-        "description": "Prototype for the TypedArray objects.",
-        "childType": "property"
-      }
-    }
-  },
-  "Int16x8": {
-    "description": "",
-    "syntax": "SIMD.Int16x8(s0, s1, s2, s3, s4, s5, s6, s7);",
+  "Function": {
+    "description": "Function objects created with the Function constructor are parsed when the function is created. This is less efficient than declaring a function with a function expression or function statement and calling it within your code, because such functions are parsed with the rest of the code.All arguments passed to the function are treated as the names of the identifiers of the parameters in the function to be created, in the order in which they are passed.\nNote: Functions created with the Function constructor do not create closures to their creation contexts; they always are created in the global scope. When running them, they will only be able to access their own local variables and global ones, not the ones from the scope in which the Function constructor was called. This is different from using eval with code for a function expression.\nInvoking the Function constructor as a function (without using the new operator) has the same effect as invoking it as a constructor.",
+    "syntax": "new Function ([arg1[, arg2[, ...argN]],] functionBody)",
     "parameters": {
-      "s[0-7]": "An integer specifying the value of the lane. Defaults to 0."
-    },
-    "children": {}
-  },
-  "Int32x4": {
-    "description": "",
-    "syntax": "SIMD.Int32x4(x, y, z, w);",
-    "parameters": {
-      "x": "An integer specifying the value of the first lane. Defaults to 0.",
-      "y": "An integer specifying the value of the second lane. Defaults to 0.",
-      "z": "An integer specifying the value of the third lane. Defaults to 0.",
-      "w": "An integer specifying the value of the fourth lane. Defaults to 0."
+      "arg1, arg2, ... argN": "Names to be used by the function as formal argument names. Each must be a string that corresponds to a valid JavaScript identifier or a list of such strings separated with a comma; for example \"x\", \"theValue\", or \"a,b\".",
+      "functionBody": "A string containing the JavaScript statements comprising the function definition."
     },
     "children": {}
   },
@@ -522,6 +487,43 @@
       }
     }
   },
+  "Int16Array": {
+    "description": "",
+    "syntax": "new Int16Array(length);\nnew Int16Array(typedArray);\nnew Int16Array(object);\nnew Int16Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "children": {
+      "Int16Array.from": {
+        "description": "Creates a new Int16Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Int16Array.of": {
+        "description": "Creates a new Int16Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Int16Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 2 in the case of an Int16Array.",
+        "childType": "property"
+      },
+      "Int16Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Int16Array.prototype.length.",
+        "childType": "property"
+      },
+      "Int16Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Int16Array type: \"Int16Array\".",
+        "childType": "property"
+      },
+      "Int16Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
+    }
+  },
+  "Infinity": {
+    "description": "Infinity is a property of the global object, i.e. it is a variable in global scope.The initial value of Infinity is Number.POSITIVE_INFINITY. The value Infinity (positive infinity) is greater than any other number. This value behaves mathematically like infinity; for example, any positive number multiplied by Infinity is Infinity, and anything divided by Infinity is 0.Per the ECMAScript 5 specification, Infinity is read only (implemented in JavaScript 1.8.5 / Firefox 4).",
+    "syntax": "Infinity ",
+    "parameters": {},
+    "children": {}
+  },
   "Int8Array": {
     "description": "",
     "syntax": "new Int8Array(length);\nnew Int8Array(typedArray);\nnew Int8Array(object);\nnew Int8Array(buffer [, byteOffset [, length]]);",
@@ -553,9 +555,28 @@
       }
     }
   },
+  "Int32x4": {
+    "description": "",
+    "syntax": "SIMD.Int32x4(x, y, z, w);",
+    "parameters": {
+      "x": "An integer specifying the value of the first lane. Defaults to 0.",
+      "y": "An integer specifying the value of the second lane. Defaults to 0.",
+      "z": "An integer specifying the value of the third lane. Defaults to 0.",
+      "w": "An integer specifying the value of the fourth lane. Defaults to 0."
+    },
+    "children": {}
+  },
+  "Int16x8": {
+    "description": "",
+    "syntax": "SIMD.Int16x8(s0, s1, s2, s3, s4, s5, s6, s7);",
+    "parameters": {
+      "s[0-7]": "An integer specifying the value of the lane. Defaults to 0."
+    },
+    "children": {}
+  },
   "Int8x16": {
     "description": "",
-    "syntax": "SIMD.Int8x16(s0, s1, s2, s3, s4, s5, s6, s7, s8, s9, s10, s11, s12, s13, s14, s15);",
+    "syntax": "SIMD.Int8x16(s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15);",
     "parameters": {
       "s[0-15]": "An integer specifying the value of the lane. Defaults to 0."
     },
@@ -604,25 +625,6 @@
       }
     }
   },
-  "Intl": {
-    "description": "",
-    "syntax": "",
-    "parameters": {},
-    "children": {
-      "Intl.Collator": {
-        "description": "Constructor for collators, objects that enable language sensitive string comparison.",
-        "childType": "property"
-      },
-      "Intl.DateTimeFormat": {
-        "description": "Constructor for objects that enable language sensitive date and time formatting.",
-        "childType": "property"
-      },
-      "Intl.NumberFormat": {
-        "description": "Constructor for objects that enable language sensitive number formatting.",
-        "childType": "property"
-      }
-    }
-  },
   "JSON": {
     "description": "",
     "syntax": "",
@@ -638,24 +640,6 @@
       }
     }
   },
-  "Iterator": {
-    "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
-    "syntax": "Iterator(object, [keyOnly])",
-    "parameters": {
-      "object": "Object to iterate over properties.",
-      "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
-    },
-    "children": {
-      "Iterator.prototype.next": {
-        "description": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items.",
-        "childType": "method"
-      },
-      "Iterator.prototype[@@iterator]": {
-        "description": "Returns a function that returns iterator object, that conforms to iterator protocol.",
-        "childType": "property"
-      }
-    }
-  },
   "Map": {
     "description": "A Map object iterates its elements in insertion order — a for...of loop returns an array of [key, value] for each iteration.",
     "syntax": "new Map([iterable])\n",
@@ -668,7 +652,7 @@
         "childType": "method"
       },
       "Map.prototype.delete(key)": {
-        "description": "Removes any value associated to the key and returns the value that Map.prototype.has(value) would have previously returned. Map.prototype.has(key) will return false afterwards.",
+        "description": "Removes any value associated to the key and returns the value that Map.prototype.has(key) would have previously returned. Map.prototype.has(key) will return false afterwards.",
         "childType": "method"
       },
       "Map.prototype.entries": {
@@ -713,6 +697,24 @@
       },
       "Map.prototype": {
         "description": "Represents the prototype for the Map constructor. Allows the addition of properties to all Map objects.",
+        "childType": "property"
+      }
+    }
+  },
+  "Iterator": {
+    "description": "Returns Iterator instance that iterates over object. Iterator instance returns [property_name, property_value] array for each iteration if keyOnly is falsy,  otherwise, if keyOnly is truthy, it returns property_name for each iteration.  If object is the Iterator instance or Generator instance, it returns object itself.",
+    "syntax": "Iterator(object, [keyOnly])",
+    "parameters": {
+      "object": "Object to iterate over properties.",
+      "keyOnly": "If keyOnly is truthy value, Iterator.prototype.next returns property_name only."
+    },
+    "children": {
+      "Iterator.prototype.next": {
+        "description": "Returns next item in the [property_name, property_value] format or property_name only. It throws StopIteration if there are no more items.",
+        "childType": "method"
+      },
+      "Iterator.prototype[@@iterator]": {
+        "description": "Returns a function that returns iterator object, that conforms to iterator protocol.",
         "childType": "property"
       }
     }
@@ -900,12 +902,6 @@
       }
     }
   },
-  "NaN": {
-    "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
-    "syntax": "NaN",
-    "parameters": {},
-    "children": {}
-  },
   "Number": {
     "description": "The primary uses for the Number object are:\n If the argument cannot be converted into a number, it returns NaN.\n In a non-constructor context (i.e., without the new operator), Number can be used to perform a type conversion.\n",
     "syntax": "new Number(value);",
@@ -1007,6 +1003,12 @@
       }
     }
   },
+  "NaN": {
+    "description": "NaN is a property of the global object.The initial value of NaN is Not-A-Number — the same as the value of Number.NaN. In modern browsers, NaN is a non-configurable, non-writable property. Even when this is not the case, avoid overriding it.It is rather rare to use NaN in a program. It is the returned value when Math functions fail (Math.sqrt(-1)) or when a function trying to parse a number fails (parseInt(\"blabla\")).",
+    "syntax": "NaN",
+    "parameters": {},
+    "children": {}
+  },
   "NumberFormat": {
     "description": "",
     "syntax": "new Intl.NumberFormat([locales[, options]])\nIntl.NumberFormat.call(this[, locales[, options]])\n",
@@ -1035,15 +1037,6 @@
         "childType": "property"
       }
     }
-  },
-  "Object": {
-    "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.When called in a non-constructor context, Object behaves identically to new Object().See also the object initializer / literal syntax.",
-    "syntax": "// Object initialiser or literal\n{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }\n\n// Called as a constructor\nnew Object([value])",
-    "parameters": {
-      "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
-      "value": "Any value."
-    },
-    "children": {}
   },
   "ParallelArray": {
     "description": "",
@@ -1088,13 +1081,22 @@
       }
     }
   },
+  "Object": {
+    "description": "The Object constructor creates an object wrapper for the given value. If the value is null or undefined, it will create and return an empty object, otherwise, it will return an object of a Type that corresponds to the given value. If the value is an object already, it will return the value.When called in a non-constructor context, Object behaves identically to new Object().See also the object initializer / literal syntax.",
+    "syntax": "// Object initialiser or literal\n{ [ nameValuePair1[, nameValuePair2[, ...nameValuePairN] ] ] }\n\n// Called as a constructor\nnew Object([value])",
+    "parameters": {
+      "nameValuePair1, nameValuePair2, ... nameValuePairN": "Pairs of names (strings) and values (any value) where the name is separated from the value by a colon.",
+      "value": "Any value."
+    },
+    "children": {}
+  },
   "Promise": {
     "description": "A Promise represents a proxy for a value not necessarily known when the promise is created. It allows you to associate handlers to an asynchronous action's eventual success value or failure reason. This lets asynchronous methods return values like synchronous methods: instead of the final value, the asynchronous method returns a promise of having a value at some point in the future.A Promise is in one of these states:\n pending: initial state, not fulfilled or rejected.\n fulfilled: meaning that the operation completed successfully.\n rejected: meaning that the operation failed.\nA pending promise can become either fulfilled with a value, or rejected with a reason (error). When either of these happens, the associated handlers queued up by a promise's then method are called. (If the promise has already been fulfilled or rejected when a corresponding handler is attached, the handler will be called, so there is no race condition between an asynchronous operation completing and its handlers being attached.)As the Promise.prototype.then() and Promise.prototype.catch() methods return promises, they can be chained—an operation called composition.\nNote: A promise is said to be settled if it is either fulfilled or rejected, but not pending. You will also hear the term resolved used with promises — this means that the promise is settled, or it is locked into a promise chain. Domenic Denicola's States and fates contains more details about promise terminology.\n",
-    "syntax": "new Promise(executor);\nnew Promise(function(resolve, reject) { ... });",
+    "syntax": "new Promise( /* executor */ function(resolve, reject) { ... } );",
     "parameters": {},
     "children": {
       "Promise.all(iterable)": {
-        "description": "Returns a promise that resolves when all of the promises in the iterable argument have resolved. This is useful for aggregating results of multiple promises together.",
+        "description": "Returns a promise that either resolves when all of the promises in the iterable argument have resolved or rejects as soon as one of the promises in the iterable argument rejects. If the returned promise resolves, it is resolved with an array of the values from the resolved promises in the iterable. If the returned promise rejects, it is rejected with the reason from the promise in the iterable that rejected. This method can be useful for aggregating results of multiple promises together.",
         "childType": "method"
       },
       "Promise.race(iterable)": {
@@ -1119,20 +1121,6 @@
       }
     }
   },
-  "Proxy": {
-    "description": "",
-    "syntax": "var p = new Proxy(target, handler);\n",
-    "parameters": {
-      "target": "A target object (can be any sort of objects, including a native array, a function or even another proxy) or function to wrap with Proxy.",
-      "handler": "An object whose properties are functions which define the behavior of the proxy when an operation is performed on it."
-    },
-    "children": {
-      "Proxy.revocable": {
-        "description": "Creates a revocable Proxy object.",
-        "childType": "method"
-      }
-    }
-  },
   "RangeError": {
     "description": "A RangeError is thrown when trying to pass a number as an argument to a function that does not allow a range that includes that number. This can be encountered when attempting to create an array of an illegal length with the Array constructor, or when passing bad values to the numeric methods Number.toExponential(), Number.toFixed() or Number.toPrecision().",
     "syntax": "new RangeError([message[, fileName[, lineNumber]]])",
@@ -1146,33 +1134,47 @@
         "description": "Allows the addition of properties to an RangeError object.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.constructor": {
-        "description": "\n  Specifies the function that created an instance's prototype.",
+      "RangeError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.message": {
-        "description": "\n  Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "RangeError.prototype.message": {
+        "description": "Error message. Although ECMA-262 specifies that RangeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.name": {
-        "description": "\n  Error name. Inherited from Error.",
+      "RangeError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.fileName": {
-        "description": "\n  Path to file that raised this error. Inherited from Error.",
+      "RangeError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.lineNumber": {
-        "description": "\n  Line number in file that raised this error. Inherited from Error.",
+      "RangeError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.columnNumber": {
-        "description": "\n  Column number in line that raised this error. Inherited from Error.",
+      "RangeError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
         "childType": "property"
       },
-      "\n  RangeError.prototype.stack": {
-        "description": "\n  Stack trace. Inherited from Error.",
+      "RangeError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
         "childType": "property"
+      }
+    }
+  },
+  "Proxy": {
+    "description": "",
+    "syntax": "var p = new Proxy(target, handler);\n",
+    "parameters": {
+      "target": "A target object (can be any sort of objects, including a native array, a function or even another proxy) or function to wrap with Proxy.",
+      "handler": "An object whose properties are functions which define the behavior of the proxy when an operation is performed on it."
+    },
+    "children": {
+      "Proxy.revocable": {
+        "description": "Creates a revocable Proxy object.",
+        "childType": "method"
       }
     }
   },
@@ -1189,96 +1191,33 @@
         "description": "Allows the addition of properties to an ReferenceError object.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.constructor": {
-        "description": "\n  Specifies the function that created an instance's prototype.",
+      "ReferenceError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.message": {
-        "description": "\n  Error message. Although ECMA-262 specifies that ReferenceError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "ReferenceError.prototype.message": {
+        "description": "Error message. Although ECMA-262 specifies that ReferenceError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.name": {
-        "description": "\n  Error name. Inherited from Error.",
+      "ReferenceError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.fileName": {
-        "description": "\n  Path to file that raised this error. Inherited from Error.",
+      "ReferenceError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.lineNumber": {
-        "description": "\n  Line number in file that raised this error. Inherited from Error.",
+      "ReferenceError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.columnNumber": {
-        "description": "\n  Column number in line that raised this error. Inherited from Error.",
+      "ReferenceError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
         "childType": "property"
       },
-      "\n  ReferenceError.prototype.stack": {
-        "description": "\n  Stack trace. Inherited from Error.",
+      "ReferenceError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
         "childType": "property"
-      }
-    }
-  },
-  "Reflect": {
-    "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
-    "syntax": "",
-    "parameters": {},
-    "children": {
-      "Reflect.apply": {
-        "description": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
-        "childType": "method"
-      },
-      "Reflect.construct": {
-        "description": " The new operator as a function. Equivalent to calling new target(...args).",
-        "childType": "method"
-      },
-      "Reflect.defineProperty": {
-        "description": "Similar to Object.defineProperty(). Returns a Boolean.",
-        "childType": "method"
-      },
-      "Reflect.deleteProperty": {
-        "description": "The delete operator as a function. Equivalent to calling delete target[name].",
-        "childType": "method"
-      },
-      "Reflect.enumerate": {
-        "description": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
-        "childType": "method"
-      },
-      "Reflect.get": {
-        "description": "A function that returns the value of properties.",
-        "childType": "method"
-      },
-      "Reflect.getOwnPropertyDescriptor": {
-        "description": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
-        "childType": "method"
-      },
-      "Reflect.getPrototypeOf": {
-        "description": "Same as Object.getPrototypeOf().",
-        "childType": "method"
-      },
-      "Reflect.has": {
-        "description": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
-        "childType": "method"
-      },
-      "Reflect.isExtensible": {
-        "description": "Same as Object.isExtensible().",
-        "childType": "method"
-      },
-      "Reflect.ownKeys": {
-        "description": "Returns an array of the target object's own (not inherited) property keys.",
-        "childType": "method"
-      },
-      "Reflect.preventExtensions": {
-        "description": "Similar to Object.preventExtensions(). Returns a Boolean.",
-        "childType": "method"
-      },
-      "Reflect.set": {
-        "description": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
-        "childType": "method"
-      },
-      "Reflect.setPrototypeOf": {
-        "description": "A function that sets the prototype of an object.",
-        "childType": "method"
       }
     }
   },
@@ -1361,11 +1300,124 @@
       }
     }
   },
+  "Reflect": {
+    "description": "Unlike most global objects, Reflect is not a constructor. You can not use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).",
+    "syntax": "",
+    "parameters": {},
+    "children": {
+      "Reflect.apply": {
+        "description": "Calls a target function with arguments as specified by the args parameter. See also Function.prototype.apply().",
+        "childType": "method"
+      },
+      "Reflect.construct": {
+        "description": " The new operator as a function. Equivalent to calling new target(...args).",
+        "childType": "method"
+      },
+      "Reflect.defineProperty": {
+        "description": "Similar to Object.defineProperty(). Returns a Boolean.",
+        "childType": "method"
+      },
+      "Reflect.deleteProperty": {
+        "description": "The delete operator as a function. Equivalent to calling delete target[name].",
+        "childType": "method"
+      },
+      "Reflect.enumerate": {
+        "description": "Like the for...in loop. Returns an iterator with the enumerable own and inherited properties of the target object.",
+        "childType": "method"
+      },
+      "Reflect.get": {
+        "description": "A function that returns the value of properties.",
+        "childType": "method"
+      },
+      "Reflect.getOwnPropertyDescriptor": {
+        "description": "Similar to Object.getOwnPropertyDescriptor(). Returns a property descriptor of the given property if it exists on the object,  undefined otherwise.",
+        "childType": "method"
+      },
+      "Reflect.getPrototypeOf": {
+        "description": "Same as Object.getPrototypeOf().",
+        "childType": "method"
+      },
+      "Reflect.has": {
+        "description": "The in operator as function. Returns a boolean indicating whether an own or inherited property exists.",
+        "childType": "method"
+      },
+      "Reflect.isExtensible": {
+        "description": "Same as Object.isExtensible().",
+        "childType": "method"
+      },
+      "Reflect.ownKeys": {
+        "description": "Returns an array of the target object's own (not inherited) property keys.",
+        "childType": "method"
+      },
+      "Reflect.preventExtensions": {
+        "description": "Similar to Object.preventExtensions(). Returns a Boolean.",
+        "childType": "method"
+      },
+      "Reflect.set": {
+        "description": "A function that assigns values to properties. Returns a Boolean that is true if the update was successful.",
+        "childType": "method"
+      },
+      "Reflect.setPrototypeOf": {
+        "description": "A function that sets the prototype of an object.",
+        "childType": "method"
+      }
+    }
+  },
+  "Intl": {
+    "description": "",
+    "syntax": "",
+    "parameters": {},
+    "children": {
+      "Intl.Collator": {
+        "description": "Constructor for collators, objects that enable language sensitive string comparison.",
+        "childType": "property"
+      },
+      "Intl.DateTimeFormat": {
+        "description": "Constructor for objects that enable language sensitive date and time formatting.",
+        "childType": "property"
+      },
+      "Intl.NumberFormat": {
+        "description": "Constructor for objects that enable language sensitive number formatting.",
+        "childType": "property"
+      }
+    }
+  },
   "SIMD": {
     "description": "The JavaScript SIMD API consists of several new types and operations. Browsers provide highly optimized implementations of this API depending on the underlying hardware of the user. Currently, SIMD is especially modeled for ARMv7 platforms with NEON and x86 platforms with SSE.The SIMD API types are installed on a SIMD module. Unlike the other global objects, SIMD is not a constructor. You can not use it with a new operator or invoke the SIMD object as a function. All properties and methods of SIMD are static (as is the case with the Math object).",
     "syntax": "",
     "parameters": {},
     "children": {}
+  },
+  "StopIteration": {
+    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
+    "syntax": "StopIteration",
+    "parameters": {},
+    "children": {}
+  },
+  "Symbol": {
+    "description": "To create a new primitive symbol, you write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value and might be surprising as creating explicit wrapper objects around primitive data types is generally possible (for example, new Boolean, new String and new Number).If you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
+    "syntax": "Symbol([description])",
+    "parameters": {
+      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
+    },
+    "children": {
+      "Symbol.for(key)": {
+        "description": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
+        "childType": "method"
+      },
+      "Symbol.keyFor(sym)": {
+        "description": "Retrieves a shared symbol key from the global symbol registry for the given symbol.",
+        "childType": "method"
+      },
+      "Symbol.length": {
+        "description": "Length property whose value is 0.",
+        "childType": "property"
+      },
+      "Symbol.prototype": {
+        "description": "Represents the prototype for the Symbol constructor.",
+        "childType": "property"
+      }
+    }
   },
   "Set": {
     "description": "Set objects are collections of values, you can iterate its elements in insertion order. A value in the Set may only occur once; it is unique in the Set's collection.",
@@ -1422,74 +1474,6 @@
       }
     }
   },
-  "StopIteration": {
-    "description": "StopIteration is a part of legacy iterator protocol, and it will be removed at the same time as legacy iterator and legacy generator.",
-    "syntax": "StopIteration",
-    "parameters": {},
-    "children": {}
-  },
-  "Symbol": {
-    "description": "To create a new primitive symbol, you simply write Symbol() with an optional string as its description:var sym1 = Symbol();\nvar sym2 = Symbol(\"foo\");\nvar sym3 = Symbol(\"foo\");\nThe above code creates three new symbols. Note that Symbol(\"foo\") does not coerce the string \"foo\" into a symbol. It creates a new symbol each time:Symbol(\"foo\") === Symbol(\"foo\"); // falseThe following syntax with the new operator will throw a TypeError:var sym = new Symbol(); // TypeErrorThis prevents authors from creating an explicit Symbol wrapper object instead of a new symbol value. Creating an explicit wrapper object around primitive data types is no longer supported starting with ECMAScript 6. However, existing primitive wrapper objects like new Boolean, new String and new Number can still be created for legacy reasons.And if you really want to create a Symbol wrapper object, you can use the Object() function:var sym = Symbol(\"foo\");\ntypeof sym;     // \"symbol\" \nvar symObj = Object(sym);\ntypeof symObj;  // \"object\"\n",
-    "syntax": "Symbol([description])",
-    "parameters": {
-      "description": "Optional, string. A description of the symbol which can be used for debugging but not to access the symbol itself."
-    },
-    "children": {
-      "Symbol.for(key)": {
-        "description": "Searches for existing symbols with the given key and returns it if found. Otherwise a new symbol gets created in the global symbol registry with this key.",
-        "childType": "method"
-      },
-      "Symbol.keyFor(sym)": {
-        "description": "Retrieves a shared symbol key from the global symbol registry for the given symbol.",
-        "childType": "method"
-      },
-      "Symbol.length": {
-        "description": "Length property whose value is 0.",
-        "childType": "property"
-      },
-      "Symbol.prototype": {
-        "description": "Represents the prototype for the Symbol constructor.",
-        "childType": "property"
-      }
-    }
-  },
-  "String": {
-    "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
-    "syntax": "'string text'\n\"string text\"\n\"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்\"String(thing)\nnew String(thing)",
-    "parameters": {
-      "thing": "Anything to be converted to a string."
-    },
-    "children": {
-      "String.fromCharCode": {
-        "description": "Returns a string created by using the specified sequence of Unicode values.",
-        "childType": "method"
-      },
-      "String.fromCodePoint": {
-        "description": "Returns a string created by using the specified sequence of code points.",
-        "childType": "method"
-      },
-      "String.raw": {
-        "description": "Returns a string created from a raw template string.",
-        "childType": "method"
-      },
-      "String.prototype": {
-        "description": "Allows the addition of properties to a String object.",
-        "childType": "property"
-      },
-      "String.prototype.constructor": {
-        "description": "Specifies the function that creates an object's prototype.",
-        "childType": "property"
-      },
-      "String.prototype.length": {
-        "description": "Reflects the length of the string.",
-        "childType": "property"
-      },
-      "N": {
-        "description": "Used to access the character in the Nth position where N is a positive integer between 0 and one less than the value of length. These properties are read-only.",
-        "childType": "property"
-      }
-    }
-  },
   "SyntaxError": {
     "description": "A SyntaxError is thrown when the JavaScript engine encounters tokens or token order that does not conform to the syntax of the language when parsing code.",
     "syntax": "new SyntaxError([message[, fileName[, lineNumber]]])",
@@ -1533,45 +1517,39 @@
       }
     }
   },
-  "TypeError": {
-    "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
-    "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
+  "String": {
+    "description": "Strings are useful for holding data that can be represented in text form. Some of the most-used operations on strings are to check their length, to build and concatenate them using the + and += string operators, checking for the existence or location of substrings with the indexOf() method, or extracting substrings with the substring() method.",
+    "syntax": "'string text'\n\"string text\"\n\"中文 español English हिन्दी العربية português বাংলা русский 日本語 ਪੰਜਾਬੀ 한국어 தமிழ்\"String(thing)\nnew String(thing)",
     "parameters": {
-      "message": "Optional. Human-readable description of the error",
-      "fileName": "Optional. The name of the file containing the code that caused the exception",
-      "lineNumber": "Optional. The line number of the code that caused the exception"
+      "thing": "Anything to be converted to a string."
     },
     "children": {
-      "TypeError.prototype": {
-        "description": "Allows the addition of properties to a TypeError object.",
+      "String.fromCharCode": {
+        "description": "Returns a string created by using the specified sequence of Unicode values.",
+        "childType": "method"
+      },
+      "String.fromCodePoint": {
+        "description": "Returns a string created by using the specified sequence of code points.",
+        "childType": "method"
+      },
+      "String.raw": {
+        "description": "Returns a string created from a raw template string.",
+        "childType": "method"
+      },
+      "String.prototype": {
+        "description": "Allows the addition of properties to a String object.",
         "childType": "property"
       },
-      "TypeError.prototype.constructor": {
-        "description": "Specifies the function that created an instance's prototype.",
+      "String.prototype.constructor": {
+        "description": "Specifies the function that creates an object's prototype.",
         "childType": "property"
       },
-      "TypeError.prototype.message": {
-        "description": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
+      "String.prototype.length": {
+        "description": "Reflects the length of the string.",
         "childType": "property"
       },
-      "TypeError.prototype.name": {
-        "description": "Error name. Inherited from Error.",
-        "childType": "property"
-      },
-      "TypeError.prototype.fileName": {
-        "description": "Path to file that raised this error. Inherited from Error.",
-        "childType": "property"
-      },
-      "TypeError.prototype.lineNumber": {
-        "description": "Line number in file that raised this error. Inherited from Error.",
-        "childType": "property"
-      },
-      "TypeError.prototype.columnNumber": {
-        "description": "Column number in line that raised this error. Inherited from Error.",
-        "childType": "property"
-      },
-      "TypeError.prototype.stack": {
-        "description": "Stack trace. Inherited from Error.",
+      "N": {
+        "description": "Used to access the character in the Nth position where N is a positive integer between 0 and one less than the value of length. These properties are read-only.",
         "childType": "property"
       }
     }
@@ -1619,6 +1597,14 @@
       }
     }
   },
+  "Uint16x8": {
+    "description": "",
+    "syntax": "SIMD.Uint16x8(s0, s1, s2, s3, s4, s5, s6, s7);",
+    "parameters": {
+      "s[0-7]": "An integer specifying the value of the lane. Defaults to 0."
+    },
+    "children": {}
+  },
   "Uint16Array": {
     "description": "",
     "syntax": "new Uint16Array(length);\nnew Uint16Array(typedArray);\nnew Uint16Array(object);\nnew Uint16Array(buffer [, byteOffset [, length]]);",
@@ -1650,33 +1636,45 @@
       }
     }
   },
-  "Uint32Array": {
-    "description": "",
-    "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
-    "parameters": {},
+  "TypeError": {
+    "description": "A TypeError is thrown when an operand or argument passed to a function is incompatible with the type expected by that operator or function.",
+    "syntax": "new TypeError([message[, fileName[, lineNumber]]])",
+    "parameters": {
+      "message": "Optional. Human-readable description of the error",
+      "fileName": "Optional. The name of the file containing the code that caused the exception",
+      "lineNumber": "Optional. The line number of the code that caused the exception"
+    },
     "children": {
-      "Uint32Array.from": {
-        "description": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
-        "childType": "method"
-      },
-      "Uint32Array.of": {
-        "description": "Creates a new Uint32Array with a variable number of arguments. See also Array.of().",
-        "childType": "method"
-      },
-      "Uint32Array.BYTES_PER_ELEMENT": {
-        "description": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
+      "TypeError.prototype": {
+        "description": "Allows the addition of properties to a TypeError object.",
         "childType": "property"
       },
-      "Uint32Array.length": {
-        "description": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
+      "TypeError.prototype.constructor": {
+        "description": "Specifies the function that created an instance's prototype.",
         "childType": "property"
       },
-      "Uint32Array.name": {
-        "description": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
+      "TypeError.prototype.message": {
+        "description": "Error message. Although ECMA-262 specifies that TypeError should provide its own message property, in SpiderMonkey, it inherits Error.prototype.message.",
         "childType": "property"
       },
-      "Uint32Array.prototype": {
-        "description": "Prototype for the TypedArray objects.",
+      "TypeError.prototype.name": {
+        "description": "Error name. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.fileName": {
+        "description": "Path to file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.lineNumber": {
+        "description": "Line number in file that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.columnNumber": {
+        "description": "Column number in line that raised this error. Inherited from Error.",
+        "childType": "property"
+      },
+      "TypeError.prototype.stack": {
+        "description": "Stack trace. Inherited from Error.",
         "childType": "property"
       }
     }
@@ -1811,8 +1809,24 @@
       }
     }
   },
+  "decodeURIComponent": {
+    "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
+    "syntax": "decodeURIComponent(encodedURI)",
+    "parameters": {
+      "encodedURI": "An encoded component of a Uniform Resource Identifier."
+    },
+    "children": {}
+  },
+  "decodeURI": {
+    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
+    "syntax": "decodeURI(encodedURI)",
+    "parameters": {
+      "encodedURI": "A complete, encoded Uniform Resource Identifier."
+    },
+    "children": {}
+  },
   "arguments": {
-    "description": "The arguments object is a local variable available within all functions. arguments as a property of Function can no longer be used.You can refer to a function's arguments within the function by using the arguments object. This object contains an entry for each argument passed to the function, the first entry's index starting at 0. For example, if a function is passed three arguments, you can refer to the argument as follows:arguments[0]\narguments[1]\narguments[2]\nThe arguments can also be set:arguments[1] = 'new value';The arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. For example, it does not have the pop method. However it can be converted to a real Array:var args = Array.prototype.slice.call(arguments);\nImportant: You should not slice on arguments because it prevents optimizations in JavaScript engines (V8 for example). Instead, try constructing a new array by iterating through the arguments object. More information.\nThe arguments object is available only within a function body. Attempting to access the arguments object outside a function declaration results in an error.You can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. You can use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. (To determine the number of arguments declared when a function was defined, use the Function.length property.)",
+    "description": "The arguments object is a local variable available within all functions. You can refer to a function's arguments within the function by using the arguments object. This object contains an entry for each argument passed to the function, the first entry's index starting at 0. For example, if a function is passed three arguments, you can refer to them as follows:arguments[0]\narguments[1]\narguments[2]\nThe arguments can also be set:arguments[1] = 'new value';\nThe arguments object is not an Array. It is similar to an Array, but does not have any Array properties except length. For example, it does not have the pop method. However it can be converted to a real Array:var args = Array.prototype.slice.call(arguments);\nYou can also use the Array.from() method or the spread operator to convert arguments to a real Array:var args = Array.from(arguments);\nvar args = [...arguments];\n\nUsing slice on arguments prevents optimizations in some JavaScript engines (V8 for example - more information). If you care for them, try constructing a new array by iterating through the arguments object instead. An alternative would be to use the despised Array constructor as a function:\n\nvar args = (arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments));\n\nYou can use the arguments object if you call a function with more arguments than it is formally declared to accept. This technique is useful for functions that can be passed a variable number of arguments. Use arguments.length to determine the number of arguments passed to the function, and then process each argument by using the arguments object. To determine the number of parameters in the function signature, use the Function.length property.",
     "syntax": "arguments",
     "parameters": {},
     "children": {
@@ -1827,22 +1841,18 @@
       "arguments.length": {
         "description": "Reference to the number of arguments passed to the function.",
         "childType": "property"
+      },
+      "arguments[@@iterator]": {
+        "description": "Returns a new Array Iterator object that contains the values for each index in the arguments.",
+        "childType": "property"
       }
     }
   },
-  "decodeURI": {
-    "description": "Replaces each escape sequence in the encoded URI with the character that it represents, but does not decode escape sequences that could not have been introduced by encodeURI. The character “#” is not decoded from escape sequences.",
-    "syntax": "decodeURI(encodedURI)",
+  "encodeURI": {
+    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
+    "syntax": "encodeURI(URI)",
     "parameters": {
-      "encodedURI": "A complete, encoded Uniform Resource Identifier."
-    },
-    "children": {}
-  },
-  "decodeURIComponent": {
-    "description": "Replaces each escape sequence in the encoded URI component with the character that it represents.",
-    "syntax": "decodeURIComponent(encodedURI)",
-    "parameters": {
-      "encodedURI": "An encoded component of a Uniform Resource Identifier."
+      "URI": "A complete Uniform Resource Identifier."
     },
     "children": {}
   },
@@ -1854,11 +1864,50 @@
     },
     "children": {}
   },
+  "Uint32Array": {
+    "description": "",
+    "syntax": "new Uint32Array(length);\nnew Uint32Array(typedArray);\nnew Uint32Array(object);\nnew Uint32Array(buffer [, byteOffset [, length]]);",
+    "parameters": {},
+    "children": {
+      "Uint32Array.from": {
+        "description": "Creates a new Uint32Array from an array-like or iterable object. See also Array.from().",
+        "childType": "method"
+      },
+      "Uint32Array.of": {
+        "description": "Creates a new Uint32Array with a variable number of arguments. See also Array.of().",
+        "childType": "method"
+      },
+      "Uint32Array.BYTES_PER_ELEMENT": {
+        "description": "Returns a number value of the element size. 4 in the case of an Uint32Array.",
+        "childType": "property"
+      },
+      "Uint32Array.length": {
+        "description": "Static length property whose value is 3. For the actual length (number of elements), see Uint32Array.prototype.length.",
+        "childType": "property"
+      },
+      "Uint32Array.name": {
+        "description": "Returns the string value of the constructor name. In the case of the Uint32Array type: \"Uint32Array\".",
+        "childType": "property"
+      },
+      "Uint32Array.prototype": {
+        "description": "Prototype for the TypedArray objects.",
+        "childType": "property"
+      }
+    }
+  },
   "eval": {
     "description": "eval() is a function property of the global object.The argument of the eval() function is a string. If the string represents an expression, eval() evaluates the expression. If the argument represents one or more JavaScript statements, eval() evaluates the statements. Do not call eval() to evaluate an arithmetic expression; JavaScript evaluates arithmetic expressions automatically.If you construct an arithmetic expression as a string, you can use eval() to evaluate it at a later time. For example, suppose you have a variable x. You can postpone evaluation of an expression involving x by assigning the string value of the expression, say \"3 * x + 2\", to a variable, and then calling eval() at a later point in your script.If the argument of eval() is not a string, eval() returns the argument unchanged. In the following example, the String constructor is specified, and eval() returns a String object rather than evaluating the string.eval(new String(\"2 + 2\")); // returns a String object containing \"2 + 2\"\neval(\"2 + 2\");             // returns 4\nYou can work around this limitation in a generic fashion by using toString().var expression = new String(\"2 + 2\");\neval(expression.toString());\nIf you use the eval function indirectly, by invoking it via a reference other than eval, as of ECMAScript 5 it works at global scope rather than local scope; this means, for instance, that function declarations create global functions, and that the code being evaluated doesn't have access to local variables within the scope where it's being called.function test() {\n  var x = 2, y = 4;\n  console.log(eval(\"x + y\"));  // Direct call, uses local scope, result is 6\n  var geval = eval;\n  console.log(geval(\"x + y\")); // Indirect call, uses global scope, throws ReferenceError because `x` is undefined\n}\n",
     "syntax": "eval(string)",
     "parameters": {
       "string": "A string representing a JavaScript expression, statement, or sequence of statements. The expression can include variables and properties of existing objects."
+    },
+    "children": {}
+  },
+  "encodeURIComponent": {
+    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
+    "syntax": "encodeURIComponent(str);",
+    "parameters": {
+      "str": "String. A component of a URI."
     },
     "children": {}
   },
@@ -1878,28 +1927,6 @@
     },
     "children": {}
   },
-  "null": {
-    "description": "The value null is a literal (not a property of the global object like undefined can be). In APIs, null is often retrieved in place where an object can be expected but no object is relevant. When checking for null or undefined beware of the differences between equality (==) and identity (===) operators (type-conversion is performed with the former).// foo does not exist, it is not defined and has never been initialized:\n> foo\n\"ReferenceError: foo is not defined\"\n\n// foo is known to exist now but it has no type or value:\n> var foo = null; foo\n\"null\"\n",
-    "syntax": "null ",
-    "parameters": {},
-    "children": {}
-  },
-  "encodeURIComponent": {
-    "description": "encodeURIComponent escapes all characters except the following: alphabetic, decimal digits, - _ . ! ~ * ' ( )Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURIComponent('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURIComponent('\\uDFFF')); \nTo avoid unexpected requests to the server, you should call encodeURIComponent on any user-entered parameters that will be passed as part of a URI. For example, a user could type \"Thyme &time=again\" for a variable comment. Not using encodeURIComponent on this variable will give comment=Thyme%20&time=again. Note that the ampersand and the equal sign mark a new key and value pair. So instead of having a POST comment key equal to \"Thyme &time=again\", you have two POST keys, one equal to \"Thyme \" and another (time) equal to again.For application/x-www-form-urlencoded, spaces are to be replaced by '+', so one may wish to follow a encodeURIComponent replacement with an additional replacement of \"%20\" with \"+\".To be more stringent in adhering to RFC 3986 (which reserves !, ', (, ), and *), even though these characters have no formalized URI delimiting uses, the following can be safely used:function fixedEncodeURIComponent (str) {\n  return encodeURIComponent(str).replace(/[!'()*]/g, function(c) {\n    return '%' + c.charCodeAt(0).toString(16);\n  });\n}\n",
-    "syntax": "encodeURIComponent(str);",
-    "parameters": {
-      "str": "String. A component of a URI."
-    },
-    "children": {}
-  },
-  "encodeURI": {
-    "description": "Assumes that the URI is a complete URI, so does not encode reserved characters that have special meaning in the URI.encodeURI replaces all characters except the following with the appropriate UTF-8 escape sequences:\n \n  \n   Type\n   Includes\n  \n  \n   Reserved characters\n   ; , / ? : @ & = + $\n  \n  \n   Unescaped characters\n   alphabetic, decimal digits, - _ . ! ~ * ' ( )\n  \n  \n   Number sign\n   #\n  \n \nNote that encodeURI by itself cannot form proper HTTP GET and POST requests, such as for XMLHTTPRequests, because \"&\", \"+\", and \"=\" are not encoded, which are treated as special characters in GET and POST requests. encodeURIComponent, however, does encode these characters.Note that an URIError will be thrown if one attempts to encode a surrogate which is not part of a high-low pair, e.g.,// high-low pair ok\nconsole.log(encodeURI('\\uD800\\uDFFF'));\n\n// lone high surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uD800'));\n\n// lone low surrogate throws \"URIError: malformed URI sequence\"\nconsole.log(encodeURI('\\uDFFF')); Also note that if one wishes to follow the more recent RFC3986 for URLs, which makes square brackets reserved (for IPv6) and thus not encoded when forming something which could be part of a URL (such as a host), the following code snippet may help:function fixedEncodeURI (str) {\n    return encodeURI(str).replace(/%5B/g, '[').replace(/%5D/g, ']');\n}",
-    "syntax": "encodeURI(URI)",
-    "parameters": {
-      "URI": "A complete Uniform Resource Identifier."
-    },
-    "children": {}
-  },
   "parseFloat": {
     "description": "parseFloat is a top-level function and is not associated with any object.parseFloat parses its argument, a string, and returns a floating point number. If it encounters a character other than a sign (+ or -), numeral (0-9), a decimal point, or an exponent, it returns the value up to that point and ignores that character and all succeeding characters. Leading and trailing spaces are allowed.If the first character cannot be converted to a number, parseFloat returns NaN.For arithmetic purposes, the NaN value is not a number in any radix. You can call the isNaN function to determine if the result of parseFloat is NaN. If NaN is passed on to arithmetic operations, the operation results will also be NaN.parseFloat can also parse and return the value Infinity. You can use the isFinite function to determine if the result is a finite number (not Infinity, -Infinity, or NaN).",
     "syntax": "parseFloat(string)",
@@ -1916,14 +1943,6 @@
     },
     "children": {}
   },
-  "uneval": {
-    "description": "uneval() is a top-level function and is not associated with any object.",
-    "syntax": "uneval(object)",
-    "parameters": {
-      "object": "A JavaScript expression or statement."
-    },
-    "children": {}
-  },
   "unescape": {
     "description": "The unescape function is a property of the global object.",
     "syntax": "unescape(str)",
@@ -1936,6 +1955,20 @@
     "description": "undefined is a property of the global object, i.e. it is a variable in global scope. The initial value of undefined is the primitive value undefined.In modern browsers (JavaScript 1.8.5 / Firefox 4+), undefined is a non-configurable, non-writable property per the ECMAScript 5 specification. Even when this is not the case, avoid overriding it.A variable that has not been assigned a value is of type undefined. A method or statement also returns undefined if the variable that is being evaluated does not have an assigned value. A function returns undefined if a value was not returned.Since undefined is not a reserved word, it can be used as an identifier (variable name) in any scope other than the global scope.// logs \"foo string\"\n(function(){ var undefined = 'foo'; console.log(undefined, typeof undefined); })();\n\n// logs \"foo string\"\n(function(undefined){ console.log(undefined, typeof undefined); })('foo');\n",
     "syntax": "undefined",
     "parameters": {},
+    "children": {}
+  },
+  "null": {
+    "description": "The value null is written with a literal, null (it's not an identifer for a property of the global object like undefined can be). In APIs, null is often retrieved in place where an object can be expected but no object is relevant. When checking for null or undefined beware of the differences between equality (==) and identity (===) operators (type-conversion is performed with the former).// foo does not exist, it is not defined and has never been initialized:\n> foo\n\"ReferenceError: foo is not defined\"\n\n// foo is known to exist now but it has no type or value:\n> var foo = null; foo\n\"null\"\n",
+    "syntax": "null ",
+    "parameters": {},
+    "children": {}
+  },
+  "uneval": {
+    "description": "uneval() is a top-level function and is not associated with any object.",
+    "syntax": "uneval(object)",
+    "parameters": {
+      "object": "A JavaScript expression or statement."
+    },
     "children": {}
   }
 }
