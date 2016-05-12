@@ -4,10 +4,8 @@ var skipList = ['Addons'];
 
 function traverseMenu(root, targetKey, indent) {
 
-    console.log('[' + targetKey + ']');
     // for each module in 'modules'
-    root[targetKey].forEach(function(targetObj) {
-
+    root[targetKey].forEach(function(targetObj, index) {
         // check that the item's not in our skip list by searching it for the obj's textRaw property 
         if ( targetObj.textRaw && skipList.indexOf(targetObj.textRaw) !== -1 ) {
             return false;
