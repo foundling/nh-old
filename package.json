@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/foundling/node-help",
   "dependencies": {
+    "blessed": "^0.1.81",
     "colors": "^1.1.2",
     "nconf": "^0.8.2",
     "node-serialize": "0.0.4"
